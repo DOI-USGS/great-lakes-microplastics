@@ -6,7 +6,7 @@ getFiles <- function(names = NULL, lookup.table){
   
   source("scripts/0_download/auth.R")
   item.id <- "570eaf6be4b0ef3b7ca2565e"
-  cache_folder <- 'data/cache'
+  cache_folder <- 'cache'
   
   # look up table
   #data.relative.abundance matches with All_data_for_data_release.csv
