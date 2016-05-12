@@ -47,8 +47,14 @@ data:
     type: text/csv
   -
     id: siteText
-    location: data/siteText.yml
+    location: data/siteText.yaml
     type: text/yaml
+  -
+    id: microplastics_data
+    itemId: 570eaf6be4b0ef3b7ca2565e
+    filename: All_data_for_data_release.csv
+    handler: sciencebase
+    type: text/csv
 figures:
   -
     id: relativeAbundanceFig
