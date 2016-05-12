@@ -1,4 +1,5 @@
 auth.R
+data/cache
 
 # History files
 .Rhistory
@@ -12,6 +13,7 @@ auth.R
 
 # RStudio files
 .Rproj.user/
+*.Rproj
 
 # produced vignettes
 vignettes/*.html
