@@ -1,7 +1,7 @@
 
 #' @import dinosvg
 #' 
-visualizeRelativeAbundance <- function(){
+visualizeRelativeAbundance <- function(tag='desktop'){
   svg <- dinosvg:::init_svg(width = 12, height = 6)
   
   groups <- list(list(col='#7fc97f', perc=21.2, cx='50', cy='50', name='FOAM'),
@@ -23,7 +23,7 @@ visualizeRelativeAbundance <- function(){
     start.y <- start.y+height
   }
   
-  file.out <- 'images/relative_abundance.svg'
+  file.out <- sprintf('images/relativeAbundance-%s.svg',tag)
   dinosvg:::write_svg(svg, file=file.out)
   return(file.out)
 }
