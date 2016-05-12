@@ -1,0 +1,73 @@
+/*Universal Classes*/
+.center{
+	height:300px;
+	width:80%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom:0;
+	margin: auto
+	}
+	
+.text{
+	text-align:center;
+	}
+	
+.figure{
+	border:1px solid rgb(240,240,240);
+	min-height:200px;
+	max-width:960px;
+	margin:10px auto;
+	
+	}
+
+
+/*Header CSS*/
+header{
+	background:rgb(63,136,189);
+	color:#fff;
+	height:32px;
+	padding:8px  0 0 10px;
+	border-bottom:5px solid rgb(210,210,210);
+	}
+	
+/*Section CSS*/
+#intro,
+#figure1,
+#figure2{
+	height:100%;
+	position:relative;
+	}
+	
+#figure1{
+	background:lime;
+	}
+	
+#figure2{
+	background:purple;
+	}
+
+/*Footer CSS*/
+footer{
+	background:rgb(63,136,189);
+	min-height:400px;
+	border-top:5px solid rgb(210,210,210);
+	}
+	
+@media screen and (min-width:768px){
+	/*Header CSS*/
+	#logo{
+		width:760px;
+		margin:0 auto;
+		}
+
+}
+
+@media screen and (min-width:1024px){
+	/*Header CSS*/
+	#logo{
+		width:960px;
+		}
+
+}
