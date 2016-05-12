@@ -7,10 +7,14 @@ cacheFiles <- function(names = NULL){
   
   source("scripts/0_download/auth.R")
   
-  item.id <- "5734d92ce4b0dae0d5de62ee"
+  item.id <- "570eaf6be4b0ef3b7ca2565e"
   
   files <- item_list_files(item.id)
   cache_folder <- 'data/cache'
+  
+  if(!dir.exists(cache_folder)){
+    dir.create(cache_folder)
+  }
   
   if(is.null(names)){
     item_file_download(item.id, dest_dir = cache_folder)
