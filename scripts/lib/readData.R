@@ -9,6 +9,7 @@ readData.fileItem <- function(file.item) {
   mimeType <- file.item[["mimeType"]]
   class <- switch(mimeType,
                   "text/csv" = "csv",
+                  "text/tab-seperated-values" = "csv",
                   "text/yaml" = "yaml",
                   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "excel",
                   "none")
@@ -17,15 +18,17 @@ readData.fileItem <- function(file.item) {
 }
 
 readData.csv <- function(data) {
-  read.csv(data$filename)
+  raw.data <- fread(data$location)
+  raw.data <- setDF(raw.data)
+  raw.data
 }
 
 readData.yaml <- function(data) {
-  yaml.load_file(data$filename)
+  yaml.load_file(data$location)
 }
 
 readData.excel <- function(data) {
-  read_excel(data$filename)
+  read_excel(data$location)
 }
 
 readData.none <- function(data) {

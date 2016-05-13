@@ -1,35 +1,27 @@
 packages:
   - sbtools
+  - yaml
+  - readxl
+  - data.table
   
 sources:
+  - scripts/lib/getDataInfo.R
   - scripts/lib/getData.R
   - scripts/lib/readData.R
+  - scripts/0_download/getFiles.R
 
 targets:
   all:
     depends:
-      - siteTextData
-      - SI_Table1Data
+      #- siteTextData
       - All_dataData
       - envEffectsData
 
-siteTextData:
-  command: readData('siteTextData')
+#  siteTextData:
+#    command: readData(target_name)
+    
+  All_dataData:
+    command: readData(target_name)
   
-All_dataData:
-  depends: 'cache/All_data_for_data_release.csv'
-  command: readData('All_dataData')
-
-SI_Table1Data:
-  depends: 'cache/SI_Table 1_site_characteristics_for_PUB_2.xlsx'
-  command: readData('SI_Table1Data')
-
-envEffectsData:
-  command: readData('envEffectsData')
-
-
-cache/All_data_for_data_release.csv:
-  command: getData('All_dataData')
-
-cache/SI_Table 1_site_characteristics_for_PUB_2.xlsx:
-  command: getData('SI_Table1')
+  envEffectsData:
+    command: readData(target_name)
