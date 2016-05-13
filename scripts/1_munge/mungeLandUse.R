@@ -4,13 +4,11 @@
 #' @import readxl
 
 mungeLandUse <- function(fname){
-  all.data <- fname[grep("All_data", fname)]
-  SI.1.data <- fname[grep("SI_Table 1", fname)]
-  
-  raw.data <- fread(all.data)
+
+  raw.data <- fread(fname[1])
   raw.data <- setDF(raw.data)
   
-  SI.1 <- read_excel(SI.1.data, skip = 2)
+  SI.1 <- read_excel(fname[2], skip = 2)
   land.per.cols <- which(is.na(names(SI.1)))
   land.per.cols <- c(land.per.cols[1]-1, land.per.cols)
   names(SI.1)[land.per.cols] <- SI.1[1,land.per.cols]
