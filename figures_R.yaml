@@ -1,0 +1,31 @@
+packages:
+  - dplyr
+  - gsplot
+  
+sources:
+  - scripts/3_visualize/relativeAbundance.R
+  - scripts/3_visualize/environmentalEffects.R
+  - scripts/3_visualize/landUse.R
+  
+include:
+  - munge.yaml
+
+targets:
+  target/relativeAbundanceFig-mobile.svg:
+    command: visualizeRelativeAbundance_mobile("cache/mungedRelativeAbundance.tsv", target_name)
+  
+  target/relativeAbundanceFig-desktop.svg:
+    command: visualizeRelativeAbundance_desktop("cache/mungedRelativeAbundance.tsv", target_name)
+    
+  target/relativeAbundanceFig-ie.svg:
+    command: visualizeRelativeAbundance_ie("cache/mungedRelativeAbundance.tsv", target_name)
+    
+
+  target/landUseFig-mobile.svg:
+    command: visualizeLandUse_mobile("cache/mungedLandUse.tsv", target_name)
+  
+  target/landUseFig-desktop.svg:
+    command: visualizeLandUse_desktop("cache/mungedLandUse.tsv", target_name)
+    
+  target/landUseFig-ie.svg:
+    command: visualizeLandUse_ie("cache/mungedLandUse.tsv", target_name)
