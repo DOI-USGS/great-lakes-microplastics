@@ -1,0 +1,27 @@
+packages:
+  - yaml
+  - dplyr
+  - sbtools
+  - data.table
+
+## All R files that are used must be listed here:
+sources:
+  - scripts/0_download/getFiles.R
+
+targets:
+  all:
+    depends: 
+      - munged.relative.abundance
+      - munged.land.use
+  
+  info.table:
+    command: getDataInfo()
+
+  cache/munged/relative_abundance.json:
+    command: mungeRelativeAbundance(data.All_data, target_name)
+    
+  data.SI_Table1:
+    command: getFiles(target_name, lookup.table)
+
+  munged.land.use:
+    command: mungeRelativeAbundance(data.All_data, data.SI_Table1)
