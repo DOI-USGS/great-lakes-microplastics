@@ -1,12 +1,15 @@
 packages:
-  - yaml
-  - dplyr
-  - sbtools
   - data.table
+  - dplyr
+  - reshape2
+  - readxl
+  - tidyr
+  - jsonlite
 
 ## All R files that are used must be listed here:
 sources:
-  - scripts/0_download/getFiles.R
+  - scripts/1_munge/mungeLanduse.R
+  - scripts/1_munge/mungeRelativeAbundance.R
   
 include:
   - data.yaml
@@ -14,20 +17,11 @@ include:
 targets:
   all:
     depends: 
-      - munged.relative.abundance
-      - munged.land.use
+      - cache/mungedLandUse.tsv
+      - cache/mungedRelativeAbundance.tsv
   
-  info.table:
-    command: getDataInfo()
+  cache/mungedLandUse.tsv:
+    command: mungeLandUse(All_dataData, SI_Table1, target_name)
 
-  cache/mungeLandUse.tsv:
-    command: mungeLandUse(data.All_data)
-
-  mungedRelativeAbundance:
-    command: mungeRelativeAbundance(data.All_data, data.SI_Table1)
-    
-  data.SI_Table1:
-    command: getFiles(target_name, lookup.table)
-
-  munged.relative.abundance:
-    command: mungeRelativeAbundance(data.All_data, data.SI_Table1)
+  cache/mungedRelativeAbundance.tsv:
+    command: mungeRelativeAbundance(All_dataData, target_name)

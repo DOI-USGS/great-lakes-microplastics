@@ -44,36 +44,39 @@ data:
   -
     id: siteTextData
     location: data/siteText.yaml
-    type: text/yaml
+    mimeType: text/yaml
   -
     id: All_dataData
     itemId: 570eaf6be4b0ef3b7ca2565e
     filename: All_data_for_data_release.csv
     handler: sciencebase
-    type: text/csv
+    mimeType: text/csv
   -
     id: SI_Table1Data
     itemId: 570eaf6be4b0ef3b7ca2565e
-    filename: SI.csv
+    filename: SI_Table 1_site_characteristics_for_PUB_2.xlsx
     handler: sciencebase
-    type: text/csv
+    mimeType: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
   -
     id: envEffectsData
     location: data/envEffectsData.csv
-    type: text/csv
+    mimeType: text/csv
 figures:
   -
     id: relativeAbundanceFig
+    input: cache/mungedRelativeAbundance.tsv
     buildfile: scripts/3_visualize/relativeAbundance.R
     type: R
     tags: [mobile, desktop, ie]
   -
     id: environmentalEffectsFig
+    input: 
     buildfile: scripts/3_visualize/environmentalEffects.R
-    type: R
+    type: html
     tags: [mobile, desktop, ie]
   -
     id: landUseFig
+    input: cache/mungedLandUse.tsv
     buildfile: scripts/3_visualize/landUse.R
     type: R
     tags: [mobile, desktop, ie]
