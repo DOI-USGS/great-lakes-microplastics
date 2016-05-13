@@ -1,4 +1,14 @@
 
+visualizeRelativeAbundance_mobile <- function(data.in) {
+  visualizeRelativeAbundance('mobile', data.in)
+}
+visualizeRelativeAbundance_desktop <- function(data.in) {
+  visualizeRelativeAbundance('desktop', data.in)
+}
+visualizeRelativeAbundance_ie <- function(data.in) {
+  visualizeRelativeAbundance('ie', data.in)
+}
+
 #' @import dinosvg
 #' @import dplyr
 #' 
