@@ -23,5 +23,5 @@ targets:
   data.SI_Table1:
     command: getFiles(target_name, lookup.table)
 
-  munged.land.use:
+  munged.relative.abundance:
     command: mungeRelativeAbundance(data.All_data, data.SI_Table1)
