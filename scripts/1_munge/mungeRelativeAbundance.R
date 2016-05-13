@@ -30,5 +30,7 @@ mungeRelativeAbundance <- function(fname){
                                 countFilm = "Film",
                                 countFoam = "Foam"))
   
-  write.table(percent.data, "cache/munged_relative_abundance.tsv", sep="\t")
+  fpath <- "cache/munged_relative_abundance.tsv"
+  write.table(percent.data, fpath, sep="\t")
+  return(fpath)
 }
