@@ -17,8 +17,11 @@ targets:
   info.table:
     command: getDataInfo()
 
-  cache/munged/relative_abundance.json:
-    command: mungeRelativeAbundance(data.All_data, target_name)
+  cache/mungeLandUse.tsv:
+    command: mungeLandUse(data.All_data)
+
+  cache/mungeRelativeAbundance.tsv:
+    command: mungeRelativeAbundance(data.All_data, data.SI_Table1)
     
   data.SI_Table1:
     command: getFiles(target_name, lookup.table)
