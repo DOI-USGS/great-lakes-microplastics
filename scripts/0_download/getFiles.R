@@ -19,17 +19,25 @@ getFiles <- function(names = NULL, lookup.table){
     files <- item_list_files(item.id)
     fpath <- file.path(cache_folder, files$fname)
     fexists <- file.exists(fpath)
-    item_file_download(item.id, names = files$fname[!fexists],
-                       destinations = fpath)
+    fpath_exists <- fpath[fexists]
+    fpath_download <- item_file_download(item.id, names = files$fname[!fexists],
+                                         destinations = fpath[!fexists])
   } else {
     fpath <- file.path(cache_folder, names)
-    if(!file.exists(fpath)){
-      item_file_download(item.id, names = names,
-                         destinations = fpath)
-    } else {
-      return(fpath)
+    fexists <- file.exists(fpath)
+    fpath_exists <- fpath[fexists]
+    fpath_download <- NULL
+    if(any(!fexists)){
+      fpath_download <- item_file_download(item.id, names = names[!fexists],
+                                           destinations = fpath[!fexists])
     }
-    
   }
   
+  names(fpath_exists) <- rep("Existed", length(fpath_exists))
+  if(!is.null(fpath_download)){ 
+    names(fpath_download) <- rep("Downloaded", length(fpath_exists)) 
+  }
+  
+  fresults <- c(fpath_exists, fpath_download)
+  return(fresults)
 }
