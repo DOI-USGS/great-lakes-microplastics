@@ -1,6 +1,7 @@
 #' @import data.table
 #' @import dplyr
 #' @import reshape2
+#' @import readxl
 
 mungeLandUse <- function(fname){
   raw.data <- fread(fname[1])
