@@ -1,0 +1,73 @@
+vizlab: "0.1"
+info:
+  id: great-lakes-microplastics
+  name: An example visualization
+  date: 2016-05-12
+  publish-date: 2016-05-19
+  path: /microplastics
+  description: >-
+    Microplastics, plastic particles less than 5 millimeters in diameter,
+    are a contaminant of emerging concern in aquatic environments.
+    Microplastics come from a wide range of potential sources
+    (see Microplastics Sources sidebar), and are commonly grouped by
+    size, as well as by particle types including fibers/lines,
+    pellets/beads, foams, films, and fragments.
+sections:
+  -
+    id: header
+    template: layout/header.mustache
+    context: siteText
+  -
+    id: intro
+    template: layout/intro.mustache
+    context: siteText
+  -
+    id: relativeAbundance
+    template: layout/relativeAbundance.mustache
+    context: siteText
+    depends: relativeAbundanceFig
+  -
+    id: environmentalEffects
+    template: layout/environmentalEffects.mustache
+    context: siteText
+    depends: environmentalEffectsFig
+  -
+    id: landUse
+    template: layout/landUse.mustache
+    context: siteText
+    depends: landUseFig
+  -
+    id: footer
+    template: layout/footer.mustache
+    context: siteText
+data:
+  -
+    id: envEffectsData
+    location: data/envEffectsData.csv
+    type: text/csv
+  -
+    id: siteText
+    location: data/siteText.yaml
+    type: text/yaml
+  -
+    id: microplastics_data
+    itemId: 570eaf6be4b0ef3b7ca2565e
+    filename: All_data_for_data_release.csv
+    handler: sciencebase
+    type: text/csv
+figures:
+  -
+    id: relativeAbundanceFig
+    buildfile: scripts/3_visualize/relativeAbundance.R
+    type: R
+    tags: [mobile, desktop, ie]
+  -
+    id: environmentalEffectsFig
+    buildfile: scripts/3_visualize/environmentalEffects.R
+    type: R
+    tags: [mobile, desktop, ie]
+  -
+    id: landUseFig
+    buildfile: scripts/3_visualize/landUse.R
+    type: R
+    tags: [mobile, desktop, ie]
