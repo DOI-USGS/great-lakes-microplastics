@@ -21,11 +21,14 @@ mungeLandUse <- function(fname){
   # remove leftover blanks
   allSizes <- filter(allSizes, towLength_m.y != "DI BLANK")
   
-  allSizesSub <- subset(allSizes, select=c("shortName", "UrbanPct", "populationDensity","sampleDate","flowCondition","flowConditionAKB",
+  allSizesSub <- subset(allSizes, select=c("shortName", "UrbanPct", "populationDensity",
+                                           "AgTotalPct","ForestPct","Water_WetlandPct","OtherLandUsePct",
+                                           "sampleDate","flowCondition","flowConditionAKB",
                                            "conc_per_m3_frag","conc_per_m3_pellet","conc_per_m3_line",
                                            "conc_per_m3_film","conc_per_m3_foam"))
 
-  siteAvg <- group_by(allSizesSub, shortName, UrbanPct) %>%
+  siteAvg <- mutate(allSizesSub, OtherPct = ForestPct + Water_WetlandPct + OtherLandUsePct) %>%
+    group_by(shortName, UrbanPct, OtherPct, AgTotalPct) %>%
     summarise(meanFrag = mean(conc_per_m3_frag, na.rm=TRUE),
               meanPellet = mean(conc_per_m3_pellet, na.rm=TRUE),
               meanFiber = mean(conc_per_m3_line, na.rm=TRUE),
@@ -33,7 +36,7 @@ mungeLandUse <- function(fname){
               meanFoam = mean(conc_per_m3_foam, na.rm=TRUE))
   
   # convert to long
-  conc.summary <- melt(siteAvg, id.vars=c("shortName", "UrbanPct"), variable.name="type", value.name="conc_per_m3")
+  conc.summary <- melt(siteAvg, id.vars=c("shortName", "UrbanPct", "OtherPct", "AgTotalPct"), variable.name="type", value.name="conc_per_m3")
   
   f.path <- "cache/mungeLandUse.tsv"
   write.table(conc.summary,file=f.path, sep="\t")
