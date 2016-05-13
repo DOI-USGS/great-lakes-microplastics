@@ -1,5 +1,6 @@
 auth.R
-data/cache
+data
+cache
 
 # History files
 .Rhistory

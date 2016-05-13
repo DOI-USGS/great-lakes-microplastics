@@ -1,7 +1,7 @@
 # function to clear the cached files from data/cache
 
 clearCache <- function(names = NULL){
-  cache_folder <- 'data/cache'
+  cache_folder <- 'cache'
   cache_files <- list.files(cache_folder)
   
   if(is.null(names)){
