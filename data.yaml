@@ -1,0 +1,12 @@
+packages:
+  - yaml
+  - sbtools
+  
+sources:
+  - scripts/0_download/getFiles.R
+
+targets:
+  All_dataData: 
+    command: getFiles('')
+  SI_Table1Data: 
+  envEffectsData:

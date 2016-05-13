@@ -1,0 +1,22 @@
+packages:
+  - yaml
+  - dplyr
+  - gsplot
+  
+sources:
+  - scripts/3_visualize/relativeAbundance.R
+  - scripts/3_visualize/environmentalEffects.R
+  - scripts/3_visualize/landUse.R
+  
+include:
+  - munge.yaml
+
+targets:
+  relativeAbundanceFig_mobile:
+    command: visualizeRelativeAbundance_mobile(mungedRelativeAbundance)
+  
+  relativeAbundanceFig_desktop:
+    command: visualizeRelativeAbundance_desktop(mungedRelativeAbundance)
+    
+  relativeAbundanceFig_mobile:
+    command: visualizeRelativeAbundance_ie(mungedRelativeAbundance)

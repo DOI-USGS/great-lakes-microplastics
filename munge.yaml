@@ -7,6 +7,9 @@ packages:
 ## All R files that are used must be listed here:
 sources:
   - scripts/0_download/getFiles.R
+  
+include:
+  - data.yaml
 
 targets:
   all:
@@ -20,7 +23,7 @@ targets:
   cache/mungeLandUse.tsv:
     command: mungeLandUse(data.All_data)
 
-  cache/mungeRelativeAbundance.tsv:
+  mungedRelativeAbundance:
     command: mungeRelativeAbundance(data.All_data, data.SI_Table1)
     
   data.SI_Table1:
