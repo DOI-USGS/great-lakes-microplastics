@@ -30,6 +30,5 @@ mungeRelativeAbundance <- function(fname){
                                 countFilm = "Film",
                                 countFoam = "Foam"))
   
-  munged.json <- toJSON(percent.data)
-  write(munged.json, "cache/munged_relative_abundance.json")
+  write.table(percent.data, "cache/munged_relative_abundance.tsv", sep="\t")
 }
