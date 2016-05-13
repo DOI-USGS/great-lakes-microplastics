@@ -14,8 +14,22 @@ $(document).ready(function(){
 				var compiledTemplate = Mustache.render(data);
 				//Places mustache file in correct location
 				$(value.div).html(compiledTemplate);
-			});
-			
+			});	
 	});
+	
+	//scrollmagic magic
+	// init controller
+	var controller = new ScrollMagic.Controller();
+
+	// create a scene
+	new ScrollMagic.Scene({
+        duration:800,
+		offset:50
+    })
+    .setPin("#pinMe") // pins the element for the the scene's duration
+	.addIndicators()
+	.triggerHook(0)
+    .addTo(controller); // assign the scene to the controller
+
 	
 });
