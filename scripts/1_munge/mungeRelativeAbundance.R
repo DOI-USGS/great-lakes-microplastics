@@ -5,10 +5,8 @@
 #' @import tidyr
 #' @import jsonlite
 
-mungeRelativeAbundance <- function(fname){
-  
-  raw.data <- fread(fname)
-  raw.data <- setDF(raw.data)
+mungeRelativeAbundance <- function(raw.data, target_name){
+
   
   clean.data <- raw.data %>% 
     select(starts_with('count')) %>% 
@@ -30,7 +28,6 @@ mungeRelativeAbundance <- function(fname){
                                 countFilm = "Film",
                                 countFoam = "Foam"))
   
-  fpath <- "cache/munged_relative_abundance.tsv"
-  write.table(percent.data, fpath, sep="\t")
-  return(fpath)
+  write.table(percent.data, target_name, sep="\t")
+  return(target_name)
 }

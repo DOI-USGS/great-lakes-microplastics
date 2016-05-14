@@ -28,7 +28,7 @@ mungeLandUse <- function(raw.data, target_name){
   conc.summary <- melt(siteAvg, id.vars=c("shortName", "UrbanPct", "OtherPct", "AgTotalPct"), variable.name="type", value.name="conc_per_m3")
 
   write.table(conc.summary,file=target_name, sep="\t")
-  return(f.path)
+  return(target_name)
 }
 
   
