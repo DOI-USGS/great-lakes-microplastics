@@ -89,12 +89,13 @@ visualizeLandUse <- function(fname.data, fname.fig){
            y.top = landuse.pct) 
   position.df.landuse.ag <- data.in.landuse %>%
     filter(landuse.type == "AgTotalPct") %>% 
-    mutate(y.bottom = cbind(position.df.landuse.urban$y.top),
-           y.top = landuse.pct)
+    inner_join(position.df.landuse.urban[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+landuse.pct)
   position.df.landuse.other <- data.in.landuse %>%
     filter(landuse.type == "OtherPct") %>% 
-    mutate(y.bottom = cbind(position.df.landuse.ag$y.top),
-           y.top = landuse.pct)
+    inner_join(position.df.landuse.ag[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = 100) # verified that these sum to either 100, 99.9 or 100.1
+           
   
   
   position.df.landuse <- rbind(position.df.landuse.urban, 
