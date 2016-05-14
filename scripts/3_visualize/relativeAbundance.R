@@ -1,18 +1,19 @@
 
-visualizeRelativeAbundance_mobile <- function(data.in) {
-  visualizeRelativeAbundance('mobile', data.in)
+visualizeRelativeAbundance_mobile <- function(file.in, target_name) {
+  visualizeRelativeAbundance('mobile', file.in, target_name)
 }
-visualizeRelativeAbundance_desktop <- function(data.in) {
-  visualizeRelativeAbundance('desktop', data.in)
+visualizeRelativeAbundance_desktop <- function(file.in, target_name) {
+  visualizeRelativeAbundance('desktop', data.in, target_name)
 }
-visualizeRelativeAbundance_ie <- function(data.in) {
-  visualizeRelativeAbundance('ie', data.in)
+visualizeRelativeAbundance_ie <- function(file.in, target_name) {
+  visualizeRelativeAbundance('ie', data.in, target_name)
 }
 
 #' @import dinosvg
 #' @import dplyr
 #' 
-visualizeRelativeAbundance <- function(tag='desktop', data.in){
+visualizeRelativeAbundance <- function(tag='desktop', file.in, target_name){
+  data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
   svg <- dinosvg:::init_svg(width = 12, height = 6)
   
   groups <- list(list(col='#7fc97f', cx='50', cy='50', name='Foam'),
@@ -37,9 +38,8 @@ visualizeRelativeAbundance <- function(tag='desktop', data.in){
     start.y <- start.y+height
   }
   
-  file.out <- sprintf('images/relativeAbundance-%s.svg',tag)
-  dinosvg:::write_svg(svg, file=file.out)
-  return(file.out)
+  dinosvg:::write_svg(svg, file=target_name)
+  return(target_name)
 }
 
 

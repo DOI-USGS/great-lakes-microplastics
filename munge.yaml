@@ -7,7 +7,7 @@ packages:
 
 ## All R files that are used must be listed here:
 sources:
-  - scripts/1_munge/mungeLanduse.R
+  - scripts/1_munge/mungeLandUse.R
   - scripts/1_munge/mungeRelativeAbundance.R
   
 include:

@@ -4,8 +4,8 @@ packages:
   
 sources:
   - scripts/3_visualize/relativeAbundance.R
-  - scripts/3_visualize/environmentalEffects.R
-  - scripts/3_visualize/landUse.R
+  ##- scripts/3_visualize/environmentalEffects.R
+  - scripts/3_visualize/visualizeLandUse.R
   
 include:
   - munge.yaml
