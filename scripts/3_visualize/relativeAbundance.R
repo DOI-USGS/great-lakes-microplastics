@@ -1,18 +1,18 @@
 
-visualizeRelativeAbundance_mobile <- function(file.in, figure.name) {
-  visualizeRelativeAbundance('mobile', file.in, figure.name)
+visualizeRelativeAbundance_mobile <- function(file.in, target_name) {
+  visualizeRelativeAbundance('mobile', file.in, target_name)
 }
-visualizeRelativeAbundance_desktop <- function(file.in, figure.name) {
-  visualizeRelativeAbundance('desktop', data.in, figure.name)
+visualizeRelativeAbundance_desktop <- function(file.in, target_name) {
+  visualizeRelativeAbundance('desktop', data.in, target_name)
 }
-visualizeRelativeAbundance_ie <- function(file.in, figure.name) {
-  visualizeRelativeAbundance('ie', data.in, figure.name)
+visualizeRelativeAbundance_ie <- function(file.in, target_name) {
+  visualizeRelativeAbundance('ie', data.in, target_name)
 }
 
 #' @import dinosvg
 #' @import dplyr
 #' 
-visualizeRelativeAbundance <- function(tag='desktop', file.in, figure.name){
+visualizeRelativeAbundance <- function(tag='desktop', file.in, target_name){
   data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
   svg <- dinosvg:::init_svg(width = 12, height = 6)
   
@@ -38,8 +38,8 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, figure.name){
     start.y <- start.y+height
   }
   
-  dinosvg:::write_svg(svg, file=figure.name)
-  return(file.out)
+  dinosvg:::write_svg(svg, file=target_name)
+  return(target_name)
 }
 
 
