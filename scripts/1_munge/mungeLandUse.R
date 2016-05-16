@@ -38,12 +38,12 @@ mungeLandUse <- function(raw.data){
     rowwise() %>% 
     mutate(x.middle = mean(c(x.left, x.right)))
   
-  return(site.geom.df)
+  return(list(conc.summary = conc.summary, site.geom.df = site.geom.df))
 }
 
-mungeLandUseConc <- function(data.in, fname.output){
+mungeLandUsePct <- function(data.in, fname.output){
   
-  data.in.landuse <- data.in %>% 
+  data.in.landuse <- data.in$conc.summary %>% 
     rename(site.name = shortName) %>% 
     select(-c(type, conc_per_m3)) %>% 
     unique() %>% 
@@ -65,19 +65,24 @@ mungeLandUseConc <- function(data.in, fname.output){
   geom.df.landuse <- bind_rows(geom.df.landuse.urban, 
                                geom.df.landuse.ag,
                                geom.df.landuse.other)
-  geom.df.landuse <- left_join(geom.df, geom.df.landuse) %>% 
+  geom.df.landuse <- left_join(data.in$site.geom.df, geom.df.landuse) %>% 
     mutate(rect.col = switch(landuse.type,
                              UrbanPct = "salmon",
                              AgTotalPct = "yellow",
-                             OtherPct = "lightgreen"))
+                             OtherPct = "lightgreen")) %>% 
+    group_by(site.name) %>% 
+    # need to supply label for each rect, but don't want labels overplotting
+    mutate(site.label = c(site.name[1], 
+                          rep(NA, length(site.name) - 1))) %>% 
+    ungroup()
   
   write.table(geom.df.landuse, file=fname.output, sep="\t")
   return(fname.output)
 }
 
-mungeLandUsePct <- function(data.in, fname.output){
+mungeLandUseConc <- function(data.in, fname.output){
   
-  data.in.conc <- data.in %>% 
+  data.in.conc <- data.in$conc.summary %>% 
     select(-c(UrbanPct, OtherPct, AgTotalPct)) %>% 
     rename(site.name = shortName) %>% 
     mutate(type = factor(type, levels = c("meanFrag", "meanPellet", "meanFiber", 
@@ -107,13 +112,18 @@ mungeLandUsePct <- function(data.in, fname.output){
   geom.df.conc <- bind_rows(geom.df.conc.frag, geom.df.conc.pellet,
                             geom.df.conc.fiber, geom.df.conc.film, 
                             geom.df.conc.foam)
-  geom.df.conc <- left_join(geom.df, geom.df.conc) %>% 
+  geom.df.conc <- left_join(data.in$site.geom.df, geom.df.conc) %>% 
     mutate(rect.col = switch(type,
                              meanFrag = "green",
                              meanPellet = "purple",
                              meanFiber = "orange",
                              meanFilm = "yellow",
-                             meanFoam = "blue"))
+                             meanFoam = "blue")) %>% 
+    group_by(site.name) %>% 
+    # need to supply label for each rect, but don't want labels overplotting
+    mutate(site.label = c(site.name[1], 
+                          rep(NA, length(site.name) - 1))) %>% 
+    ungroup()
   
   write.table(geom.df.conc, file=fname.output, sep="\t")
   return(fname.output)
