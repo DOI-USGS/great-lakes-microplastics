@@ -62,7 +62,7 @@ gsplotLandUsePct <- function(fname.data){
   
   gs_landuse$view.1.2$rect$id=geom.df$id
   q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
-  gs_landuse$json <- q.sorted$swaps
+  gs_landuse$json <- q.sorted$swaps_ids
   return(gs_landuse)
 }
 
