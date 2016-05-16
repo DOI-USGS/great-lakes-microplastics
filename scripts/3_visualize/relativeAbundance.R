@@ -11,9 +11,13 @@ visualizeRelativeAbundance_ie <- function(file.in, target_name) {
 
 #' @import dinosvg
 #' @import dplyr
+#' @import yaml
 #' 
-visualizeRelativeAbundance <- function(tag='desktop', file.in, target_name){
+visualizeRelativeAbundance <- function(file.in, file.text, target_name, tag='desktop'){
   data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
+  
+  text.in <- yaml.load_file(file.text)
+  
   svg <- dinosvg:::init_svg(width = 12, height = 6)
   
   groups <- list(list(col='#7fc97f', cx='50', cy='50', name='Foam'),
@@ -35,6 +39,11 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, target_name){
     g <- dinosvg:::svg_node("g", svg, c(id=group$name))
     dinosvg:::svg_node("rect", g, c(x="200", y=start.y, width="100", height=height, fill=fill))
     dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r='40', fill=fill))
+    dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em'),
+                       newXMLTextNode("Bead"))
+    dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em', opacity='0.2',id="something"),
+                       newXMLTextNode("Detail 1"))
+    
     start.y <- start.y+height
   }
   
