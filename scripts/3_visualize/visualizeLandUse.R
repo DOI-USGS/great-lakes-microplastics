@@ -46,6 +46,10 @@ gsplotLandUseConc <- function(fname.data){
 gsplotLandUsePct <- function(fname.data){
   
   geom.df <-  read.table(fname.data, sep = "\t")
+  sites <- unique(geom.df$site.name)
+  site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
+  geom.df <- left_join(geom.df, site.ids) %>% 
+    mutate(id = paste0(num,'-',landuse.type))
   
   gs_landuse <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
@@ -56,6 +60,9 @@ gsplotLandUsePct <- function(fname.data){
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
     axis(side = 2, at = seq(0, 100, by=25))
   
+  gs_landuse$view.1.2$rect$id=geom.df$id
+  q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
+  gs_landuse$json <- q.sorted$swaps
   return(gs_landuse)
 }
 
@@ -68,6 +75,23 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   XML:::removeAttributes(view.1)
   XML:::addAttributes(view.1, .attrs = c(id='view-1-2a')) # renaming the view as a hack...
+  un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
+  un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
+  all.types = c(un.lu.types, un.conc.types) #swaps.length
+  js.function <- c('function swapNums(){
+\tvar i =0;
+ \twindow.myInterval = setInterval(function () {   
+ if (i < swaps.length){
+  \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
+  \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
+  sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',all.types),
+  sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',all.types),
+  'i++
+  } else {
+     clearInterval(window.myInterval);
+}}, 100)',
+  '}')
+  dinosvg:::add_ecmascript(svg, sprintf('var swaps = %s\n%s', jsonlite::toJSON(gs.landuse$json), paste(js.function, collapse='\n')))
   
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
   dinosvg::svg(svg, gs.conc, file=target_name)
