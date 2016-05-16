@@ -32,7 +32,9 @@ visualizeLandUse <- function(fname.data, fname.fig){
 ## ----------- ## concentration barplot ## ----------- ##
   data.in.conc <- data.in %>% 
     select(-c(UrbanPct, OtherPct, AgTotalPct)) %>% 
-    rename(site.name = shortName)
+    rename(site.name = shortName) %>% 
+    mutate(type = factor(type, levels = c("meanFrag", "meanPellet", "meanFiber", 
+                                          "meanFilm", "meanFoam")), ordered = TRUE)
   
   position.df.conc.frag <- data.in.conc %>%
     filter(type == "meanFrag") %>% 
@@ -40,20 +42,20 @@ visualizeLandUse <- function(fname.data, fname.fig){
            y.top = conc_per_m3) 
   position.df.conc.pellet <- data.in.conc %>%
     filter(type == "meanPellet") %>% 
-    mutate(y.bottom = cbind(position.df.conc.frag$y.top),
-           y.top = conc_per_m3)
+    inner_join(position.df.conc.frag[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
   position.df.conc.fiber <- data.in.conc %>%
     filter(type == "meanFiber") %>% 
-    mutate(y.bottom = cbind(position.df.conc.pellet$y.top),
-           y.top = conc_per_m3)
+    inner_join(position.df.conc.pellet[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
   position.df.conc.film <- data.in.conc %>%
     filter(type == "meanFilm") %>% 
-    mutate(y.bottom = cbind(position.df.conc.fiber$y.top),
-           y.top = conc_per_m3)
+    inner_join(position.df.conc.fiber[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
   position.df.conc.foam <- data.in.conc %>%
     filter(type == "meanFoam") %>% 
-    mutate(y.bottom = cbind(position.df.conc.film$y.top),
-           y.top = conc_per_m3)
+    inner_join(position.df.conc.film[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
     
   position.df.conc <- rbind(position.df.conc.frag, position.df.conc.pellet,
                             position.df.conc.fiber, position.df.conc.film, 
@@ -65,11 +67,12 @@ visualizeLandUse <- function(fname.data, fname.fig){
                              meanFiber = "orange",
                              meanFilm = "yellow",
                              meanFoam = "blue"))
-  
+
   gs.conc <- gsplot() %>% 
     rect(position.df.conc$x.left, position.df.conc$y.bottom, 
          position.df.conc$x.right, position.df.conc$y.top,
-         lwd=0.5, col = position.df.conc$rect.col) %>% 
+         lwd=0.5, col = position.df.conc$rect.col, 
+         legend.name=levels(position.df.conc$type)) %>% 
     axis(side = 1, at = position.df.conc$x.middle, 
          labels = position.df.conc$site.name, 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
