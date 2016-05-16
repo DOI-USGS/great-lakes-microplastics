@@ -32,7 +32,7 @@ gsplotLandUseConc <- function(fname.data){
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col, 
-         legend.name=levels(geom.df$type), side=c(3, 2))
+         legend.name=levels(geom.df$type))
   return(gs.conc)
 }
 
@@ -57,7 +57,12 @@ gsplotLandUsePct <- function(fname.data){
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.1, 2.1)
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
+  view.1 <- dinosvg:::g_view(svg, side=c(1,2))
+  attrs <- XML:::xmlAttrs(view.1)
+  
+  XML:::removeAttributes(view.1)
+  XML:::addAttributes(view.1, .attrs = c(id='view-1-2a')) # renaming the view as a hack...
   
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
-  dinosvg::svg(svg, gs.conc)
+  dinosvg::svg(svg, gs.conc, file=target_name)
 }
