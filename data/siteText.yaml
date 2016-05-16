@@ -17,8 +17,27 @@ relAbundance-intro1: >-
 
 relAbundance-title: Figure 1 Title
 relAbundance-p1: >-	
-    Donec id diam scelerisque, dictum odio at, feugiat ex.
-    Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+
+  Donec id diam scelerisque, dictum odio at, feugiat ex.
+  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+	
+relAbundance-pellets-label: Pellets
+relAbundance-pellets: ["Production pellets and powders","Bead blasting (engine parts and boat hulls)"]
+
+relAbundance-beads-label: Beads	
+relAbundance-beads: ["Soaps, scrubs, toothpaste","Deodorant, sunscreen, lipstick, eye shadow, shaving cream","Drug delivery"]
+
+relAbundance-fiberlines-labels: Fiber and Lines		
+relAbundance-fiberlines: ["Synthetic clothes and textiles","Diapers, wipes, tampons","Cigarette butts","Nets", "Atmospheric deposition"]
+
+relAbundance-films-label: Films  
+relAbundance-films: ["Bags and wrappers"]
+
+relAbundance-fragments-labels: Fragments  
+relAbundance-fragments: ["Degrated pieces of plastic litter, such as plastic bottles"]
+
+relAbundance-foams-label: Foams	
+relAbundance-foams: ["Styrofoam"]
 
 ## Environmental Effects ##
 envEffects-title: Figure 2 Title

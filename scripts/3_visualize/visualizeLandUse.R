@@ -2,14 +2,15 @@
 #' @import dinosvg
 
 # Functions directly called by remake:make('figures_R.yaml')
-visualizeLandUse_mobile <- function(data.conc, data.landuse, file.out) {
-  visualizeLandUse('mobile', data.conc, data.landuse, file.out)
+
+visualizeLandUse_mobile <- function(...) {
+  visualizeLandUse('mobile', ...)
 }
-visualizeLandUse_desktop <- function(data.conc, data.landuse, file.out) {
-  visualizeLandUse('desktop', data.conc, data.landuse, file.out)
+visualizeLandUse_desktop <- function(...) {
+  visualizeLandUse('desktop', ...)
 }
-visualizeLandUse_ie <- function(data.conc, data.landuse, file.out) {
-  visualizeLandUse('ie', data.conc, data.landuse, file.out)
+visualizeLandUse_ie <- function(...) {
+  visualizeLandUse('ie', ...)
 }
 
 # The workhorse function
