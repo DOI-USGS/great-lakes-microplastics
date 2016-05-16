@@ -6,16 +6,23 @@ swap <- function(a, b)
   # Don't swap if the elements are the same
   if(a==b) return()
   
+  # Keep a record of what pairs are being swapped
+  swaps_pos <<- rbind(swaps_pos, matrix(c(a, b), ncol=2, nrow=1))
+  swaps_ids <<- rbind(swaps_ids, matrix(c(tosortids[a], tosortids[b]), ncol=2, nrow=1))
+  
   # Do the swapping. This has 'side-effects' (i.e., the main effect) on sorted
   t <- sorted[a]
   sorted[a] <<- sorted[b]
   sorted[b] <<- t
   
-  # Keep a record of what has been swapped
-  swaps <<- rbind(swaps, matrix(c(a, b), ncol=2, nrow=1))
+  # Keep a record of where the IDs go
+  t <- tosortids[a]
+  tosortids[a] <<- tosortids[b]
+  tosortids[b] <<- t
   
   # Keep a record of results of swaps
-  steps <<- rbind(steps, matrix(sorted, ncol=length(sorted), nrow=1))
+  steps_vals <<- rbind(steps_vals, matrix(sorted, ncol=length(sorted), nrow=1))
+  steps_ids  <<- rbind(steps_ids,  matrix(tosortids, ncol=length(tosortids), nrow=1))
 }
 
 # Identify a pivot index that partitions an array around the value of element h.
@@ -43,16 +50,22 @@ partition <- function(l, h) {
 # l  --> Starting index (low), 
 # h  --> Ending index (high)
 quickSortIterative <- function(tosort, l=1, h=length(tosort)) {
-  # Prepare to document all the swaps we make. swaps gets edited by swap()
-  swaps <<- matrix(ncol=2, nrow=0)
-  steps <<- matrix(tosort, ncol=length(tosort), nrow=1)
+  num_vals <- h-l+1
   
-  # Make a copy of arr that we can manipulate
+  # Prepare to document all the swaps we make. swaps gets edited by swap()
+  swaps_pos <<- matrix(ncol=2, nrow=0)
+  swaps_ids <<- matrix(ncol=2, nrow=0)
+  steps_vals <<- matrix(tosort, nrow=1)
+  steps_ids <<- matrix(seq_len(num_vals), nrow=1)
+  
+  # Make a copy of arr that we can manipulate, and a vector of IDs we can
+  # manipulate in parallel to track where IDs are going
   sorted <<- tosort
+  tosortids <<- seq_len(num_vals)
   
   # Create an auxiliary stack about as long as tosort; we'll use less than that.
   # the stack will contain partition bounds
-  stack <- integer(h-l+1);
+  stack <- integer(num_vals);
   
   # initialize top of stack
   top <- 0
@@ -86,9 +99,28 @@ quickSortIterative <- function(tosort, l=1, h=length(tosort)) {
     }
   }
   
-  out <- list(sorted=sorted, swaps=swaps, steps=steps)
-  rm(sorted, swaps, steps, envir=.GlobalEnv)
+  out <- list(sorted=sorted, swaps_pos=swaps_pos, swaps_ids=swaps_ids, steps_vals=steps_vals, steps_ids=steps_ids)
+  rm(sorted, swaps_pos, swaps_ids, steps_vals, steps_ids, envir=.GlobalEnv)
   return(out)
 }
 
-# quickSortIterative(c(4,2,5,1,3))
+# ## Demo ##
+# arr <- c(40,20,50,10,30)
+# x <- quickSortIterative(arr)
+# 
+# ## Tests ##
+# 
+# # redo the steps using ids
+# ids <- 1:length(arr)
+# for(i in 1:nrow(x$swaps_ids)) {
+#   swap <- x$swaps_ids[i,]
+#   elem <- match(swap, ids)
+#   t <- ids[elem[1]]
+#   ids[elem[1]] <- ids[elem[2]]
+#   ids[elem[2]] <- t
+# }
+# ids
+# # compare ids to the final row of steps_ids - should be the same
+# tail(x$steps_ids,1)
+# # show that the ids are in order - ordering arr by ids should give sorted arr
+# arr[ids]
