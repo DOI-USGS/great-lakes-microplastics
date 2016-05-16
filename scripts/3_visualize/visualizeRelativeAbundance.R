@@ -14,9 +14,8 @@ visualizeRelativeAbundance_ie <- function(...) {
   visualizeRelativeAbundance('ie', ...)
 }
 
-visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target_name){
-
 # The workhorse function
+visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target_name){
 
   data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
   
@@ -67,5 +66,5 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
 }
 
 
-visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
+#visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
 
