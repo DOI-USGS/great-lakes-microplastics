@@ -67,6 +67,7 @@ gsplotLandUsePct <- function(fname.data){
           xlab = "Sampling locations")
   
   gs_landuse$view.1.2$rect$id=geom.df$id
+  gs_landuse$side.1$axis$id=paste0('site-',1:length(sites))
   q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
   gs_landuse$json <- q.sorted$swaps_ids
   return(gs_landuse)
@@ -90,6 +91,8 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
  if (i < swaps.length){
   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
+  '\t document.getElementById("site-" + swaps[i][0]).setAttribute("x", x1);',
+  '\t document.getElementById("site-" + swaps[i][1]).setAttribute("x", x0);',
   sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',all.types),
   sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',all.types),
   'i++
