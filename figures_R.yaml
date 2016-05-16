@@ -11,6 +11,15 @@ include:
   - munge.yaml
 
 targets:
+  all:
+    depends:
+      - target/relativeAbundanceFig-mobile.svg
+      - target/relativeAbundanceFig-desktop.svg
+      - target/relativeAbundanceFig-ie.svg
+      - target/landUseFig-mobile.svg
+      - target/landUseFig-desktop.svg
+      - target/landUseFig-ie.svg
+  
   target/relativeAbundanceFig-mobile.svg:
     command: visualizeRelativeAbundance_mobile("cache/mungedRelativeAbundance.tsv", target_name)
   

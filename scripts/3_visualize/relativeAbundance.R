@@ -1,20 +1,23 @@
-
-visualizeRelativeAbundance_mobile <- function(file.in, target_name) {
-  visualizeRelativeAbundance('mobile', file.in, target_name)
-}
-visualizeRelativeAbundance_desktop <- function(file.in, target_name) {
-  visualizeRelativeAbundance('desktop', data.in, target_name)
-}
-visualizeRelativeAbundance_ie <- function(file.in, target_name) {
-  visualizeRelativeAbundance('ie', data.in, target_name)
-}
-
 #' @import dinosvg
 #' @import dplyr
 #' @import yaml
-#' 
-visualizeRelativeAbundance <- function(file.in, file.text, target_name, tag='desktop'){
-  data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
+
+# Functions directly called by remake::make('figures_R.yaml')
+visualizeRelativeAbundance_mobile <- function(...) {
+  visualizeRelativeAbundance('mobile', ...)
+}
+visualizeRelativeAbundance_desktop <- function(...) {
+  visualizeRelativeAbundance('desktop', ...)
+}
+visualizeRelativeAbundance_ie <- function(...) {
+  visualizeRelativeAbundance('ie', ...)
+}
+
+visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target_name){
+
+# The workhorse function
+
+    data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
   
   text.in <- yaml.load_file(file.text)
   
