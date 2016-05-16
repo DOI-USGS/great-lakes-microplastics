@@ -1,6 +1,7 @@
 packages:
   - dplyr
   - gsplot
+  - XML
   
 sources:
   - scripts/3_visualize/relativeAbundance.R
