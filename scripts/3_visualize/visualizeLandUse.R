@@ -31,14 +31,18 @@ gsplotLandUseConc <- function(fname.data){
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
     mutate(id = paste0(num,'-',type))
+  
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col) %>% 
     axis(side = 2, at = seq(0, 10, by=5)) %>% 
-    axis(1, labels=FALSE)
+    axis(1, labels=FALSE) %>% 
+    title(ylab = "Average concentration,\n in particles per cubic meter")
+  
   # hack because we need to support gs extensions
   gs.conc$view.1.2$rect$id=geom.df$id
+  
   return(gs.conc)
 }
 
@@ -55,10 +59,12 @@ gsplotLandUsePct <- function(fname.data){
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col) %>% 
-    axis(side = 1, at = geom.df$x.middle, 
-         labels = geom.df$site.label, 
+    axis(side = 1, at = unique(geom.df$x.middle), 
+         labels = unique(geom.df$site.name), 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
-    axis(side = 2, at = seq(0, 100, by=25))
+    axis(side = 2, at = seq(0, 100, by=25)) %>% 
+    title(ylab = "Basin land use,\nin percent",
+          xlab = "Sampling locations")
   
   gs_landuse$view.1.2$rect$id=geom.df$id
   q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
