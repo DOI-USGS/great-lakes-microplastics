@@ -13,12 +13,12 @@ welcome-p2: >-
 relAbundance-intro1: >-	
 	In 2015, the United States Congress passed 
 	
-relAbundance-intro1_html1 : "<a href='%{link}' target='_blank'>\"Public Law 114-114\"</a>"
+relAbundance-intro1_html1 : "<a href='%{link}' target='_blank'>\"Public Law 114-114\" to ban the sale of products containing microbeads. </a>"
  = t(:relAbundance-intro_html1,
       link:"https://www.congress.gov/bill/114th-congress/house-bill/1321")
 
 relAbundance-intro2: >-		
-	to ban the sale of products containing microbeads. 
+	
 	The ban for sale of these products starts in 2018. 
 	However, microbeads are only a small fraction of microplastics found in the environment. 
   
