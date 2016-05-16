@@ -36,7 +36,8 @@ mungeLandUse <- function(raw.data){
                                  x.right = tail(rect.seq, -1),
                                  stringsAsFactors = FALSE) %>% 
     rowwise() %>% 
-    mutate(x.middle = mean(c(x.left, x.right)))
+    mutate(x.middle = mean(c(x.left, x.right))) %>% 
+    ungroup()
   
   return(list(conc.summary = conc.summary, site.geom.df = site.geom.df))
 }
@@ -66,15 +67,11 @@ mungeLandUsePct <- function(data.in, fname.output){
                                geom.df.landuse.ag,
                                geom.df.landuse.other)
   geom.df.landuse <- left_join(data.in$site.geom.df, geom.df.landuse) %>% 
+    rowwise() %>% 
     mutate(rect.col = switch(landuse.type,
                              UrbanPct = "salmon",
                              AgTotalPct = "yellow",
                              OtherPct = "lightgreen")) %>% 
-    ungroup() %>%
-    group_by(site.name) %>% 
-    # need to supply label for each rect, but don't want labels overplotting
-    mutate(site.label = c(site.name[1], 
-                          rep(NA, length(site.name) - 1))) %>% 
     ungroup()
   
   write.table(geom.df.landuse, file=fname.output, sep="\t")
@@ -114,17 +111,13 @@ mungeLandUseConc <- function(data.in, fname.output){
                             geom.df.conc.fiber, geom.df.conc.film, 
                             geom.df.conc.foam)
   geom.df.conc <- left_join(data.in$site.geom.df, geom.df.conc) %>% 
+    rowwise() %>% 
     mutate(rect.col = switch(as.character(type),
                              meanFrag = "green",
                              meanPellet = "purple",
                              meanFiber = "orange",
                              meanFilm = "yellow",
                              meanFoam = "blue")) %>% 
-    ungroup() %>%
-    group_by(site.name) %>% 
-    # need to supply label for each rect, but don't want labels overplotting
-    mutate(site.label = c(site.name[1], 
-                          rep(NA, length(site.name) - 1))) %>% 
     ungroup()
   
   write.table(geom.df.conc, file=fname.output, sep="\t")
