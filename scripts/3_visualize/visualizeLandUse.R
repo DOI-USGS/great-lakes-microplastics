@@ -35,7 +35,8 @@ gsplotLandUseConc <- function(fname.data){
     axis(side = 1, at = geom.df$x.middle, 
          labels = geom.df$site.label, 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
-    axis(side = 2, at = seq(0, 10, by=5))
+    axis(side = 2, at = seq(0, 10, by=5)) %>% 
+    title(ylab = "Average concentration,\n in particles per cubic meter")
   
   return(gs.conc)
 }
@@ -52,7 +53,9 @@ gsplotLandUsePct <- function(fname.data){
     axis(side = 1, at = geom.df$x.middle, 
          labels = geom.df$site.label, 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
-    axis(side = 2, at = seq(0, 100, by=25))
+    axis(side = 2, at = seq(0, 100, by=25)) %>% 
+    title(ylab = "Basin land use,\nin percent",
+          xlab = "Sampling locations")
   
   return(gs_landuse)
 }
