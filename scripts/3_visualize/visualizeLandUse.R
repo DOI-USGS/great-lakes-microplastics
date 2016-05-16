@@ -20,7 +20,6 @@ visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig){
   gs.landuse <- gsplotLandUsePct(fname.geom.pct)
   
   createBarFig(gs.conc, gs.landuse, fname.fig)
-  ############## SVG MAGIC HAPPENS HERE ############## 
 
 }
 
