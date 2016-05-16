@@ -74,11 +74,7 @@ visualizeLandUse <- function(fname.data, fname.fig){
     rect(position.df.conc$x.left, position.df.conc$y.bottom, 
          position.df.conc$x.right, position.df.conc$y.top,
          lwd=0.5, col = position.df.conc$rect.col, 
-         legend.name=levels(position.df.conc$type)) %>% 
-    axis(side = 1, at = at, 
-         labels = labels, 
-         tick = FALSE, las = 2, cex.axis = 0.1) %>% 
-    axis(side = 2, at = seq(0, 10, by=5))
+         legend.name=levels(position.df.conc$type), side=c(3,2)) # hack because can't be side 4
   
 ## ----------- ## landuse barplot ## ----------- ##
   
@@ -128,3 +124,13 @@ visualizeLandUse <- function(fname.data, fname.fig){
   saveRDS(gs_landuse, file = "cache/visualize_land_use.RDS")
 }
 
+
+createBarFig <- function(file.conc, file.landuse, target_name){
+  gs.conc <- readRDS(file.conc)
+  gs.landuse <- readRDS(file.landuse)
+  gs.landuse$global$par$mar <- c(9.1, 4.1, 13.1, 2.1)
+  svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
+  
+  gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
+  dinosvg::svg(svg, gs.conc)
+}
