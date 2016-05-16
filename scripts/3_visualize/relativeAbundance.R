@@ -50,8 +50,14 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
     dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r='70', fill=fill))
     dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em'),
                        newXMLTextNode(text.in[paste0("relAbundance-",group$id,"-label")]))
+    detail.text <- ""
+    for(detail in text.in[paste0("relAbundance-",group$id)]){
+      detail.text <- paste0(detail.text, "&bull;",detail,"\n")
+    }
+    #TODO tspan
+    
     dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em', opacity='0.2',id=paste0(group$id,".details")),
-                       newXMLTextNode(text.in[paste0("relAbundance-",group$id)]))
+                       newXMLTextNode(detail.text))
 
     start.y <- start.y+height
   }
