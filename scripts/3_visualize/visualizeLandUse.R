@@ -26,29 +26,27 @@ visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig){
 # Returns gsplot object for the top part of the figure
 gsplotLandUseConc <- function(fname.data){
   
-  geom.df <-  read.table(fname.data, sep = "\t", 
-                         stringsAsFactors = FALSE)
-  
+  geom.df <-  read.table(fname.data, sep = "\t")
+
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col, 
-         legend.name=levels(geom.df$type), side=c(3))
+         legend.name=levels(geom.df$type), side=c(3, 2))
   return(gs.conc)
 }
 
 # Returns gsplot object for the bottom part of the figure
 gsplotLandUsePct <- function(fname.data){
   
-  geom.df <-  read.table(fname.data, sep = "\t", 
-                         stringsAsFactors = FALSE)
+  geom.df <-  read.table(fname.data, sep = "\t")
   
   gs_landuse <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col) %>% 
     axis(side = 1, at = geom.df$x.middle, 
-         labels = geom.df$site.name, 
+         labels = geom.df$site.label, 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
     axis(side = 2, at = seq(0, 100, by=25))
   
