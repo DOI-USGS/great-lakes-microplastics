@@ -70,7 +70,10 @@ data:
 figures:
   -
     id: relativeAbundanceFig
-    input: cache/mungedRelativeAbundance.tsv
+    input:
+      -
+        filename: cache/mungedRelativeAbundance.tsv
+        mimeType: text/tab-separated-values
     buildfile: scripts/3_visualize/relativeAbundance.R
     type: R
     tags: [mobile, desktop, ie]
@@ -82,7 +85,13 @@ figures:
     tags: [mobile, desktop, ie]
   -
     id: landUseFig
-    input: cache/mungedLandUse.tsv
+    input:
+      -
+        filename: cache/munged_LandUse_geomConc.tsv
+        mimeType: text/tab-separated-values
+      -
+        filename: cache/munged_LandUse_geomPct.tsv
+        mimeType: text/tab-separated-values
     buildfile: scripts/3_visualize/landUse.R
     type: R
     tags: [mobile, desktop, ie]
