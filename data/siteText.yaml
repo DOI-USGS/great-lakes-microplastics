@@ -10,10 +10,10 @@ welcome-p2: >-
   They come from a wide range of sources such as synthetic clothing, cigarette butts, disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
 	
 ## Relative Abundance ##
-relAbundance-intro: >-	
-	In 2015, the United States Congress passed Public Law 114-114 (https://www.congress.gov/bill/114th-congress/house-bill/1321) to ban the sale of products containing microbeads. 
-	The ban for sale of these products starts in 2018. 
-	However, microbeads are only a small fraction of microplastics found in the environment. 
+relAbundance-intro1: >-	
+  In 2015, the United States Congress passed <a href='https://www.congress.gov/bill/114th-congress/house-bill/1321' target='_blank'>Public Law 114-114</a> to ban the sale of products containing microbeads.	
+  The ban for sale of these products starts in 2018. 
+  However, microbeads are only a small fraction of microplastics found in the environment. 
   
 relAbundance-title: Figure 1 Title
 relAbundance-p1: >-	
