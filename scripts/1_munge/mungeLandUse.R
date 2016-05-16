@@ -70,6 +70,7 @@ mungeLandUsePct <- function(data.in, fname.output){
                              UrbanPct = "salmon",
                              AgTotalPct = "yellow",
                              OtherPct = "lightgreen")) %>% 
+    ungroup() %>%
     group_by(site.name) %>% 
     # need to supply label for each rect, but don't want labels overplotting
     mutate(site.label = c(site.name[1], 
@@ -113,12 +114,13 @@ mungeLandUseConc <- function(data.in, fname.output){
                             geom.df.conc.fiber, geom.df.conc.film, 
                             geom.df.conc.foam)
   geom.df.conc <- left_join(data.in$site.geom.df, geom.df.conc) %>% 
-    mutate(rect.col = switch(type,
+    mutate(rect.col = switch(as.character(type),
                              meanFrag = "green",
                              meanPellet = "purple",
                              meanFiber = "orange",
                              meanFilm = "yellow",
                              meanFoam = "blue")) %>% 
+    ungroup() %>%
     group_by(site.name) %>% 
     # need to supply label for each rect, but don't want labels overplotting
     mutate(site.label = c(site.name[1], 
