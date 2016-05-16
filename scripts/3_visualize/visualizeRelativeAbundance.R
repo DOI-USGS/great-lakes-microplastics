@@ -49,14 +49,19 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
     dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r='70', fill=fill))
     dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em'),
                        newXMLTextNode(text.in[paste0("relAbundance-",group$id,"-label")]))
-    detail.text <- ""
-    for(detail in text.in[paste0("relAbundance-",group$id)]){
-      detail.text <- paste0(detail.text, "&bull;",detail,"\n")
-    }
-    #TODO tspan
+    txt.node <- dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em', opacity='0.2',id=paste0(group$id,".details")),
+                                   newXMLTextNode(text.in[paste0("relAbundance-",group$id,"-label")]))
     
-    dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em', opacity='0.2',id=paste0(group$id,".details")),
-                       newXMLTextNode(detail.text))
+    bullet.points <- text.in[paste0("relAbundance-",group$id)][[1]]
+    for(detail in bullet.points){
+      if(length(bullet.points)%%2){
+        # TODO: figure out y spacing
+      } else {
+        # TODO: figure out y spacing
+      }
+      dinosvg:::svg_node("tspan", txt.node, c(x=cx, y=cy,'text-anchor'='middle',dy='0.33em'),
+                         newXMLTextNode(detail))
+    }
 
     start.y <- start.y+height
   }
@@ -66,5 +71,5 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
 }
 
 
-#visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
+visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
 
