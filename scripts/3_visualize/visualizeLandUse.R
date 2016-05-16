@@ -2,14 +2,14 @@
 #' @import dinosvg
 
 # Functions directly called by remake:make('figures_R.yaml')
-visualizeRelativeAbundance_mobile <- function(...) {
-  visualizeRelativeAbundance('mobile', ...)
+visualizeLandUse_mobile <- function(...) {
+  visualizeLandUse('mobile', ...)
 }
-visualizeRelativeAbundance_desktop <- function(...) {
-  visualizeRelativeAbundance('desktop', ...)
+visualizeLandUse_desktop <- function(...) {
+  visualizeLandUse('desktop', ...)
 }
-visualizeRelativeAbundance_ie <- function(...) {
-  visualizeRelativeAbundance('ie', ...)
+visualizeLandUse_ie <- function(...) {
+  visualizeLandUse('ie', ...)
 }
 
 # The workhorse function
