@@ -12,34 +12,40 @@ info:
     (see Microplastics Sources sidebar), and are commonly grouped by
     size, as well as by particle types including fibers/lines,
     pellets/beads, foams, films, and fragments.
+pages:
+  -
+    id: index
+    template: layout/templates/index.mustache
+    sections: [header, intro, relativeAbundance, environmentalEffects, landUse, footer]
+    context: siteTextData
 sections:
   -
     id: header
-    template: layout/header.mustache
-    context: siteText
+    template: layout/templates/header.mustache
+    context: siteTextData
   -
     id: intro
-    template: layout/intro.mustache
-    context: siteText
+    template: layout/templates/intro.mustache
+    context: siteTextData
   -
     id: relativeAbundance
-    template: layout/relativeAbundance.mustache
-    context: siteText
+    template: layout/templates/figure1.mustache
+    context: siteTextData
     depends: relativeAbundanceFig
   -
     id: environmentalEffects
-    template: layout/environmentalEffects.mustache
-    context: siteText
+    template: layout/templates/figure2.mustache
+    context: siteTextData
     depends: environmentalEffectsFig
   -
     id: landUse
-    template: layout/landUse.mustache
-    context: siteText
+    template: layout/templates/figure3.mustache
+    context: siteTextData
     depends: landUseFig
   -
     id: footer
-    template: layout/footer.mustache
-    context: siteText
+    template: layout/templates/footer.mustache
+    context: siteTextData
 data:
   -
     id: siteTextData

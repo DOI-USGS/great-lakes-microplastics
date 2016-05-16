@@ -1,7 +1,61 @@
 ## GLOBAL ##
 title: Microplastics in the Great Lakes
+
+## Intro ##
+welcome: Welcome
+welcome-p1: >-
+  Microplastics are a contaminant of emerging concern in aquatic environments. 
+welcome-p2: >-
+  Microplastics are smaller than 5 millimeters in size.
+  They come from a wide range of sources such as synthetic clothing, cigarette butts, disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
+	
 ## Relative Abundance ##
-
+relAbundance-intro: >-	
+	In 2015, the United States Congress passed Public Law 114-114 (https://www.congress.gov/bill/114th-congress/house-bill/1321) to ban the sale of products containing microbeads. 
+	The ban for sale of these products starts in 2018. 
+	However, microbeads are only a small fraction of microplastics found in the environment. 
+  
+relAbundance-title: Figure 1 Title
+relAbundance-p1: >-	
+    Donec id diam scelerisque, dictum odio at, feugiat ex.
+    Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+	
 ## Environmental Effects ##
+envEffects-title: Figure 2 Title
+envEffects-p1: >-
+  Donec id diam scelerisque, dictum odio at, feugiat ex.
+  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
 
+
+## Environmental Effects Facts## 
+envEffects-globalProd1: >617,000,000,000
+envEffects-globalProd2: pounds of plastic produced worldwide in 2012
+		 
+envEffects-fish1: Particles found in
+envEffects-fish2: 12%
+envEffects-fish3: of freshwater fish
+	
+envEffects-oysters1: 50
+envEffects-oysters2: particles per serving of  commercially-cultured oysters
+envEffects-oysters3: 90
+envEffects-oysters4: particles per serving of  commercially-cultured mussels 
+	
+envEffects-stream1: Up to 
+envEffects-stream2: 32
+envEffects-stream3: particles per cubic meter of Great Lakes tributary water
+envEffects-stream4: >13,800
+envEffects-stream5: particles per square meter of river sediment
+	
+envEffects-lake1: 43,000 
+envEffects-lake2: particles per square kilometer of Great Lakes water
+	
+	
 ## Land Use Correlation ##
+landUse-intro: How do microplastics get into our rivers and streams?
+landUse-title: Figure 3 Title
+landUse-p1: >-
+  Donec id diam scelerisque, dictum odio at, feugiat ex.
+  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+
+## Footer ##
+footer-text: Footer Text

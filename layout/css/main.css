@@ -35,7 +35,8 @@ header{
 /*Section CSS*/
 #intro,
 #figure1,
-#figure2{
+#figure2,
+#figure3{
 	height:100%;
 	position:relative;
 	}
@@ -47,7 +48,9 @@ header{
 #figure2{
 	background:purple;
 	}
-
+#figure3{
+	background:aqua;
+	}
 /*Footer CSS*/
 footer{
 	background:rgb(63,136,189);

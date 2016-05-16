@@ -1,5 +1,7 @@
 auth.R
-cache
+cache/
+target/
+
 # History files
 .Rhistory
 .Rapp.history
