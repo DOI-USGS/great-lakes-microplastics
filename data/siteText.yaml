@@ -1,7 +1,29 @@
 ## GLOBAL ##
 title: Microplastics in the Great Lakes
+
+## Intro ##
+welcome: Welcome
+welcome-p1: >-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Nullam euismod eleifend enim.
+  
 ## Relative Abundance ##
-
+relAbundance-title: Figure 1 Title
+relAbundance-p1: >-
+  Donec id diam scelerisque, dictum odio at, feugiat ex.
+  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+  
 ## Environmental Effects ##
-
+envEffects-title: Figure 2 Title
+envEffects-p1: >-
+  Donec id diam scelerisque, dictum odio at, feugiat ex.
+  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+  
 ## Land Use Correlation ##
+landUse-title: Figure 3 Title
+landUse-p1: >-
+  Donec id diam scelerisque, dictum odio at, feugiat ex.
+  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+
+## Footer ##
+footer-text: Footer Text
