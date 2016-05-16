@@ -2,14 +2,14 @@
 #' @import dinosvg
 
 # Functions directly called by remake:make('figures_R.yaml')
-visualizeRelativeAbundance_mobile <- function(...) {
-  visualizeRelativeAbundance('mobile', ...)
+visualizeLandUse_mobile <- function(data.conc, data.landuse, file.out) {
+  visualizeLandUse('mobile', data.conc, data.landuse, file.out)
 }
-visualizeRelativeAbundance_desktop <- function(...) {
-  visualizeRelativeAbundance('desktop', ...)
+visualizeLandUse_desktop <- function(data.conc, data.landuse, file.out) {
+  visualizeLandUse('desktop', data.conc, data.landuse, file.out)
 }
-visualizeRelativeAbundance_ie <- function(...) {
-  visualizeRelativeAbundance('ie', ...)
+visualizeLandUse_ie <- function(data.conc, data.landuse, file.out) {
+  visualizeLandUse('ie', data.conc, data.landuse, file.out)
 }
 
 # The workhorse function
@@ -33,11 +33,7 @@ gsplotLandUseConc <- function(fname.data){
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col, 
-         legend.name=levels(geom.df$type)) %>% 
-    axis(side = 1, at = geom.df$x.middle, 
-         labels = geom.df$site.name, 
-         tick = FALSE, las = 2, cex.axis = 0.1) %>% 
-    axis(side = 2, at = seq(0, 10, by=5))
+         legend.name=levels(geom.df$type), side=c(3))
   return(gs.conc)
 }
 
