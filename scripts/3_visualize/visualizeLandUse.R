@@ -68,13 +68,15 @@ visualizeLandUse <- function(fname.data, fname.fig){
                              meanFilm = "yellow",
                              meanFoam = "blue"))
 
-  gs.conc <- gsplot() %>% 
+  at <- unique(position.df.conc$x.middle)
+  labels <- unique(position.df.conc$site.name)
+  gs_conc <- gsplot() %>% 
     rect(position.df.conc$x.left, position.df.conc$y.bottom, 
          position.df.conc$x.right, position.df.conc$y.top,
          lwd=0.5, col = position.df.conc$rect.col, 
          legend.name=levels(position.df.conc$type)) %>% 
-    axis(side = 1, at = position.df.conc$x.middle, 
-         labels = position.df.conc$site.name, 
+    axis(side = 1, at = at, 
+         labels = labels, 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
     axis(side = 2, at = seq(0, 10, by=5))
   
@@ -109,13 +111,14 @@ visualizeLandUse <- function(fname.data, fname.fig){
                              UrbanPct = "salmon",
                              AgTotalPct = "yellow",
                              OtherPct = "lightgreen"))
-  
+  at <- unique(position.df.landuse$x.middle)
+  labels <- unique(position.df.landuse$site.name)
   gs_landuse <- gsplot() %>% 
     rect(position.df.landuse$x.left, position.df.landuse$y.bottom, 
          position.df.landuse$x.right, position.df.landuse$y.top,
          lwd=0.5, col = position.df.landuse$rect.col) %>% 
-    axis(side = 1, at = position.df.landuse$x.middle, 
-         labels = position.df.landuse$site.name, 
+    axis(side = 1, at = at,
+         labels = labels, 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
     axis(side = 2, at = seq(0, 100, by=25))
   
