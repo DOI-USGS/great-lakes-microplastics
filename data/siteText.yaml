@@ -28,7 +28,7 @@ envEffects-p1: >-
 
 
 ## Environmental Effects Facts## 
-envEffects-globalProd1: >617,000,000,000
+envEffects-globalProd1: ">617,000,000,000"
 envEffects-globalProd2: pounds of plastic produced worldwide in 2012
 		 
 envEffects-fish1: Particles found in
@@ -43,7 +43,7 @@ envEffects-oysters4: particles per serving of  commercially-cultured mussels
 envEffects-stream1: Up to 
 envEffects-stream2: 32
 envEffects-stream3: particles per cubic meter of Great Lakes tributary water
-envEffects-stream4: >13,800
+envEffects-stream4: ">13,800"
 envEffects-stream5: particles per square meter of river sediment
 	
 envEffects-lake1: 43,000 
