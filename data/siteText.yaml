@@ -13,7 +13,7 @@ welcome-p2: >-
 relAbundance-intro1: >-	
 	In 2015, the United States Congress passed 
 	
-relAbundance-intro1_html1 : "<a href='%{link}'>\"Public Law 114-114\"</a>"
+relAbundance-intro1_html1 : "<a href='%{link}' target='_blank'>\"Public Law 114-114\"</a>"
  = t(:relAbundance-intro_html1,
       link:"https://www.congress.gov/bill/114th-congress/house-bill/1321")
 
