@@ -1,17 +1,18 @@
-
-visualizeRelativeAbundance_mobile <- function(file.in, target_name) {
-  visualizeRelativeAbundance('mobile', file.in, target_name)
-}
-visualizeRelativeAbundance_desktop <- function(file.in, target_name) {
-  visualizeRelativeAbundance('desktop', data.in, target_name)
-}
-visualizeRelativeAbundance_ie <- function(file.in, target_name) {
-  visualizeRelativeAbundance('ie', data.in, target_name)
-}
-
 #' @import dinosvg
 #' @import dplyr
-#' 
+
+# Functions directly called by remake::make('figures_R.yaml')
+visualizeRelativeAbundance_mobile <- function(...) {
+  visualizeRelativeAbundance('mobile', ...)
+}
+visualizeRelativeAbundance_desktop <- function(...) {
+  visualizeRelativeAbundance('desktop', ...)
+}
+visualizeRelativeAbundance_ie <- function(...) {
+  visualizeRelativeAbundance('ie', ...)
+}
+
+# The workhorse function
 visualizeRelativeAbundance <- function(tag='desktop', file.in, target_name){
   data.in <- read.table(file.in, header = TRUE, sep = '\t', stringsAsFactors = FALSE)
   svg <- dinosvg:::init_svg(width = 12, height = 6)
