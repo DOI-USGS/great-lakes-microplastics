@@ -15,8 +15,9 @@ include:
 
 targets:
   all:
-    depends: 
-      - cache/mungedLandUse.tsv
+    depends:
+      - cache/munged_LandUse_geomConc.tsv
+      - cache/munged_LandUse_geomPct.tsv
       - cache/mungedRelativeAbundance.tsv
   
   cache_mungedLandUse:
