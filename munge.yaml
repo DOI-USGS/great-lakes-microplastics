@@ -19,8 +19,14 @@ targets:
       - cache/mungedLandUse.tsv
       - cache/mungedRelativeAbundance.tsv
   
-  cache/mungedLandUse.tsv:
-    command: mungeLandUse(All_dataData, target_name)
+  cache_mungedLandUse:
+    command: mungeLandUse(All_dataData)
 
+  cache/munged_LandUse_geomConc.tsv:
+    command: mungeLandUseConc(cache_mungedLandUse, target_name)
+  
+  cache/munged_LandUse_geomPct.tsv:
+    command: mungeLandUsePct(cache_mungedLandUse, target_name)
+  
   cache/mungedRelativeAbundance.tsv:
     command: mungeRelativeAbundance(All_dataData, target_name)
