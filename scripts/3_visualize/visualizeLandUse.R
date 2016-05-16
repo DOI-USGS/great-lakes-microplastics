@@ -43,8 +43,7 @@ gsplotLandUseConc <- function(fname.data){
 # Returns gsplot object for the bottom part of the figure
 gsplotLandUsePct <- function(fname.data){
   
-  geom.df <-  read.table(fname.data, sep = "\t", 
-                         stringsAsFactors = FALSE)
+  geom.df <-  read.table(fname.data, sep = "\t")
   
   gs_landuse <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
