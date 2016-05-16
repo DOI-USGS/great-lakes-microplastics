@@ -41,7 +41,7 @@ mungeLandUse <- function(raw.data){
   return(list(conc.summary = conc.summary, site.geom.df = site.geom.df))
 }
 
-mungeLandUseConc <- function(data.in, fname.output){
+mungeLandUsePct <- function(data.in, fname.output){
   
   data.in.landuse <- data.in$conc.summary %>% 
     rename(site.name = shortName) %>% 
@@ -69,13 +69,18 @@ mungeLandUseConc <- function(data.in, fname.output){
     mutate(rect.col = switch(landuse.type,
                              UrbanPct = "salmon",
                              AgTotalPct = "yellow",
-                             OtherPct = "lightgreen"))
+                             OtherPct = "lightgreen")) %>% 
+    group_by(site.name) %>% 
+    # need to supply label for each rect, but don't want labels overplotting
+    mutate(site.label = c(site.name[1], 
+                          rep(NA, length(site.name) - 1))) %>% 
+    ungroup()
   
   write.table(geom.df.landuse, file=fname.output, sep="\t")
   return(fname.output)
 }
 
-mungeLandUsePct <- function(data.in, fname.output){
+mungeLandUseConc <- function(data.in, fname.output){
   
   data.in.conc <- data.in$conc.summary %>% 
     select(-c(UrbanPct, OtherPct, AgTotalPct)) %>% 
@@ -113,7 +118,12 @@ mungeLandUsePct <- function(data.in, fname.output){
                              meanPellet = "purple",
                              meanFiber = "orange",
                              meanFilm = "yellow",
-                             meanFoam = "blue"))
+                             meanFoam = "blue")) %>% 
+    group_by(site.name) %>% 
+    # need to supply label for each rect, but don't want labels overplotting
+    mutate(site.label = c(site.name[1], 
+                          rep(NA, length(site.name) - 1))) %>% 
+    ungroup()
   
   write.table(geom.df.conc, file=fname.output, sep="\t")
   return(fname.output)
