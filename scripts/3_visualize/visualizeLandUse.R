@@ -78,15 +78,19 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   all.types = c(un.lu.types, un.conc.types) #swaps.length
-  browser()
   js.function <- c('function swapNums(){
-  for (var i = 0; i < 1; i++){
+\tvar i =0;
+ \twindow.myInterval = setInterval(function () {   
+ if (i < swaps.length){
   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
   sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',all.types),
   sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',all.types),
-  '}
-  }')
+  'i++
+  } else {
+     clearInterval(window.myInterval);
+}}, 100)',
+  '}')
   dinosvg:::add_ecmascript(svg, sprintf('var swaps = %s\n%s', jsonlite::toJSON(gs.landuse$json), paste(js.function, collapse='\n')))
   
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
