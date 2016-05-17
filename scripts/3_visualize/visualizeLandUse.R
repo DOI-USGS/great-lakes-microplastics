@@ -83,14 +83,20 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   XML:::addAttributes(view.1, .attrs = c(id='view-1-2a')) # renaming the view as a hack...
   un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
-  all.types = c(un.lu.types, un.conc.types) #swaps.length
+  all.types = c(un.lu.types, un.conc.types)
   
   xlab <- dinosvg:::xpath_one(svg, "//*[local-name()='g'][@id='side-1']//*[local-name()='g'][@id='axis-side-1']//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   attrs <- XML:::xmlAttrs(xlab)
   attrs[['dy']] = "7.8em"
   XML:::removeAttributes(xlab)
   XML:::addAttributes(xlab, .attrs = attrs)
-  js.function <- c('function swapNums(){
+  
+  init.function <- c('function init(evt){
+    if ( window.svgDocument == null ) {
+      svgDocument = evt.target.ownerDocument;
+      svgDocument.sortLU = this.sortLU;}
+  }')
+  js.function <- c('function sortLU(){
 \tvar i =0;
  \twindow.myInterval = setInterval(function () {   
  if (i < swaps.length){
@@ -109,7 +115,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
      clearInterval(window.myInterval);
 }}, 50)',
   '}')
-  dinosvg:::add_ecmascript(svg, sprintf('var swaps = %s\n%s', jsonlite::toJSON(gs.landuse$json), paste(js.function, collapse='\n')))
+  dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s', init.function, jsonlite::toJSON(gs.landuse$json), paste(js.function, collapse='\n')))
   
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
   dinosvg::svg(svg, gs.conc, file=target_name)
