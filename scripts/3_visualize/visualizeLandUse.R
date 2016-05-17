@@ -36,7 +36,7 @@ gsplotLandUseConc <- function(fname.data, gap){
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',type)) %>% 
+    mutate(id = paste0(num,'-',type), hovertext=sprintf('%1.1fpm3',conc_per_m3)) %>% 
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
@@ -54,18 +54,19 @@ gsplotLandUseConc <- function(fname.data, gap){
   
   # hack because we need to support gs extensions
   gs.conc$view.1.2$rect$id=geom.df$id
+  gs.conc$view.1.2$rect$hovertext = geom.df$hovertext
   
   return(gs.conc)
 }
 
 # Returns gsplot object for the bottom part of the figure
 gsplotLandUsePct <- function(fname.data, gap){
-  
+
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',landuse.type)) %>% 
+    mutate(id = paste0(num,'-',landuse.type), hovertext=sprintf('%1.1f (pct)',landuse.pct)) %>% 
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
@@ -84,7 +85,9 @@ gsplotLandUsePct <- function(fname.data, gap){
     axis(side = 2, at = seq(0, 100, by=25))
   
   gs_landuse$view.1.2$rect$id=geom.df$id
+  gs_landuse$view.1.2$rect$hovertext = geom.df$hovertext
   gs_landuse$side.1$axis$id=paste0('site-',1:length(sites))
+  
   q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
   gs_landuse$json <- q.sorted$swaps_ids
   return(gs_landuse)
@@ -122,9 +125,7 @@ injectLabelTextBreaks <- function(svg.side){
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
-  
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
-  
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   attrs <- XML:::xmlAttrs(xlab)
   attrs[['dy']] = "7.8em"
@@ -148,7 +149,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   injectLabelTextBreaks(dinosvg:::g_side(svg,"2a"))
   injectLabelTextBreaks(dinosvg:::g_side(svg,"2"))
-  
+  dinosvg:::add_tooltip(svg, dx="1.0em")
   dinosvg:::write_svg(svg, target_name)
 }
 
