@@ -1,5 +1,11 @@
 #' @import gsplot
 #' @import dinosvg
+#' @examples 
+#' fname.geom.conc <- 'cache/munged_LandUse_geomConc.tsv'
+#' fname.geom.pct <- 'cache/munged_LandUse_geomPct.tsv'
+#' gap <- 0.25
+#' gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
+#' gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
 
 # Functions directly called by remake:make('figures_R.yaml')
 
@@ -14,23 +20,27 @@ visualizeLandUse_ie <- function(...) {
 }
 
 # The workhorse function
-visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig){
+visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig, gap = 0.25){
 
-  gs.conc <- gsplotLandUseConc(fname.geom.conc)
-  gs.landuse <- gsplotLandUsePct(fname.geom.pct)
+  gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
+  gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
   
   createBarFig(gs.conc, gs.landuse, fname.fig)
 
 }
 
 # Returns gsplot object for the top part of the figure
-gsplotLandUseConc <- function(fname.data){
+gsplotLandUseConc <- function(fname.data, gap){
   
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',type))
+    mutate(id = paste0(num,'-',type)) %>% 
+    #use gap specification for spacing bars
+    mutate(x.right = x.left*gap + x.right,
+           x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
+           x.middle = rowMeans(cbind(x.left, x.right))) 
   
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
@@ -48,14 +58,18 @@ gsplotLandUseConc <- function(fname.data){
 }
 
 # Returns gsplot object for the bottom part of the figure
-gsplotLandUsePct <- function(fname.data){
+gsplotLandUsePct <- function(fname.data, gap){
   
-  geom.df <-  read.table(fname.data, sep = "\t")
+  geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',landuse.type))
-  
+    mutate(id = paste0(num,'-',landuse.type)) %>% 
+    #use gap specification for spacing bars
+    mutate(x.right = x.left*gap + x.right,
+           x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
+           x.middle = rowMeans(cbind(x.left, x.right))) 
+           
   gs_landuse <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,

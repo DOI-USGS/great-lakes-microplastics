@@ -2,6 +2,9 @@
 #' @import dplyr
 #' @import yaml
 #' @import XML
+#' @examples 
+#' visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
+
 
 # Functions directly called by remake::make('figures_R.yaml')
 visualizeRelativeAbundance_mobile <- function(...) {
@@ -74,7 +77,3 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
   dinosvg:::write_svg(svg, file=target_name)
   return(target_name)
 }
-
-
-visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
-
