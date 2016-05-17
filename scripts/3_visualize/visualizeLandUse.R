@@ -35,10 +35,9 @@ gsplotLandUseConc <- function(fname.data){
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
-         lwd=0.5, col = geom.df$rect.col) %>% 
+         lwd=0.5, col = geom.df$rect.col, ylab = "Average concentration,\n in particles per cubic meter") %>% 
     axis(side = 2, at = seq(0, 10, by=5)) %>% 
-    axis(1, labels=FALSE) %>% 
-    title(ylab = "Average concentration,\n in particles per cubic meter")
+    axis(1, labels=FALSE)
   
   # hack because we need to support gs extensions
   gs.conc$view.1.2$rect$id=geom.df$id
@@ -58,13 +57,13 @@ gsplotLandUsePct <- function(fname.data){
   gs_landuse <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
-         lwd=0.5, col = geom.df$rect.col) %>% 
+         lwd=0.5, col = geom.df$rect.col,
+         ylab = "Basin land use,\nin percent",
+         xlab = "Sampling locations") %>% 
     axis(side = 1, at = unique(geom.df$x.middle), 
          labels = unique(geom.df$site.name), 
          tick = FALSE, las = 2, cex.axis = 0.1) %>% 
-    axis(side = 2, at = seq(0, 100, by=25)) %>% 
-    title(ylab = "Basin land use,\nin percent",
-          xlab = "Sampling locations")
+    axis(side = 2, at = seq(0, 100, by=25))
   
   gs_landuse$view.1.2$rect$id=geom.df$id
   gs_landuse$side.1$axis$id=paste0('site-',1:length(sites))
@@ -78,13 +77,19 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
   view.1 <- dinosvg:::g_view(svg, side=c(1,2))
-  attrs <- XML:::xmlAttrs(view.1)
+ 
   
   XML:::removeAttributes(view.1)
   XML:::addAttributes(view.1, .attrs = c(id='view-1-2a')) # renaming the view as a hack...
   un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   all.types = c(un.lu.types, un.conc.types) #swaps.length
+  
+  xlab <- dinosvg:::xpath_one(svg, "//*[local-name()='g'][@id='side-1']//*[local-name()='g'][@id='axis-side-1']//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
+  attrs <- XML:::xmlAttrs(xlab)
+  attrs[['dy']] = "7.8em"
+  XML:::removeAttributes(xlab)
+  XML:::addAttributes(xlab, .attrs = attrs)
   js.function <- c('function swapNums(){
 \tvar i =0;
  \twindow.myInterval = setInterval(function () {   
