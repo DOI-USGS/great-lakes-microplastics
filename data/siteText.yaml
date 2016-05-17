@@ -6,8 +6,13 @@ welcome: Welcome
 welcome-p1: >-
   Microplastics are a contaminant of emerging concern in aquatic environments. 
 welcome-p2: >-
-  Microplastics are smaller than 5 millimeters in size.
-  They come from a wide range of sources such as synthetic clothing, cigarette butts, disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
+  Microplastics are smaller than 5 millimeters in size. 
+  They come from a wide range of sources such as synthetic clothing, cigarette butts, 
+  disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
+welcome-p3: >- 
+  In 2014–15, the U.S. Geological Survey and the State University of New York at Fredonia 
+  sampled the quantity and particle types of floating microplastics in 29 rivers flowing into 
+  the Great Lakes in 6 states as part of the Great Lakes Restoration Initiative. 
 
 ## Relative Abundance ##
 relAbundance-intro1: >-
@@ -17,8 +22,10 @@ relAbundance-intro1: >-
 
 relAbundance-title: Relative Abundance
 relAbundance-p1: >-
-  Microplastics were found in all tributary samples analyzed. Fibers, presumably from synthetic clothing and textiles,
-  were the dominant particle type, making up an average of 71 percent of each sample.
+  Microplastics were found in all tributary samples analyzed. Fibers were the dominant 
+  particle type, making up an average of 71 percent of each sample. Fibers were present in 
+  all types of land use (including urban, agriculture, and natural).
+  Fragments, films, and foams were detected more frequent in samples from more urban areas.
 
 relAbundance-pellets-label: Pellets
 relAbundance-pellets: ["Production pellets and powders","Bead blasting (engine parts and boat hulls)"]
