@@ -69,9 +69,9 @@ mungeLandUsePct <- function(data.in, fname.output){
   geom.df.landuse <- left_join(data.in$site.geom.df, geom.df.landuse) %>% 
     rowwise() %>% 
     mutate(rect.col = switch(landuse.type,
-                             UrbanPct = "salmon",
-                             AgTotalPct = "yellow",
-                             OtherPct = "lightgreen")) %>% 
+                             UrbanPct = "#D2372C",
+                             AgTotalPct = "#ffcc0a",
+                             OtherPct = "#9BD733")) %>% 
     ungroup()
   
   write.table(geom.df.landuse, file=fname.output, sep="\t")
