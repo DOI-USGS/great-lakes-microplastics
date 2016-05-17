@@ -86,38 +86,39 @@ mungeLandUseConc <- function(data.in, fname.output){
     mutate(type = factor(type, levels = c("meanPellet", "meanFilm", "meanFoam", 
                                           "meanFrag", "meanFiber")), ordered = TRUE)
   
-  geom.df.conc.frag <- data.in.conc %>%
-    filter(type == "meanFrag") %>% 
-    mutate(y.bottom = 0,
-           y.top = conc_per_m3) 
+  
   geom.df.conc.pellet <- data.in.conc %>%
     filter(type == "meanPellet") %>% 
-    inner_join(geom.df.conc.frag[c('site.name','y.top')], by='site.name') %>% 
-    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
-  geom.df.conc.fiber <- data.in.conc %>%
-    filter(type == "meanFiber") %>% 
-    inner_join(geom.df.conc.pellet[c('site.name','y.top')], by='site.name') %>% 
-    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
+    mutate(y.bottom = 0,
+           y.top = conc_per_m3)
   geom.df.conc.film <- data.in.conc %>%
     filter(type == "meanFilm") %>% 
-    inner_join(geom.df.conc.fiber[c('site.name','y.top')], by='site.name') %>% 
+    inner_join(geom.df.conc.pellet[c('site.name','y.top')], by='site.name') %>% 
     mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
   geom.df.conc.foam <- data.in.conc %>%
     filter(type == "meanFoam") %>% 
     inner_join(geom.df.conc.film[c('site.name','y.top')], by='site.name') %>% 
     mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
+  geom.df.conc.frag <- data.in.conc %>%
+    filter(type == "meanFrag") %>% 
+    inner_join(geom.df.conc.foam[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
+  geom.df.conc.fiber <- data.in.conc %>%
+    filter(type == "meanFiber") %>% 
+    inner_join(geom.df.conc.frag[c('site.name','y.top')], by='site.name') %>% 
+    mutate(y.bottom = y.top, y.top = y.top+conc_per_m3)
   
-  geom.df.conc <- bind_rows(geom.df.conc.frag, geom.df.conc.pellet,
-                            geom.df.conc.fiber, geom.df.conc.film, 
-                            geom.df.conc.foam)
+  geom.df.conc <- bind_rows(geom.df.conc.pellet, geom.df.conc.film,
+                            geom.df.conc.foam, geom.df.conc.frag, 
+                            geom.df.conc.fiber)
   geom.df.conc <- left_join(data.in$site.geom.df, geom.df.conc) %>% 
     rowwise() %>% 
     mutate(rect.col = switch(as.character(type),
-                             meanPellet = "#aadedc",
-                             meanFilm = "#26b9da",
+                             meanPellet = "#4ebec2",
+                             meanFilm = "#0b516b",
                              meanFoam = "#01b29F",
-                             meanFrag = "#4ebec2",
-                             meanFiber = "#0b516b")) %>% 
+                             meanFrag = "#aadedc",
+                             meanFiber = "#26b9da")) %>% 
     ungroup()
   
   write.table(geom.df.conc, file=fname.output, sep="\t")

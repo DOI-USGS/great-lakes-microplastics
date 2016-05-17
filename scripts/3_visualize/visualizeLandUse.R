@@ -3,7 +3,7 @@
 #' @examples 
 #' fname.geom.conc <- 'cache/munged_LandUse_geomConc.tsv'
 #' fname.geom.pct <- 'cache/munged_LandUse_geomPct.tsv'
-#' gap <- 0.25
+#' gap <- 0.15
 #' gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
 #' gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
 
@@ -20,7 +20,7 @@ visualizeLandUse_ie <- function(...) {
 }
 
 # The workhorse function
-visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig, gap = 0.25){
+visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig, gap = 0.15){
 
   gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
   gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
@@ -46,10 +46,11 @@ gsplotLandUseConc <- function(fname.data, gap){
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col, 
+         border = NA,
          ylab = "Average concentration,\n in particles per cubic meter",
          ylim=c(0,13.5)) %>% 
     axis(side = 2, at = seq(0, 10, by=5)) %>% 
-    axis(1, labels=FALSE)
+    axis(1, labels=FALSE, lwd.tick = 0)
   
   # hack because we need to support gs extensions
   gs.conc$view.1.2$rect$id=geom.df$id
@@ -74,6 +75,7 @@ gsplotLandUsePct <- function(fname.data, gap){
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col,
+         border = NA,
          ylab = "Basin land use,\nin percent",
          xlab = "Sampling locations") %>% 
     axis(side = 1, at = unique(geom.df$x.middle), 
