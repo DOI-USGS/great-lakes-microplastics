@@ -57,17 +57,6 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                                 'font-size'='2em'),
                                    newXMLTextNode(paste(sprintf(fmt = "%1.1f",perc),"%")))
 
-    # bullet.points <- text.in[paste0("relAbundance-",group$id)][[1]]
-    # 
-    # for(i in 1:length(bullet.points)){
-    #   
-    #   dinosvg:::svg_node("text", g, c(x=cx+off.x, y=cy+off.y,
-    #                                   'text-anchor'='left',dy=paste0(i,'em'), 
-    #                                   opacity='0.2',id=paste0(group$id,".details"),
-    #                                   'font-size'='0.7em'),
-    #                      newXMLTextNode(bullet.points[i]))
-    # }
-
     start.y <- start.y+height
   }
   
