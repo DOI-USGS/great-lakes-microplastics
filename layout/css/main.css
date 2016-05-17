@@ -68,7 +68,7 @@ header{
 	
 .subject{
 	background:orange;
-	min-height:200px;
+	height:100%;
 	}
 	
 .subject:after {
@@ -82,6 +82,7 @@ header{
 	 
 .picSide,
 .statSide{
+  position:relative;
 	text-align:center;
 	}
 	
@@ -90,16 +91,41 @@ header{
 	}
 	
 .picSide img{
-	width:50%;
-	float:right;
+	width:100%;
 	}
 	
 .statSide{
+  top:300px;
 	background:aqua;
 	min-height:200px;
-	width:50%;
-	float:left;
 	}
+
+#fishPicContainer {
+  height:1200px;
+  width:50%;
+  float:right;
+}
+#fishStat1Container {
+  height:600px;
+  width:50%;
+  float:left;
+}
+#fishStat2Container {
+  height:600px;
+  width:50%;
+  float:left;
+}
+
+#oysterPicContainer {
+  height:600px;
+  width:50%;
+  float:right;
+}
+#oysterStatContainer {
+  height:600px;
+  width:50%;
+  float:left;
+}
 
 /*Footer CSS*/
 footer{
