@@ -35,7 +35,9 @@ gsplotLandUseConc <- function(fname.data){
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
-         lwd=0.5, col = geom.df$rect.col, ylab = "Average concentration,\n in particles per cubic meter") %>% 
+         lwd=0.5, col = geom.df$rect.col, 
+         ylab = "Average concentration,\n in particles per cubic meter",
+         ylim=c(0,13.5)) %>% 
     axis(side = 2, at = seq(0, 10, by=5)) %>% 
     axis(1, labels=FALSE)
   
@@ -72,51 +74,78 @@ gsplotLandUsePct <- function(fname.data){
   return(gs_landuse)
 }
 
+renameViewSides <- function(svg, side){
+  
+  idRename <- function(g){
+    attrs <- XML:::xmlAttrs(g)
+    attrs[['id']] <- paste0(attrs[['id']],'a')
+    XML:::removeAttributes(g)
+    XML:::addAttributes(g, .attrs = attrs) # renaming the ids as a hack because we are adding new views with the same names
+  }
+  idRename(dinosvg:::g_view(svg, side=side))
+  idRename(dinosvg:::g_side(svg, side=side[1]))
+  idRename(dinosvg:::g_side(svg, side=side[2]))
+  invisible(svg)
+}
+
 
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
-  view.1 <- dinosvg:::g_view(svg, side=c(1,2))
- 
   
-  XML:::removeAttributes(view.1)
-  XML:::addAttributes(view.1, .attrs = c(id='view-1-2a')) # renaming the view as a hack...
-  un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
-  un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
-  all.types = c(un.lu.types, un.conc.types)
+  renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   
-  xlab <- dinosvg:::xpath_one(svg, "//*[local-name()='g'][@id='side-1']//*[local-name()='g'][@id='axis-side-1']//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
+  xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   attrs <- XML:::xmlAttrs(xlab)
   attrs[['dy']] = "7.8em"
   XML:::removeAttributes(xlab)
   XML:::addAttributes(xlab, .attrs = attrs)
   
-  init.function <- c('function init(evt){
+  un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
+  un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
+  all.types = c(un.lu.types, un.conc.types)
+  
+  LU.swaps <- jsonlite::toJSON(gs.landuse$json)
+  swap.length <- nrow(gs.landuse$json)
+  dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s', 
+                                        JS_defineInitFunction(), 
+                                        LU.swaps , 
+                                        JS_defineSwapLuFunction(all.types, swap.length, duration=1.5)))
+  
+  gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
+  dinosvg::svg(svg, gs.conc, file=target_name)
+}
+
+JS_defineInitFunction <- function(){
+  c('function init(evt){
     if ( window.svgDocument == null ) {
       svgDocument = evt.target.ownerDocument;
       svgDocument.sortLU = this.sortLU;}
   }')
+}
+
+JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
+  
+  
+  frame.interval <- round(duration/swap.length*1000)
   js.function <- c('function sortLU(){
 \tvar i =0;
- \twindow.myInterval = setInterval(function () {   
- if (i < swaps.length){
-  \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
-  \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
-  '\t var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
-	 \t var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
-  \t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
-  \t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
-  '\t document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);',
-  '\t document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);',
-  sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',all.types),
-  sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',all.types),
-  'i++
-  } else {
-     clearInterval(window.myInterval);
-}}, 50)',
-  '}')
-  dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s', init.function, jsonlite::toJSON(gs.landuse$json), paste(js.function, collapse='\n')))
-  
-  gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
-  dinosvg::svg(svg, gs.conc, file=target_name)
+                   \twindow.myInterval = setInterval(function () {   
+                   if (i < swaps.length){
+                   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
+                   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
+    '\t var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
+                   \t var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
+                   \t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
+                   \t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
+    '\t document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);',
+    '\t document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);',
+    sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',types),
+    sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',types),
+    'i++
+                   } else {
+                   clearInterval(window.myInterval);',
+                   sprintf('}}, %s)',frame.interval),
+    '}')
+  return(paste(js.function, collapse='\n'))
 }
