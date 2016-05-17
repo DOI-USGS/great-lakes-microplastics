@@ -26,11 +26,11 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
   
   svg <- dinosvg:::init_svg(width = 12, height = 6)
 
-  groups <- list(list(col='#aadedc', cx='85', cy='75', name='Pellet/Bead', id="beads"),
-                 list(col='#26b9da', cx='400', cy='146.5', name='Film', id="films"),
+  groups <- list(list(col='#4ebec2', cx='85', cy='75', name='Pellet/Bead', id="beads"),
+                 list(col='#0b516b', cx='400', cy='146.5', name='Film', id="films"),
                  list(col='#01b29F', cx='85', cy='218', name='Foam', id="foams"),
-                 list(col='#4ebec2', cx='400', cy='300', name='Fragment', id="fragments"),
-                 list(col='#0b516b', cx='85', cy='360', name='Fiber/Line', id="fiberlines"))
+                 list(col='#aadedc', cx='400', cy='300', name='Fragment', id="fragments"),
+                 list(col='#26b9da', cx='85', cy='360', name='Fiber/Line', id="fiberlines"))
 
   
   start.y <- 25
@@ -58,21 +58,39 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
     } else {
       d = sprintf("M%s %s a%s,%s 0 0,1 %s,%s L 200 %s L 200 %sz", cx, cy-cr, cr,cr,cr,cr, start.y+height, start.y)
     }
-    dinosvg:::svg_node("path", g, c(d=d, fill=fill, opacity = opacity, stroke="none"))
-    dinosvg:::svg_node("rect", g, c(x="200", y=start.y, width="100", height=height, fill=fill, opacity = opacity))
-    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill, opacity = opacity))
+    dinosvg:::svg_node("path", g, c(d=d, fill=fill, stroke="none", opacity = '0.2'))
+    dinosvg:::svg_node("rect", g, c(x="200", y=start.y, width="100", height=height, 
+                                    fill=fill)) 
+                                    # ,onmouseover="MakeTransparent(evt)",
+                                    # onmouseout="MakeOpaque(evt)"))
+    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill))
+                                      # onmouseover="MakeTransparent(evt)",
+                                      # onmouseout="MakeOpaque(evt)"))
     dinosvg:::svg_node("text", g, c(x=cx+offset.x, y=cy+offset.y,fill="#FFFFFF",
                                     'text-anchor'='left',dy='0.33em'),
                        newXMLTextNode(text.in[paste0("relAbundance-",group$id,"-label")]))
-    dinosvg:::svg_node("text", g, c(x=cx, y=cy,'text-anchor'='middle',dy='0.23em',
-                                                opacity='0.2',id=paste0(group$id,".details"),
+    dinosvg:::svg_node("text", g, c(x=cx, y=cy,fill="#FFFFFF",'text-anchor'='middle',dy='0.23em',
+                                                id=paste0(group$id,".details"),
                                                 'font-size'='2em'),
                                    newXMLTextNode(paste(sprintf(fmt = "%1.1f",perc),"%")))
-    
+    dinosvg:::add_ecmascript(g, paste(JS_MakeTransparent(),JS_MakeOpaque()))
+
     start.y <- start.y+height
   }
   
   dinosvg:::write_svg(svg, file=target_name)
   return(target_name)
+}
+
+JS_MakeTransparent <- function(){
+  c('function MakeTransparent(evt) {
+    evt.target.setAttributeNS(null,"opacity","0.5");
+}')
+}
+
+JS_MakeOpaque <- function(){
+  c('function MakeOpaque(evt) {
+    evt.target.setAttributeNS(null,"opacity","1");
+}')
 }
 
