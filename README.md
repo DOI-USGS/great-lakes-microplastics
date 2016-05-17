@@ -19,6 +19,8 @@ The overall flow is controlled by the `remake::make()` function, which uses thre
 
 `-3->`: figures_R.yaml (non-R figures will be described elsewhere) (e.g., `remake::make(remake_file='figures_R.yaml')`)
 
+`-4->`: layout.yaml (e.g., `remake::make(remake_file='layout.yaml')`)
+
 Each remake script also points backward to the preceding remake script, which means that a single call to `remake::make(remake_file='figures_R.yaml')` is enough to ensure that the entire pipeline is up to date.
 
 
