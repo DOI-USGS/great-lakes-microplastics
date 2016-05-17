@@ -1,5 +1,11 @@
 #' @import gsplot
 #' @import dinosvg
+#' @examples 
+#' fname.geom.conc <- 'cache/munged_LandUse_geomConc.tsv'
+#' fname.geom.pct <- 'cache/munged_LandUse_geomPct.tsv'
+#' gap <- 0.25
+#' gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
+#' gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
 
 # Functions directly called by remake:make('figures_R.yaml')
 
