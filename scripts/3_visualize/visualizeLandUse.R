@@ -124,7 +124,7 @@ injectLabelTextBreaks <- function(svg.side){
 
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
-  svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
+  svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE, onload="init(evt)")
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   attrs <- XML:::xmlAttrs(xlab)
@@ -157,7 +157,9 @@ JS_defineInitFunction <- function(){
   c('function init(evt){
     if ( window.svgDocument == null ) {
       svgDocument = evt.target.ownerDocument;
-      svgDocument.sortLU = this.sortLU;}
+      svgDocument.sortLU = this.sortLU;
+      //window.parent.addEventListener("landUseTrigger", svgDocument.sortLU, false);
+    }
   }')
 }
 
