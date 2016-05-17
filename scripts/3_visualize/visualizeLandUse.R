@@ -91,14 +91,18 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
  if (i < swaps.length){
   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
-  '\t document.getElementById("site-" + swaps[i][0]).setAttribute("x", x1);',
-  '\t document.getElementById("site-" + swaps[i][1]).setAttribute("x", x0);',
+  '\t var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
+	 \t var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
+  \t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
+  \t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
+  '\t document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);',
+  '\t document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);',
   sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',all.types),
   sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',all.types),
   'i++
   } else {
      clearInterval(window.myInterval);
-}}, 100)',
+}}, 50)',
   '}')
   dinosvg:::add_ecmascript(svg, sprintf('var swaps = %s\n%s', jsonlite::toJSON(gs.landuse$json), paste(js.function, collapse='\n')))
   
