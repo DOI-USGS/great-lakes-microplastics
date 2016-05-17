@@ -43,6 +43,18 @@ header{
 	border-bottom:5px solid rgb(210,210,210);
 	}
 	
+header h3{
+	padding-top:1px;
+	}
+	
+header img{
+	float:left;
+	margin-right:5px;
+	width:80px;
+	}
+	
+
+	
 /*Section CSS*/
 #intro,
 #figure1,
