@@ -83,8 +83,8 @@ mungeLandUseConc <- function(data.in, fname.output){
   data.in.conc <- data.in$conc.summary %>% 
     select(-c(UrbanPct, OtherPct, AgTotalPct)) %>% 
     rename(site.name = shortName) %>% 
-    mutate(type = factor(type, levels = c("meanFrag", "meanPellet", "meanFiber", 
-                                          "meanFilm", "meanFoam")), ordered = TRUE)
+    mutate(type = factor(type, levels = c("meanPellet", "meanFilm", "meanFoam", 
+                                          "meanFrag", "meanFiber")), ordered = TRUE)
   
   geom.df.conc.frag <- data.in.conc %>%
     filter(type == "meanFrag") %>% 
@@ -113,11 +113,11 @@ mungeLandUseConc <- function(data.in, fname.output){
   geom.df.conc <- left_join(data.in$site.geom.df, geom.df.conc) %>% 
     rowwise() %>% 
     mutate(rect.col = switch(as.character(type),
-                             meanFrag = "green",
-                             meanPellet = "purple",
-                             meanFiber = "orange",
-                             meanFilm = "yellow",
-                             meanFoam = "blue")) %>% 
+                             meanPellet = "#aadedc",
+                             meanFilm = "#26b9da",
+                             meanFoam = "#01b29F",
+                             meanFrag = "#4ebec2",
+                             meanFiber = "#0b516b")) %>% 
     ungroup()
   
   write.table(geom.df.conc, file=fname.output, sep="\t")
