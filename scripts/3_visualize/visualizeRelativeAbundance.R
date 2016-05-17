@@ -41,9 +41,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
     
     offset.x <- -50
     offset.y <- -30
-    line.spacing <- 16
-    off.x <- -55
-    off.y <- -10
+
     opacity <- '0.2'
     
     g <- dinosvg:::svg_node("g", svg, c(id=group$name))
@@ -65,5 +63,5 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
 }
 
 
-visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
+# visualizeRelativeAbundance("desktop","cache/mungedRelativeAbundance.tsv","data/siteText.yaml","test.svg")
 
