@@ -25,7 +25,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
 
   groups <- list(list(col='#aadedc', cx='85', cy='75', name='Pellet/Bead', id="beads"),
                  list(col='#26b9da', cx='400', cy='146.5', name='Film', id="films"),
-                 list(col='#036c83', cx='85', cy='218', name='Foam', id="foams"),
+                 list(col='#01b29F', cx='85', cy='218', name='Foam', id="foams"),
                  list(col='#4ebec2', cx='400', cy='300', name='Fragment', id="fragments"),
                  list(col='#0b516b', cx='85', cy='360', name='Fiber/Line', id="fiberlines"))
 
