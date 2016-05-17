@@ -88,6 +88,20 @@ renameViewSides <- function(svg, side){
   invisible(svg)
 }
 
+injectLabelTextBreaks <- function(svg.side){
+  
+  g.lab <- dinosvg:::xpath_one(svg.side, "//*[local-name()='g'][@id='axis-label']")
+  lab <- dinosvg:::xpath_one(g.lab, "//*[local-name()='text']")
+  text <- strsplit(xmlValue(lab),'\n')[[1]]
+  xmlValue(lab) <- text[1]
+  attrs <- XML:::xmlAttrs(lab)
+  newXMLNode('text', parent = g.lab, attrs = c(attrs,'class'='sub-label'), newXMLTextNode(text[2]))
+  attrs[['dy']] = "-3.0em"
+  XML:::removeAttributes(lab)
+  XML:::addAttributes(lab, .attrs = attrs)
+  
+}
+
 
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
@@ -100,6 +114,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   attrs[['dy']] = "7.8em"
   XML:::removeAttributes(xlab)
   XML:::addAttributes(xlab, .attrs = attrs)
+
   
   un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
@@ -113,7 +128,12 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
                                         JS_defineSwapLuFunction(all.types, swap.length, duration=1.5)))
   
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
-  dinosvg::svg(svg, gs.conc, file=target_name)
+  svg <- dinosvg::svg(svg, gs.conc, as.xml=TRUE)
+  
+  injectLabelTextBreaks(dinosvg:::g_side(svg,"2a"))
+  injectLabelTextBreaks(dinosvg:::g_side(svg,"2"))
+  
+  dinosvg:::write_svg(svg, target_name)
 }
 
 JS_defineInitFunction <- function(){
