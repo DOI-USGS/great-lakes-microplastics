@@ -23,6 +23,12 @@ The overall flow is controlled by the `remake::make()` function, which uses thre
 
 Each remake script also points backward to the preceding remake script, which means that a single call to `remake::make(remake_file='figures_R.yaml')` is enough to ensure that the entire pipeline is up to date.
 
+To start a simple local server, navigate to the target folder in a shell, and run the command:
+
+```
+python -m SimpleHTTPServer
+```
+
 
 Disclaimer
 ----------
