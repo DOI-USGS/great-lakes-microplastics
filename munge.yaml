@@ -26,7 +26,7 @@ targets:
     command: mungeLandUse(All_dataData)
     
   cache_mungeSiteTable:
-    command: mungeSiteTable(SI_Table1Data)
+    command: mungeSiteTable(SI_Table1Data, target_name)
 
   cache/munged_LandUse_geomConc.tsv:
     command: mungeLandUseConc(cache_mungedLandUse, target_name)
