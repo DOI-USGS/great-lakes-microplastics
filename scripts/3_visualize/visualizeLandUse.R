@@ -20,19 +20,22 @@ visualizeLandUse_ie <- function(...) {
 }
 
 # The workhorse function
-visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig, gap = 0.15){
+visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.site,
+                             fname.fig, gap = 0.15){
 
-  gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
-  gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
+  gs.conc <- gsplotLandUseConc(fname.geom.conc, fname.site, gap)
+  gs.landuse <- gsplotLandUsePct(fname.geom.pct, fname.site, gap)
   
   createBarFig(gs.conc, gs.landuse, fname.fig)
 
 }
 
 # Returns gsplot object for the top part of the figure
-gsplotLandUseConc <- function(fname.data, gap){
+gsplotLandUseConc <- function(fname.data, fname.site, gap){
   
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
+  site.df <-  read.table(fname.site, sep = "\t", stringsAsFactors = FALSE)
+  
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
@@ -60,9 +63,11 @@ gsplotLandUseConc <- function(fname.data, gap){
 }
 
 # Returns gsplot object for the bottom part of the figure
-gsplotLandUsePct <- function(fname.data, gap){
+gsplotLandUsePct <- function(fname.data, fname.site, gap){
 
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
+  site.df <-  read.table(fname.site, sep = "\t", stringsAsFactors = FALSE)
+  
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
