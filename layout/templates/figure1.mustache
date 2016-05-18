@@ -3,21 +3,69 @@
 		<h3 class="title">{{{ relAbundance-title }}}</h3>
 		<p>{{{ relAbundance-intro1 }}}</p>
 	</div>
-	<div class="figure">{{{ relAbundance-figure }}}</div>
-	<div class="text">
-		<p>{{{ relAbundance-p1 }}}</p>
-		<p>{{{ relAbundance-pellets-label }}}</p>
-		<p>{{{ relAbundance-pellets }}}</p>
-		<p>{{{ relAbundance-beads-label }}}</p>
-		<p>{{{ relAbundance-beads }}}</p>
-		<p>{{{ relAbundance-fiberlines-label }}}</p>
-		<p>{{{ relAbundance-fiberlines }}}</p>
-		<p>{{{ relAbundance-films-label }}}</p>
-		<p>{{{ relAbundance-films }}}</p>
-		<p>{{{ relAbundance-fragments-label }}}</p>
-		<p>{{{ relAbundance-fragments }}}</p>		
-		<p>{{{ relAbundance-foams-label }}}</p>
-		<p>{{{ relAbundance-foams }}}</p>
+	<div class="figure">
+	  <object type="image/svg+xml" data="{{ relativeAbundanceFig }}">
+    </object> 
+  </div>
+	<div id="figure1Table">
+		<div class="text">
 		
+		
+			<p>{{{ relAbundance-p1 }}}</p>
+			
+			<div class="boxTop">
+				<h3>{{{ relAbundance-pellets-label }}}</h3>
+			</div>
+			<div class="boxBottom">
+				<p>{{{ relAbundance-pellets }}}</p>
+				<img src="images/pellets1.jpg" alt="pellets1" width="150" />
+				<img src="images/pellets2.jpg" alt="pellets2" width="150/>
+			</div>
+			
+			<div class="boxTop">
+				<h3>{{{ relAbundance-beads-label }}}</h3>
+			</div>
+			<div class="boxBottom">
+				<p>{{{ relAbundance-beads }}}</p>
+				<img src="images/bead1.jpg" alt="bead1" width="150" />
+				<img src="images/bead2.jpg" alt="bead2" width="150/>
+				<img src="images/bead3.jpg" alt="bead3" width="150" />
+			</div>
+			
+			<div class="boxTop">
+				<h3>{{{ relAbundance-fiberlines-label }}}</h3>
+			</div>
+			<div class="boxBottom">
+				<p>{{{ relAbundance-fiberlines }}}</p>
+				<img src="images/fiber1.jpg" alt="fiber1" width="150" />
+				<img src="images/fiber2.jpg" alt="fiber2" width="150/>
+			</div>
+			
+			<div class="boxTop">
+			  <h3>{{{ relAbundance-films-label }}}</h3>
+			</div>
+			<div class="boxBottom">
+			  <p>{{{ relAbundance-films }}}</p>
+			  <img src="images/film1.jpg" alt="film1" width="150" />
+				<img src="images/film2.jpg" alt="film2" width="150/>
+			</div>
+			
+			<div class="boxTop">
+			  <h3>{{{ relAbundance-fragments-label }}}</h3>
+			</div>
+			<div class="boxBottom">
+			  <p>{{{ relAbundance-fragments }}}</p>		
+			  <img src="images/fragment1.jpg" alt="fragment1" width="150" />
+			</div>
+			
+			<div class="boxTop">
+			  <h3>{{{ relAbundance-foams-label }}}</h3>
+			</div>
+			<div class="boxBottom">
+			  <p>{{{ relAbundance-foams }}}</p>
+			  <img src="images/foam.jpg" alt="foam" width="150" />
+			</div>
+			
+	</div>
 	</div>
 </div>

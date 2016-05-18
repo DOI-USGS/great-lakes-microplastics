@@ -15,11 +15,10 @@ relAbundance-intro1: >-
   The ban for sale of these products starts in 2018. 
   However, microbeads are only a small fraction of microplastics found in the environment. 
 
-relAbundance-title: Figure 1 Title
+relAbundance-title: Relative Abundance
 relAbundance-p1: >-
-
-  Donec id diam scelerisque, dictum odio at, feugiat ex.
-  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+  Microplastics were found in all tributary samples analyzed. Fibers, presumably from synthetic clothing and textiles,
+  were the dominant particle type, making up an average of 71 percent of each sample.
 
 relAbundance-pellets-label: Pellets
 relAbundance-pellets: ["Production pellets and powders","Bead blasting (engine parts and boat hulls)"]

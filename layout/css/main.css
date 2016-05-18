@@ -1,13 +1,8 @@
 /*Universal Classes*/
 .center{
 	height:800px;
-	width:80%;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top:0;
-	bottom:0;
-	margin: auto
+	padding:10px;
+	margin:0 auto;
 	}
 	
 .text{
@@ -28,6 +23,15 @@
 .awake{
 	display:block !important;
 	}
+	
+.sleep{
+	-webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
+     opacity: 0;
+	}
 
 
 /*Header CSS*/
@@ -39,6 +43,18 @@ header{
 	border-bottom:5px solid rgb(210,210,210);
 	}
 	
+header h3{
+	padding-top:1px;
+	}
+	
+header img{
+	float:left;
+	margin-right:5px;
+	width:80px;
+	}
+	
+
+	
 /*Section CSS*/
 #intro,
 #figure1,
@@ -47,27 +63,26 @@ header{
 	min-height:100%;
 	position:relative;
 	}
-	
-#figure1{
-	background:lime;
+
+#intro p,
+#figure1 p,
+#figure2 p,
+#figure3 p{
+	max-width:860px;
+	margin:0 auto;
 	}
 	
-#figure2{
-	background:purple;
-	}
-#figure3{
-	background:aqua;
+#intro{
+	padding-top:30px;
 	}
 	
 /*Figure 2*/
 #subjectContainer{
-	background:gray;
 	min-height:100px;
-	padding-top:50px;
+	padding:30px 10px 10px 10px;
 	}
 	
 .subject{
-	background:orange;
 	height:100%;
 	}
 	
@@ -82,12 +97,8 @@ header{
 	 
 .picSide,
 .statSide{
-  position:relative;
+  	position:relative;
 	text-align:center;
-	}
-	
-.picSide{
-	background:lime;
 	}
 	
 .picSide img{
@@ -95,34 +106,63 @@ header{
 	}
 	
 .statSide{
-  top:300px;
-	background:aqua;
+  	top:200px;
 	min-height:200px;
 	}
 
 #fishPicContainer {
-  height:1200px;
+  height:500px;
   width:50%;
   float:right;
 }
 #fishStat1Container {
-  height:600px;
-  width:50%;
-  float:left;
-}
-#fishStat2Container {
-  height:600px;
+  height:100px;
   width:50%;
   float:left;
 }
 
 #oysterPicContainer {
-  height:600px;
+  height:800px;
+  width:50%;
+  float:right;
+  margin-bottom:20px;
+}
+#oysterStatContainer {
+  height:300px;
+  width:50%;
+  float:left;
+}
+
+#oysterStat2Container {
+  height:300px;
+  width:50%;
+  float:left;
+}
+
+#streamPicContainer {
+  height:700px;
   width:50%;
   float:right;
 }
-#oysterStatContainer {
-  height:600px;
+#streamStatContainer {
+  height:300px;
+  width:50%;
+  float:left;
+}
+
+#streamStat2Container {
+  height:300px;
+  width:50%;
+  float:left;
+}
+
+#lakePicContainer {
+  height:500px;
+  width:50%;
+  float:right;
+}
+#lakeStatContainer {
+  height:300px;
   width:50%;
   float:left;
 }
@@ -135,6 +175,10 @@ footer{
 	}
 	
 @media screen and (min-width:768px){
+	
+	.center{
+		width:80%;
+		}
 	
 	.bigNumber{
 		font-size:5em;
@@ -151,6 +195,52 @@ footer{
 		width:760px;
 		margin:0 auto;
 		}
+		
+	.statSide{
+  		top:400px;
+	}
+		
+	.statSide p{
+		width:50%;
+	}
+	
+	#fishPicContainer {
+  		height:850px;
+	}
+	
+	#fishStat1Container {
+  		height:300px;
+	}
+
+	#oysterPicContainer {
+  		height:1500px;
+	}
+	#oysterStatContainer {
+  		height:600px;
+	}
+
+	#oysterStat2Container {
+  		height:600px;
+	}
+
+	#streamPicContainer {
+  		height:1500px;
+	}
+	#streamStatContainer {
+  		height:600px;
+	}
+
+	#streamStat2Container {
+  		height:600px;
+	}
+
+	#lakePicContainer {
+  		height:1200px;
+
+	}
+	#lakeStatContainer {
+  		height:600px;
+	}
 }
 
 @media screen and (min-width:1024px){
