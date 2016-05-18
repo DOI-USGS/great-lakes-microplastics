@@ -235,7 +235,10 @@ JS_defineInitFunction <- function(){
   c('function init(evt){
     if ( window.svgDocument == null ) {
       svgDocument = evt.target.ownerDocument;
-      svgDocument.sortLU = this.sortLU;}
+      svgDocument.sortLU = this.sortLU;
+      var mainDocument = window.parent.document;
+      mainDocument.addEventListener("landUseTrigger", sortLU, false);
+    }
   }')
 }
 
