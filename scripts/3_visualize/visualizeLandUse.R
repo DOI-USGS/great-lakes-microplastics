@@ -36,7 +36,7 @@ gsplotLandUseConc <- function(fname.data, gap){
   sites <- unique(geom.df$site.name)
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',type), hovertext=sprintf('%1.1fpm3',conc_per_m3)) %>% 
+    mutate(id = paste0(num,'-',type), hovertext=sprintf('%1.1f (ppcm)',conc_per_m3)) %>% 
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
