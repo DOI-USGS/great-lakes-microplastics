@@ -148,6 +148,7 @@ JS_defineInitFunction <- function(){
     if ( window.svgDocument == null ) {
     svgDocument = evt.target.ownerDocument;
     svgDocument.sortLU = this.sortLU;}
+
 }')
 }
 
@@ -195,12 +196,13 @@ JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
   gs.landuse$css <- CSS_defineCSS()
-  
-  svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
+
+  svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE, onload="init(evt)")
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   modifyAttr(xlab, c('dy' = "7.5em"))
 
+  
   un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   all.types = c(un.lu.types, un.conc.types)
@@ -227,4 +229,38 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   dinosvg:::add_tooltip(svg, dx="1.0em")
   dinosvg:::write_svg(svg, target_name)
+}
+
+JS_defineInitFunction <- function(){
+  c('function init(evt){
+    if ( window.svgDocument == null ) {
+      svgDocument = evt.target.ownerDocument;
+      svgDocument.sortLU = this.sortLU;}
+  }')
+}
+
+JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
+  
+  
+  frame.interval <- round(duration/swap.length*1000)
+  js.function <- c('function sortLU(){
+\tvar i =0;
+                   \twindow.myInterval = setInterval(function () {   
+                   if (i < swaps.length){
+                   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
+                   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
+    '\t var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
+                   \t var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
+                   \t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
+                   \t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
+    '\t document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);',
+    '\t document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);',
+    sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',types),
+    sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',types),
+    'i++
+                   } else {
+                   clearInterval(window.myInterval);',
+                   sprintf('}}, %s)',frame.interval),
+    '}')
+  return(paste(js.function, collapse='\n'))
 }
