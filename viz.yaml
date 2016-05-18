@@ -65,7 +65,7 @@ data:
     mimeType: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
     readParam: 
       -
-        skip:"2"
+        skip:2
   -
     id: envEffectsData
     location: data/envEffectsData.csv

@@ -19,6 +19,7 @@ targets:
     depends:
       - cache/munged_LandUse_geomConc.tsv
       - cache/munged_LandUse_geomPct.tsv
+      - cache/munged_LandUse_site.tsv
       - cache/mungedRelativeAbundance.tsv
   
   cache_mungedLandUse:
@@ -32,6 +33,9 @@ targets:
   
   cache/munged_LandUse_geomPct.tsv:
     command: mungeLandUsePct(cache_mungedLandUse, target_name)
-  
+
   cache/mungedRelativeAbundance.tsv:
     command: mungeRelativeAbundance(All_dataData, target_name)
+    
+  cache/munged_LandUse_site.tsv:
+    command: mungeSiteTable(SI_Table1Data, target_name)
