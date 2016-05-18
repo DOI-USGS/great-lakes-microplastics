@@ -4,10 +4,17 @@ title: Microplastics in the Great Lakes
 ## Intro ##
 welcome: Welcome
 welcome-p1: >-
-  Microplastics are a contaminant of emerging concern in aquatic environments. 
+  Microplastics are a growing contaminant of concern in freshwater environments, yet sources, transport, and fate remain unclear. 
+  
 welcome-p2: >-
-  Microplastics are smaller than 5 millimeters in size.
-  They come from a wide range of sources such as synthetic clothing, cigarette butts, disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
+  Microplastics are smaller than 5 millimeters in size. 
+  They come from a wide range of sources such as synthetic clothing, cigarette butts, 
+  disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
+  
+welcome-p3: >- 
+  In 2014–15, the U.S. Geological Survey and the State University of New York at Fredonia 
+  sampled the quantity and particle types of floating microplastics in 29 rivers flowing into 
+  the Great Lakes in 6 states as part of the Great Lakes Restoration Initiative. 
 
 ## Relative Abundance ##
 relAbundance-intro1: >-
@@ -17,9 +24,9 @@ relAbundance-intro1: >-
 
 relAbundance-title: Relative Abundance
 relAbundance-p1: >-
-  Microplastics were found in all tributary samples analyzed. Fibers, presumably from synthetic clothing and textiles,
-  were the dominant particle type, making up an average of 71 percent of each sample.
-
+  Microplastics were found in all tributary samples analyzed. Fibers were the dominant 
+  particle type, making up an average of 71 percent of each sample. 
+  
 relAbundance-pellets-label: Pellets
 relAbundance-pellets: ["Production pellets and powders","Bead blasting (engine parts and boat hulls)"]
 
@@ -39,10 +46,9 @@ relAbundance-foams-label: Foams
 relAbundance-foams: ["Styrofoam"]
 
 ## Environmental Effects ##
-envEffects-title: Figure 2 Title
+envEffects-title: How have microplastics been observed in the enviornment?
 envEffects-p1: >-
-  Donec id diam scelerisque, dictum odio at, feugiat ex.
-  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+  Many
 
 ## Environmental Effects Facts## 
 envEffects-globalProd1: ">617,000,000,000"
@@ -70,8 +76,10 @@ envEffects-lake2: particles per square kilometer of Great Lakes water
 landUse-intro: How do microplastics get into our rivers and streams?
 landUse-title: Figure 3 Title
 landUse-p1: >-
-  Donec id diam scelerisque, dictum odio at, feugiat ex.
-  Cras nibh arcu, ornare eu sapien quis, imperdiet rutrum magna.
+  Fibers were present in watersheds with all types of land use and varying wastewater effluent contributions
+
+landUse-p2: >-
+  Fragments, films, and foams were more frequent in samples from more urban basins
 
 ## Footer ##
 footer-text: Footer Text
