@@ -92,16 +92,23 @@ gsplotLandUsePct <- function(fname.data, gap){
 }
 
 renameViewSides <- function(svg, side){
-  
-  idRename <- function(g){
+  attRename <- function(g, attr='id'){
     attrs <- XML:::xmlAttrs(g)
-    attrs[['id']] <- paste0(attrs[['id']],'a')
+    attrs[[attr]] <- paste0(attrs[[attr]],'a')
     XML:::removeAttributes(g)
     XML:::addAttributes(g, .attrs = attrs) # renaming the ids as a hack because we are adding new views with the same names
+    invisible(NULL)
   }
-  idRename(dinosvg:::g_view(svg, side=side))
-  idRename(dinosvg:::g_side(svg, side=side[1]))
-  idRename(dinosvg:::g_side(svg, side=side[2]))
+  
+  
+  attRename(dinosvg:::g_mask(svg, side=side))
+  attRename(dinosvg:::g_view(svg, side=side))
+  attRename(dinosvg:::g_side(svg, side=side[1]))
+  attRename(dinosvg:::g_side(svg, side=side[2]))
+  
+  xpath = sprintf("//*[local-name()='g'][@clip-path='url(#mask-%s-%s)']", side[1], side[2])
+  masked.nodes <- xpathApply(dinosvg:::g_view(svg, side=c(side[1],paste0(side[2],'a'))), xpath)
+  sapply(masked.nodes, function(x) attRename(x, attr='clip-path'))
   invisible(svg)
 }
 
