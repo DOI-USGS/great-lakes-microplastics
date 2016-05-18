@@ -28,7 +28,7 @@ To start a simple local server, navigate to the target folder in a shell, and ru
 ```
 python -m SimpleHTTPServer
 ```
-
+`Ctrl-C` quits the server. 
 
 Disclaimer
 ----------
