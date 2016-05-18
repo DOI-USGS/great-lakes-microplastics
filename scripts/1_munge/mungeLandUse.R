@@ -1,6 +1,7 @@
 #' @import data.table
 #' @import dplyr
 #' @import reshape2
+#' @import readxl
 
 mungeLandUse <- function(raw.data){
 
@@ -40,6 +41,19 @@ mungeLandUse <- function(raw.data){
     ungroup()
   
   return(list(conc.summary = conc.summary, site.geom.df = site.geom.df))
+}
+
+# SI1 <- read_excel("cache/SI_Table 1_site_characteristics_for_PUB_2.xlsx", skip = 2)
+
+mungeSiteTable <- function(fname.in, fname.out){
+  SI1 <- read_excel(file.path(tempFolder, files$fname[2]), skip = 2)
+  land.per.cols <- which(is.na(names(SI1)))
+  land.per.cols <- c(land.per.cols[1]-1, land.per.cols)
+  names(SI1)[land.per.cols] <- SI1[1,land.per.cols]
+  SI1 <- SI1[-1,]
+  SI1[,land.per.cols] <- sapply(SI1[,land.per.cols], function(x) as.numeric(x))
+  write.table(SI1, file=fname.out, sep="\t")
+  return(fname.out)
 }
 
 mungeLandUsePct <- function(data.in, fname.output){

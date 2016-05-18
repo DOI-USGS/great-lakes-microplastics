@@ -4,6 +4,7 @@ packages:
   - reshape2
   - tidyr
   - jsonlite
+  - readxl
 
 ## All R files that are used must be listed here:
 sources:
@@ -22,6 +23,9 @@ targets:
   
   cache_mungedLandUse:
     command: mungeLandUse(All_dataData)
+    
+  cache_mungeSiteTable:
+    command: mungeSiteTable(SI_Table1Data)
 
   cache/munged_LandUse_geomConc.tsv:
     command: mungeLandUseConc(cache_mungedLandUse, target_name)
