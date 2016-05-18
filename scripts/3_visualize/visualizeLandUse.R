@@ -121,6 +121,7 @@ injectLabelTextBreaks <- function(svg.side){
   text <- strsplit(xmlValue(lab),'\n')[[1]]
   xmlValue(lab) <- text[1]
   attrs <- XML:::xmlAttrs(lab)
+  attrs[['dy']] = "-2.5em"
   newXMLNode('text', parent = g.lab, attrs = c(attrs,'class'='sub-label'), newXMLTextNode(text[2]))
   attrs[['dy']] = "-3.0em"
   XML:::removeAttributes(lab)
@@ -131,11 +132,12 @@ injectLabelTextBreaks <- function(svg.side){
 
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
+  gs.landuse$css <- CSS_defineCSS()
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE)
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   attrs <- XML:::xmlAttrs(xlab)
-  attrs[['dy']] = "7.8em"
+  attrs[['dy']] = "8.5em"
   XML:::removeAttributes(xlab)
   XML:::addAttributes(xlab, .attrs = attrs)
 
@@ -168,6 +170,20 @@ JS_defineInitFunction <- function(){
   }')
 }
 
+CSS_defineCSS <- function(){
+  'text, .sub-label {
+    cursor: default;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.sub-label, .x-tick-labels ,#tick-labels{
+font-size: 10px;
+}
+
+text{
+font-size: 12px;
+
+}'
+}
 JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
   
   
