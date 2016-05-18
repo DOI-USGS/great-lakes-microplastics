@@ -58,14 +58,19 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
     } else {
       d = sprintf("M%s %s a%s,%s 0 0,1 %s,%s L 200 %s L 200 %sz", cx, cy-cr, cr,cr,cr,cr, start.y+height, start.y)
     }
-    dinosvg:::svg_node("path", g, c(d=d, fill=fill, stroke="none", opacity = '0.2'))
+    dinosvg:::svg_node("path", g, c(d=d, fill=fill, stroke="none",opacity='0.2', 
+                                    id = paste0(group$name,"-path"),
+                                    onmouseover="MakeOpaque(evt)",
+                                    onmouseout="MakeTransparent(evt)"))
     dinosvg:::svg_node("rect", g, c(x="200", y=start.y, width="100", height=height, 
-                                    fill=fill)) 
-                                    # ,onmouseover="MakeTransparent(evt)",
-                                    # onmouseout="MakeOpaque(evt)"))
-    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill))
-                                      # onmouseover="MakeTransparent(evt)",
-                                      # onmouseout="MakeOpaque(evt)"))
+                                    fill=fill,
+                                    id = paste0(group$name,"-rect"),
+                                    onmouseover="MakePathOpaque(evt)",
+                                    onmouseout="MakePathTransparent(evt)"))
+    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,
+                                      id = paste0(group$name,"-circle"),
+                                      onmouseover="MakePathOpaque(evt)",
+                                      onmouseout="MakePathTransparent(evt)"))
     dinosvg:::svg_node("text", g, c(x=cx+offset.x, y=cy+offset.y,fill="#FFFFFF",
                                     'text-anchor'='left',dy='0.33em'),
                        newXMLTextNode(text.in[paste0("relAbundance-",group$id,"-label")]))
@@ -73,24 +78,41 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                                 id=paste0(group$id,".details"),
                                                 'font-size'='2em'),
                                    newXMLTextNode(paste(sprintf(fmt = "%1.1f",perc),"%")))
-    dinosvg:::add_ecmascript(g, paste(JS_MakeTransparent(),JS_MakeOpaque()))
+    
 
     start.y <- start.y+height
   }
   
+  dinosvg:::add_ecmascript(g, paste(JS_MakeTransparent(),JS_MakeOpaque(),
+                                    JS_MakePathTransparent(),JS_MakePathOpaque()))
   dinosvg:::write_svg(svg, file=target_name)
   return(target_name)
 }
 
-JS_MakeTransparent <- function(){
-  c('function MakeTransparent(evt) {
-    evt.target.setAttributeNS(null,"opacity","0.5");
-}')
-}
-
 JS_MakeOpaque <- function(){
   c('function MakeOpaque(evt) {
-    evt.target.setAttributeNS(null,"opacity","1");
+    evt.target.setAttributeNS(null,"opacity","0.8");
 }')
 }
 
+JS_MakeTransparent <- function(){
+  c('function MakeTransparent(evt) {
+    evt.target.setAttributeNS(null,"opacity","0.2");
+}')
+}
+
+JS_MakePathTransparent <- function(){
+  c('function MakePathTransparent(evt) {
+      var id=evt.target.getAttribute("id");
+	    var node = document.getElementById(id.split("-")[0] + "-path");
+      node.setAttributeNS(null, "opacity","0.2");
+}')
+}
+
+JS_MakePathOpaque <- function(){
+  c('function MakePathOpaque(evt) {
+      var id=evt.target.getAttribute("id");
+	    var node = document.getElementById(id.split("-")[0] + "-path");
+      node.setAttributeNS(null, "opacity","0.8");
+}')
+}
