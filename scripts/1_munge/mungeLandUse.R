@@ -25,6 +25,8 @@ mungeLandUse <- function(raw.data){
   allSizesSub$shortName[allSizesSub$shortName == "StJoseph, MI"] <- "St Joseph, MI"
   
   siteOrder <- unique(allSizesSub$shortName)
+  siteOrder <- siteOrder[c(1:2,29,3:28)]
+  
   site.df <- data.frame(shortName = siteOrder, num=1:length(siteOrder), stringsAsFactors = FALSE)
   
   siteAvg <- mutate(allSizesSub, OtherPct = ForestPct + Water_WetlandPct + OtherLandUsePct) %>%
