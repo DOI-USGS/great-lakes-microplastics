@@ -52,9 +52,7 @@ header img{
 	margin-right:5px;
 	width:80px;
 	}
-	
-
-	
+		
 /*Section CSS*/
 #intro,
 #figure1,
@@ -75,6 +73,22 @@ header img{
 #intro{
 	padding-top:30px;
 	}
+	
+/*Figure 1*/
+#figure1Table{
+	min-height:100px;
+	border:1px solid rgb(200,200,200);
+	padding:10px;
+	}
+
+	
+.boxTop{
+	background:rgb(63,136,189);
+	margin:10px 0 5px 0;
+	padding:10px;
+	color:#fff;
+	}
+
 	
 /*Figure 2*/
 #subjectContainer{
@@ -189,6 +203,11 @@ footer{
 		width:760px;
 		margin:0 auto;
 		}
+	
+	/*Figure 1*/
+	#figure1Table{
+		width:30%;
+	}
 		
 	/*Figure 2*/
 	#subjectContainer{
