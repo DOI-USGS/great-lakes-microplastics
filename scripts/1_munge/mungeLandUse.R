@@ -85,9 +85,6 @@ mungeLandUsePct <- function(data.in, fname.output){
     unique() %>% 
     gather(key = 'landuse.type', value = 'landuse.pct', -site.name)
  
-  data.in.landuse$site.name[data.in.landuse$site.name == "StLouis, MN"] <- "St Louis, MN"
-  data.in.landuse$site.name[data.in.landuse$site.name == "StJoseph, MI"] <- "St Joseph, MI"
-  
   geom.df.landuse.urban <- data.in.landuse %>%
     filter(landuse.type == "UrbanPct") %>% 
     mutate(y.bottom = 0,
@@ -108,9 +105,7 @@ mungeLandUsePct <- function(data.in, fname.output){
                                geom.df.landuse.other)
   
   sites <- data.in$site.geom.df
-  sites$site.name[sites$site.name == "StLouis, MN"] <- "St Louis, MN"
-  sites$site.name[sites$site.name == "StJoseph, MI"] <- "St Joseph, MI"
-  
+
   geom.df.landuse <- left_join(sites, geom.df.landuse) %>% 
     rowwise() %>% 
     mutate(rect.col = switch(landuse.type,
@@ -130,9 +125,6 @@ mungeLandUseConc <- function(data.in, fname.output){
     rename(site.name = shortName) %>% 
     mutate(type = factor(type, levels = c("meanPellet", "meanFilm", "meanFoam", 
                                           "meanFrag", "meanFiber")), ordered = TRUE) 
-  
-  data.in.conc$site.name[data.in.conc$site.name == "StLouis, MN"] <- "St Louis, MN"
-  data.in.conc$site.name[data.in.conc$site.name == "StJoseph, MI"] <- "St Joseph, MI"
   
   geom.df.conc.pellet <- data.in.conc %>%
     filter(type == "meanPellet") %>% 
@@ -164,9 +156,7 @@ mungeLandUseConc <- function(data.in, fname.output){
                             geom.df.conc.fiber)
   
   sites <- data.in$site.geom.df
-  sites$site.name[sites$site.name == "StLouis, MN"] <- "St Louis, MN"
-  sites$site.name[sites$site.name == "StJoseph, MI"] <- "St Joseph, MI"
-  
+
   geom.df.conc <- left_join(sites, geom.df.conc) %>% 
     rowwise() %>% 
     mutate(rect.col = switch(as.character(type),
