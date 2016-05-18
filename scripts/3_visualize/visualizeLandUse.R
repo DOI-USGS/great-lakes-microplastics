@@ -3,9 +3,10 @@
 #' @examples 
 #' fname.geom.conc <- 'cache/munged_LandUse_geomConc.tsv'
 #' fname.geom.pct <- 'cache/munged_LandUse_geomPct.tsv'
+#' fname.site <- 'cache/munged_LandUse_site.tsv'
 #' gap <- 0.15
-#' gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
-#' gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
+#' gs.conc <- gsplotLandUseConc(fname.geom.conc, fname.site, gap)
+#' gs.landuse <- gsplotLandUsePct(fname.geom.pct, fname.site, gap)
 
 # Functions directly called by remake:make('figures_R.yaml')
 
@@ -20,23 +21,31 @@ visualizeLandUse_ie <- function(...) {
 }
 
 # The workhorse function
-visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.fig, gap = 0.15){
+visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct, fname.site,
+                             fname.fig, gap = 0.15){
 
-  gs.conc <- gsplotLandUseConc(fname.geom.conc, gap)
-  gs.landuse <- gsplotLandUsePct(fname.geom.pct, gap)
+  gs.conc <- gsplotLandUseConc(fname.geom.conc, fname.site, gap)
+  gs.landuse <- gsplotLandUsePct(fname.geom.pct, fname.site, gap)
   
   createBarFig(gs.conc, gs.landuse, fname.fig)
 
 }
 
 # Returns gsplot object for the top part of the figure
-gsplotLandUseConc <- function(fname.data, gap){
+gsplotLandUseConc <- function(fname.data, fname.site, gap){
   
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
-  sites <- unique(geom.df$site.name)
+  
+  geom.df$site.name[geom.df$site.name == "StLouis, MN"] <- "St Louis, MN"
+  geom.df$site.name[geom.df$site.name == "StJoseph, MI"] <- "St Joseph, MI"
+  
+  site.df <-  read.table(fname.site, sep = "\t", stringsAsFactors = FALSE)
+  
+  sites <- site.df$Sampling.location.short.name
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
     mutate(id = paste0(num,'-',type), hovertext=sprintf('%1.1f (ppcm)',conc_per_m3)) %>% 
+    arrange(num) %>%
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
@@ -60,13 +69,20 @@ gsplotLandUseConc <- function(fname.data, gap){
 }
 
 # Returns gsplot object for the bottom part of the figure
-gsplotLandUsePct <- function(fname.data, gap){
+gsplotLandUsePct <- function(fname.data, fname.site, gap){
 
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
-  sites <- unique(geom.df$site.name)
+  geom.df$site.name[geom.df$site.name == "StLouis, MN"] <- "St Louis, MN"
+  geom.df$site.name[geom.df$site.name == "StJoseph, MI"] <- "St Joseph, MI"
+  
+  site.df <-  read.table(fname.site, sep = "\t", stringsAsFactors = FALSE)
+  
+  sites <- site.df$Sampling.location.short.name
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
+
   geom.df <- left_join(geom.df, site.ids) %>% 
     mutate(id = paste0(num,'-',landuse.type), hovertext=sprintf('%1.1f (pct)',landuse.pct)) %>% 
+    arrange(num) %>%
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals

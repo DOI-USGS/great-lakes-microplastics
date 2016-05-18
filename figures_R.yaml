@@ -35,10 +35,10 @@ targets:
     
 
   target/landUseFig-mobile.svg:
-    command: visualizeLandUse_mobile("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", target_name)
+    command: visualizeLandUse_mobile("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", "cache/munged_LandUse_site.tsv", target_name)
   
   target/landUseFig-desktop.svg:
-    command: visualizeLandUse_desktop("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", target_name)
+    command: visualizeLandUse_desktop("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", "cache/munged_LandUse_site.tsv", target_name)
     
   target/landUseFig-ie.svg:
-    command: visualizeLandUse_ie("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", target_name)
+    command: visualizeLandUse_ie("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", "cache/munged_LandUse_site.tsv", target_name)
