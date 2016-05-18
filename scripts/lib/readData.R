@@ -28,7 +28,8 @@ readData.yaml <- function(data) {
 }
 
 readData.excel <- function(data) {
-  read_excel(data$location)
+  # The only thing coming in is location and mime type,....would like to read in more parameters
+  read_excel(data$location, skip=2)
 }
 
 readData.none <- function(data) {

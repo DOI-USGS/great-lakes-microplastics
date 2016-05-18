@@ -60,9 +60,12 @@ data:
   -
     id: SI_Table1Data
     itemId: 570eaf6be4b0ef3b7ca2565e
-    filename: SI_Table 1_site_characteristics_for_PUB_2.xlsx
+    filename: "SI_Table 1_site_characteristics_for_PUB_2.xlsx"
     handler: sciencebase
     mimeType: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+    readParam: 
+      -
+        skip:2
   -
     id: envEffectsData
     location: data/envEffectsData.csv
@@ -91,6 +94,9 @@ figures:
         mimeType: text/tab-separated-values
       -
         filename: cache/munged_LandUse_geomPct.tsv
+        mimeType: text/tab-separated-values
+      -
+        filename: cache/munged_LandUse_site.tsv
         mimeType: text/tab-separated-values
     buildfile: scripts/3_visualize/landUse.R
     type: R
