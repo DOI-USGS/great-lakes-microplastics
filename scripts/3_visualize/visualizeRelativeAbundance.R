@@ -26,7 +26,6 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
   
   svg <- dinosvg:::init_svg(width = 12, height = 6)
   
-  dinosvg:::add_css(svg, css.text = CSS_relativeAbundance())
   groups <- list(list(col='#4ebec2', cx='85', cy='75', name='Pellet/Bead', id="beads"),
                  list(col='#0b516b', cx='400', cy='146.5', name='Film', id="films"),
                  list(col='#01b29F', cx='85', cy='218', name='Foam', id="foams"),
@@ -66,7 +65,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                     id = paste0(group$name,"-rect"),
                                     onmouseover="MakePathOpaque(evt)",
                                     onmouseout="MakePathTransparent(evt)"))
-    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,opacity="0.8"))
+    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,stroke=fill, 'stroke-opacity'="0.4", opacity="0.8"))
     
     dinosvg:::svg_node("text", g, c(x=cx+offset.x, y=cy+offset.y,fill="#FFFFFF",
                                     'text-anchor'='left',dy='0.33em'),
@@ -110,11 +109,6 @@ JS_MakePathTransparent <- function(){
 }')
 }
 
-CSS_relativeAbundance <- function(){
-  'text{
-  cursor: default;
-}'
-}
 
 JS_MakePathOpaque <- function(){
   c('function MakePathOpaque(evt) {
