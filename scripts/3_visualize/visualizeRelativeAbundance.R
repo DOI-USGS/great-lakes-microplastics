@@ -25,7 +25,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
   text.in <- yaml.load_file(file.text)
   
   svg <- dinosvg:::init_svg(width = 12, height = 6)
-
+  
   groups <- list(list(col='#4ebec2', cx='85', cy='75', name='Pellet/Bead', id="beads"),
                  list(col='#0b516b', cx='400', cy='146.5', name='Film', id="films"),
                  list(col='#01b29F', cx='85', cy='218', name='Foam', id="foams"),
@@ -65,10 +65,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                     id = paste0(group$name,"-rect"),
                                     onmouseover="MakePathOpaque(evt)",
                                     onmouseout="MakePathTransparent(evt)"))
-    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,opacity="0.8",
-                                      id = paste0(group$name,"-circle"),
-                                      onmouseover="MakePathOpaque(evt)",
-                                      onmouseout="MakePathTransparent(evt)"))
+    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,stroke=fill, 'stroke-opacity'="0.4", opacity="0.8"))
     
     dinosvg:::svg_node("text", g, c(x=cx+offset.x, y=cy+offset.y,fill="#FFFFFF",
                                     'text-anchor'='left',dy='0.33em'),
@@ -78,7 +75,11 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                     id=paste0(group$id,".details"),
                                     'font-size'='2em'),
                        newXMLTextNode(paste(sprintf(fmt = "%1.1f",perc),"%")))
-
+    # this is a dummy that is invisible, but controls the mouseover
+    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, opacity="0.0",
+                                      id = paste0(group$name,"-circle"),
+                                      onmouseover="MakePathOpaque(evt)",
+                                      onmouseout="MakePathTransparent(evt)"))
     start.y <- start.y+height
   }
   
@@ -107,6 +108,7 @@ JS_MakePathTransparent <- function(){
       node.setAttributeNS(null, "opacity","0.2");
 }')
 }
+
 
 JS_MakePathOpaque <- function(){
   c('function MakePathOpaque(evt) {
