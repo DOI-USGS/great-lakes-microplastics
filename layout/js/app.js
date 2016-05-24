@@ -12,49 +12,37 @@ var triggerOnce = function(event) {
       triggers[event] = true;
     }
 }
-//FISH
-  new ScrollMagic.Scene({
-		  triggerElement: "#fishPicContainer",
-      duration: "30%",
-      offset:100
-    })
-    .setPin("#fishPic")
-    .triggerHook(0.5)
-	.addIndicators()
-    .addTo(controller);
+
+new ScrollMagic.Scene({
+	triggerElement: "#figure2"
+	})
+	.setClassToggle("#fish", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+					
+new ScrollMagic.Scene({
+	triggerElement: "#figure2",
+	offset:500
+	})
+	.setClassToggle("#oyster", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 	
-//OYSTER
-  new ScrollMagic.Scene({
-		triggerElement: "#oysterPicContainer",
-      duration: "95%",
-	    offset:100
-    })
-    .setPin("#oysterPic")
-    .triggerHook(0.5)
-    .addIndicators()
-    .addTo(controller);
+new ScrollMagic.Scene({
+	triggerElement: "#figure2",
+	offset:1000
+	})
+	.setClassToggle("#stream", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 	
-//Stream
-  new ScrollMagic.Scene({
-		triggerElement: "#streamPicContainer",
-      duration: "80%",
-	    offset:200
-    })
-    .setPin("#streamPic")
-    .triggerHook(0.5)
-    .addIndicators()
-    .addTo(controller);
-	
-//Lake
-  new ScrollMagic.Scene({
-		triggerElement: "#lakePicContainer",
-      duration: "30%",
-	    offset:100
-    })
-    .setPin("#lakePic")
-    .triggerHook(0.5)
-    .addIndicators()
-    .addTo(controller);
+new ScrollMagic.Scene({
+	triggerElement: "#figure2",
+	offset:1500
+	})
+	.setClassToggle("#lakes", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 
   new ScrollMagic.Scene({
     triggerElement: "#landUseFig"
