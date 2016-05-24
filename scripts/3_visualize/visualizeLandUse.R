@@ -241,7 +241,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"2"), "//*[local-name()='g'][@id='axis-side-2']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='y-tick-label'))
   
-  newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="3", ry="3", width="55", height="27", fill='white', 'stroke-width'="0.5", stroke='#696969', class="hidden"))
+  newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="2.5", ry="2.5", width="55", height="27", fill='white', 'stroke-width'="0.5", stroke='#696969', class="hidden"))
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="1.6em", dy="-1.45em", stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
@@ -311,29 +311,6 @@ JS_defineHoverFunction <- function(){
   }
   }'
 }
-
-JS_defineHoverFunction <- function(){
-  'function cursorPoint(evt){
-    pt.x = evt.clientX; pt.y = evt.clientY;
-    return pt.matrixTransform(svg.getScreenCTM().inverse());
-  };
-  function hovertext(text, evt){
-    var tooltip = document.getElementById("tooltip");
-    if (evt === undefined){
-      tooltip.setAttribute("class","hidden");
-      tooltip.setAttribute("x",0);
-      tooltip.setAttribute("y",0);
-      tooltip.firstChild.data = text;
-    } else {
-      var pt = cursorPoint(evt)
-      tooltip.setAttribute("x",pt.x);
-      tooltip.setAttribute("y",pt.y);
-      tooltip.firstChild.data = text;
-      tooltip.setAttribute("class","shown");
-    }
-  }'
-}
-
 JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
   
   
