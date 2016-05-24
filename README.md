@@ -30,6 +30,18 @@ python -m SimpleHTTPServer
 ```
 `Ctrl-C` quits the server. 
 
+Running with Docker
+-------------------
+
+There is a Dockerfile and Makefile to run the above steps all in one.  It sets up the environment with all packages and dependencies needed.  To run this type the following:
+
+```
+docker build -t great-lakes-microplastics .
+docker run -v $(pwd)/target:/target -v $(pwd)/cache:/cache great-lakes-microplastics
+```
+
+This will dump the target outputs to your target directory and you will still need to run the python SimpleHTTPServer against it.
+
 Disclaimer
 ----------
 This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey  (USGS), an agency of the United States Department of Interior. For more information, see the official USGS copyright policy at [http://www.usgs.gov/visual-id/credit_usgs.html#copyright](http://www.usgs.gov/visual-id/credit_usgs.html#copyright)
