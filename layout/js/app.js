@@ -60,7 +60,7 @@ function updateBox (e) {
 //Figure3 appears	
 new ScrollMagic.Scene({
 	triggerElement: "#figure3",
-	offset:400
+	offset:"50%"
 	})
 	.setClassToggle("#landUseFig", "awake") // add class toggle
 	.on("enter leave", updateBox)
@@ -71,7 +71,7 @@ new ScrollMagic.Scene({
 new ScrollMagic.Scene({
 	triggerElement: "#figure3",
 	duration:200,
-	offset:500
+	offset:"290%"
 	})
 	.setPin('#figure3')
 	.on("enter leave", updateBox)
@@ -81,36 +81,33 @@ new ScrollMagic.Scene({
 //First text disappears	
 new ScrollMagic.Scene({
 	triggerElement: "#figure3",
-	offset:700
+	offset:"490%"
 	})
-	.setClassToggle("#first", "sleep") // add class toggle
+	.setClassToggle("#first", "gone") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Second text appears	
 new ScrollMagic.Scene({
 	triggerElement: "#figure3",
+	offset:"490%"
+	})
+	.setClassToggle("#second", "here") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	
+//Second text appears	
+new ScrollMagic.Scene({
+	triggerElement: "#figure3",
 	duration:200,
-	offset:700
+	offset:"490%"
 	})
 	.setPin('#figure3')
-	.setClassToggle("#second", "awake") // add class toggle
 	.on("enter leave", updateBox)
 	.on("enter", function() {
     triggerOnce("landUseTrigger");
   	})
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
-
-  new ScrollMagic.Scene({
-    triggerElement: "#landUseFig",
-	duration:200,
-	offset:600
-  })
-  .on("enter", function() {
-    triggerOnce("landUseTrigger");
-  })
-  .addIndicators()
-  .addTo(controller);
 
 });
