@@ -218,8 +218,9 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s\n%s\n%s', 
                                         JS_defineInitFunction(), 
                                         LU.swaps , 
-                                        'var svg = document.querySelector("svg")
-                                        var pt = svg.createSVGPoint();',
+                                        '\tvar svg = document.querySelector("svg")\n
+                                        \tvar pt = svg.createSVGPoint();\n
+                                        \tvar xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);\n',
                                         JS_defineSwapLuFunction(all.types, swap.length, duration=1.5),
                                         JS_defineHoverFunction()))
   
@@ -236,7 +237,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"2"), "//*[local-name()='g'][@id='axis-side-2']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='y-tick-label'))
   
-  newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000"), newXMLTextNode(' '))
+  newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
   dinosvg:::write_svg(svg, target_name)
 }
 
@@ -258,6 +259,7 @@ JS_defineHoverFunction <- function(){
 };
   function hovertext(text, evt){
   var tooltip = document.getElementById("tooltip");
+  tooltip.setAttribute("text-anchor","begin");
   if (evt === undefined){
   tooltip.setAttribute("class","hidden");
   tooltip.setAttribute("x",0);
@@ -269,6 +271,10 @@ JS_defineHoverFunction <- function(){
   tooltip.setAttribute("y",pt.y);
   tooltip.firstChild.data = text;
   tooltip.setAttribute("class","shown");
+  var length = tooltip.getComputedTextLength();
+  if (pt.x+length > xmax){
+  	tooltip.setAttribute("text-anchor","end");
+  }
   }
   }'
 }
