@@ -1,14 +1,18 @@
 /*Universal Classes*/
 .center{
-	min-height:800px;
+	min-height:100px;
 	padding:10px;
 	margin:0 auto;
 	position:relative;
 	}
 	
 .text{
-	text-align:center;
 	clear:both;
+	}
+	
+.text h1,
+.text h3{
+	text-align:center;
 	}
 	
 .figure{
@@ -64,7 +68,16 @@ header img{
 	}
 		
 /*Section CSS*/
-#intro,
+#intro{
+	min-height:100px;
+	padding-bottom:10px;
+	margin-bottom:20px;
+	}
+	
+#intro h1{
+	font-size:3em;
+	}
+
 #figure1,
 #figure2,
 #figure3{
@@ -75,7 +88,7 @@ header img{
 #figure2{
 	padding-bottom:20px;
 	}
-	
+
 #figure2:after{
      visibility: hidden;
      display: block;
@@ -151,6 +164,7 @@ header img{
 .oneStat p,
 .twoStat p{
 	padding:0 10px;
+	max-width:250px !important;
 }
 	
 .pic{
@@ -210,12 +224,12 @@ footer{
 	}
 	
 	.oneStat{
-		height:150px;
+		height:170px;
 	
 	}
 	
 	.twoStat{
-		height:290px;
+		height:350px;
 	}
 	
 	.pic{
