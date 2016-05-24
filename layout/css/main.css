@@ -44,7 +44,7 @@
     -ms-transition: opacity .5s ease-in-out;
     -o-transition: opacity .5s ease-in-out;
 	transition: opacity .5s ease-in-out;
-     opacity: 0;
+    opacity: 0;
 	}
 
 
@@ -176,7 +176,12 @@ header img{
 .pic img{
 	width:70%;
 	}
-
+	
+/*Figure 3*/
+.figure3Text{
+	text-align:center;
+	}
+	
 /*Footer CSS*/
 footer{
 	background:rgb(63,136,189);

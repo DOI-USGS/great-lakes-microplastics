@@ -13,13 +13,15 @@ var triggerOnce = function(event) {
     }
 }
 
+//Fish
 new ScrollMagic.Scene({
 	triggerElement: "#figure2"
 	})
 	.setClassToggle("#fish", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
-					
+
+//Oyster					
 new ScrollMagic.Scene({
 	triggerElement: "#figure2",
 	offset:500
@@ -27,7 +29,8 @@ new ScrollMagic.Scene({
 	.setClassToggle("#oyster", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
-	
+
+//Stream		
 new ScrollMagic.Scene({
 	triggerElement: "#figure2",
 	offset:1000
@@ -35,7 +38,8 @@ new ScrollMagic.Scene({
 	.setClassToggle("#stream", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
-	
+
+//Lakes	
 new ScrollMagic.Scene({
 	triggerElement: "#figure2",
 	offset:1500
@@ -43,9 +47,65 @@ new ScrollMagic.Scene({
 	.setClassToggle("#lakes", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
+	
+// show pin state
+function updateBox (e) {
+	if (e.type === "enter") {
+		$("#pin p").text("Pinned.");
+	} else {
+		$("#pin p").text("Unpinned.");
+		}
+}
+	
+//Figure3 appears	
+new ScrollMagic.Scene({
+	triggerElement: "#figure3",
+	offset:400
+	})
+	.setClassToggle("#landUseFig", "awake") // add class toggle
+	.on("enter leave", updateBox)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+//Figure3 is pinned	
+new ScrollMagic.Scene({
+	triggerElement: "#figure3",
+	duration:200,
+	offset:500
+	})
+	.setPin('#figure3')
+	.on("enter leave", updateBox)
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+//First text disappears	
+new ScrollMagic.Scene({
+	triggerElement: "#figure3",
+	offset:700
+	})
+	.setClassToggle("#first", "sleep") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
+//Second text appears	
+new ScrollMagic.Scene({
+	triggerElement: "#figure3",
+	duration:200,
+	offset:700
+	})
+	.setPin('#figure3')
+	.setClassToggle("#second", "awake") // add class toggle
+	.on("enter leave", updateBox)
+	.on("enter", function() {
+    triggerOnce("landUseTrigger");
+  	})
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 
   new ScrollMagic.Scene({
-    triggerElement: "#landUseFig"
+    triggerElement: "#landUseFig",
+	duration:200,
+	offset:600
   })
   .on("enter", function() {
     triggerOnce("landUseTrigger");
