@@ -39,7 +39,9 @@ gsplotLandUseConc <- function(fname.data, gap){
   
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',type), hovertext=sprintf('%1.1f (ppcm)',conc_per_m3)) %>% 
+    mutate(id = paste0(num,'-',type), 
+           onmousemove=sprintf("hovertext('%1.1f (ppcm)',evt)",conc_per_m3),
+           onmouseout="hovertext(' ')") %>% 
     arrange(num) %>%
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
@@ -58,7 +60,8 @@ gsplotLandUseConc <- function(fname.data, gap){
   
   # hack because we need to support gs extensions
   gs.conc$view.1.2$rect$id=geom.df$id
-  gs.conc$view.1.2$rect$hovertext = geom.df$hovertext
+  gs.conc$view.1.2$rect$onmousemove = geom.df$onmousemove
+  gs.conc$view.1.2$rect$onmouseout = geom.df$onmouseout
   
   return(gs.conc)
 }
@@ -72,7 +75,9 @@ gsplotLandUsePct <- function(fname.data, gap){
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
 
   geom.df <- left_join(geom.df, site.ids) %>% 
-    mutate(id = paste0(num,'-',landuse.type), hovertext=sprintf('%1.1f (pct)',landuse.pct)) %>% 
+    mutate(id = paste0(num,'-',landuse.type), 
+           onmousemove=sprintf("hovertext('%1.1f (pct)',evt)",landuse.pct),
+           onmouseout="hovertext(' ')") %>% 
     arrange(num) %>%
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
@@ -92,7 +97,8 @@ gsplotLandUsePct <- function(fname.data, gap){
     axis(side = 2, at = seq(0, 100, by=25))
   
   gs_landuse$view.1.2$rect$id=geom.df$id
-  gs_landuse$view.1.2$rect$hovertext = geom.df$hovertext
+  gs_landuse$view.1.2$rect$onmousemove = geom.df$onmousemove
+  gs_landuse$view.1.2$rect$onmouseout = geom.df$onmouseout
   gs_landuse$side.1$axis$id=paste0('site-',1:length(sites))
   
   q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
@@ -209,10 +215,13 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   LU.swaps <- jsonlite::toJSON(gs.landuse$json)
   swap.length <- nrow(gs.landuse$json)
-  dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s', 
+  dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s\n%s\n%s', 
                                         JS_defineInitFunction(), 
                                         LU.swaps , 
-                                        JS_defineSwapLuFunction(all.types, swap.length, duration=1.5)))
+                                        'var svg = document.querySelector("svg")
+                                        var pt = svg.createSVGPoint();',
+                                        JS_defineSwapLuFunction(all.types, swap.length, duration=1.5),
+                                        JS_defineHoverFunction()))
   
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
   svg <- dinosvg::svg(svg, gs.conc, as.xml=TRUE)
@@ -227,7 +236,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"2"), "//*[local-name()='g'][@id='axis-side-2']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='y-tick-label'))
   
-  dinosvg:::add_tooltip(svg, dx="1.0em")
+  newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000"), newXMLTextNode(' '))
   dinosvg:::write_svg(svg, target_name)
 }
 
@@ -240,6 +249,28 @@ JS_defineInitFunction <- function(){
       mainDocument.addEventListener("landUseTrigger", sortLU, false);
     }
   }')
+}
+
+JS_defineHoverFunction <- function(){
+  'function cursorPoint(evt){
+    pt.x = evt.clientX; pt.y = evt.clientY;
+    return pt.matrixTransform(svg.getScreenCTM().inverse());
+  };
+  function hovertext(text, evt){
+    var tooltip = document.getElementById("tooltip");
+    if (evt === undefined){
+      tooltip.setAttribute("class","hidden");
+      tooltip.setAttribute("x",0);
+      tooltip.setAttribute("y",0);
+      tooltip.firstChild.data = text;
+    } else {
+      var pt = cursorPoint(evt)
+      tooltip.setAttribute("x",pt.x);
+      tooltip.setAttribute("y",pt.y);
+      tooltip.firstChild.data = text;
+      tooltip.setAttribute("class","shown");
+    }
+  }'
 }
 
 JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
