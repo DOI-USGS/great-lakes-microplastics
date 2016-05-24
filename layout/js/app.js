@@ -13,6 +13,37 @@ var triggerOnce = function(event) {
     }
 }
 
+new ScrollMagic.Scene({
+	triggerElement: "#figure2"
+	})
+	.setClassToggle("#fish", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+					
+new ScrollMagic.Scene({
+	triggerElement: "#figure2",
+	offset:500
+	})
+	.setClassToggle("#oyster", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	
+new ScrollMagic.Scene({
+	triggerElement: "#figure2",
+	offset:1000
+	})
+	.setClassToggle("#stream", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	
+new ScrollMagic.Scene({
+	triggerElement: "#figure2",
+	offset:1500
+	})
+	.setClassToggle("#lakes", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
   new ScrollMagic.Scene({
     triggerElement: "#landUseFig"
   })
