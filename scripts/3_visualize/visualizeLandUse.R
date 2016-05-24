@@ -167,6 +167,9 @@ CSS_defineCSS <- function(){
 font-size: 10px;
 }
 
+.hidden {
+opacity:0;
+}
 text{
 font-size: 12px;
 
@@ -237,6 +240,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"2"), "//*[local-name()='g'][@id='axis-side-2']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='y-tick-label'))
   
+  newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="3", ry="3", width="55", height="17", fill='white', stroke='black', class="hidden"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
   dinosvg:::write_svg(svg, target_name)
 }
@@ -259,21 +263,33 @@ JS_defineHoverFunction <- function(){
 };
   function hovertext(text, evt){
   var tooltip = document.getElementById("tooltip");
+  var tooltip_bg = document.getElementById("tooltip_bg");
   tooltip.setAttribute("text-anchor","begin");
+  tooltip.setAttribute("dx","0.5em");
   if (evt === undefined){
   tooltip.setAttribute("class","hidden");
   tooltip.setAttribute("x",0);
   tooltip.setAttribute("y",0);
   tooltip.firstChild.data = text;
+  tooltip_bg.setAttribute("class","hidden");
+  tooltip_bg.setAttribute("x",0);
+  tooltip_bg.setAttribute("y",0);
+  
   } else {
   var pt = cursorPoint(evt)
   tooltip.setAttribute("x",pt.x);
   tooltip.setAttribute("y",pt.y);
   tooltip.firstChild.data = text;
+  tooltip_bg.setAttribute("x",pt.x+2);
+  tooltip_bg.setAttribute("y",pt.y-15);
   tooltip.setAttribute("class","shown");
+  tooltip_bg.setAttribute("class","shown");
   var length = tooltip.getComputedTextLength();
-  if (pt.x+length > xmax){
-  	tooltip.setAttribute("text-anchor","end");
+  tooltip_bg.setAttribute("width", length+6);
+  if (pt.x+length+8 > xmax){
+  tooltip.setAttribute("text-anchor","end");
+  tooltip.setAttribute("dx","-0.5em");
+  tooltip_bg.setAttribute("x",pt.x-8-length);
   }
   }
   }'
