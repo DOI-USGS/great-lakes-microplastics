@@ -221,9 +221,10 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s\n%s\n%s', 
                                         JS_defineInitFunction(), 
                                         LU.swaps , 
-                                        '\tvar svg = document.querySelector("svg")\n
-                                        \tvar pt = svg.createSVGPoint();\n
-                                        \tvar xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);\n',
+                                        '\tvar svg = document.querySelector("svg")
+                                        \tvar pt = svg.createSVGPoint();
+                                        \t	var toolkeys = {"meanFiber":"Fiber & Lines","meanPellet":"Beads & Pellets", "meanFilm":"Films", "meanFoam":"Foams", "meanFrag":"Fragments", "UrbanPct":"Urban", "AgTotalPct":"Agriculture", "OtherPct":"Other"}
+                                        \tvar xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);',
                                         JS_defineSwapLuFunction(all.types, swap.length, duration=1.5),
                                         JS_defineHoverFunction()))
   
@@ -240,7 +241,9 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"2"), "//*[local-name()='g'][@id='axis-side-2']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='y-tick-label'))
   
-  newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="3", ry="3", width="55", height="17", fill='white', stroke='black', class="hidden"))
+  newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="3", ry="3", width="55", height="27", fill='white', 'stroke-width'="0.5", stroke='#696969', class="hidden"))
+  newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
+  newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="1.6em", dy="-1.45em", stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
   dinosvg:::write_svg(svg, target_name)
 }
@@ -264,32 +267,46 @@ JS_defineHoverFunction <- function(){
   function hovertext(text, evt){
   var tooltip = document.getElementById("tooltip");
   var tooltip_bg = document.getElementById("tooltip_bg");
+  var tool_key = document.getElementById("tool_key");
+  var tooltip_key = document.getElementById("tooltip_key");
   tooltip.setAttribute("text-anchor","begin");
   tooltip.setAttribute("dx","0.5em");
+  tooltip_key.setAttribute("text-anchor","begin");
+  tooltip_key.setAttribute("dx","1.6em");
   if (evt === undefined){
   tooltip.setAttribute("class","hidden");
-  tooltip.setAttribute("x",0);
-  tooltip.setAttribute("y",0);
+  tooltip_key.setAttribute("class","hidden");
   tooltip.firstChild.data = text;
   tooltip_bg.setAttribute("class","hidden");
   tooltip_bg.setAttribute("x",0);
   tooltip_bg.setAttribute("y",0);
-  
+  tool_key.setAttribute("fill","none");
   } else {
   var pt = cursorPoint(evt)
   tooltip.setAttribute("x",pt.x);
   tooltip.setAttribute("y",pt.y);
   tooltip.firstChild.data = text;
   tooltip_bg.setAttribute("x",pt.x+2);
-  tooltip_bg.setAttribute("y",pt.y-15);
+  tooltip_bg.setAttribute("y",pt.y-25);
   tooltip.setAttribute("class","shown");
+  tooltip_key.setAttribute("x",pt.x);
+  tooltip_key.setAttribute("y",pt.y);
+  tooltip_key.setAttribute("class","sub-label");
+  var keytext = evt.target.getAttribute("id").split("-")[1];
+  tooltip_key.firstChild.data = toolkeys[keytext];
   tooltip_bg.setAttribute("class","shown");
-  var length = tooltip.getComputedTextLength();
+  tool_key.setAttribute("fill", evt.target.getAttribute("fill"));
+  tool_key.setAttribute("x",pt.x+5);
+  tool_key.setAttribute("y",pt.y-22);
+  var length = Math.max(tooltip.getComputedTextLength(), tooltip_key.getComputedTextLength()+12);
   tooltip_bg.setAttribute("width", length+6);
   if (pt.x+length+8 > xmax){
   tooltip.setAttribute("text-anchor","end");
   tooltip.setAttribute("dx","-0.5em");
   tooltip_bg.setAttribute("x",pt.x-8-length);
+  tool_key.setAttribute("x",pt.x-12);
+  tooltip_key.setAttribute("text-anchor","end");
+  tooltip_key.setAttribute("dx","-1.6em");
   }
   }
   }'
