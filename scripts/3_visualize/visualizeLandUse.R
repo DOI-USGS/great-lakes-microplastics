@@ -312,6 +312,28 @@ JS_defineHoverFunction <- function(){
   }'
 }
 
+JS_defineHoverFunction <- function(){
+  'function cursorPoint(evt){
+    pt.x = evt.clientX; pt.y = evt.clientY;
+    return pt.matrixTransform(svg.getScreenCTM().inverse());
+  };
+  function hovertext(text, evt){
+    var tooltip = document.getElementById("tooltip");
+    if (evt === undefined){
+      tooltip.setAttribute("class","hidden");
+      tooltip.setAttribute("x",0);
+      tooltip.setAttribute("y",0);
+      tooltip.firstChild.data = text;
+    } else {
+      var pt = cursorPoint(evt)
+      tooltip.setAttribute("x",pt.x);
+      tooltip.setAttribute("y",pt.y);
+      tooltip.firstChild.data = text;
+      tooltip.setAttribute("class","shown");
+    }
+  }'
+}
+
 JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
   
   
