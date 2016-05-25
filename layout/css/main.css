@@ -118,6 +118,10 @@ header img{
 	padding-top:30px;
 	}
 	
+#figure3{
+	background:rgb(100,0,0,.5);
+	}
+	
 /*Figure 1*/
 #figure1Table{
 	min-height:100px;
@@ -259,8 +263,7 @@ footer{
 		}
 		
 	#landUseFig{
-		width:600px;
-		margin:0 auto;
+		width:800px;
 		}
 		
 }
