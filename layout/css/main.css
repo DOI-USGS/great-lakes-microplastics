@@ -1,3 +1,9 @@
+/*IE SVG Width Fix*/
+#relativeAbundanceSVG,
+#landUseSVG{
+	width:100%;
+	}
+
 /*Universal Classes*/
 .center{
 	min-height:100px;
@@ -128,6 +134,7 @@ header img{
 	border:1px solid rgb(200,200,200);
 	padding:10px;
 	font-size:.8em;
+	border-radius:5px;
 	}
 	
 #figure1Table p{
@@ -140,12 +147,28 @@ header img{
 	display:none;
 	}
 
-	
 .boxTop{
 	background:rgb(63,136,189);
 	margin:10px 0 5px 0;
 	padding:5px 10px;
 	color:#fff;
+	border-radius:5px;
+	border:1px solid rgb(63,136,189);
+	}
+	
+.boxTop:hover{
+	background:#fff;
+	color:rgb(63,136,189);
+	border:1px solid rgb(190,190,190);
+	}
+	
+#beads,
+#fibers,
+#films,
+#fragments,
+#foams{
+	display:none;
+	cursor:pointer;
 	}
 	
 /*Figure 2*/
@@ -193,6 +216,10 @@ header img{
 .figure3Text{
 	text-align:center;
 	margin-bottom:-20px;
+	}
+	
+.figure3Text p{
+	font-size:.9em;
 	}
 	
 /*Footer CSS*/
@@ -261,6 +288,10 @@ footer{
 		width:760px;
 		margin:0 auto -20px auto;
 		}
+		
+	.figure3Text p{
+		font-size:1em;
+	}
 		
 	#landUseFig{
 		width:800px;
