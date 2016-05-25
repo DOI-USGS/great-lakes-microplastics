@@ -113,5 +113,13 @@ new ScrollMagic.Scene({
   	})
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
+	
+$('#beads-table').on('click', function(){
+	$('#beads').toggle('slow');
+});
+
+$('#fiberlines-table').on('click', function(){
+	$('#fibers').toggle('slow');
+});
 
 });
