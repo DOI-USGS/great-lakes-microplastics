@@ -4,59 +4,62 @@
 		<p>{{{ relAbundance-intro1 }}}</p>
 	</div>
 	<div class="figure" id="bubbles">
-	  <object type="image/svg+xml" data="{{ relativeAbundanceFig }}">
+	  <object id="relativeAbundanceSVG" type="image/svg+xml" data="{{ relativeAbundanceFig }}">
     </object> 
   </div>
-	<div id="figure1Table">
-		<div class="text">
-
+		<div id="figure1Table">
+		
 			<p>{{{ relAbundance-p1 }}}</p>
 			
-			<div class="boxTop", id={{{ relAbundance-beads-id }}}>
-				<h3>{{{ relAbundance-beads-label }}}</h3>
-			</div>
-			<div class="boxBottom">
-				<p>{{{ relAbundance-beads }}}</p>
-				<img src="images/bead1.jpg" alt="bead1" width="150" />
-				<img src="images/bead2.jpg" alt="bead2" width="150" />
-				<img src="images/bead3.jpg" alt="bead3" width="150" />
-				<img src="images/pellets1.jpg" alt="pellets1" width="150" />
+			<div class="accordion">
+			
+				<div class="accordion-section">
+					<a class="accordion-section-title" href="#accordion-1">{{{ relAbundance-beads-label }}}</a>
+					<div id="accordion-1" class="accordion-section-content">
+						<p>{{{ relAbundance-beads }}}</p>
+						<img src="images/bead1.jpg" alt="bead1" width="150" />
+						<img src="images/bead2.jpg" alt="bead2" width="150" />
+						<img src="images/bead3.jpg" alt="bead3" width="150" />
+						<img src="images/pellets1.jpg" alt="pellets1" width="150" />
+					</div>
+				</div>
+				
+				<div class="accordion-section">
+					<a class="accordion-section-title" href="#accordion-2">{{{relAbundance-fiberlines-label}}}</a>
+					<div id="accordion-2" class="accordion-section-content">
+						<p>{{{ relAbundance-fiberlines }}}</p>
+						<img src="images/fiber1.jpg" alt="fiber1" width="150" />
+						<img src="images/fiber2.jpg" alt="fiber2" width="150" />
+					</div>
+				</div>
+				
+				<div class="accordion-section">
+					<a class="accordion-section-title" href="#accordion-3">{{{ relAbundance-films-label }}}</a>
+					<div id="accordion-3" class="accordion-section-content">
+						<p>{{{ relAbundance-films }}}</p>
+			  			<img src="images/film1.jpg" alt="film1" width="150" />
+						<img src="images/film2.jpg" alt="film2" width="150" />
+					</div>
+				</div>
+				
+				<div class="accordion-section">
+					<a class="accordion-section-title" href="#accordion-4">{{{ relAbundance-fragments-label }}}</a>
+					<div id="accordion-4" class="accordion-section-content">
+						<p>{{{ relAbundance-fragments }}}</p>		
+			  			<img src="images/fragment1.jpg" alt="fragment1" width="150" />
+					</div>
+				</div>
+				
+				<div class="accordion-section">
+					<a class="accordion-section-title" href="#accordion-5">{{{ relAbundance-foams-label }}}</a>
+					<div id="accordion-5" class="accordion-section-content">
+						<p>{{{ relAbundance-foams }}}</p>
+			  			<img src="images/foam.jpg" alt="foam" width="150" />
+					</div>
+				</div>
+				
 			</div>
 			
-			<div class="boxTop", id={{{ relAbundance-fiberlines-id }}}>
-				<h3>{{{ relAbundance-fiberlines-label }}}</h3>
-			</div>
-			<div class="boxBottom">
-				<p>{{{ relAbundance-fiberlines }}}</p>
-				<img src="images/fiber1.jpg" alt="fiber1" width="150" />
-				<img src="images/fiber2.jpg" alt="fiber2" width="150" />
-			</div>
-			
-			<div class="boxTop", id={{{ relAbundance-films-id }}}>
-			  <h3>{{{ relAbundance-films-label }}}</h3>
-			</div>
-			<div class="boxBottom">
-			  <p>{{{ relAbundance-films }}}</p>
-			  <img src="images/film1.jpg" alt="film1" width="150" />
-				<img src="images/film2.jpg" alt="film2" width="150" />
-			</div>
-			
-			<div class="boxTop", id = {{{ relAbundance-fragments-id }}}>
-			  <h3>{{{ relAbundance-fragments-label }}}</h3>
-			</div>
-			<div class="boxBottom">
-			  <p>{{{ relAbundance-fragments }}}</p>		
-			  <img src="images/fragment1.jpg" alt="fragment1" width="150" />
-			</div>
-			
-			<div class="boxTop", id={{{ relAbundance-foams-id }}}>
-			  <h3>{{{ relAbundance-foams-label }}}</h3>
-			</div>
-			<div class="boxBottom">
-			  <p>{{{ relAbundance-foams }}}</p>
-			  <img src="images/foam.jpg" alt="foam" width="150" />
-			</div>
-			
-	</div>
+		</div>
 	</div>
 </div>
