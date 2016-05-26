@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 864 432">
+  <style>.shown, .hidden {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .hidden {
+    opacity:0;
+  }
+  .large-radius, .Foam-small,.Fiber-small,.Foam-large {
+    -webkit-transition: 1.6s ease-in-out;
+  -moz-transition: 1.6s ease-in-out;
+  -o-transition: .6s ease-in-out;
+  transition: 1.6s ease-in-out;
+  }
+
+.Foam-small {
+    -ms-transform: translate(80px,0px) scale(0.25,0.15); /* IE 9 */
+    -webkit-transform: translate(80px,0px) scale(0.25,0.15); /* Safari */
+    transform: translate(80px,0px) scale(0.25,0.15);
+}
+
+.Fiber-small {
+    -ms-transform: translate(80px,10px) scale(0.25,0.15); /* IE 9 */
+    -webkit-transform: translate(80px,10px) scale(0.25,0.15); /* Safari */
+    transform: translate(80px,10px) scale(0.25,0.15);
+}
+
+.Foam-large {
+  -ms-transform: translate(85px,218px) scale(1); /* IE 9 */
+  -webkit-transform: translate(85px,218px) scale(1); /* Safari */
+  transform: translate(85px,218px) scale(1);
+}
+.Pellet-large {
+  fill: url(#bead-background);
+}
+.Pellet-small {
+  fill:white;
+}
+.large-radius {
+  -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari */
+    transform: scale(1);
+
+}
+</style>
+<g id='beaker' transform='translate(50,20)'>
+	
+	<defs>
+	    <pattern id="bead-background" patternUnits="userSpaceOnUse"  x="5" y="-10" width="80" height="46.14334">
+	      <image xlink:href="bead2.jpg" opacity="1"  x="0" y="0" width="85" height="56.14334" />
+	    </pattern>
+	</defs>
+  <g id="Pellet" transform='translate(100,26.23057811060324)'>
+    <rect x="-100" y="-3.115289" width="100" height="6.23057811060324" fill="#4ebec2" stroke='black' opacity="0.8" id="Pellet-rect"/>
+	<path d="M0,0 l10,-10 h80 v20 h-80 z" stroke='#4ebec2' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Pellet-path' class='Pellet-small'/>
+  </g>
+  <g id="Film" transform='translate(0,31.2305781106032)'>
+    <rect width="100" height="13.148726034124" fill="#0b516b" opacity="0.8" id="Film-rect"/>
+  </g>
+  <g id="Foam" transform='translate(0,44.3793041447273)'>
+    <rect width="100" height="30.4926968168144" fill="#01b29F" opacity="0.8" id="Foam-rect"/>
+  </g>
+  <g id="Fragment" transform='translate(0,74.8720009615417)'>
+    <rect width="100" height="66.6477965664068" fill="#aadedc" opacity="0.8" id="Fragment-rect"/>
+  </g>
+  <g id="Fiber" transform='translate(0,141.519797527948)'>
+    <rect width="100" height="283.480202472052" fill="#26b9da" opacity="0.8" id="Fiber-rect"/>
+</g>
+</g>
+  <script type="text/ecmascript"><![CDATA[
+	  var pointers = {"Pellet":{"small":"M0,0 l10,-10 h80 v20 h-80 z", "large":"M0,0 l10,-10 h120 v20 h-120 z"}}
+	  function unRoll(evt){
+	  	evt.target.setAttributeNS(null,"class","Pellet-large");
+	  	evt.target.setAttribute('d',pointers['Pellet']['large'])
+	  }
+	  function rollUp(evt){
+	  	evt.target.setAttributeNS(null,"class","Pellet-small");
+	  	evt.target.setAttribute('d',pointers['Pellet']['small'])
+	  }
+	  ]]></script>
+</svg>
