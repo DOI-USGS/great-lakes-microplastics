@@ -1,0 +1,17 @@
+{
+      "Bead":{"small":"M100,2 l10,-25 h45 v20 h-35 v0 l-10,0z", "large":"M100 2 l10,-25 a 50 50, 1, 1, 1, 0 60z", 
+        "name":"Beads","percentage":"1.6%",
+        "longtext":[" "," "," "]},
+      "Film":{"small":"M100,6.5 l10,-10 h40 v20 h-40 v0 l-10,-10z", "large":"M100,6.5 l10,-10 a 50 50, 1, 1, 1, 0 60z",
+        "name":"Films","percentage":"3.3%",
+        "longtext":[" "," "," "]},
+      "Foam":{"small":"M100,18 l10,-10 h50 v20 h-50 v0 l-10,-10z", "large":"M100,18 l10,-10 a 50 50, 1, 1, 1, 0 60z",
+        "name":"Foams","percentage":"7.6%",
+        "longtext":[" "," "," "]},
+      "Fragment":{"small":"M100,33.3 l10,-10 h80 v20 h-80 v0 l-10,-10z", "large":"M100,33.3 l10,-10 a 50 50, 1, 1, 1, 0 60z",
+        "name":"Fragments","percentage":"16.7%",
+        "longtext":[" "," "," "]},
+      "Fiber":{"small":"M100,70 l10,-10 h45 v20 h-45 v0 l-10,-10z", "large":"M100,70 l10,-10 a 50 50, 1, 1, 1, 0 60z",
+        "name":"Fibers","percentage":"70.9%",
+        "longtext":[" "," "," "]}
+      }

@@ -1,0 +1,17 @@
+{
+      "Bead":{"small":"M100,2 l10,-25 h45 v20 h-35 v0 l-10,0z", "large":"M100,2 l10,-25 h310 v120 h-310 v-100 l0,0z", 
+        "name":"Beads and Pellets","percentage":"1.6%",
+        "longtext":["Soaps, scrubs, toothpaste, deodorant, sunscreen, lipstick,","eye shadow, shaving cream, drug delivery, production pellets","and powders, bead blasting (engine parts and boat hulls)"]},
+      "Film":{"small":"M100,6.5 l10,-10 h40 v20 h-40 v0 l-10,-10z", "large":"M100,6.5 l10,-10 h280 v120 h-280 v-100 l-10,-10z",
+        "name":"Films","percentage":"3.3%",
+        "longtext":[" "," ","Bags and wrappers"]},
+      "Foam":{"small":"M100,18 l10,-10 h50 v20 h-50 v0 l-10,-10z", "large":"M100,18 l10,-10 h180 v120 h-180 v-100 l-10,-10z",
+        "name":"Foams","percentage":"7.6%",
+        "longtext":[" "," ","Styrofoam"]},
+      "Fragment":{"small":"M100,33.3 l10,-10 h80 v20 h-80 v0 l-10,-10z", "large":"M100,33.3 l10,-10 h280 v120 h-280 v-100 l-10,-10z",
+        "name":"Fragments","percentage":"16.7%",
+        "longtext":[" "," ","Degrated pieces of plastic litter, such as plastic bottles"]},
+      "Fiber":{"small":"M100,70 l10,-10 h45 v20 h-45 v0 l-10,-10z", "large":"M100,70 l10,-10 h280 v120 h-280 v-100 l-10,-10z",
+        "name":"Fibers and Lines","percentage":"70.9%",
+        "longtext":[" ","Synthetic clothes and textiles, diapers, wipes,","tampons, cigarette butts, nets, atmospheric deposition"]}
+      }
