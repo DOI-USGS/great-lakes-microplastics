@@ -1,6 +1,7 @@
 auth.R
 cache/
 target/
+.remake/
 
 # History files
 .Rhistory
@@ -18,4 +19,6 @@ vignettes/*.pdf
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
 .Rproj.user
-.remake
+
+# Mac files that seem to make their way into everything
+.DS_Store
