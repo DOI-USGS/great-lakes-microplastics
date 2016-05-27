@@ -1,7 +1,7 @@
 vizlab: "0.1"
 info:
   id: great-lakes-microplastics
-  name: An example visualization
+  name: Microplastics in the Great Lakes
   date: 2016-05-12
   publish-date: 2016-05-19
   path: /microplastics

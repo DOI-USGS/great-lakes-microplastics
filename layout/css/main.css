@@ -82,16 +82,12 @@ header img{
 	}
 		
 /*Section CSS*/
-#intro{
-	min-height:100px;
-	padding-bottom:10px;
-	margin-bottom:20px;
-	}
 	
 #intro h1{
 	font-size:3em;
 	}
 
+#intro,
 #figure1,
 #figure2,
 #figure3{
@@ -147,39 +143,9 @@ header img{
 	display:none;
 	}
 	
-.accordion {
-    overflow:hidden;
-    border-radius:3px;
-}
- 
-/*----- Section Titles -----*/
-.accordion-section-title {
-    width:100%;
-    padding:10px;
-    display:inline-block;
-    border-bottom:1px solid #fff;
-    background:rgb(63,136,189);
-    transition:all linear 0.15s;
-    /* Type */
-    font-size:1.200em;
-    color:#fff;
-}
- 
-.accordion-section-title.active, .accordion-section-title:hover {
-    background:#0b516b;
-    /* Type */
-    text-decoration:none;
-}
- 
-.accordion-section:last-child .accordion-section-title {
-    border-bottom:none;
-}
- 
-/*----- Section Content -----*/
-.accordion-section-content {
-    display:none;
-	padding:5px;
-}
+#relativeAbundanceSVG{
+	width:760px;
+	}
 
 /*Figure 2*/
 
