@@ -198,13 +198,74 @@ header img{
 	font-size:.9em;
 	}
 	
+/*References*/
+#referenceBox{
+	min-height:50px;
+	margin-bottom:20px;
+	padding:10px;
+	}
+	
+#referenceTitle{
+	background:rgb(63,136,189);
+	height:35px;
+	border-radius:5px;
+	color:#fff;
+	position:relative;
+	}
+	
+#arrow{
+	width: 0; 
+  	height: 0; 
+  	border-top: 8px solid transparent;
+  	border-bottom: 8px solid transparent;
+  	border-right:8px solid #fff; 
+	position:absolute;
+	right:10px;
+	top:9px;
+	}
+	
+.rotate{
+	transform: rotate(-90deg);
+	}
+	
+.corners{
+	border-radius:5px 5px 0 0 !important;
+	}
+	
+#referenceTitle:hover{
+	background:#387186;
+	}
+	
+#referencePanels{
+	border:1px solid rgb(190,190,190);
+	padding:0 10px 10px 10px;
+	border-radius:0 0 5px 5px;
+	display:none;
+	}
+	
+#referenceTitle h3{
+	padding:6px 0 0 10px;
+	}
+	
+.panel{
+	margin:10px 0 0 0;
+	padding-bottom:10px;
+	border-bottom:1px solid rgb(190,190,190);
+	}
+	
+.panel:last-child{
+	border:none;
+	padding-bottom:0;
+	}
+	
+	
 /*Footer CSS*/
 footer{
 	background:rgb(63,136,189);
 	min-height:400px;
 	border-top:5px solid rgb(210,210,210);
 	}
-	
+		
 @media screen and (min-width:768px){
 	
 	.center{
@@ -271,6 +332,12 @@ footer{
 		
 	#landUseFig{
 		width:800px;
+		}
+		
+	/*References*/
+	#referenceBoxContent{
+		width:760px;
+		margin:0 auto;
 		}
 		
 }

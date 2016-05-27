@@ -123,4 +123,10 @@ $('#fiberlines-table').on('click', function(){
 	$('#fibers').toggle('slow');
 });
 
+$('#referenceTitle').on('click', function(){
+	$('#referenceTitle').toggleClass('corners');
+	$('#arrow').toggleClass('rotate');
+	$('#referencePanels').slideToggle('slow');
+});
+
 });
