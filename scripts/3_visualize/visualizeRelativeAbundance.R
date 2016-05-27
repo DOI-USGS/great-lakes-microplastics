@@ -24,11 +24,12 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
   
   text.in <- yaml.load_file(file.text)
   
-  svg <- dinosvg:::init_svg(width = 12, height = 6)
+  svg <- dinosvg:::init_svg(width = 12, height = 6, onload="init(evt)")
+  dinosvg:::add_css(svg, CSS_relAbun())
   
   groups <- list(list(col='#4ebec2', cx='85', cy='75', name='Pellet/Bead', id="beads"),
                  list(col='#0b516b', cx='400', cy='146.5', name='Film', id="films"),
-                 list(col='#01b29F', cx='85', cy='218', name='Foam', id="foams"),
+                 list(col='#01b29F', cx='0', cy='0', name='Foam', id="foams"),
                  list(col='#aadedc', cx='400', cy='300', name='Fragment', id="fragments"),
                  list(col='#26b9da', cx='85', cy='360', name='Fiber/Line', id="fiberlines"))
 
@@ -56,7 +57,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
       d = sprintf("M%s %s a%s,%s 0 0,1 %s,%s L 200 %s L 200 %sz", cx, cy-cr, cr,cr,cr,cr, start.y+height, start.y)
     }
 
-    dinosvg:::svg_node("path", g, c(d=d, fill=fill, stroke="none",opacity='0.2', 
+    dinosvg:::svg_node("path", g, c(d=d, fill=fill, stroke="none",class='hidden', opacity="0.8",
                                     id = paste0(group$name,"-path"),
                                     onmouseover="MakeOpaque(evt)",
                                     onmouseout="MakeTransparent(evt)"))
@@ -64,8 +65,10 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                     fill=fill,opacity="0.8",
                                     id = paste0(group$name,"-rect"),
                                     onmouseover="MakePathOpaque(evt)",
-                                    onmouseout="MakePathTransparent(evt)"))
-    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,stroke=fill, 'stroke-opacity'="0.4", opacity="0.8"))
+                                    onmouseout="MakePathTransparent(evt)",
+                                    'clip-path'="url(#mask-water)"))
+    dinosvg:::svg_node("circle", g, c(cx=cx, cy=cy,r=cr, fill=fill,stroke=fill, opacity="0.8", 'stroke-opacity'="0.4", 
+                                      id=paste0(group$name,"-viz-circle")))
     
     dinosvg:::svg_node("text", g, c(x=cx+offset.x, y=cy+offset.y,fill="#FFFFFF",
                                     'text-anchor'='left',dy='0.33em'),
@@ -82,22 +85,26 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
                                       onmouseout="MakePathTransparent(evt)"))
     start.y <- start.y+height
   }
+  defs = dinosvg:::svg_node("defs", svg)
+  clip = dinosvg:::svg_node("clipPath", svg, c(id="mask-water"))
+  dinosvg:::svg_node("rect", clip, c(y="425", height="0", width="400", id="water-dim"))
   
-  dinosvg:::add_ecmascript(g, paste(JS_MakeTransparent(),JS_MakeOpaque(),
-                                    JS_MakePathTransparent(),JS_MakePathOpaque()))
+  dinosvg:::add_ecmascript(g, paste(JS_MakeTransparent(),JS_MakeOpaque(),JS_moveMask(), 
+                                    JS_MakePathTransparent(),JS_MakePathOpaque(), sep=
+                             '\n'))
   dinosvg:::write_svg(svg, file=target_name)
   return(target_name)
 }
 
 JS_MakeOpaque <- function(){
   c('function MakeOpaque(evt) {
-    evt.target.setAttributeNS(null,"opacity","0.8");
+    evt.target.setAttributeNS(null,"class","shown");
 }')
 }
 
 JS_MakeTransparent <- function(){
   c('function MakeTransparent(evt) {
-    evt.target.setAttributeNS(null,"opacity","0.2");
+    evt.target.setAttributeNS(null,"class","hidden");
 }')
 }
 
@@ -105,16 +112,81 @@ JS_MakePathTransparent <- function(){
   c('function MakePathTransparent(evt) {
       var id=evt.target.getAttribute("id");
 	    var node = document.getElementById(id.split("-")[0] + "-path");
-      node.setAttributeNS(null, "opacity","0.2");
+      node.setAttributeNS(null, "class","hidden");
 }')
 }
-
-
 JS_MakePathOpaque <- function(){
   c('function MakePathOpaque(evt) {
-      var id=evt.target.getAttribute("id");
-	    var node = document.getElementById(id.split("-")[0] + "-path");
-      node.setAttributeNS(null, "opacity","0.8");
-
+    var id=evt.target.getAttribute("id");
+    var node = document.getElementById(id.split("-")[0] + "-path");
+    node.setAttributeNS(null, "class","shown");
+    
 }')
+}
+JS_moveMask <- function(){
+  'function init(evt){
+			moveMask()
+  }
+
+function moveMask(){
+  var yo = 425;
+  var y = 25;
+  var i = 0;
+  var numSteps = 100;
+  var mask = document.getElementById("water-dim");
+  var sweepCount = setInterval(function () {   
+  if (i < numSteps){
+  var ynew = (y*(i+1)+yo*(numSteps-1-i))/numSteps;
+  var height = 400*(i+1)/numSteps;
+  mask.setAttribute("y", ynew);
+  mask.setAttribute("height", height);
+  i++
+  } else {
+  clearInterval(sweepCount);
+  }}, 30);};'
+}
+
+CSS_relAbun <- function(){
+  '.shown, .hidden {
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .hidden {
+    opacity:0;
+  }
+  .large-radius, .Foam-small,.Fiber-small,.Foam-large {
+    -webkit-transition: 1.6s ease-in-out;
+  -moz-transition: 1.6s ease-in-out;
+  -o-transition: .6s ease-in-out;
+  transition: 1.6s ease-in-out;
+  }
+
+.Foam-small {
+    -ms-transform: translate(80px,0px) scale(0.25,0.15); /* IE 9 */
+    -webkit-transform: translate(80px,0px) scale(0.25,0.15); /* Safari */
+    transform: translate(80px,0px) scale(0.25,0.15);
+}
+
+.Fiber-small {
+    -ms-transform: translate(80px,10px) scale(0.25,0.15); /* IE 9 */
+    -webkit-transform: translate(80px,10px) scale(0.25,0.15); /* Safari */
+    transform: translate(80px,10px) scale(0.25,0.15);
+}
+
+.Foam-large {
+  -ms-transform: translate(85px,218px) scale(1); /* IE 9 */
+  -webkit-transform: translate(85px,218px) scale(1); /* Safari */
+  transform: translate(85px,218px) scale(1);
+}
+
+.large-radius {
+  -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari */
+    transform: scale(1);
+
+}
+'
 }
