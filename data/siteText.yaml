@@ -4,7 +4,8 @@ title: Microplastics in the Great Lakes
 ## Intro ##
 welcome: Welcome
 welcome-p1: >-
-  Microplastics are a growing contaminant of concern in freshwater environments, yet sources, transport, and fate remain unclear. 
+  Microplastics are a growing contaminant of concern in freshwater environments, 
+  yet sources, transport, and fate remain unclear. 
   
 welcome-p2: >-
   Microplastics are smaller than 5 millimeters in size. 
@@ -29,28 +30,28 @@ relAbundance-p1: >-
   
 relAbundance-beads-label: Beads and Pellets
 relAbundance-beads-id: beads-table
-relAbundance-beads: ["Soaps, scrubs, toothpaste","Deodorant, sunscreen, lipstick, eye shadow, shaving cream","Drug delivery","Production pellets and powders","Bead blasting (engine parts and boat hulls)"]
+relAbundance-beads: ["soaps, scrubs, toothpaste","deodorant, sunscreen, lipstick, eye shadow, shaving cream","drug delivery","production pellets and powders","bead blasting (engine parts and boat hulls)"]
 
 relAbundance-fiberlines-label: Fiber and Lines
 relAbundance-fiberlines-id: fiberlines-table
-relAbundance-fiberlines: ["Synthetic clothes and textiles","Diapers, wipes, tampons","Cigarette butts","Nets", "Atmospheric deposition"]
+relAbundance-fiberlines: ["synthetic clothes and textiles","diapers, wipes, tampons","cigarette butts","nets","insulation"]
 
 relAbundance-films-label: Films 
 relAbundance-films-id: films-table 
-relAbundance-films: ["Bags and wrappers"]
+relAbundance-films: ["bags and wrappers"]
 
 relAbundance-fragments-label: Fragments
 relAbundance-fragments-id: fragments-table
-relAbundance-fragments: ["Degrated pieces of plastic litter, such as plastic bottles"]
+relAbundance-fragments: ["degrated pieces of plastic litter, such as plastic bottles"]
 
 relAbundance-foams-label: Foams
 relAbundance-foams-id: foams-table
-relAbundance-foams: ["Styrofoam"]
+relAbundance-foams: ["styrofoam"]
 
 ## Environmental Effects ##
 envEffects-title: How have microplastics been observed in the environment?
 envEffects-p1: >-
-  Many
+  Various studies have started to analyze how plastics are affecting the environment.
 
 ## Environmental Effects Facts## 
 envEffects-globalProd1: ">617,000,000,000"
