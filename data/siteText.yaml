@@ -4,7 +4,8 @@ title: Microplastics in the Great Lakes
 ## Intro ##
 welcome: Welcome
 welcome-p1: >-
-  Microplastics are a growing contaminant of concern in freshwater environments, yet sources, transport, and fate remain unclear. 
+  Microplastics are a growing contaminant of concern in freshwater environments, 
+  yet sources, transport, and fate remain unclear. 
   
 welcome-p2: >-
   Microplastics are smaller than 5 millimeters in size. 
@@ -29,28 +30,28 @@ relAbundance-p1: >-
   
 relAbundance-beads-label: Beads and Pellets
 relAbundance-beads-id: beads-table
-relAbundance-beads: ["Soaps, scrubs, toothpaste","Deodorant, sunscreen, lipstick, eye shadow, shaving cream","Drug delivery","Production pellets and powders","Bead blasting (engine parts and boat hulls)"]
+relAbundance-beads: ["soaps, scrubs, toothpaste","deodorant, sunscreen, lipstick, eye shadow, shaving cream","drug delivery","production pellets and powders","bead blasting (engine parts and boat hulls)"]
 
 relAbundance-fiberlines-label: Fiber and Lines
 relAbundance-fiberlines-id: fiberlines-table
-relAbundance-fiberlines: ["Synthetic clothes and textiles","Diapers, wipes, tampons","Cigarette butts","Nets", "Atmospheric deposition"]
+relAbundance-fiberlines: ["synthetic clothes and textiles","diapers, wipes, tampons","cigarette butts","nets","insulation"]
 
 relAbundance-films-label: Films 
 relAbundance-films-id: films-table 
-relAbundance-films: ["Bags and wrappers"]
+relAbundance-films: ["bags and wrappers"]
 
 relAbundance-fragments-label: Fragments
 relAbundance-fragments-id: fragments-table
-relAbundance-fragments: ["Degrated pieces of plastic litter, such as plastic bottles"]
+relAbundance-fragments: ["degrated pieces of plastic litter, such as plastic bottles"]
 
 relAbundance-foams-label: Foams
 relAbundance-foams-id: foams-table
-relAbundance-foams: ["Styrofoam"]
+relAbundance-foams: ["styrofoam"]
 
 ## Environmental Effects ##
 envEffects-title: How have microplastics been observed in the environment?
 envEffects-p1: >-
-  Many
+  Various studies have started to analyze how plastics are affecting the environment.
 
 ## Environmental Effects Facts## 
 envEffects-globalProd1: ">617,000,000,000"
@@ -76,7 +77,7 @@ envEffects-lake2: particles per square kilometer of Great Lakes water
 
 ## Land Use Correlation ##
 landUse-intro: How do microplastics get into our rivers and streams?
-landUse-title: Figure 3 Title
+landUse-title: Land use surronding rivers correlate to some types of microplastics, but not the dominating fiber contributor.
 landUse-p1: >-
   Fibers were present in watersheds with all types of land use and varying wastewater effluent contributions
 
@@ -85,3 +86,22 @@ landUse-p2: >-
 
 ## Footer ##
 footer-text: Footer Text
+
+## Supplemental Information ##
+
+ref1: >- 
+  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. Microplastic pollution in the surface waters of the Laurentian Great Lakes. Mar. Pollut. Bull. 2013, 77 (1-2)
+  
+ref2: >- 
+  Van Cauwenberghe L, Janssen CR. Microplastics in bivalves cultured for human consumption. Environmental Pollution. 2014 Oct 31;193:65-70
+  
+ref3: >- 
+  Sanchez W, Bender C, Porcher JM. Wild gudgeons (Gobio gobio) from French rivers are contaminated by microplastics: preliminary study and first evidence. Environmental research. 2014 Jan 31;128:98-100.
+  
+ref4: >-
+  Baldwin, A.; Corsi, S.; Mason, S. Microplastics in 29 Great Lakes tributaries: Relations to watershed attributes and hydrology. 2016.
+  
+ref5: >-
+  Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. Policy: Classify plastic waste as hazardous. 
+  
+  
