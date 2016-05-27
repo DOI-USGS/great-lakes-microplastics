@@ -43,6 +43,10 @@ sections:
     context: siteTextData
     depends: landUseFig
   -
+    id: reference
+    template: layout/templates/reference.mustache
+    context: siteTextData
+  -
     id: footer
     template: layout/templates/footer.mustache
     context: siteTextData
