@@ -29,7 +29,7 @@ visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target
   
   groups <- list(list(col='#4ebec2', cx='85', cy='75', name='Pellet/Bead', id="beads"),
                  list(col='#0b516b', cx='400', cy='146.5', name='Film', id="films"),
-                 list(col='#01b29F', cx='0', cy='0', name='Foam', id="foams"),
+                 list(col='#01b29F', cx='85', cy='218', name='Foam', id="foams"),
                  list(col='#aadedc', cx='400', cy='300', name='Fragment', id="fragments"),
                  list(col='#26b9da', cx='85', cy='360', name='Fiber/Line', id="fiberlines"))
 
@@ -157,36 +157,5 @@ CSS_relAbun <- function(){
   .hidden {
     opacity:0;
   }
-  .large-radius, .Foam-small,.Fiber-small,.Foam-large {
-    -webkit-transition: 1.6s ease-in-out;
-  -moz-transition: 1.6s ease-in-out;
-  -o-transition: .6s ease-in-out;
-  transition: 1.6s ease-in-out;
-  }
-
-.Foam-small {
-    -ms-transform: translate(80px,0px) scale(0.25,0.15); /* IE 9 */
-    -webkit-transform: translate(80px,0px) scale(0.25,0.15); /* Safari */
-    transform: translate(80px,0px) scale(0.25,0.15);
-}
-
-.Fiber-small {
-    -ms-transform: translate(80px,10px) scale(0.25,0.15); /* IE 9 */
-    -webkit-transform: translate(80px,10px) scale(0.25,0.15); /* Safari */
-    transform: translate(80px,10px) scale(0.25,0.15);
-}
-
-.Foam-large {
-  -ms-transform: translate(85px,218px) scale(1); /* IE 9 */
-  -webkit-transform: translate(85px,218px) scale(1); /* Safari */
-  transform: translate(85px,218px) scale(1);
-}
-
-.large-radius {
-  -ms-transform: scale(1); /* IE 9 */
-    -webkit-transform: scale(1); /* Safari */
-    transform: scale(1);
-
-}
 '
 }
