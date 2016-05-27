@@ -4,6 +4,7 @@ packages:
   - XML
   - dinosvg
   - yaml
+  - whisker
   
 sources:
   - scripts/3_visualize/quicksort.R
@@ -26,13 +27,15 @@ targets:
   
   target/relativeAbundanceFig-mobile.svg:
     command: visualizeRelativeAbundance_mobile("cache/mungedRelativeAbundance.tsv", "data/siteText.yaml", target_name)
+    depends: data/relativeAbundance.mustache
   
   target/relativeAbundanceFig-desktop.svg:
     command: visualizeRelativeAbundance_desktop("cache/mungedRelativeAbundance.tsv", "data/siteText.yaml", target_name)
+    depends: data/relativeAbundance.mustache
     
   target/relativeAbundanceFig-ie.svg:
     command: visualizeRelativeAbundance_ie("cache/mungedRelativeAbundance.tsv", "data/siteText.yaml", target_name)
-    
+    depends: data/relativeAbundance.mustache
 
   target/landUseFig-mobile.svg:
     command: visualizeLandUse_mobile("cache/munged_LandUse_geomConc.tsv", "cache/munged_LandUse_geomPct.tsv", target_name)
