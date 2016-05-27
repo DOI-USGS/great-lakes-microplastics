@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 864 432">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 864 432" onload="init(evt)">
   <style>.shown, .hidden {
     -webkit-transition: opacity 0.2s ease-in-out;
     -moz-transition: opacity 0.2s ease-in-out;
@@ -53,25 +53,46 @@
 	      <image xlink:href="bead2.jpg" opacity="1"  x="0" y="0" width="85" height="56.14334" />
 	    </pattern>
 	</defs>
-  <g id="Pellet" transform='translate(100,26.23057811060324)'>
-    <rect x="-100" y="-3.115289" width="100" height="6.23057811060324" fill="#4ebec2" stroke='black' opacity="0.8" id="Pellet-rect"/>
-	<path d="M0,0 l10,-10 h80 v20 h-80 z" stroke='#4ebec2' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Pellet-path' class='Pellet-small'/>
-  </g>
-  <g id="Film" transform='translate(0,31.2305781106032)'>
-    <rect width="100" height="13.148726034124" fill="#0b516b" opacity="0.8" id="Film-rect"/>
+
+  <g id="Fiber" transform='translate(0,141.519797527948)'>
+    <rect width="100" height="283.480202472052" fill="#26b9da" opacity="0.8" id="Fiber-rect"/>
+    <path stroke='#0b516b' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Fiber-path' class='Pellet-small'/>
+    <text x="100" y="2" text-anchor="begin" dx="10" dy="0.33em">Fibers</text>
+</g>
+<g id="Fragment" transform='translate(0,74.8720009615417)'>
+    <rect width="100" height="66.6477965664068" fill="#aadedc" opacity="0.8" id="Fragment-rect"/>
+    <path stroke='#0b516b' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Fragment-path' class='Pellet-small'/>
+    <text x="100" y="2" text-anchor="begin" dx="10" dy="0.33em">Fragments</text>
   </g>
   <g id="Foam" transform='translate(0,44.3793041447273)'>
     <rect width="100" height="30.4926968168144" fill="#01b29F" opacity="0.8" id="Foam-rect"/>
+    <path stroke='#0b516b' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Foam-path' class='Pellet-small'/>
+    <text x="100" y="2" text-anchor="begin" dx="10" dy="0.33em">Foams</text>
   </g>
-  <g id="Fragment" transform='translate(0,74.8720009615417)'>
-    <rect width="100" height="66.6477965664068" fill="#aadedc" opacity="0.8" id="Fragment-rect"/>
+  <g id="Film" transform='translate(0,31.2305781106032)'>
+    <rect width="100" height="13.148726034124" fill="#0b516b" opacity="0.8" id="Film-rect"/>
+    <path stroke='#0b516b' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Film-path' class='Pellet-small'/>
+    <text x="100" y="2" text-anchor="begin" dx="10" dy="0.33em">Films</text>
   </g>
-  <g id="Fiber" transform='translate(0,141.519797527948)'>
-    <rect width="100" height="283.480202472052" fill="#26b9da" opacity="0.8" id="Fiber-rect"/>
-</g>
-</g>
+  <g id="Pellet" transform='translate(0,25)'>
+    <rect width="100" height="6.23057811060324" fill="#4ebec2" opacity="0.8" id="Pellet-rect"/>
+	  <path stroke='#4ebec2' onmouseover='unRoll(evt)' onmouseout='rollUp(evt)' id='Pellet-path' class='Pellet-small'/>
+    <text x="100" y="2" text-anchor="begin" dx="10" dy="0.33em">Pellets</text>
+  </g>
+  
+  
+  
+  
+</g> 
   <script type="text/ecmascript"><![CDATA[
-	  var pointers = {"Pellet":{"small":"M0,0 l10,-10 h80 v20 h-80 z", "large":"M0,0 l10,-10 h120 v20 h-120 z"}}
+    function init(evt){
+      document.getElementById('Pellet-path').setAttribute('d',pointers['Pellet']['small'])
+      document.getElementById('Film-path').setAttribute('d',pointers['Pellet']['small'])
+      document.getElementById('Foam-path').setAttribute('d',pointers['Pellet']['small'])
+      document.getElementById('Fragment-path').setAttribute('d',pointers['Pellet']['small'])
+      document.getElementById('Fiber-path').setAttribute('d',pointers['Pellet']['small'])
+    }
+	  var pointers = {"Pellet":{"small":"M100,2 l10,-10 h80 v20 h-80 v0 l-10,-10z", "large":"M100,2 l10,-10 h180 v80 h-180 v-60 l-10,-10z"}}
 	  function unRoll(evt){
 	  	evt.target.setAttributeNS(null,"class","Pellet-large");
 	  	evt.target.setAttribute('d',pointers['Pellet']['large'])
