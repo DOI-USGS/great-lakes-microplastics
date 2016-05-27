@@ -77,7 +77,7 @@ envEffects-lake2: particles per square kilometer of Great Lakes water
 
 ## Land Use Correlation ##
 landUse-intro: How do microplastics get into our rivers and streams?
-landUse-title: Figure 3 Title
+landUse-title: Land use surronding rivers correlate to some types of microplastics, but not the dominating fiber contributor.
 landUse-p1: >-
   Fibers were present in watersheds with all types of land use and varying wastewater effluent contributions
 
@@ -86,3 +86,22 @@ landUse-p2: >-
 
 ## Footer ##
 footer-text: Footer Text
+
+## Supplemental Information ##
+
+ref1: >- 
+  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. Microplastic pollution in the surface waters of the Laurentian Great Lakes. Mar. Pollut. Bull. 2013, 77 (1-2)
+  
+ref2: >- 
+  Van Cauwenberghe L, Janssen CR. Microplastics in bivalves cultured for human consumption. Environmental Pollution. 2014 Oct 31;193:65-70
+  
+ref3: >- 
+  Sanchez W, Bender C, Porcher JM. Wild gudgeons (Gobio gobio) from French rivers are contaminated by microplastics: preliminary study and first evidence. Environmental research. 2014 Jan 31;128:98-100.
+  
+ref4: >-
+  Baldwin, A.; Corsi, S.; Mason, S. Microplastics in 29 Great Lakes tributaries: Relations to watershed attributes and hydrology. 2016.
+  
+ref5: >-
+  Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. Policy: Classify plastic waste as hazardous. 
+  
+  
