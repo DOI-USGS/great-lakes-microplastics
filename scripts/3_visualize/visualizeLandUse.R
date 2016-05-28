@@ -207,6 +207,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$css <- CSS_defineCSS()
   
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE, onload="init(evt)")
+  #<rect x="100" y="30.24" height="307.52" width="5" fill="yellow" id='highlight-fill'/>
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   modifyAttr(xlab, c('dy' = "7.5em"))
@@ -265,6 +266,7 @@ JS_defineHoverFunction <- function(){
   return pt.matrixTransform(svg.getScreenCTM().inverse());
 };
   function hovertext(text, evt){
+  var highlight = document.getElementById("highlight-fill");
   var tooltip = document.getElementById("tooltip");
   var tooltip_bg = document.getElementById("tooltip_bg");
   var tool_key = document.getElementById("tool_key");
@@ -274,6 +276,7 @@ JS_defineHoverFunction <- function(){
   tooltip_key.setAttribute("text-anchor","begin");
   tooltip_key.setAttribute("dx","1.6em");
   if (evt === undefined){
+  highlight.setAttribute("width","0");
   tooltip.setAttribute("class","hidden");
   tooltip_key.setAttribute("class","hidden");
   tooltip.firstChild.data = text;
@@ -283,6 +286,8 @@ JS_defineHoverFunction <- function(){
   tool_key.setAttribute("fill","none");
   } else {
   var pt = cursorPoint(evt)
+  highlight.setAttribute("width","15");
+  highlight.setAttribute("x",evt.target.getAttribute("x")-1)
   tooltip.setAttribute("x",pt.x);
   tooltip.setAttribute("y",pt.y);
   tooltip.firstChild.data = text;
