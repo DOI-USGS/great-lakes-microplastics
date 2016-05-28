@@ -207,7 +207,6 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$css <- CSS_defineCSS()
   
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE, onload="init(evt)")
-  #<rect x="100" y="30.24" height="307.52" width="5" fill="yellow" id='highlight-fill'/>
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   modifyAttr(xlab, c('dy' = "7.5em"))
@@ -219,8 +218,9 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   LU.swaps <- jsonlite::toJSON(gs.landuse$json)
   swap.length <- nrow(gs.landuse$json)
-  dinosvg:::add_ecmascript(svg, sprintf('%s\nvar swaps = %s\n%s\n%s\n%s', 
+  dinosvg:::add_ecmascript(svg, sprintf('%s\n%s\nvar swaps = %s\n%s\n%s\n%s', 
                                         JS_defineInitFunction(), 
+                                        'var highlightBaseHeight = Number(document.getElementById("highlight-fill").getAttribute("height"));',
                                         LU.swaps , 
                                         '\tvar svg = document.querySelector("svg")
                                         \tvar pt = svg.createSVGPoint();
@@ -246,6 +246,11 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="1.6em", dy="-1.45em", stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
+  y.pos <- XML:::xmlAttrs(XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,2)))$rect)[['y']]
+  mask.bottom <- XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,'2a')))$rect
+  y.pos2 <- XML:::xmlAttrs(mask.bottom)[['y']]
+  height <- as.numeric(XML:::xmlAttrs(mask.bottom)[['height']]) + as.numeric(y.pos2) - as.numeric(y.pos)
+  newXMLNode('rect', parent=svg, at=1, attrs = c(y=y.pos, height=height, width="0", fill="#ffffb2", stroke='#ffff4c', rx="2", ry="2", id='highlight-fill'))
   dinosvg:::write_svg(svg, target_name)
 }
 
@@ -286,8 +291,10 @@ JS_defineHoverFunction <- function(){
   tool_key.setAttribute("fill","none");
   } else {
   var pt = cursorPoint(evt)
-  highlight.setAttribute("width","15");
-  highlight.setAttribute("x",evt.target.getAttribute("x")-1)
+  highlight.setAttribute("width",evt.target.getAttribute("width"));
+  highlight.setAttribute("x",evt.target.getAttribute("x"));
+  var siteNum = evt.target.getAttribute("id").split("-")[0];
+  highlight.setAttribute("height", 6 + highlightBaseHeight + Number(document.getElementById("site-" + siteNum).getComputedTextLength()));
   tooltip.setAttribute("x",pt.x);
   tooltip.setAttribute("y",pt.y);
   tooltip.firstChild.data = text;
