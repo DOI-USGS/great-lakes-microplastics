@@ -1,0 +1,490 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 432 454" onload="init(evt)">
+  <style>text {
+  cursor: default;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.sub-label, .x-tick-label, .y-tick-label, #tooltip {
+font-size: 10px;
+}
+
+.hidden {
+opacity:0;
+}
+text{
+font-size: 12px;
+
+}</style>
+  <rect x="100" y="30.24" height="307.52" width="5" fill="yellow" id='highlight-fill'/>
+  <g id="view-1-2a">
+    <defs>
+      <clipPath id="mask-1-2a">
+        <rect x="59.04" y="194.4" height="128.56" width="342.72"/>
+      </clipPath>
+    </defs>
+    <g id="axes" fill="none" stroke="#000000" stroke-width="1">
+      <rect x="59.04" y="194.4" height="128.56" width="342.72" id="axes-box"/>
+    </g>
+    <g clip-path="url(#mask-1-2)a">
+      <rect x="59.04" y="319.232" height="3.72824000000003" width="10.3228915662651" fill="rgb(210,55,44)" id="1-UrbanPct" onmousemove="hovertext('2.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="59.04" y="315.504" height="3.72824000000003" width="10.3228915662651" fill="rgb(155,215,51)" id="1-AgTotalPct" onmousemove="hovertext('2.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="59.04" y="194.4" height="121.10352" width="10.3228915662651" fill="rgb(255,204,10)" id="1-OtherPct" onmousemove="hovertext('94.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="319.103" height="3.85680000000002" width="10.322891566265" fill="rgb(210,55,44)" id="2-UrbanPct" onmousemove="hovertext('3.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="306.376" height="12.72744" width="10.322891566265" fill="rgb(155,215,51)" id="2-AgTotalPct" onmousemove="hovertext('9.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="194.4" height="111.97576" width="10.322891566265" fill="rgb(255,204,10)" id="2-OtherPct" onmousemove="hovertext('87.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="312.161" height="10.79904" width="10.3228915662651" fill="rgb(210,55,44)" id="3-UrbanPct" onmousemove="hovertext('8.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="258.937" height="53.22384" width="10.3228915662651" fill="rgb(155,215,51)" id="3-AgTotalPct" onmousemove="hovertext('41.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="194.4" height="64.53712" width="10.3228915662651" fill="rgb(255,204,10)" id="3-OtherPct" onmousemove="hovertext('50.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="313.961" height="8.99919999999997" width="10.3228915662652" fill="rgb(210,55,44)" id="4-UrbanPct" onmousemove="hovertext('7.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="224.097" height="89.86344" width="10.3228915662652" fill="rgb(155,215,51)" id="4-AgTotalPct" onmousemove="hovertext('69.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="194.4" height="29.69736" width="10.3228915662652" fill="rgb(255,204,10)" id="4-OtherPct" onmousemove="hovertext('23.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="311.904" height="11.05616" width="10.3228915662649" fill="rgb(210,55,44)" id="5-UrbanPct" onmousemove="hovertext('8.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="229.24" height="82.66408" width="10.3228915662649" fill="rgb(155,215,51)" id="5-AgTotalPct" onmousemove="hovertext('64.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="194.4" height="34.83976" width="10.3228915662649" fill="rgb(255,204,10)" id="5-OtherPct" onmousemove="hovertext('27.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="284.521" height="38.43944" width="10.3228915662652" fill="rgb(210,55,44)" id="6-UrbanPct" onmousemove="hovertext('29.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="228.983" height="55.53792" width="10.3228915662652" fill="rgb(155,215,51)" id="6-AgTotalPct" onmousemove="hovertext('43.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="194.4" height="34.58264" width="10.3228915662652" fill="rgb(255,204,10)" id="6-OtherPct" onmousemove="hovertext('26.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="214.841" height="108.11896" width="10.3228915662652" fill="rgb(210,55,44)" id="7-UrbanPct" onmousemove="hovertext('84.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="213.555" height="1.28559999999999" width="10.3228915662652" fill="rgb(155,215,51)" id="7-AgTotalPct" onmousemove="hovertext('1.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="194.4" height="19.15544" width="10.3228915662652" fill="rgb(255,204,10)" id="7-OtherPct" onmousemove="hovertext('14.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="274.107" height="48.8528" width="10.3228915662649" fill="rgb(210,55,44)" id="8-UrbanPct" onmousemove="hovertext('38.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="238.882" height="35.22544" width="10.3228915662649" fill="rgb(155,215,51)" id="8-AgTotalPct" onmousemove="hovertext('27.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="194.4" height="44.48176" width="10.3228915662649" fill="rgb(255,204,10)" id="8-OtherPct" onmousemove="hovertext('34.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="305.219" height="17.74128" width="10.3228915662652" fill="rgb(210,55,44)" id="9-UrbanPct" onmousemove="hovertext('13.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="227.568" height="77.65024" width="10.3228915662652" fill="rgb(155,215,51)" id="9-AgTotalPct" onmousemove="hovertext('60.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="194.4" height="33.16848" width="10.3228915662652" fill="rgb(255,204,10)" id="9-OtherPct" onmousemove="hovertext('25.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="308.818" height="14.1416" width="10.3228915662652" fill="rgb(210,55,44)" id="10-UrbanPct" onmousemove="hovertext('11.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="246.981" height="61.83736" width="10.3228915662652" fill="rgb(155,215,51)" id="10-AgTotalPct" onmousemove="hovertext('48.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="194.4" height="52.58104" width="10.3228915662652" fill="rgb(255,204,10)" id="10-OtherPct" onmousemove="hovertext('40.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="305.476" height="17.48416" width="10.3228915662649" fill="rgb(210,55,44)" id="11-UrbanPct" onmousemove="hovertext('13.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="242.867" height="62.60872" width="10.3228915662649" fill="rgb(155,215,51)" id="11-AgTotalPct" onmousemove="hovertext('48.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="194.4" height="48.46712" width="10.3228915662649" fill="rgb(255,204,10)" id="11-OtherPct" onmousemove="hovertext('37.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="303.933" height="19.02688" width="10.3228915662652" fill="rgb(210,55,44)" id="12-UrbanPct" onmousemove="hovertext('14.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="234.511" height="69.4224" width="10.3228915662652" fill="rgb(155,215,51)" id="12-AgTotalPct" onmousemove="hovertext('54.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="194.4" height="40.11072" width="10.3228915662652" fill="rgb(255,204,10)" id="12-OtherPct" onmousemove="hovertext('31.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="307.276" height="15.68432" width="10.3228915662649" fill="rgb(210,55,44)" id="13-UrbanPct" onmousemove="hovertext('12.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="250.066" height="57.2092" width="10.3228915662649" fill="rgb(155,215,51)" id="13-AgTotalPct" onmousemove="hovertext('44.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="194.4" height="55.66648" width="10.3228915662649" fill="rgb(255,204,10)" id="13-OtherPct" onmousemove="hovertext('43.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="255.08" height="67.87968" width="10.3228915662652" fill="rgb(210,55,44)" id="14-UrbanPct" onmousemove="hovertext('52.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="230.011" height="25.0692" width="10.3228915662652" fill="rgb(155,215,51)" id="14-AgTotalPct" onmousemove="hovertext('19.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="194.4" height="35.61112" width="10.3228915662652" fill="rgb(255,204,10)" id="14-OtherPct" onmousemove="hovertext('27.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="204.685" height="118.2752" width="10.3228915662652" fill="rgb(210,55,44)" id="15-UrbanPct" onmousemove="hovertext('92.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="204.556" height="0.128559999999993" width="10.3228915662652" fill="rgb(155,215,51)" id="15-AgTotalPct" onmousemove="hovertext('0.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="194.4" height="10.15624" width="10.3228915662652" fill="rgb(255,204,10)" id="15-OtherPct" onmousemove="hovertext('7.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="285.806" height="37.15384" width="10.3228915662649" fill="rgb(210,55,44)" id="16-UrbanPct" onmousemove="hovertext('28.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="253.409" height="32.39712" width="10.3228915662649" fill="rgb(155,215,51)" id="16-AgTotalPct" onmousemove="hovertext('25.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="194.4" height="59.00904" width="10.3228915662649" fill="rgb(255,204,10)" id="16-OtherPct" onmousemove="hovertext('45.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="308.69" height="14.27016" width="10.3228915662651" fill="rgb(210,55,44)" id="17-UrbanPct" onmousemove="hovertext('11.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="222.169" height="86.52088" width="10.3228915662651" fill="rgb(155,215,51)" id="17-AgTotalPct" onmousemove="hovertext('67.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="194.4" height="27.76896" width="10.3228915662651" fill="rgb(255,204,10)" id="17-OtherPct" onmousemove="hovertext('21.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="309.204" height="13.75592" width="10.3228915662652" fill="rgb(210,55,44)" id="18-UrbanPct" onmousemove="hovertext('10.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="208.027" height="101.17672" width="10.3228915662652" fill="rgb(155,215,51)" id="18-AgTotalPct" onmousemove="hovertext('78.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="194.4" height="13.62736" width="10.3228915662652" fill="rgb(255,204,10)" id="18-OtherPct" onmousemove="hovertext('10.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="310.361" height="12.59888" width="10.3228915662649" fill="rgb(210,55,44)" id="19-UrbanPct" onmousemove="hovertext('9.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="202.114" height="108.24752" width="10.3228915662649" fill="rgb(155,215,51)" id="19-AgTotalPct" onmousemove="hovertext('84.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="194.4" height="7.71359999999999" width="10.3228915662649" fill="rgb(255,204,10)" id="19-OtherPct" onmousemove="hovertext('6.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="312.29" height="10.67048" width="10.3228915662651" fill="rgb(210,55,44)" id="20-UrbanPct" onmousemove="hovertext('8.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="208.799" height="103.4908" width="10.3228915662651" fill="rgb(155,215,51)" id="20-AgTotalPct" onmousemove="hovertext('80.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="194.4" height="14.39872" width="10.3228915662651" fill="rgb(255,204,10)" id="20-OtherPct" onmousemove="hovertext('11.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="310.747" height="12.2132" width="10.3228915662651" fill="rgb(210,55,44)" id="21-UrbanPct" onmousemove="hovertext('9.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="214.97" height="95.7772" width="10.3228915662651" fill="rgb(155,215,51)" id="21-AgTotalPct" onmousemove="hovertext('74.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="194.4" height="20.5696" width="10.3228915662651" fill="rgb(255,204,10)" id="21-OtherPct" onmousemove="hovertext('15.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="306.761" height="16.19856" width="10.3228915662649" fill="rgb(210,55,44)" id="22-UrbanPct" onmousemove="hovertext('12.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="234.511" height="72.25072" width="10.3228915662649" fill="rgb(155,215,51)" id="22-AgTotalPct" onmousemove="hovertext('56.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="194.4" height="40.11072" width="10.3228915662649" fill="rgb(255,204,10)" id="22-OtherPct" onmousemove="hovertext('31.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="270.765" height="52.19536" width="10.3228915662652" fill="rgb(210,55,44)" id="23-UrbanPct" onmousemove="hovertext('40.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="242.224" height="28.54032" width="10.3228915662652" fill="rgb(155,215,51)" id="23-AgTotalPct" onmousemove="hovertext('22.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="194.4" height="47.82432" width="10.3228915662652" fill="rgb(255,204,10)" id="23-OtherPct" onmousemove="hovertext('37.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="271.536" height="51.424" width="10.3228915662652" fill="rgb(210,55,44)" id="24-UrbanPct" onmousemove="hovertext('40.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="249.038" height="22.498" width="10.3228915662652" fill="rgb(155,215,51)" id="24-AgTotalPct" onmousemove="hovertext('17.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="194.4" height="54.638" width="10.3228915662652" fill="rgb(255,204,10)" id="24-OtherPct" onmousemove="hovertext('42.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="311.518" height="11.44184" width="10.3228915662649" fill="rgb(210,55,44)" id="25-UrbanPct" onmousemove="hovertext('8.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="267.422" height="44.09608" width="10.3228915662649" fill="rgb(155,215,51)" id="25-AgTotalPct" onmousemove="hovertext('34.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="194.4" height="73.02208" width="10.3228915662649" fill="rgb(255,204,10)" id="25-OtherPct" onmousemove="hovertext('56.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="307.79" height="15.17008" width="10.3228915662652" fill="rgb(210,55,44)" id="26-UrbanPct" onmousemove="hovertext('11.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="262.408" height="45.38168" width="10.3228915662652" fill="rgb(155,215,51)" id="26-AgTotalPct" onmousemove="hovertext('35.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="194.4" height="68.00824" width="10.3228915662652" fill="rgb(255,204,10)" id="26-OtherPct" onmousemove="hovertext('52.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="302.005" height="20.95528" width="10.3228915662652" fill="rgb(210,55,44)" id="27-UrbanPct" onmousemove="hovertext('16.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="258.166" height="43.83896" width="10.3228915662652" fill="rgb(155,215,51)" id="27-AgTotalPct" onmousemove="hovertext('34.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="194.4" height="63.76576" width="10.3228915662652" fill="rgb(255,204,10)" id="27-OtherPct" onmousemove="hovertext('49.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="313.575" height="9.38488000000001" width="10.3228915662649" fill="rgb(210,55,44)" id="28-UrbanPct" onmousemove="hovertext('7.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="251.995" height="61.58024" width="10.3228915662649" fill="rgb(155,215,51)" id="28-AgTotalPct" onmousemove="hovertext('47.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="194.4" height="57.59488" width="10.3228915662649" fill="rgb(255,204,10)" id="28-OtherPct" onmousemove="hovertext('44.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="314.475" height="8.48496" width="10.3228915662652" fill="rgb(210,55,44)" id="29-UrbanPct" onmousemove="hovertext('6.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="256.237" height="58.23768" width="10.3228915662652" fill="rgb(155,215,51)" id="29-AgTotalPct" onmousemove="hovertext('45.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="194.4" height="61.83736" width="10.3228915662652" fill="rgb(255,204,10)" id="29-OtherPct" onmousemove="hovertext('48.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+    </g>
+  </g>
+  <g id="side-1">
+    <g id="axis-side-1a">
+      <g id="tick-labels" stroke="none" fill="#000000" text-anchor="end">
+        <text dy="0.33em" dx="-0.33em" transform="translate(64.201,322.96) rotate(-90)" id="site-1" class="x-tick-label">St Louis, MN</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(76.073,322.96) rotate(-90)" id="site-2" class="x-tick-label">Nemadji, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(87.944,322.96) rotate(-90)" id="site-3" class="x-tick-label">Fox, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(99.815,322.96) rotate(-90)" id="site-4" class="x-tick-label">Manitowoc, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(111.687,322.96) rotate(-90)" id="site-5" class="x-tick-label">Sheboygan, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(123.558,322.96) rotate(-90)" id="site-6" class="x-tick-label">Milwaukee, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(135.429,322.96) rotate(-90)" id="site-7" class="x-tick-label">IndianaHC, IN</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(147.301,322.96) rotate(-90)" id="site-8" class="x-tick-label">Burns, IN</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(159.172,322.96) rotate(-90)" id="site-9" class="x-tick-label">St Joseph, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(171.043,322.96) rotate(-90)" id="site-10" class="x-tick-label">PawPaw, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(182.915,322.96) rotate(-90)" id="site-11" class="x-tick-label">Kalamazoo, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(194.786,322.96) rotate(-90)" id="site-12" class="x-tick-label">Grand, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(206.657,322.96) rotate(-90)" id="site-13" class="x-tick-label">Saginaw, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(218.529,322.96) rotate(-90)" id="site-14" class="x-tick-label">Clinton, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(230.4,322.96) rotate(-90)" id="site-15" class="x-tick-label">Rouge, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(242.271,322.96) rotate(-90)" id="site-16" class="x-tick-label">Huron, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(254.143,322.96) rotate(-90)" id="site-17" class="x-tick-label">Raisin, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(266.014,322.96) rotate(-90)" id="site-18" class="x-tick-label">Maumee, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(277.885,322.96) rotate(-90)" id="site-19" class="x-tick-label">Portage, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(289.757,322.96) rotate(-90)" id="site-20" class="x-tick-label">Sandusky, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(301.628,322.96) rotate(-90)" id="site-21" class="x-tick-label">Huron, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(313.499,322.96) rotate(-90)" id="site-22" class="x-tick-label">Black, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(325.371,322.96) rotate(-90)" id="site-23" class="x-tick-label">Rocky, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(337.242,322.96) rotate(-90)" id="site-24" class="x-tick-label">Cuyahoga, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(349.113,322.96) rotate(-90)" id="site-25" class="x-tick-label">Grand, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(360.985,322.96) rotate(-90)" id="site-26" class="x-tick-label">Ashtabula, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(372.856,322.96) rotate(-90)" id="site-27" class="x-tick-label">Buffalo, NY</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(384.727,322.96) rotate(-90)" id="site-28" class="x-tick-label">Tonawanda, NY</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(396.599,322.96) rotate(-90)" id="site-29" class="x-tick-label">Genesee, NY</text>
+      </g>
+      <g id="ticks">
+        <path d="M 64.201,322.96 v -5"/>
+        <path d="M 76.073,322.96 v -5"/>
+        <path d="M 87.944,322.96 v -5"/>
+        <path d="M 99.815,322.96 v -5"/>
+        <path d="M 111.687,322.96 v -5"/>
+        <path d="M 123.558,322.96 v -5"/>
+        <path d="M 135.429,322.96 v -5"/>
+        <path d="M 147.301,322.96 v -5"/>
+        <path d="M 159.172,322.96 v -5"/>
+        <path d="M 171.043,322.96 v -5"/>
+        <path d="M 182.915,322.96 v -5"/>
+        <path d="M 194.786,322.96 v -5"/>
+        <path d="M 206.657,322.96 v -5"/>
+        <path d="M 218.529,322.96 v -5"/>
+        <path d="M 230.4,322.96 v -5"/>
+        <path d="M 242.271,322.96 v -5"/>
+        <path d="M 254.143,322.96 v -5"/>
+        <path d="M 266.014,322.96 v -5"/>
+        <path d="M 277.885,322.96 v -5"/>
+        <path d="M 289.757,322.96 v -5"/>
+        <path d="M 301.628,322.96 v -5"/>
+        <path d="M 313.499,322.96 v -5"/>
+        <path d="M 325.371,322.96 v -5"/>
+        <path d="M 337.242,322.96 v -5"/>
+        <path d="M 349.113,322.96 v -5"/>
+        <path d="M 360.985,322.96 v -5"/>
+        <path d="M 372.856,322.96 v -5"/>
+        <path d="M 384.727,322.96 v -5"/>
+        <path d="M 396.599,322.96 v -5"/>
+      </g>
+      <g id="axis-label" stroke="none" fill="#000000" text-anchor="middle">
+        <text x="230.4" y="322.96" dy="7.5em">Sampling locations</text>
+      </g>
+    </g>
+  </g>
+  <g id="side-2">
+    <g id="axis-side-2a">
+      <g id="tick-labels" stroke="none" fill="#000000" text-anchor="end">
+        <text x="59.04" y="322.96" dx="-0.33em" dy="0.33em" class="y-tick-label">0</text>
+        <text x="59.04" y="290.82" dx="-0.33em" dy="0.33em" class="y-tick-label">25</text>
+        <text x="59.04" y="258.68" dx="-0.33em" dy="0.33em" class="y-tick-label">50</text>
+        <text x="59.04" y="226.54" dx="-0.33em" dy="0.33em" class="y-tick-label">75</text>
+        <text x="59.04" y="194.4" dx="-0.33em" dy="0.33em" class="y-tick-label">100</text>
+      </g>
+      <g id="ticks">
+        <path d="M 59.04,322.96 h 5"/>
+        <path d="M 59.04,290.82 h 5"/>
+        <path d="M 59.04,258.68 h 5"/>
+        <path d="M 59.04,226.54 h 5"/>
+        <path d="M 59.04,194.4 h 5"/>
+      </g>
+      <g id="axis-label" stroke="none" fill="#000000" text-anchor="middle">
+        <text x="59.04" y="258.68" dy="-3.0em" transform="rotate(-90 59.04,258.68)">Basin land use,</text>
+        <text x="59.04" y="258.68" dy="-2.5em" transform="rotate(-90 59.04,258.68)" class="sub-label">in percent</text>
+      </g>
+    </g>
+  </g>
+  <script type="text/ecmascript"><![CDATA[function init(evt){
+    if ( window.svgDocument == null ) {
+    svgDocument = evt.target.ownerDocument;
+    svgDocument.sortLU = this.sortLU;
+    var mainDocument = window.parent.document;
+    mainDocument.addEventListener("landUseTrigger", sortLU, false);
+    }
+}
+var swaps = [[3,29],[5,20],[6,28],[7,3],[15,16],[15,17],[15,18],[15,19],[15,5],[15,21],[15,22],[15,23],[15,24],[15,25],[15,26],[15,27],[15,6],[15,7],[8,9],[8,10],[8,11],[8,12],[8,13],[8,16],[14,17],[8,18],[14,19],[8,5],[14,21],[8,22],[14,25],[8,26],[23,27],[24,6],[14,8],[14,24],[16,17],[16,18],[16,19],[16,5],[16,21],[16,22],[16,25],[16,26],[16,27],[9,10],[9,17],[11,18],[12,19],[13,5],[9,21],[11,25],[12,26],[9,22],[9,11],[10,5],[17,25],[18,21],[10,18],[20,28]]
+	var svg = document.querySelector("svg")
+                                        	var pt = svg.createSVGPoint();
+                                        		var toolkeys = {"meanFiber":"Fiber & Lines","meanPellet":"Beads & Pellets", "meanFilm":"Films", "meanFoam":"Foams", "meanFrag":"Fragments", "UrbanPct":"Urban", "AgTotalPct":"Agriculture", "OtherPct":"Other"}
+                                        	var xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);
+function sortLU(){
+	var i =0;
+                   	window.myInterval = setInterval(function () {   
+                   if (i < swaps.length){
+                   	 var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
+                   	 var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");
+	 var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
+                   	 var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
+                   	 var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
+                   	 var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"
+	 document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);
+	 document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);
+	 document.getElementById(swaps[i][0] + "-UrbanPct").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-AgTotalPct").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-OtherPct").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-meanPellet").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-meanFilm").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-meanFoam").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-meanFrag").setAttribute("x", x1);
+	 document.getElementById(swaps[i][0] + "-meanFiber").setAttribute("x", x1);
+	 document.getElementById(swaps[i][1] + "-UrbanPct").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-AgTotalPct").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-OtherPct").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-meanPellet").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-meanFilm").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-meanFoam").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-meanFrag").setAttribute("x", x0);
+	 document.getElementById(swaps[i][1] + "-meanFiber").setAttribute("x", x0);
+i++
+                   } else {
+                   clearInterval(window.myInterval);
+}}, 25)
+}
+function cursorPoint(evt){
+  pt.x = evt.clientX; pt.y = evt.clientY;
+  return pt.matrixTransform(svg.getScreenCTM().inverse());
+};
+  function hovertext(text, evt){
+  var highlight = document.getElementById("highlight-fill");
+  var tooltip = document.getElementById("tooltip");
+  var tooltip_bg = document.getElementById("tooltip_bg");
+  var tool_key = document.getElementById("tool_key");
+  var tooltip_key = document.getElementById("tooltip_key");
+  tooltip.setAttribute("text-anchor","begin");
+  tooltip.setAttribute("dx","0.5em");
+  tooltip_key.setAttribute("text-anchor","begin");
+  tooltip_key.setAttribute("dx","1.6em");
+  if (evt === undefined){
+  highlight.setAttribute("width","0");
+  tooltip.setAttribute("class","hidden");
+  tooltip_key.setAttribute("class","hidden");
+  tooltip.firstChild.data = text;
+  tooltip_bg.setAttribute("class","hidden");
+  tooltip_bg.setAttribute("x",0);
+  tooltip_bg.setAttribute("y",0);
+  tool_key.setAttribute("fill","none");
+  } else {
+  var pt = cursorPoint(evt)
+  highlight.setAttribute("width","15");
+  highlight.setAttribute("x",evt.target.getAttribute("x")-1)
+  tooltip.setAttribute("x",pt.x);
+  tooltip.setAttribute("y",pt.y);
+  tooltip.firstChild.data = text;
+  tooltip_bg.setAttribute("x",pt.x+2);
+  tooltip_bg.setAttribute("y",pt.y-25);
+  tooltip.setAttribute("class","shown");
+  tooltip_key.setAttribute("x",pt.x);
+  tooltip_key.setAttribute("y",pt.y);
+  tooltip_key.setAttribute("class","sub-label");
+  var keytext = evt.target.getAttribute("id").split("-")[1];
+  tooltip_key.firstChild.data = toolkeys[keytext];
+  tooltip_bg.setAttribute("class","shown");
+  tool_key.setAttribute("fill", evt.target.getAttribute("fill"));
+  tool_key.setAttribute("x",pt.x+5);
+  tool_key.setAttribute("y",pt.y-22);
+  var length = Math.max(tooltip.getComputedTextLength(), tooltip_key.getComputedTextLength()+12);
+  tooltip_bg.setAttribute("width", length+6);
+  if (pt.x+length+8 > xmax){
+  tooltip.setAttribute("text-anchor","end");
+  tooltip.setAttribute("dx","-0.5em");
+  tooltip_bg.setAttribute("x",pt.x-8-length);
+  tool_key.setAttribute("x",pt.x-12);
+  tooltip_key.setAttribute("text-anchor","end");
+  tooltip_key.setAttribute("dx","-1.6em");
+  }
+  }
+  }]]></script>
+  <g id="view-1-2">
+    <defs>
+      <clipPath id="mask-1-2">
+        <rect x="59.04" y="30.24" height="148.72" width="342.72"/>
+      </clipPath>
+    </defs>
+    <g id="axes" fill="none" stroke="#000000" stroke-width="1">
+      <rect x="59.04" y="30.24" height="148.72" width="342.72" id="axes-box"/>
+    </g>
+    <g clip-path="url(#mask-1-2)">
+      <rect x="59.04" y="178.96" height="0" width="10.3228915662651" fill="rgb(78,190,194)" id="1-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="59.04" y="178.744" height="0.216437973731473" width="10.3228915662651" fill="rgb(11,81,107)" id="1-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="59.04" y="178.325" height="0.418507283884395" width="10.3228915662651" fill="rgb(1,178,159)" id="1-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="59.04" y="178.159" height="0.165720693383378" width="10.3228915662651" fill="rgb(170,222,220)" id="1-meanFrag" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="59.04" y="170.602" height="7.55745097407083" width="10.3228915662651" fill="rgb(38,185,218)" id="1-meanFiber" onmousemove="hovertext('0.7 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="178.912" height="0.0475754318227359" width="10.322891566265" fill="rgb(78,190,194)" id="2-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="178.728" height="0.184366091182682" width="10.322891566265" fill="rgb(11,81,107)" id="2-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="178.53" height="0.197764886267436" width="10.322891566265" fill="rgb(1,178,159)" id="2-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="178.052" height="0.478274712759315" width="10.322891566265" fill="rgb(170,222,220)" id="2-meanFrag" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="70.911" y="158.523" height="19.5293664041631" width="10.322891566265" fill="rgb(38,185,218)" id="2-meanFiber" onmousemove="hovertext('1.8 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="177.2" height="1.76018539230759" width="10.3228915662651" fill="rgb(78,190,194)" id="3-meanPellet" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="174.157" height="3.04231976182143" width="10.3228915662651" fill="rgb(11,81,107)" id="3-meanFilm" onmousemove="hovertext('0.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="173.602" height="0.555970535596458" width="10.3228915662651" fill="rgb(1,178,159)" id="3-meanFoam" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="161.973" height="11.628483702904" width="10.3228915662651" fill="rgb(170,222,220)" id="3-meanFrag" onmousemove="hovertext('1.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="82.783" y="134.785" height="27.1879506930947" width="10.3228915662651" fill="rgb(38,185,218)" id="3-meanFiber" onmousemove="hovertext('2.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="178.94" height="0.0204550956185017" width="10.3228915662652" fill="rgb(78,190,194)" id="4-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="178.554" height="0.385673195831572" width="10.3228915662652" fill="rgb(11,81,107)" id="4-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="178.282" height="0.272028420421663" width="10.3228915662652" fill="rgb(1,178,159)" id="4-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="177.979" height="0.302608016256784" width="10.3228915662652" fill="rgb(170,222,220)" id="4-meanFrag" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="94.654" y="171.16" height="6.81916998707541" width="10.3228915662652" fill="rgb(38,185,218)" id="4-meanFiber" onmousemove="hovertext('0.6 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="178.779" height="0.180855243103196" width="10.3228915662649" fill="rgb(78,190,194)" id="5-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="178.665" height="0.114589170165289" width="10.3228915662649" fill="rgb(11,81,107)" id="5-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="178.249" height="0.415688694212349" width="10.3228915662649" fill="rgb(1,178,159)" id="5-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="177.885" height="0.363656991727993" width="10.3228915662649" fill="rgb(170,222,220)" id="5-meanFrag" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="106.525" y="168.051" height="9.83429911252441" width="10.3228915662649" fill="rgb(38,185,218)" id="5-meanFiber" onmousemove="hovertext('0.9 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="177.114" height="1.84556485180715" width="10.3228915662652" fill="rgb(78,190,194)" id="6-meanPellet" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="175.849" height="1.265049860863" width="10.3228915662652" fill="rgb(11,81,107)" id="6-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="151.055" height="24.794000239217" width="10.3228915662652" fill="rgb(1,178,159)" id="6-meanFoam" onmousemove="hovertext('2.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="112.979" height="38.0765239763343" width="10.3228915662652" fill="rgb(170,222,220)" id="6-meanFrag" onmousemove="hovertext('3.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="118.397" y="100.618" height="12.3609399930091" width="10.3228915662652" fill="rgb(38,185,218)" id="6-meanFiber" onmousemove="hovertext('1.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="176.046" height="2.91355775503717" width="10.3228915662652" fill="rgb(78,190,194)" id="7-meanPellet" onmousemove="hovertext('0.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="175.01" height="1.03671280265414" width="10.3228915662652" fill="rgb(11,81,107)" id="7-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="171.361" height="3.6488994605501" width="10.3228915662652" fill="rgb(1,178,159)" id="7-meanFoam" onmousemove="hovertext('0.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="114.122" height="57.2386605193527" width="10.3228915662652" fill="rgb(170,222,220)" id="7-meanFrag" onmousemove="hovertext('5.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="130.268" y="99.468" height="14.6543137503526" width="10.3228915662652" fill="rgb(38,185,218)" id="7-meanFiber" onmousemove="hovertext('1.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="178.876" height="0.0840718113335583" width="10.3228915662649" fill="rgb(78,190,194)" id="8-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="178.812" height="0.0638024283745438" width="10.3228915662649" fill="rgb(11,81,107)" id="8-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="176.888" height="1.92364518252302" width="10.3228915662649" fill="rgb(1,178,159)" id="8-meanFoam" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="176.174" height="0.714036603762452" width="10.3228915662649" fill="rgb(170,222,220)" id="8-meanFrag" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.139" y="175.452" height="0.722546924710429" width="10.3228915662649" fill="rgb(38,185,218)" id="8-meanFiber" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="178.046" height="0.914329712144394" width="10.3228915662652" fill="rgb(78,190,194)" id="9-meanPellet" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="177.613" height="0.432978046870488" width="10.3228915662652" fill="rgb(11,81,107)" id="9-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="174.958" height="2.65455696934342" width="10.3228915662652" fill="rgb(1,178,159)" id="9-meanFoam" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="144.989" height="29.9686796062417" width="10.3228915662652" fill="rgb(170,222,220)" id="9-meanFrag" onmousemove="hovertext('2.7 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="154.011" y="140.152" height="4.83749848898131" width="10.3228915662652" fill="rgb(38,185,218)" id="9-meanFiber" onmousemove="hovertext('0.4 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="178.867" height="0.0925431031582775" width="10.3228915662652" fill="rgb(78,190,194)" id="10-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="178.444" height="0.423383900536805" width="10.3228915662652" fill="rgb(11,81,107)" id="10-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="178.444" height="0" width="10.3228915662652" fill="rgb(1,178,159)" id="10-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="176.884" height="1.55964396971774" width="10.3228915662652" fill="rgb(170,222,220)" id="10-meanFrag" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="165.882" y="119.065" height="57.819307167815" width="10.3228915662652" fill="rgb(38,185,218)" id="10-meanFiber" onmousemove="hovertext('5.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="178.897" height="0.0630230111116532" width="10.3228915662649" fill="rgb(78,190,194)" id="11-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="177.812" height="1.08448757471487" width="10.3228915662649" fill="rgb(11,81,107)" id="11-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="177.512" height="0.300161783984521" width="10.3228915662649" fill="rgb(1,178,159)" id="11-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="175.433" height="2.078962114988" width="10.3228915662649" fill="rgb(170,222,220)" id="11-meanFrag" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="177.753" y="157.915" height="17.5181559662119" width="10.3228915662649" fill="rgb(38,185,218)" id="11-meanFiber" onmousemove="hovertext('1.6 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="178.96" height="0" width="10.3228915662652" fill="rgb(78,190,194)" id="12-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="178.508" height="0.452122900674311" width="10.3228915662652" fill="rgb(11,81,107)" id="12-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="178.479" height="0.0288811889215594" width="10.3228915662652" fill="rgb(1,178,159)" id="12-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="176.771" height="1.70794961874051" width="10.3228915662652" fill="rgb(170,222,220)" id="12-meanFrag" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="189.625" y="139.456" height="37.314735130085" width="10.3228915662652" fill="rgb(38,185,218)" id="12-meanFiber" onmousemove="hovertext('3.4 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="178.857" height="0.103349638073013" width="10.3228915662649" fill="rgb(78,190,194)" id="13-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="178.538" height="0.318703411876697" width="10.3228915662649" fill="rgb(11,81,107)" id="13-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="178.099" height="0.439235961810255" width="10.3228915662649" fill="rgb(1,178,159)" id="13-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="173.078" height="5.02117609192086" width="10.3228915662649" fill="rgb(170,222,220)" id="13-meanFrag" onmousemove="hovertext('0.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="201.496" y="126.526" height="46.551625265055" width="10.3228915662649" fill="rgb(38,185,218)" id="13-meanFiber" onmousemove="hovertext('4.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="178.062" height="0.898125647760565" width="10.3228915662652" fill="rgb(78,190,194)" id="14-meanPellet" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="167.781" height="10.2807314573373" width="10.3228915662652" fill="rgb(11,81,107)" id="14-meanFilm" onmousemove="hovertext('0.9 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="158.068" height="9.71356852249212" width="10.3228915662652" fill="rgb(1,178,159)" id="14-meanFoam" onmousemove="hovertext('0.9 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="93.896" height="64.1717610585274" width="10.3228915662652" fill="rgb(170,222,220)" id="14-meanFrag" onmousemove="hovertext('5.8 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="213.367" y="43.553" height="50.3432122279205" width="10.3228915662652" fill="rgb(38,185,218)" id="14-meanFiber" onmousemove="hovertext('4.6 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="178.734" height="0.226358376664024" width="10.3228915662652" fill="rgb(78,190,194)" id="15-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="176.24" height="2.49344165063579" width="10.3228915662652" fill="rgb(11,81,107)" id="15-meanFilm" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="160.128" height="16.1122943784214" width="10.3228915662652" fill="rgb(1,178,159)" id="15-meanFoam" onmousemove="hovertext('1.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="137.989" height="22.1390150289032" width="10.3228915662652" fill="rgb(170,222,220)" id="15-meanFrag" onmousemove="hovertext('2.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="225.239" y="68.058" height="69.9304060573268" width="10.3228915662652" fill="rgb(38,185,218)" id="15-meanFiber" onmousemove="hovertext('6.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="178.808" height="0.151708942076965" width="10.3228915662649" fill="rgb(78,190,194)" id="16-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="171.768" height="7.04023335444998" width="10.3228915662649" fill="rgb(11,81,107)" id="16-meanFilm" onmousemove="hovertext('0.6 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="166.631" height="5.13689666549041" width="10.3228915662649" fill="rgb(1,178,159)" id="16-meanFoam" onmousemove="hovertext('0.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="115.022" height="51.6089161986874" width="10.3228915662649" fill="rgb(170,222,220)" id="16-meanFrag" onmousemove="hovertext('4.7 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.11" y="81.262" height="33.7606772473362" width="10.3228915662649" fill="rgb(38,185,218)" id="16-meanFiber" onmousemove="hovertext('3.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="178.933" height="0.0268742591146918" width="10.3228915662651" fill="rgb(78,190,194)" id="17-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="178.642" height="0.291593189379142" width="10.3228915662651" fill="rgb(11,81,107)" id="17-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="178.273" height="0.368255224796826" width="10.3228915662651" fill="rgb(1,178,159)" id="17-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="176.733" height="1.53990995679715" width="10.3228915662651" fill="rgb(170,222,220)" id="17-meanFrag" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="248.981" y="163.366" height="13.3674177203912" width="10.3228915662651" fill="rgb(38,185,218)" id="17-meanFiber" onmousemove="hovertext('1.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="178.917" height="0.0425011431184146" width="10.3228915662652" fill="rgb(78,190,194)" id="18-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="178.584" height="0.333753565440816" width="10.3228915662652" fill="rgb(11,81,107)" id="18-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="178.119" height="0.465058100991911" width="10.3228915662652" fill="rgb(1,178,159)" id="18-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="177.171" height="0.947555880771006" width="10.3228915662652" fill="rgb(170,222,220)" id="18-meanFrag" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="260.853" y="152.226" height="24.9453150851008" width="10.3228915662652" fill="rgb(38,185,218)" id="18-meanFiber" onmousemove="hovertext('2.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="178.789" height="0.171343590906361" width="10.3228915662649" fill="rgb(78,190,194)" id="19-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="178.295" height="0.493834502165754" width="10.3228915662649" fill="rgb(11,81,107)" id="19-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="178.123" height="0.171343590906361" width="10.3228915662649" fill="rgb(1,178,159)" id="19-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="177.65" height="0.473008204892267" width="10.3228915662649" fill="rgb(170,222,220)" id="19-meanFrag" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="272.724" y="160.738" height="16.9121383297962" width="10.3228915662649" fill="rgb(38,185,218)" id="19-meanFiber" onmousemove="hovertext('1.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="178.329" height="0.630562414266109" width="10.3228915662651" fill="rgb(78,190,194)" id="20-meanPellet" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="177.02" height="1.30912611958362" width="10.3228915662651" fill="rgb(11,81,107)" id="20-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="175.274" height="1.74659243121116" width="10.3228915662651" fill="rgb(1,178,159)" id="20-meanFoam" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="171.349" height="3.92519648188494" width="10.3228915662651" fill="rgb(170,222,220)" id="20-meanFrag" onmousemove="hovertext('0.4 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="284.595" y="145.561" height="25.7876170220262" width="10.3228915662651" fill="rgb(38,185,218)" id="20-meanFiber" onmousemove="hovertext('2.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="178.889" height="0.070719184793262" width="10.3228915662651" fill="rgb(78,190,194)" id="21-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="178.662" height="0.227109437115473" width="10.3228915662651" fill="rgb(11,81,107)" id="21-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="178.542" height="0.120502565784875" width="10.3228915662651" fill="rgb(1,178,159)" id="21-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="177.512" height="1.03004194607101" width="10.3228915662651" fill="rgb(170,222,220)" id="21-meanFrag" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="296.467" y="167.222" height="10.2895291468562" width="10.3228915662651" fill="rgb(38,185,218)" id="21-meanFiber" onmousemove="hovertext('0.9 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="178.942" height="0.0184620350197804" width="10.3228915662649" fill="rgb(78,190,194)" id="22-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="178.254" height="0.687370166356146" width="10.3228915662649" fill="rgb(11,81,107)" id="22-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="177.773" height="0.481481481481495" width="10.3228915662649" fill="rgb(1,178,159)" id="22-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="174.6" height="3.17240203918757" width="10.3228915662649" fill="rgb(170,222,220)" id="22-meanFrag" onmousemove="hovertext('0.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="308.338" y="165.602" height="8.9985140576548" width="10.3228915662649" fill="rgb(38,185,218)" id="22-meanFiber" onmousemove="hovertext('0.8 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="178.854" height="0.106120317848706" width="10.3228915662652" fill="rgb(78,190,194)" id="23-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="176.897" height="1.95701899548814" width="10.3228915662652" fill="rgb(11,81,107)" id="23-meanFilm" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="176.566" height="0.331358692730817" width="10.3228915662652" fill="rgb(1,178,159)" id="23-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="172.696" height="3.86964512731356" width="10.3228915662652" fill="rgb(170,222,220)" id="23-meanFrag" onmousemove="hovertext('0.4 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="320.209" y="147.49" height="25.2057557594065" width="10.3228915662652" fill="rgb(38,185,218)" id="23-meanFiber" onmousemove="hovertext('2.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="178.91" height="0.0498181897358734" width="10.3228915662652" fill="rgb(78,190,194)" id="24-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="178.433" height="0.477372498979179" width="10.3228915662652" fill="rgb(11,81,107)" id="24-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="176.571" height="1.86133241250542" width="10.3228915662652" fill="rgb(1,178,159)" id="24-meanFoam" onmousemove="hovertext('0.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="172.561" height="4.01091780918026" width="10.3228915662652" fill="rgb(170,222,220)" id="24-meanFrag" onmousemove="hovertext('0.4 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="332.08" y="139.101" height="33.4590739819258" width="10.3228915662652" fill="rgb(38,185,218)" id="24-meanFiber" onmousemove="hovertext('3.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="178.96" height="0" width="10.3228915662649" fill="rgb(78,190,194)" id="25-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="178.937" height="0.0227430866185614" width="10.3228915662649" fill="rgb(11,81,107)" id="25-meanFilm" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="178.84" height="0.0971660560138048" width="10.3228915662649" fill="rgb(1,178,159)" id="25-meanFoam" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="173.045" height="5.7951550712331" width="10.3228915662649" fill="rgb(170,222,220)" id="25-meanFrag" onmousemove="hovertext('0.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="343.952" y="159.944" height="13.1005191173379" width="10.3228915662649" fill="rgb(38,185,218)" id="25-meanFiber" onmousemove="hovertext('1.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="178.808" height="0.152084006984097" width="10.3228915662652" fill="rgb(78,190,194)" id="26-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="177.27" height="1.53743265541442" width="10.3228915662652" fill="rgb(11,81,107)" id="26-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="176.637" height="0.633040223220632" width="10.3228915662652" fill="rgb(1,178,159)" id="26-meanFoam" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="166.669" height="9.9688711451158" width="10.3228915662652" fill="rgb(170,222,220)" id="26-meanFrag" onmousemove="hovertext('0.9 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="355.823" y="35.107" height="131.561448524748" width="10.3228915662652" fill="rgb(38,185,218)" id="26-meanFiber" onmousemove="hovertext('11.9 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="151.102" height="27.8579987143289" width="10.3228915662652" fill="rgb(78,190,194)" id="27-meanPellet" onmousemove="hovertext('2.5 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="144.39" height="6.71194492553067" width="10.3228915662652" fill="rgb(11,81,107)" id="27-meanFilm" onmousemove="hovertext('0.6 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="108.586" height="35.8035757809381" width="10.3228915662652" fill="rgb(1,178,159)" id="27-meanFoam" onmousemove="hovertext('3.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="92.965" height="15.6212266973896" width="10.3228915662652" fill="rgb(170,222,220)" id="27-meanFrag" onmousemove="hovertext('1.4 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="367.694" y="47.532" height="45.4337324973123" width="10.3228915662652" fill="rgb(38,185,218)" id="27-meanFiber" onmousemove="hovertext('4.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="178.718" height="0.242129435945117" width="10.3228915662649" fill="rgb(78,190,194)" id="28-meanPellet" onmousemove="hovertext('0.0 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="178.059" height="0.659120717863175" width="10.3228915662649" fill="rgb(11,81,107)" id="28-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="177.158" height="0.900527106665379" width="10.3228915662649" fill="rgb(1,178,159)" id="28-meanFoam" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="176.004" height="1.15395356859707" width="10.3228915662649" fill="rgb(170,222,220)" id="28-meanFrag" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="379.566" y="140.626" height="35.3781922872168" width="10.3228915662649" fill="rgb(38,185,218)" id="28-meanFiber" onmousemove="hovertext('3.2 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="177.672" height="1.2877305829789" width="10.3228915662652" fill="rgb(78,190,194)" id="29-meanPellet" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="176.241" height="1.43159435256618" width="10.3228915662652" fill="rgb(11,81,107)" id="29-meanFilm" onmousemove="hovertext('0.1 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="172.538" height="3.70305322954408" width="10.3228915662652" fill="rgb(1,178,159)" id="29-meanFoam" onmousemove="hovertext('0.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="169.644" height="2.89315392321458" width="10.3228915662652" fill="rgb(170,222,220)" id="29-meanFrag" onmousemove="hovertext('0.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="391.437" y="132.878" height="36.7667398189784" width="10.3228915662652" fill="rgb(38,185,218)" id="29-meanFiber" onmousemove="hovertext('3.3 (ppcm)',evt)" onmouseout="hovertext(' ')"/>
+    </g>
+  </g>
+  <g id="side-1">
+    <g id="axis-side-1"/>
+  </g>
+  <g id="side-2">
+    <g id="axis-side-2">
+      <g id="tick-labels" stroke="none" fill="#000000" text-anchor="end">
+        <text x="59.04" y="178.96" dx="-0.33em" dy="0.33em" class="y-tick-label">0</text>
+        <text x="59.04" y="123.879" dx="-0.33em" dy="0.33em" class="y-tick-label">5</text>
+        <text x="59.04" y="68.797" dx="-0.33em" dy="0.33em" class="y-tick-label">10</text>
+      </g>
+      <g id="ticks">
+        <path d="M 59.04,178.96 h 5"/>
+        <path d="M 59.04,123.879 h 5"/>
+        <path d="M 59.04,68.797 h 5"/>
+      </g>
+      <g id="axis-label" stroke="none" fill="#000000" text-anchor="middle">
+        <text x="59.04" y="104.6" dy="-3.0em" transform="rotate(-90 59.04,104.6)">Average concentration,</text>
+        <text x="59.04" y="104.6" dy="-2.5em" transform="rotate(-90 59.04,104.6)" class="sub-label"> in particles per cubic meter</text>
+      </g>
+    </g>
+  </g>
+  <rect id="tooltip_bg" x="0" y="0" rx="2.5" ry="2.5" width="55" height="27" fill="white" stroke-width="0.5" stroke="#696969" class="hidden"/>
+  <rect id="tool_key" x="0" y="0" width="7" height="7" fill="none" stroke="none"/>
+  <text id="tooltip_key" dx="1.6em" dy="-1.45em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label"> </text>
+  <text id="tooltip" dx="0.5em" dy="-0.33em" stroke="none" fill="#000000" text-anchor="begin"> </text>
+</svg>
