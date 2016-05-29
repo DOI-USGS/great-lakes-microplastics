@@ -101,8 +101,17 @@ gsplotLandUsePct <- function(fname.data, gap){
   gs_landuse$view.1.2$rect$onmouseout = geom.df$onmouseout
   gs_landuse$side.1$axis$id=paste0('site-',1:length(sites))
   
+  # determine steps for sorting
   q.sorted <- quickSortIterative(filter(geom.df, landuse.type == 'UrbanPct') %>% .$landuse.pct)
   gs_landuse$json <- q.sorted$swaps_ids
+
+  # determine steps for reverting the sort
+  q.desorted <- quickSortIterative(q.sorted$steps_ids[nrow(q.sorted$steps_ids),])
+  siteIDs <- q.desorted$steps_vals[1,]
+  qsortIDs <- q.desorted$steps_ids[1,]
+  q.desorted$swaps_val <- matrix(siteIDs[match(q.desorted$swaps_ids, qsortIDs)], ncol=2, byrow=FALSE)
+  gs_landuse$json_reverse <- q.desorted$swaps_val
+
   return(gs_landuse)
 }
 
@@ -175,32 +184,32 @@ font-size: 12px;
 
 }'
 }
-JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
-  
-  
-  frame.interval <- round(duration/swap.length*1000)
-  js.function <- c('function sortLU(){
-                   \tvar i =0;
-                   \twindow.myInterval = setInterval(function () {   
-                   if (i < swaps.length){
-                   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
-                   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
-                   '\t var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
-                   \t var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
-                   \t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
-                   \t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
-                   '\t document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);',
-                   '\t document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);',
-                   sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',types),
-                   sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',types),
-                   'i++
-                   } else {
-                   clearInterval(window.myInterval);',
-                   sprintf('}}, %s)',frame.interval),
-                   '}')
-  return(paste(js.function, collapse='\n'))
-                   }
 
+JS_defineSwapLuFunction <- function(funname='sortLU', types, swaps.name, swap.length, duration=2){
+  frame.interval <- round(duration/swap.length*1000)
+  js.function <- 
+    gsub('SWAPS', swaps.name, c(
+      sprintf('function %s(){', funname),
+      '\t var i = 0;',
+      '\t window.myInterval = setInterval(function () {'   ,
+      '\t\t if (i < SWAPS.length){',
+      '\t\t\t var x0 = document.getElementById(SWAPS[i][0] + "-meanFiber").getAttribute("x");',
+      '\t\t\t var x1 = document.getElementById(SWAPS[i][1] + "-meanFiber").getAttribute("x");',
+      '\t\t\t var tr0vals = document.getElementById("site-" + SWAPS[i][0]).getAttribute("transform").split(/[,()]+/);',
+      '\t\t\t var tr1vals = document.getElementById("site-" + SWAPS[i][1]).getAttribute("transform").split(/[,()]+/);',
+      '\t\t\t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"',
+      '\t\t\t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
+      '\t\t\t document.getElementById("site-" + SWAPS[i][0]).setAttribute("transform", tr0new);',
+      '\t\t\t document.getElementById("site-" + SWAPS[i][1]).setAttribute("transform", tr1new);',
+      sprintf('\t\t\t document.getElementById(SWAPS[i][0] + "-%s").setAttribute("x", x1);',types),
+      sprintf('\t\t\t document.getElementById(SWAPS[i][1] + "-%s").setAttribute("x", x0);',types),
+      '\t\t\t i++',
+      '\t\t} else {',
+      '\t\t\t clearInterval(window.myInterval);',
+      sprintf('\t}}, %s)',frame.interval),
+      '}'))
+  return(paste(js.function, collapse='\n'))
+}
 
 createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
@@ -211,24 +220,25 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   modifyAttr(xlab, c('dy' = "7.5em"))
   
-  
   un.conc.types <- unique(unlist(lapply(gs.conc$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   un.lu.types <- unique(unlist(lapply(gs.landuse$view.1.2$rect$id,function(x) strsplit(x, '[-]')[[1]][2])))
   all.types = c(un.lu.types, un.conc.types)
-  
+
   LU.swaps <- jsonlite::toJSON(gs.landuse$json)
-  swap.length <- nrow(gs.landuse$json)
-  dinosvg:::add_ecmascript(svg, sprintf('%s\n%s\nvar swaps = %s\n%s\n%s\n%s', 
-                                        JS_defineInitFunction(), 
-                                        'var highlightBaseHeight = Number(document.getElementById("highlight-fill").getAttribute("height"));',
-                                        LU.swaps , 
-                                        '\tvar svg = document.querySelector("svg")
-                                        \tvar pt = svg.createSVGPoint();
-                                        \t	var toolkeys = {"meanFiber":"Fiber & Lines","meanPellet":"Beads & Pellets", "meanFilm":"Films", "meanFoam":"Foams", "meanFrag":"Fragments", "UrbanPct":"Urban", "AgTotalPct":"Agriculture", "OtherPct":"Other"}
-                                        \tvar xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);',
-                                        JS_defineSwapLuFunction(all.types, swap.length, duration=1.5),
-                                        JS_defineHoverFunction()))
-  
+  LU.revswaps <- jsonlite::toJSON(gs.landuse$json_reverse)
+  dinosvg:::add_ecmascript(svg, sprintf(
+    '%s\nvar swaps = %s\n%s\nvar revswaps = %s\n%s\n%s\n%s\n%s', 
+    JS_defineInitFunction(), 
+    'var highlightBaseHeight = Number(document.getElementById("highlight-fill").getAttribute("height"));',
+    LU.swaps, 
+    LU.revswaps,
+    '\t var svg = document.querySelector("svg")
+     \t var pt = svg.createSVGPoint();
+     \t var toolkeys = {"meanFiber":"Fiber & Lines","meanPellet":"Beads & Pellets", "meanFilm":"Films", "meanFoam":"Foams", "meanFrag":"Fragments", "UrbanPct":"Urban", "AgTotalPct":"Agriculture", "OtherPct":"Other"}
+     \t var xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);',
+    JS_defineSwapLuFunction('sortLU', all.types, 'swaps', swap.length=nrow(gs.landuse$json), duration=1.5),
+    JS_defineSwapLuFunction('sortLUrev', all.types, 'revswaps', swap.length=nrow(gs.landuse$json_reverse), duration=1.5),
+    JS_defineHoverFunction()))
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
   svg <- dinosvg::svg(svg, gs.conc, as.xml=TRUE)
   
@@ -259,6 +269,7 @@ JS_defineInitFunction <- function(){
     if ( window.svgDocument == null ) {
     svgDocument = evt.target.ownerDocument;
     svgDocument.sortLU = this.sortLU;
+    svgDocument.sortLUrev = this.sortLUrev;
     var mainDocument = window.parent.document;
     mainDocument.addEventListener("landUseTrigger", sortLU, false);
     }
@@ -322,29 +333,4 @@ JS_defineHoverFunction <- function(){
   }
   }
   }'
-}
-JS_defineSwapLuFunction <- function(types, swap.length, duration=2){
-  
-  
-  frame.interval <- round(duration/swap.length*1000)
-  js.function <- c('function sortLU(){
-\tvar i =0;
-                   \twindow.myInterval = setInterval(function () {   
-                   if (i < swaps.length){
-                   \t var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
-                   \t var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");',
-                   '\t var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
-                   \t var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
-                   \t var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
-                   \t var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"',
-                   '\t document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);',
-                   '\t document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);',
-                   sprintf('\t document.getElementById(swaps[i][0] + "-%s").setAttribute("x", x1);',types),
-                   sprintf('\t document.getElementById(swaps[i][1] + "-%s").setAttribute("x", x0);',types),
-                   'i++
-                   } else {
-                   clearInterval(window.myInterval);',
-                   sprintf('}}, %s)',frame.interval),
-                   '}')
-  return(paste(js.function, collapse='\n'))
 }
