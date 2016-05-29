@@ -227,7 +227,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   LU.swaps <- jsonlite::toJSON(gs.landuse$json)
   LU.revswaps <- jsonlite::toJSON(gs.landuse$json_reverse)
   dinosvg:::add_ecmascript(svg, sprintf(
-    '%s\nvar swaps = %s\n%s\nvar revswaps = %s\n%s\n%s\n%s\n%s', 
+    '%s\n%s\nvar swaps = %s\nvar revswaps = %s\n%s\n%s\n%s\n%s', 
     JS_defineInitFunction(), 
     'var highlightBaseHeight = Number(document.getElementById("highlight-fill").getAttribute("height"));',
     LU.swaps, 
