@@ -6,7 +6,8 @@ runAll <- function() {
   if (!dir.exists("target")){
     dir.create("target")
   }
-  buildPages()
+  buildPages(viz.yaml)
+  buildJS(viz.yaml)
   # TODO describe this stuff in yaml
   file.copy("images", "target", recursive = TRUE)
   file.copy("layout/js", "target", recursive = TRUE)

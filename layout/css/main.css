@@ -88,18 +88,18 @@ header img{
 	}
 
 #intro,
-#figure1,
-#figure2,
-#figure3{
+#relativeAbundance,
+#environmentalEffects,
+#landUse{
 	min-height:100%;
 	position:relative;
 	}
 	
-#figure2{
+#environmentalEffects{
 	padding-bottom:20px;
 	}
 
-#figure2:after{
+#environmentalEffects:after{
      visibility: hidden;
      display: block;
      font-size: 0;
@@ -109,9 +109,9 @@ header img{
      }
 	 
 #intro p,
-#figure1 p,
-#figure2 p,
-#figure3 p{
+#relativeAbundance p,
+#environmentalEffects p,
+#landUse p{
 	max-width:860px;
 	margin:10px auto 0 auto;
 	}
@@ -120,7 +120,7 @@ header img{
 	padding-top:30px;
 	}
 	
-#figure3{
+#landUse{
 	background:rgb(100,0,0,.5);
 	}
 	
