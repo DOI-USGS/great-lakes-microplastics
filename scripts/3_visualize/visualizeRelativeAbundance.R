@@ -19,6 +19,7 @@ visualizeRelativeAbundance_ie <- function(...) {
 
 # The workhorse function
 visualizeRelativeAbundance <- function(tag='desktop', file.in, file.text, target_name){
+
   template.svg = paste(readLines('data/relativeAbundance.mustache'), collapse='\n')
   json.file <- sprintf('data/relativeAbundance-%s.json', tag)
   pointers = paste(readLines(json.file), collapse='\n')

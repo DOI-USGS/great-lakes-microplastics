@@ -227,8 +227,9 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   LU.swaps <- jsonlite::toJSON(gs.landuse$json)
   LU.revswaps <- jsonlite::toJSON(gs.landuse$json_reverse)
   dinosvg:::add_ecmascript(svg, sprintf(
-    '%s\nvar swaps = %s\nvar revswaps = %s\n%s\n%s\n%s\n%s', 
+    '%s\n%s\nvar swaps = %s\nvar revswaps = %s\n%s\n%s\n%s\n%s', 
     JS_defineInitFunction(), 
+    'var highlightBaseHeight = Number(document.getElementById("highlight-fill").getAttribute("height"));',
     LU.swaps, 
     LU.revswaps,
     '\t var svg = document.querySelector("svg")
@@ -238,7 +239,6 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
     JS_defineSwapLuFunction('sortLU', all.types, 'swaps', swap.length=nrow(gs.landuse$json), duration=1.5),
     JS_defineSwapLuFunction('sortLUrev', all.types, 'revswaps', swap.length=nrow(gs.landuse$json_reverse), duration=1.5),
     JS_defineHoverFunction()))
-  
   gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
   svg <- dinosvg::svg(svg, gs.conc, as.xml=TRUE)
   
@@ -256,6 +256,11 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="1.6em", dy="-1.45em", stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
+  y.pos <- XML:::xmlAttrs(XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,2)))$rect)[['y']]
+  mask.bottom <- XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,'2a')))$rect
+  y.pos2 <- XML:::xmlAttrs(mask.bottom)[['y']]
+  height <- as.numeric(XML:::xmlAttrs(mask.bottom)[['height']]) + as.numeric(y.pos2) - as.numeric(y.pos)
+  newXMLNode('rect', parent=svg, at=1, attrs = c(y=y.pos, height=height, width="0", fill="#ffffb2", stroke='#ffff4c', rx="2", ry="2", id='highlight-fill'))
   dinosvg:::write_svg(svg, target_name)
 }
 
@@ -277,6 +282,7 @@ JS_defineHoverFunction <- function(){
   return pt.matrixTransform(svg.getScreenCTM().inverse());
 };
   function hovertext(text, evt){
+  var highlight = document.getElementById("highlight-fill");
   var tooltip = document.getElementById("tooltip");
   var tooltip_bg = document.getElementById("tooltip_bg");
   var tool_key = document.getElementById("tool_key");
@@ -286,6 +292,7 @@ JS_defineHoverFunction <- function(){
   tooltip_key.setAttribute("text-anchor","begin");
   tooltip_key.setAttribute("dx","1.6em");
   if (evt === undefined){
+  highlight.setAttribute("width","0");
   tooltip.setAttribute("class","hidden");
   tooltip_key.setAttribute("class","hidden");
   tooltip.firstChild.data = text;
@@ -295,6 +302,10 @@ JS_defineHoverFunction <- function(){
   tool_key.setAttribute("fill","none");
   } else {
   var pt = cursorPoint(evt)
+  highlight.setAttribute("width",evt.target.getAttribute("width"));
+  highlight.setAttribute("x",evt.target.getAttribute("x"));
+  var siteNum = evt.target.getAttribute("id").split("-")[0];
+  highlight.setAttribute("height", 6 + highlightBaseHeight + Number(document.getElementById("site-" + siteNum).getComputedTextLength()));
   tooltip.setAttribute("x",pt.x);
   tooltip.setAttribute("y",pt.y);
   tooltip.firstChild.data = text;
