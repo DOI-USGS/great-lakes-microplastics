@@ -20,8 +20,7 @@ welcome-p3: >-
 ## Relative Abundance ##
 relAbundance-intro1: >-
   In 2015, the United States Congress passed <a href='https://www.congress.gov/bill/114th-congress/house-bill/1321' target='_blank'>Public Law 114-114</a> to ban the sale of products containing microbeads.
-  The ban for sale of these products starts in 2018. 
-  However, microbeads are only a small fraction of microplastics found in the environment. 
+  The ban for sale of these products starts in 2018; however, microbeads are only a small fraction of microplastics found in the environment. 
 
 relAbundance-title: Relative Abundance
 relAbundance-p1: >-
@@ -42,7 +41,7 @@ relAbundance-films: ["bags and wrappers"]
 
 relAbundance-fragments-label: Fragments
 relAbundance-fragments-id: fragments-table
-relAbundance-fragments: ["degrated pieces of plastic litter, such as plastic bottles"]
+relAbundance-fragments: ["degraded pieces of plastic litter, such as plastic bottles"]
 
 relAbundance-foams-label: Foams
 relAbundance-foams-id: foams-table
@@ -62,7 +61,7 @@ envEffects-p2: >-
   nonylphenol, and antimicrobials have been associated with cancer and endocrine disruption. 
   The high sorption capacity of plastic enables the accumulation of persistent organic pollutants 
   such as polychlorinated biphenyls, polycyclic aromatic hydrocarbons, and organochlorine pesticides, 
-  with concentrations of 10^5 – 10^6 times higher than in the surrounding water column. Trace metals 
+  with concentrations of 10<sup>5</sup> – 10<sup>6</sup> times higher than in the surrounding water column. Trace metals 
   and pathogens have also been shown to accumulate on microplastics.
 
 ## Environmental Effects Facts## 
@@ -89,7 +88,7 @@ envEffects-lake2: particles per square kilometer of Great Lakes water
 
 ## Land Use Correlation ##
 landUse-intro: How do microplastics get into our rivers and streams?
-landUse-title: Land use surronding rivers correlate to some types of microplastics, but not the dominating fiber contributor.
+landUse-title: Land use in the watersheds are correlated with some types of microplastics, but not with fibers which were found in greatest abundance in these stream samples. 
 landUse-p1: >-
   Fibers were present in watersheds with all types of land use and varying wastewater effluent contributions
 
@@ -106,18 +105,30 @@ footerContact: owi.webmaster@usgs.gov
 ## Supplemental Information ##
 
 ref1: >- 
-  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. Microplastic pollution in the surface waters of the Laurentian Great Lakes. Mar. Pollut. Bull. 2013, 77 (1-2)
+  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
+  Microplastic pollution in the surface waters of the Laurentian Great Lakes. 
+  Mar. Pollut. Bull. 2013, 77 (1-2)
+  http://dx.doi.org/10.1016/j.marpolbul.2016.03.041
   
 ref2: >- 
-  Van Cauwenberghe L, Janssen CR. Microplastics in bivalves cultured for human consumption. Environmental Pollution. 2014 Oct 31;193:65-70
+  Van Cauwenberghe L, Janssen CR. 
+  Microplastics in bivalves cultured for human consumption. 
+  Environmental Pollution. 2014 Oct 31;193:65-70
+  http://dx.doi.org/10.1016/j.envpol.2014.06.010
   
 ref3: >- 
-  Sanchez W, Bender C, Porcher JM. Wild gudgeons (Gobio gobio) from French rivers are contaminated by microplastics: preliminary study and first evidence. Environmental research. 2014 Jan 31;128:98-100.
+  Sanchez W, Bender C, Porcher JM. 
+  Wild gudgeons (Gobio gobio) from French rivers are contaminated by microplastics: preliminary study and first evidence. 
+  Environmental research. 2014 Jan 31;128:98-100
+  http://dx.doi.org/10.1186/s12302-014-0012-7
   
 ref4: >-
-  Baldwin, A.; Corsi, S.; Mason, S. Microplastics in 29 Great Lakes tributaries: Relations to watershed attributes and hydrology. 2016.
+  Baldwin, A.; Corsi, S.; Mason, S. 
+  Microplastics in 29 Great Lakes tributaries: Relations to watershed attributes and hydrology. 2016.
   
 ref5: >-
-  Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. Policy: Classify plastic waste as hazardous. 
+  Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. 
+  Policy: Classify plastic waste as hazardous. 
+  http://dx.doi.org/10.1038/494169a
   
   
