@@ -20,8 +20,7 @@ welcome-p3: >-
 ## Relative Abundance ##
 relAbundance-intro1: >-
   In 2015, the United States Congress passed <a href='https://www.congress.gov/bill/114th-congress/house-bill/1321' target='_blank'>Public Law 114-114</a> to ban the sale of products containing microbeads.
-  The ban for sale of these products starts in 2018. 
-  However, microbeads are only a small fraction of microplastics found in the environment. 
+  The ban for sale of these products starts in 2018; however, microbeads are only a small fraction of microplastics found in the environment. 
 
 relAbundance-title: Relative Abundance
 relAbundance-p1: >-
@@ -42,7 +41,7 @@ relAbundance-films: ["bags and wrappers"]
 
 relAbundance-fragments-label: Fragments
 relAbundance-fragments-id: fragments-table
-relAbundance-fragments: ["degrated pieces of plastic litter, such as plastic bottles"]
+relAbundance-fragments: ["degraded pieces of plastic litter, such as plastic bottles"]
 
 relAbundance-foams-label: Foams
 relAbundance-foams-id: foams-table
@@ -89,7 +88,7 @@ envEffects-lake2: particles per square kilometer of Great Lakes water
 
 ## Land Use Correlation ##
 landUse-intro: How do microplastics get into our rivers and streams?
-landUse-title: Land use surronding rivers correlate to some types of microplastics, but not the dominating fiber contributor.
+landUse-title: Land use in the watersheds are correlated with some types of microplastics, but not with fibers which were found in greatest abundance in these stream samples. 
 landUse-p1: >-
   Fibers were present in watersheds with all types of land use and varying wastewater effluent contributions
 
