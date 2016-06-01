@@ -1,13 +1,14 @@
-#' @import yaml
 #' @import whisker
-buildPages <- function() {
-  viz.yaml <- yaml::yaml.load_file("viz.yaml")
+buildPages <- function(viz.yaml) {
   pages <- viz.yaml[["pages"]]
   
   info <- getTemplateInfo()
   for (page in pages) {
     template <- readLines(page$template)
     data <- readData(page[["context"]])
+    # TODO these should be moved to a higher level at some point
+    data[["ga-tracking-id"]] <- googleAnalyticsId()
+    data[["vizlab-page-path"]] <- viz.yaml$info$path
     for (section in page$sections) {
       data <- append(data, info$data[[section]])
       

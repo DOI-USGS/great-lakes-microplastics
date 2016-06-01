@@ -1,0 +1,16 @@
+$(document).ready(function(){
+
+  // init controller
+  var controller = new ScrollMagic.Controller();
+
+  {{#sections}}
+  new ScrollMagic.Scene({
+	  triggerElement: "#{{ . }}"
+	})
+	.on('enter', function() {
+	  ga('send', 'event', 'section', '{{ . }}');
+	})
+	.addTo(controller);
+  {{/sections}}
+  // templating javascript is iffy (this line needed to end curly-brace)
+});
