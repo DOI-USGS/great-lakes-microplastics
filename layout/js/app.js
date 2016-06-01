@@ -16,7 +16,7 @@ var triggerOnce = function(event) {
 
 //Fish
 new ScrollMagic.Scene({
-	triggerElement: "#figure2"
+	triggerElement: "#environmentalEffects"
 	})
 	.setClassToggle("#fish", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
@@ -24,7 +24,7 @@ new ScrollMagic.Scene({
 
 //Oyster					
 new ScrollMagic.Scene({
-	triggerElement: "#figure2",
+	triggerElement: "#environmentalEffects",
 	offset:500
 	})
 	.setClassToggle("#oyster", "awake") // add class toggle
@@ -33,7 +33,7 @@ new ScrollMagic.Scene({
 
 //Stream		
 new ScrollMagic.Scene({
-	triggerElement: "#figure2",
+	triggerElement: "#environmentalEffects",
 	offset:1000
 	})
 	.setClassToggle("#stream", "awake") // add class toggle
@@ -42,7 +42,7 @@ new ScrollMagic.Scene({
 
 //Lakes	
 new ScrollMagic.Scene({
-	triggerElement: "#figure2",
+	triggerElement: "#environmentalEffects",
 	offset:1500
 	})
 	.setClassToggle("#lakes", "awake") // add class toggle
@@ -60,7 +60,7 @@ function updateBox (e) {
 	
 //Figure3 appears	
 new ScrollMagic.Scene({
-	triggerElement: "#figure3",
+	triggerElement: "#landUse",
 	offset:100
 	})
 	.setClassToggle("#landUseFig", "awake") // add class toggle
@@ -70,11 +70,11 @@ new ScrollMagic.Scene({
 
 //Figure3 is pinned	
 new ScrollMagic.Scene({
-	triggerElement: "#figure3",
+	triggerElement: "#landUse",
 	duration:200,
 	offset:-50
 	})
-	.setPin('#figure3')
+	.setPin('#landUse')
 	.triggerHook(0)
 	.on("enter leave", updateBox)
 	.addIndicators() // add indicators (requires plugin)
@@ -82,7 +82,7 @@ new ScrollMagic.Scene({
 
 //First text disappears	
 new ScrollMagic.Scene({
-	triggerElement: "#figure3",
+	triggerElement: "#landUse",
 	offset:150
 	})
 	.setClassToggle("#first", "gone") // add class toggle
@@ -92,7 +92,7 @@ new ScrollMagic.Scene({
 
 //Second text appears	
 new ScrollMagic.Scene({
-	triggerElement: "#figure3",
+	triggerElement: "#landUse",
 	offset:150
 	})
 	.setClassToggle("#second", "here") // add class toggle
@@ -102,11 +102,11 @@ new ScrollMagic.Scene({
 	
 //Sorting	
 new ScrollMagic.Scene({
-	triggerElement: "#figure3",
+	triggerElement: "#landUse",
 	duration:200,
 	offset:150
 	})
-	.setPin('#figure3')
+	.setPin('#landUse')
 	.triggerHook(0)
 	.on("enter leave", updateBox)
 	.on("enter", function() {
@@ -114,14 +114,6 @@ new ScrollMagic.Scene({
   	})
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
-	
-$('#beads-table').on('click', function(){
-	$('#beads').toggle('slow');
-});
-
-$('#fiberlines-table').on('click', function(){
-	$('#fibers').toggle('slow');
-});
 
 $('#referenceTitle').on('click', function(){
 	$('#referenceTitle').toggleClass('corners');
