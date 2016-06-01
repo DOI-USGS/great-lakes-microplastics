@@ -82,12 +82,15 @@ header img{
 	}
 		
 /*Section CSS*/
+
+#intro{
+	min-height:20px;
+	}
 	
 #intro h1{
 	font-size:3em;
 	}
 
-#intro,
 #relativeAbundance,
 #environmentalEffects,
 #landUse{
