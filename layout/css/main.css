@@ -84,11 +84,12 @@ header img{
 /*Section CSS*/
 
 #intro{
-	min-height:20px;
+	min-height:250px;
 	}
 	
 #intro h1{
-	font-size:3em;
+	font-size:1.5em;
+	padding-top:20px;
 	}
 
 #relativeAbundance,
@@ -115,12 +116,8 @@ header img{
 #relativeAbundance p,
 #environmentalEffects p,
 #landUse p{
-	max-width:860px;
+	max-width:960px;
 	margin:10px auto 0 auto;
-	}
-	
-#intro{
-	padding-top:30px;
 	}
 	
 #landUse{
@@ -204,7 +201,7 @@ header img{
 /*References*/
 #referenceBox{
 	min-height:50px;
-	margin-bottom:20px;
+	margin:50px 0 20px 0;
 	padding:10px;
 	}
 	
@@ -299,11 +296,12 @@ footer a:hover{
 		width:760px;
 		margin:0 auto;
 		}
+		
+	#intro h1{
+		font-size:2em;
+	}
 	
 	/*Figure 1*/
-	#bubbles{
-		
-	}
 	
 	#figure1Table{
 		width:35%;
@@ -341,7 +339,7 @@ footer a:hover{
 	/*Figure 3*/
 	.figure3Text{
 		width:760px;
-		margin:0 auto -20px auto;
+		margin:0 auto -30px auto;
 		}
 		
 	.figure3Text p{
