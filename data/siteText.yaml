@@ -70,21 +70,21 @@ envEffects-globalProd2: pounds of plastic produced worldwide in 2012
 
 envEffects-fish1: Particles found in
 envEffects-fish2: 12%
-envEffects-fish3: of freshwater fish
+envEffects-fish3: of <strong>freshwater fish</strong>
 
 envEffects-oysters1: 50
-envEffects-oysters2: particles per serving of  commercially-cultured oysters
+envEffects-oysters2: particles per serving of  commercially-cultured <strong>oysters</strong>
 envEffects-oysters3: 90
-envEffects-oysters4: particles per serving of  commercially-cultured mussels 
+envEffects-oysters4: particles per serving of  commercially-cultured <strong>mussels</strong> 
 
 envEffects-stream1: Up to 
 envEffects-stream2: 32
-envEffects-stream3: particles per cubic meter of Great Lakes tributary water
+envEffects-stream3: particles per cubic meter of Great Lakes tributary <strong>water</strong>
 envEffects-stream4: ">13,800"
-envEffects-stream5: particles per square meter of river sediment
+envEffects-stream5: particles per square meter of river <strong>sediment</strong>
 
 envEffects-lake1: "43,000" 
-envEffects-lake2: particles per square kilometer of Great Lakes water
+envEffects-lake2: particles per square kilometer of Great Lakes <strong>water</strong>
 
 ## Land Use Correlation ##
 landUse-intro: How do microplastics get into our rivers and streams?
