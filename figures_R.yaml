@@ -17,6 +17,9 @@ include:
 
 targets:
   all:
+    depends: all-figures_R
+  
+  all-figures_R:
     depends:
       - target/relativeAbundanceFig-mobile.svg
       - target/relativeAbundanceFig-desktop.svg

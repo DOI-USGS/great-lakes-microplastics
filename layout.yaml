@@ -23,4 +23,17 @@ targets:
   
   templateAndMoveHtml:
     command: runAll()
-    cleanup_level: purge
+    depends:
+      - all-figures_R
+      - layout/css/main.css
+      - layout/css/normalize.css
+      - layout/js/app.js
+      - layout/templates/figure1.mustache
+      - layout/templates/figure2.mustache
+      - layout/templates/figure3.mustache
+      - layout/templates/footer.mustache
+      - layout/templates/header.mustache
+      - layout/templates/index.mustache
+      - layout/templates/intro.mustache
+      - layout/templates/reference.mustache
+      - layout/templates/sectionAnalytics-js.mustache

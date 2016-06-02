@@ -13,13 +13,13 @@ sources:
 targets:
   all:
     depends:
-      #- siteTextData
+      - siteTextData
       - All_dataData
       - SI_Table1Data
       - envEffectsData
 
-#  siteTextData:
-#    command: readData(target_name)
+  siteTextData:
+    depends: data/siteText.yaml
     
   All_dataData:
     command: readData(target_name)
