@@ -16,10 +16,10 @@ var triggerOnce = function(event) {
 
 //Fish
 new ScrollMagic.Scene({
-	triggerElement: "#environmentalEffects"
+	triggerElement: "#environmentalEffects",
+	offset: 200
 	})
 	.setClassToggle("#fish", "awake") // add class toggle
-	.triggerHook(0)
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
