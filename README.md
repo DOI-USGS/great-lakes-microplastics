@@ -37,7 +37,7 @@ There is a Dockerfile and Makefile to run the above steps all in one.  It sets u
 
 ```
 docker build -t great-lakes-microplastics .
-docker run -v $(pwd)/target:/target -v $(pwd)/cache:/cache great-lakes-microplastics
+docker run -v $(pwd)/target:/opt/viz/target -v $(pwd)/cache:/opt/viz/cache -u $UID great-lakes-microplastics
 ```
 
 This will dump the target outputs to your target directory and you will still need to run the python SimpleHTTPServer against it.
