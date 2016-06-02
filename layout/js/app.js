@@ -19,13 +19,14 @@ new ScrollMagic.Scene({
 	triggerElement: "#environmentalEffects"
 	})
 	.setClassToggle("#fish", "awake") // add class toggle
+	.triggerHook(0)
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Oyster					
 new ScrollMagic.Scene({
 	triggerElement: "#environmentalEffects",
-	offset:500
+	offset:600
 	})
 	.setClassToggle("#oyster", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
