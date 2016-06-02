@@ -22,15 +22,21 @@ RUN installGithub.r \
   USGS-R/gsplot \
   richfitz/remake \
   jread-usgs/dinosvg 
-  
-COPY data /data
-COPY images /images
-COPY scripts /scripts 
-COPY layout /layout
-COPY Makefile Makefile
-COPY *.yaml /
 
-VOLUME /cache
-VOLUME /target
+RUN mkdir /opt/viz
+
+WORKDIR /opt/viz
+  
+COPY data data
+COPY images images
+COPY scripts scripts 
+COPY layout layout
+COPY Makefile Makefile
+COPY *.yaml ./
+
+RUN chmod -R 777 /opt/viz
+
+VOLUME /opt/viz/cache
+VOLUME /opt/viz/target
 
 CMD ["./Makefile"]
