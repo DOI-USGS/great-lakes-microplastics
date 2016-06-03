@@ -61,25 +61,25 @@ envEffects-p2: >-
 
 ## Environmental Effects Facts## 
 envEffects-globalProd1: ">617,000,000,000"
-envEffects-globalProd2: pounds of plastic produced worldwide in 2012
+envEffects-globalProd2: "pounds of plastic produced worldwide in 2012"
 
 envEffects-fish1: Particles found in
 envEffects-fish2: 12%
-envEffects-fish3: of <strong>freshwater fish</strong>
+envEffects-fish3: "of <strong>freshwater fish</strong><sup><a href='#ref1'>1</a></sup>"
 
 envEffects-oysters1: 50
 envEffects-oysters2: particles per serving of  commercially-cultured <strong>oysters</strong>
 envEffects-oysters3: 90
-envEffects-oysters4: particles per serving of  commercially-cultured <strong>mussels</strong> 
+envEffects-oysters4: "particles per serving of  commercially-cultured <strong>mussels</strong><sup><a href='#ref2'>2</a></sup>"
 
 envEffects-stream1: Up to 
 envEffects-stream2: 32
 envEffects-stream3: particles per cubic meter of Great Lakes tributary <strong>water</strong>
 envEffects-stream4: ">13,800"
-envEffects-stream5: microbeads per square meter of <strong>river sediment</strong>
+envEffects-stream5: "particles per square meter of <strong>river sediment</strong><sup><a href='#ref3'>3</a></sup>"
 
 envEffects-lake1: "43,000" 
-envEffects-lake2: particles per square kilometer of <strong>Great Lakes water</strong>
+envEffects-lake2: "particles per square kilometer of <strong>Great Lakes water</strong><sup><a href='#ref4'>4</a></sup>"
 
 ## Land Use Correlation ##
 landUse-intro: Where do microplastics come from?
@@ -108,27 +108,32 @@ footerContact: owi.webmaster@usgs.gov
 
 ## Supplemental Information ##
 
-ref1: >-   
-  <a href='http://dx.doi.org/10.1016/j.marpolbul.2016.03.041' target='_blank'>  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
-  Microplastic pollution in the surface waters of the Laurentian Great Lakes. 
-  Mar. Pollut. Bull. 2013, 77 (1-2)</a>
-  
-ref2: >- 
-  <a href='http://dx.doi.org/10.1016/j.envpol.2014.06.010' target='_blank'>  Van Cauwenberghe L, Janssen CR. 
-  Microplastics in bivalves cultured for human consumption. 
-  Environmental Pollution. 2014 Oct 31;193:65-70</a>
-  
-ref3: >- 
-  <a href='http://dx.doi.org/10.1186/s12302-014-0012-7' target='_blank'> Sanchez W, Bender C, Porcher JM. 
+ref1: >- 
+  Sanchez W, Bender C, Porcher JM. 
   Wild gudgeons (Gobio gobio) from French rivers are contaminated by microplastics: preliminary study and first evidence. 
-  Environmental research. 2014 Jan 31;128:98-100</a>
-  
-ref4: >-
+  Environmental research. 2014 Jan 31;128:98-100
+  <a href='http://dx.doi.org/10.1186/s12302-014-0012-7' target='_blank'>10.1186/s12302-014-0012-7</a>
+
+ref2: >- 
+  Van Cauwenberghe L, Janssen CR. 
+  Microplastics in bivalves cultured for human consumption. 
+  Environmental Pollution. 2014 Oct 31;193:65-70
+  <a href='http://dx.doi.org/10.1016/j.envpol.2014.06.010' target='_blank'>10.1016/j.envpol.2014.06.010</a>
+
+ref3: >-
   Baldwin, A.; Corsi, S.; Mason, S. 
   Microplastics in 29 Great Lakes tributaries: Relations to watershed attributes and hydrology. 2016.
+
+ref4: >- 
+  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
+  Microplastic pollution in the surface waters of the Laurentian Great Lakes. 
+  Mar. Pollut. Bull. 2013, 77 (1-2)
+  <a href='http://dx.doi.org/10.1016/j.marpolbul.2016.03.041' target='_blank'>10.1016/j.marpolbul.2016.03.041</a>
+
+ref5: >-
+  Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. 
+  Policy: Classify plastic waste as hazardous. 
+  <a href='http://dx.doi.org/10.1038/494169a' target='_blank'>10.1038/494169a</a>
   
-ref5: >- 
-  <a href='http://dx.doi.org/10.1038/494169a' target='_blank'>Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. 
-  Policy: Classify plastic waste as hazardous.</a>
-  
+
   
