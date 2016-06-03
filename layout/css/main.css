@@ -154,7 +154,7 @@ header img{
 	min-height:200px;
 	margin:20px 0 0 0;
 	position:relative;
-	border:none;
+	border-radius:5px;
 	}
 	
 .subject:after {
@@ -190,7 +190,6 @@ header img{
 /*Figure 3*/
 .figure3Text{
 	text-align:center;
-	margin-bottom:-20px;
 	}
 	
 .figure3Text p{
@@ -207,7 +206,7 @@ header img{
 #referenceTitle{
 	background:rgb(63,136,189);
 	height:35px;
-	border-radius:5px;
+	border-radius:5px 5px 0 0;
 	color:#fff;
 	position:relative;
 	}
@@ -215,20 +214,20 @@ header img{
 #arrow{
 	width: 0; 
   	height: 0; 
-  	border-top: 8px solid transparent;
-  	border-bottom: 8px solid transparent;
-  	border-right:8px solid #fff; 
+  	border-top: 8px solid #fff;
+  	border-right: 8px solid transparent;
+	border-left: 8px solid transparent;
 	position:absolute;
 	right:10px;
-	top:9px;
+	top:13px;
 	}
 	
 .rotate{
-	transform: rotate(-90deg);
+	transform: rotate(90deg);
 	}
 	
 .corners{
-	border-radius:5px 5px 0 0 !important;
+	border-radius:5px !important;
 	}
 	
 #referenceTitle:hover{
@@ -239,7 +238,6 @@ header img{
 	border:1px solid rgb(190,190,190);
 	padding:0 10px 10px 10px;
 	border-radius:0 0 5px 5px;
-	display:none;
 	}
 	
 #referenceTitle h3{
@@ -342,7 +340,7 @@ footer a:hover{
 	/*Figure 3*/
 	.figure3Text{
 		width:760px;
-		margin:0 auto -30px auto;
+		margin:0 auto;
 		}
 		
 	.figure3Text p{
