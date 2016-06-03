@@ -53,7 +53,7 @@ gsplotLandUseConc <- function(fname.data, gap){
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col, 
          border = NA,
-         ylab = "Average concentration,\n in particles per cubic meter",
+         ylab = "Plastic particles\nper cubic meter",
          ylim=c(0,13.5)) %>% 
     axis(side = 2, at = seq(0, 10, by=5)) %>% 
     axis(1, labels=FALSE, lwd.tick = 0)
@@ -89,7 +89,7 @@ gsplotLandUsePct <- function(fname.data, gap){
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col,
          border = NA,
-         ylab = "Basin land use,\nin percent",
+         ylab = "Land use\n(% of basin)",
          xlab = "Sampling locations") %>% 
     axis(side = 1, at = unique(geom.df$x.middle), 
          labels = unique(geom.df$site.name), 
@@ -146,13 +146,19 @@ modifyAttr <- function(g, value){
 injectLabelTextBreaks <- function(svg.side){
   
   g.lab <- dinosvg:::xpath_one(svg.side, "//*[local-name()='g'][@id='axis-label']")
+  attrs <- XML:::xmlAttrs(g.lab)
+  attrs[['text-anchor']] <- 'end'
+  XML:::removeAttributes(g.lab)
+  XML:::addAttributes(g.lab, .attrs = attrs)
   lab <- dinosvg:::xpath_one(g.lab, "//*[local-name()='text']")
   text <- strsplit(xmlValue(lab),'\n')[[1]]
   xmlValue(lab) <- text[1]
   attrs <- XML:::xmlAttrs(lab)
-  attrs[['dy']] = "-2.5em"
+  attrs[['dx']] <- "-20"
+  attrs[['dy']] = "1.0em"
+  attrs <- attrs[-which(names(attrs) == 'transform')]
   newXMLNode('text', parent = g.lab, attrs = c(attrs,'class'='sub-label'), newXMLTextNode(text[2]))
-  attrs[['dy']] = "-3.0em"
+  attrs <- attrs[-which(names(attrs) == 'dy')]
   XML:::removeAttributes(lab)
   XML:::addAttributes(lab, .attrs = attrs)
   
@@ -216,6 +222,8 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   gs.landuse$css <- CSS_defineCSS()
   
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE, onload="init(evt)")
+  
+  
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
   modifyAttr(xlab, c('dy' = "7.5em"))
@@ -261,6 +269,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   y.pos2 <- XML:::xmlAttrs(mask.bottom)[['y']]
   height <- as.numeric(XML:::xmlAttrs(mask.bottom)[['height']]) + as.numeric(y.pos2) - as.numeric(y.pos)
   newXMLNode('rect', parent=svg, at=1, attrs = c(y=y.pos, height=height, width="0", fill="#ffffb2", stroke='#ffff4c', rx="2", ry="2", id='highlight-fill'))
+  XML::xmlAttrs(svg)[['viewBox']]<- "-45 0 540 454"
   dinosvg:::write_svg(svg, target_name)
 }
 
