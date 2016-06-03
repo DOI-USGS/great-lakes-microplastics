@@ -128,7 +128,7 @@ header img{
 /*Figure 1*/
 #figure1Table{
 	min-height:100px;
-	border:1px solid rgb(200,200,200);
+	border:none;
 	padding:10px;
 	font-size:.9em;
 	border-radius:5px;
