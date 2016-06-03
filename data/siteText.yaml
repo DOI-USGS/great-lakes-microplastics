@@ -2,7 +2,7 @@
 title: Microplastics in the Great Lakes
 
 ## Intro ##
-welcome: Microplastics in the Great Lakes
+welcome: Microplastics in our water
 welcome-p1: >-
   Microplastics are a growing contaminant of concern in freshwater environments, 
   yet sources, transport, and fate remain unclear. 
@@ -12,20 +12,14 @@ welcome-p2: >-
   They come from a wide range of sources such as synthetic clothing, cigarette butts, 
   disposable diapers, cosmetic product microbeads, plastic bags, wrappers, and degraded pieces of plastic litter. 
   
-welcome-p3: >- 
-  In 2014–15, the U.S. Geological Survey and the State University of New York at Fredonia 
-  sampled the quantity and particle types of floating microplastics in 29 rivers flowing into 
-  the Great Lakes in 6 states as part of the Great Lakes Restoration Initiative. 
+
 
 ## Relative Abundance ##
 relAbundance-intro1: >-
   In 2015, the United States Congress passed <a href='https://www.congress.gov/bill/114th-congress/house-bill/1321' target='_blank'>Public Law 114-114</a> to ban the sale of products containing microbeads.
   The ban for sale of these products starts in 2018; however, microbeads are only a small fraction of microplastics found in the environment. 
 
-relAbundance-title: Relative Abundance
-relAbundance-p1: >-
-  Microplastics were found in all tributary samples analyzed. Fibers were the dominant 
-  particle type, making up an average of 71 percent of each sample. 
+relAbundance-title: Microplastic source material
   
 relAbundance-beads-label: Beads and Pellets
 relAbundance-beads-id: beads-table
@@ -48,21 +42,22 @@ relAbundance-foams-id: foams-table
 relAbundance-foams: ["styrofoam"]
 
 ## Environmental Effects ##
-envEffects-title: How have microplastics been observed in the environment?
+envEffects-title: Where are in our water are microplastics found?
 envEffects-p1: >-
   Marine organisms including mammals, birds, fish, turtles, and invertebrates 
-  have been shown to ingest microplastics. Physical hazards of ingestion can include 
-  obstruction of the digestive system, clogging of feeding appendages, oxidative stress, 
-  impaired reproduction, and death.
+  ingest microplastics. Physical hazards of ingestion can include 
+  obstruction of the digestive system, oxidative stress, impaired reproduction, and death.
 
 envEffects-p2: >-
   In addition, ingestion of microplastics may result in uptake and bioaccumulation of 
   harmful chemicals. Additives in plastic such as phthalates, brominated flame retardants, 
   nonylphenol, and antimicrobials have been associated with cancer and endocrine disruption. 
-  The high sorption capacity of plastic enables the accumulation of persistent organic pollutants 
-  such as polychlorinated biphenyls, polycyclic aromatic hydrocarbons, and organochlorine pesticides, 
-  with concentrations of 10<sup>5</sup> – 10<sup>6</sup> times higher than in the surrounding water column. Trace metals 
-  and pathogens have also been shown to accumulate on microplastics.
+  Microplastics can accumulate pollutants such as polychlorinated biphenyls, 
+  polycyclic aromatic hydrocarbons and organochlorine pesticides. As a result, 
+  concentrations of these pollutants can be 100,000 to 1,000,000 times higher than in the surrounding water.
+  Trace metals and pathogens have also been shown to accumulate on microplastics.
+  
+ 
 
 ## Environmental Effects Facts## 
 envEffects-globalProd1: ">617,000,000,000"
@@ -81,13 +76,22 @@ envEffects-stream1: Up to
 envEffects-stream2: 32
 envEffects-stream3: particles per cubic meter of Great Lakes tributary <strong>water</strong>
 envEffects-stream4: ">13,800"
-envEffects-stream5: particles per square meter of river <strong>sediment</strong>
+envEffects-stream5: microbeads per square meter of <strong>river sediment</strong>
 
 envEffects-lake1: "43,000" 
-envEffects-lake2: particles per square kilometer of Great Lakes <strong>water</strong>
+envEffects-lake2: particles per square kilometer of <strong>Great Lakes water</strong>
 
 ## Land Use Correlation ##
-landUse-intro: How do microplastics get into our rivers and streams?
+landUse-intro: Where do microplastics come from?
+
+landUse-intro1: >- 
+  In 2014–15, the U.S. Geological Survey and the State University of New York at Fredonia 
+  sampled the quantity and particle types of floating microplastics in 29 rivers flowing into 
+  the Great Lakes in 6 states as part of the Great Lakes Restoration Initiative. 
+  Microplastics were found in all tributary samples analyzed. Fibers were the dominant 
+  particle type, making up an average of 71 percent of each sample. 
+  
+  
 landUse-title: Land use in the watersheds are correlated with some types of microplastics, but not with fibers which were found in greatest abundance in these stream samples. 
 landUse-p1: >-
   Fibers were present in watersheds with all types of land use and varying wastewater effluent contributions
@@ -104,31 +108,27 @@ footerContact: owi.webmaster@usgs.gov
 
 ## Supplemental Information ##
 
-ref1: >- 
-  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
+ref1: >-   
+  <a href='http://dx.doi.org/10.1016/j.marpolbul.2016.03.041' target='_blank'>  Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
   Microplastic pollution in the surface waters of the Laurentian Great Lakes. 
-  Mar. Pollut. Bull. 2013, 77 (1-2)
-  http://dx.doi.org/10.1016/j.marpolbul.2016.03.041
+  Mar. Pollut. Bull. 2013, 77 (1-2)</a>
   
 ref2: >- 
-  Van Cauwenberghe L, Janssen CR. 
+  <a href='http://dx.doi.org/10.1016/j.envpol.2014.06.010' target='_blank'>  Van Cauwenberghe L, Janssen CR. 
   Microplastics in bivalves cultured for human consumption. 
-  Environmental Pollution. 2014 Oct 31;193:65-70
-  http://dx.doi.org/10.1016/j.envpol.2014.06.010
+  Environmental Pollution. 2014 Oct 31;193:65-70</a>
   
 ref3: >- 
-  Sanchez W, Bender C, Porcher JM. 
+  <a href='http://dx.doi.org/10.1186/s12302-014-0012-7' target='_blank'> Sanchez W, Bender C, Porcher JM. 
   Wild gudgeons (Gobio gobio) from French rivers are contaminated by microplastics: preliminary study and first evidence. 
-  Environmental research. 2014 Jan 31;128:98-100
-  http://dx.doi.org/10.1186/s12302-014-0012-7
+  Environmental research. 2014 Jan 31;128:98-100</a>
   
 ref4: >-
   Baldwin, A.; Corsi, S.; Mason, S. 
   Microplastics in 29 Great Lakes tributaries: Relations to watershed attributes and hydrology. 2016.
   
-ref5: >-
-  Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. 
-  Policy: Classify plastic waste as hazardous. 
-  http://dx.doi.org/10.1038/494169a
+ref5: >- 
+  <a href='http://dx.doi.org/10.1038/494169a' target='_blank'>Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 2013. 
+  Policy: Classify plastic waste as hazardous.</a>
   
   
