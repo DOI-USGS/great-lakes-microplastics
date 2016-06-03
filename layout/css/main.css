@@ -5,20 +5,37 @@
 	}
 
 /*Universal Classes*/
-.center{
+
+.bg{
+	background:rgb(63,136,189);
+	color:#fff;
+	min-height:200px;
+	padding: 0 15px;
+	}
+	
+.bgContent{
 	min-height:100px;
-	padding:10px;
+	}
+	
+.bgContent h1{
+	padding-top:50px;
+	margin-bottom:0;
+	font-size:1.7em;
+	}
+	
+.sectionContainer{
+	padding:15px;
 	margin:0 auto;
-	position:relative;
 	}
 	
 .text{
 	clear:both;
 	}
 	
-.text h1,
-.text h3{
-	text-align:center;
+.text p{
+	font-size:1.1em;
+	line-height:1.5em;
+	margin-bottom:10px;
 	}
 	
 .figure{
@@ -29,7 +46,6 @@
 	
 .bigNumber{
 	font-size:3em;
-	margin-bottom:-10px;
 	}
 	
 .spacer{
@@ -70,6 +86,7 @@ header{
 	height:32px;
 	padding:8px  0 0 10px;
 	border-bottom:5px solid rgb(210,210,210);
+	margin-bottom:20px;
 	}
 	
 header h3{
@@ -85,12 +102,7 @@ header img{
 /*Section CSS*/
 
 #intro{
-	min-height:250px;
-	}
-	
-#intro h1{
-	font-size:1.4em;
-	padding-top:20px;
+	min-height:100px;
 	}
 
 #relativeAbundance,
@@ -112,14 +124,6 @@ header img{
      clear: both;
      height: 0;
      }
-	 
-#intro p,
-#relativeAbundance p,
-#environmentalEffects p,
-#landUse p{
-	max-width:960px;
-	margin:10px auto 0 auto;
-	}
 	
 #landUse{
 	background:rgb(100,0,0,.5);
@@ -174,9 +178,9 @@ header img{
 	
 .oneStat p,
 .twoStat p{
-	padding:0 10px;
-	max-width:250px !important;
-}
+		max-width:250px;
+		margin:0 auto;
+	}
 	
 .pic{
 	min-height:200px;
@@ -280,6 +284,19 @@ footer a:hover{
 		
 @media screen and (min-width:768px){
 	
+	.bgContent{
+		width:730px;
+		margin:0 auto;
+		}
+		
+	.bgContent h1{
+		font-size:2em;
+		}
+		
+	.sectionContainer{
+		width:730px;
+		}
+	
 	.center{
 		width:760px;
 		}
@@ -294,10 +311,6 @@ footer a:hover{
 		margin:0 auto;
 		}
 		
-	#intro h1{
-		font-size:2em;
-	}
-	
 	/*Figure 1*/
 	
 	#figure1Table{
@@ -320,7 +333,6 @@ footer a:hover{
 	
 	.oneStat{
 		height:170px;
-	
 	}
 	
 	.twoStat{
@@ -360,9 +372,18 @@ footer a:hover{
 }
 
 @media screen and (min-width:1024px){
+	.bgContent{
+		width:930px;
+		}
+		
+	.sectionContainer{
+		width:930px;
+		}
+		
 	.center{
 		width:960px;
 		}
+		
 	/*Header CSS*/
 	#logo{
 		width:960px;
