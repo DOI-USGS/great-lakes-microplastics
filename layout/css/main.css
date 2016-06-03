@@ -128,7 +128,7 @@ header img{
 /*Figure 1*/
 #figure1Table{
 	min-height:100px;
-	border:1px solid rgb(200,200,200);
+	border:none;
 	padding:10px;
 	font-size:.9em;
 	border-radius:5px;
@@ -154,8 +154,7 @@ header img{
 	min-height:200px;
 	margin:20px 0 0 0;
 	position:relative;
-	border:1px solid rgb(190,190,190);
-	border-radius:5px;
+	border:none;
 	}
 	
 .subject:after {
@@ -182,7 +181,6 @@ header img{
 .pic{
 	min-height:200px;
 	text-align:center;
-	border-top:1px solid rgb(190,190,190);
 	}
 	
 .pic img{
@@ -339,7 +337,6 @@ footer a:hover{
 	.pic{
 		width:65%;
 		float:right;
-		border-left: 1px solid rgb(190,190,190);
 	}
 	
 	/*Figure 3*/
