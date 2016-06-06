@@ -55,7 +55,7 @@ gsplotLandUseConc <- function(fname.data, gap){
          border = NA,
          ylab = "Plastic particles\nper cubic meter",
          ylim=c(0,13.5)) %>% 
-    axis(side = 2, at = seq(0, 10, by=5)) %>% 
+    axis(side = 2, at = seq(0, 14, by=2)) %>% 
     axis(1, labels=FALSE, lwd.tick = 0)
   
   # hack because we need to support gs extensions
