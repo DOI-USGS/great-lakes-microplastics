@@ -1,11 +1,13 @@
 ## GLOBAL ##
-title: Brought to you by USGS-VIZLAB
+title: Microplastics in our water
 
 ## Intro ##
 welcome: Microplastics in our water
 welcome-subnote1: >-
   Microplastics are a growing contaminant of concern in freshwater environments, 
   yet sources, transport, and fate remain unclear. 
+  
+welcome-subnote2: Brought to you by USGS-VIZLAB
   
 welcome-p1: >-
   Microplastics are smaller than 5 millimeters in size. 
