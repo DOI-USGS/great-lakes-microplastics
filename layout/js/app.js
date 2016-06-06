@@ -50,6 +50,23 @@ new ScrollMagic.Scene({
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
+//Text after Lakes	
+new ScrollMagic.Scene({
+	triggerElement: "#environmentalEffects",
+	offset:1500
+	})
+	.setClassToggle("#figure2Text", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	
+//Relative Abundance figure appears
+new ScrollMagic.Scene({
+	triggerElement: "#relativeAbundance",
+	})
+	.setClassToggle("#figure2Section", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+	
 // show pin state
 function updateBox (e) {
 	if (e.type === "enter") {
@@ -58,6 +75,14 @@ function updateBox (e) {
 		$("#pin p").text("Unpinned.");
 		}
 }
+
+//Figure 3 section appears
+new ScrollMagic.Scene({
+	triggerElement: "#landUse",
+	})
+	.setClassToggle("#figure3Section", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
 	
 //Figure3 appears	
 new ScrollMagic.Scene({
