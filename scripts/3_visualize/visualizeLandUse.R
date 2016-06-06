@@ -55,7 +55,7 @@ gsplotLandUseConc <- function(fname.data, gap){
          border = NA,
          ylab = "Plastic particles\nper cubic meter",
          ylim=c(0,13.5)) %>% 
-    axis(side = 2, at = seq(0, 10, by=5)) %>% 
+    axis(side = 2, at = seq(0, 14, by=2)) %>% 
     axis(1, labels=FALSE, lwd.tick = 0)
   
   # hack because we need to support gs extensions
@@ -143,22 +143,22 @@ modifyAttr <- function(g, value){
   XML:::addAttributes(g, .attrs = attrs)
   invisible(g)
 }
-injectLabelTextBreaks <- function(svg.side){
-  
+reformatLabelText <- function(svg.side, y.top){
+
   g.lab <- dinosvg:::xpath_one(svg.side, "//*[local-name()='g'][@id='axis-label']")
   attrs <- XML:::xmlAttrs(g.lab)
-  attrs[['text-anchor']] <- 'end'
+  attrs[['text-anchor']] <- 'begin'
   XML:::removeAttributes(g.lab)
   XML:::addAttributes(g.lab, .attrs = attrs)
   lab <- dinosvg:::xpath_one(g.lab, "//*[local-name()='text']")
   text <- strsplit(xmlValue(lab),'\n')[[1]]
-  xmlValue(lab) <- text[1]
+  xmlValue(lab) <- paste0(text[1],' ')
+  newXMLNode('tspan', parent = lab, attrs = c('class'='sub-label'), newXMLTextNode(text[2]))
   attrs <- XML:::xmlAttrs(lab)
   attrs[['dx']] <- "-20"
-  attrs[['dy']] = "1.0em"
+  attrs[['dy']] = "-0.5em"
+  attrs[['y']] = y.top
   attrs <- attrs[-which(names(attrs) == 'transform')]
-  newXMLNode('text', parent = g.lab, attrs = c(attrs,'class'='sub-label'), newXMLTextNode(text[2]))
-  attrs <- attrs[-which(names(attrs) == 'dy')]
   XML:::removeAttributes(lab)
   XML:::addAttributes(lab, .attrs = attrs)
   
@@ -178,8 +178,11 @@ CSS_defineCSS <- function(){
   cursor: default;
   font-family: Tahoma, Geneva, sans-serif;
 }
-.sub-label, .x-tick-label, .y-tick-label, #tooltip {
+.x-tick-label, #tooltip {
 font-size: 10px;
+}
+.sub-label, .y-tick-label {
+font-size: 8px;
 }
 
 .hidden {
@@ -218,11 +221,10 @@ JS_defineSwapLuFunction <- function(funname='sortLU', types, swaps.name, swap.le
 }
 
 createBarFig <- function(gs.conc, gs.landuse, target_name){
-  gs.landuse$global$par$mar <- c(9.1, 4.1, 13.5, 2.1)
+  gs.landuse$global$par$mar <- c(9.1, 1.5, 15.5, 1.5)
   gs.landuse$css <- CSS_defineCSS()
   
   svg <- dinosvg::svg(gs.landuse, width = 6, height = 6.3, as.xml=TRUE, onload="init(evt)")
-  
   
   renameViewSides(svg, gsplot:::as.side(names(gsplot:::sides(gs.landuse))))
   xlab <- dinosvg:::xpath_one(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-label']//*[local-name()='text']")
@@ -247,11 +249,13 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
     JS_defineSwapLuFunction('sortLU', all.types, 'swaps', swap.length=nrow(gs.landuse$json), duration=1.5),
     JS_defineSwapLuFunction('sortLUrev', all.types, 'revswaps', swap.length=nrow(gs.landuse$json_reverse), duration=1.5),
     JS_defineHoverFunction()))
-  gs.conc$global$par$mar <- c(19.1, 4.1, 2.1, 2.1)
+  gs.conc$global$par$mar <- c(17.5, 1.5, 1.5, 1.5)
   svg <- dinosvg::svg(svg, gs.conc, as.xml=TRUE)
   
-  injectLabelTextBreaks(dinosvg:::g_side(svg,"2a"))
-  injectLabelTextBreaks(dinosvg:::g_side(svg,"2"))
+  y2.pos <- XML:::xmlAttrs(XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,2)))$rect)[['y']]
+  y2a.pos <- XML:::xmlAttrs(XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,"2a")))$rect)[['y']]
+  reformatLabelText(dinosvg:::g_side(svg,"2a"), y.top=y2a.pos)
+  reformatLabelText(dinosvg:::g_side(svg,"2"), y.top=y2.pos)
   
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"1a"), "//*[local-name()='g'][@id='axis-side-1a']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='x-tick-label'))
@@ -264,12 +268,11 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="1.6em", dy="-1.45em", stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
-  y.pos <- XML:::xmlAttrs(XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,2)))$rect)[['y']]
+
   mask.bottom <- XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,'2a')))$rect
   y.pos2 <- XML:::xmlAttrs(mask.bottom)[['y']]
-  height <- as.numeric(XML:::xmlAttrs(mask.bottom)[['height']]) + as.numeric(y.pos2) - as.numeric(y.pos)
-  newXMLNode('rect', parent=svg, at=1, attrs = c(y=y.pos, height=height, width="0", fill="#ffffb2", stroke='#ffff4c', rx="2", ry="2", id='highlight-fill'))
-  XML::xmlAttrs(svg)[['viewBox']]<- "-45 0 540 454"
+  height <- as.numeric(XML:::xmlAttrs(mask.bottom)[['height']]) + as.numeric(y.pos2) - as.numeric(y2.pos)
+  newXMLNode('rect', parent=svg, at=1, attrs = c(y=y2.pos, height=height, width="0", fill="#ffffb2", stroke='#ffff4c', rx="2", ry="2", id='highlight-fill'))
   dinosvg:::write_svg(svg, target_name)
 }
 
