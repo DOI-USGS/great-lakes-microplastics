@@ -266,7 +266,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="2.5", ry="2.5", width="55", height="27", fill='white', 'stroke-width'="0.5", stroke='#696969', class="hidden"))
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
-  newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="1.6em", dy="-1.45em", stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
+  newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="2em", dy="-2em" , stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip", dx="0.5em", dy="-0.33em", stroke="none", fill="#000000", 'text-anchor'='begin'), newXMLTextNode(' '))
 
   mask.bottom <- XML:::xmlChildren(dinosvg:::g_mask(svg, side=c(1,'2a')))$rect
@@ -332,7 +332,7 @@ JS_defineHoverFunction <- function(){
   tooltip_bg.setAttribute("class","shown");
   tool_key.setAttribute("fill", evt.target.getAttribute("fill"));
   tool_key.setAttribute("x",pt.x+5);
-  tool_key.setAttribute("y",pt.y-22);
+  tool_key.setAttribute("y",pt.y-23);
   var length = Math.max(tooltip.getComputedTextLength(), tooltip_key.getComputedTextLength()+12);
   tooltip_bg.setAttribute("width", length+6);
   if (pt.x+length+8 > xmax){
