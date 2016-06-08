@@ -87,7 +87,7 @@ new ScrollMagic.Scene({
 //Figure3 appears	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	offset:100
+	offset:150
 	})
 	.setClassToggle("#landUseFig", "awake") // add class toggle
 	.on("enter leave", updateBox)
@@ -97,11 +97,10 @@ new ScrollMagic.Scene({
 //Figure3 is pinned	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	duration:200,
-	offset:-50
+	duration:100,
+	offset:590
 	})
 	.setPin('#landUse')
-	.triggerHook(0)
 	.on("enter leave", updateBox)
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
@@ -109,31 +108,28 @@ new ScrollMagic.Scene({
 //First text disappears	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	offset:150
+	offset:690
 	})
 	.setClassToggle("#first", "gone") // add class toggle
-	.triggerHook(0)
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Second text appears	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	offset:150
+	offset:690
 	})
 	.setClassToggle("#second", "here") // add class toggle
-	.triggerHook(0)
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 //Sorting	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	duration:200,
-	offset:150
+	duration:100,
+	offset:690
 	})
 	.setPin('#landUse')
-	.triggerHook(0)
 	.on("enter leave", updateBox)
 	.on("enter", function() {
     	triggerOnce("landUseTrigger");
