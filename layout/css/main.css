@@ -109,8 +109,10 @@ header img{
 	min-height:100px;
 	}
 
-#relativeAbundance,
 #environmentalEffects,
+#relativeAbundance,
+#environmentalHazards,
+#beadBan,
 #landUse{
 	min-height:100%;
 	position:relative;
@@ -128,7 +130,13 @@ header img{
      clear: both;
      height: 0;
      }
-	
+
+#environmentalHazards,
+#beadBan,
+#conclusion{
+  min-height:20%;
+  }
+
 #landUse{
 	background:rgb(100,0,0,.5);
 	}
@@ -194,7 +202,15 @@ header img{
 .pic img{
 	width:70%;
 	}
+
+.photo{
+	min-height:150px;
+	text-align:center;
+	}
 	
+.photo img{
+	width:40%;
+	}
 
 	
 /*References*/

@@ -28,20 +28,32 @@ sections:
     template: layout/templates/intro.mustache
     context: siteTextData
   -
-    id: relativeAbundance
-    template: layout/templates/figure1.mustache
-    context: siteTextData
-    depends: relativeAbundanceFig
-  -
     id: environmentalEffects
     template: layout/templates/figure2.mustache
     context: siteTextData
     depends: environmentalEffectsFig
   -
+    id: environmentalHazards
+    template: layout/templates/envHazards.mustache
+    context: siteTextData
+  -
+    id: beadBan
+    template: layout/templates/beadBan.mustache
+    context: siteTextData
+  -
+    id: relativeAbundance
+    template: layout/templates/figure1.mustache
+    context: siteTextData
+    depends: relativeAbundanceFig
+  -
     id: landUse
     template: layout/templates/figure3.mustache
     context: siteTextData
     depends: landUseFig
+  -
+    id: conclusion
+    template: layout/templates/conclusion.mustache
+    context: siteTextData
   -
     id: reference
     template: layout/templates/reference.mustache
