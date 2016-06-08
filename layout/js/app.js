@@ -50,20 +50,27 @@ new ScrollMagic.Scene({
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
-//Text after Lakes	
+//Environmental Hazards text	
 new ScrollMagic.Scene({
-	triggerElement: "#environmentalEffects",
-	offset:1500
+	triggerElement: "#environmentalHazards",
 	})
-	.setClassToggle("#figure2Text", "awake") // add class toggle
+	.setClassToggle("#envHazardsSection", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
+//Bead ban text
+new ScrollMagic.Scene({
+	triggerElement: "#beadBan",
+	})
+	.setClassToggle("#beadBanSection", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
 //Relative Abundance figure appears
 new ScrollMagic.Scene({
 	triggerElement: "#relativeAbundance",
 	})
-	.setClassToggle("#figure2Section", "awake") // add class toggle
+	.setClassToggle("#figure1Section", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
@@ -105,21 +112,12 @@ new ScrollMagic.Scene({
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
-//First text disappears	
-new ScrollMagic.Scene({
-	triggerElement: "#landUse",
-	offset:690
-	})
-	.setClassToggle("#first", "gone") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
-	.addTo(controller);
-
 //Second text appears	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	offset:690
+	offset:590
 	})
-	.setClassToggle("#second", "here") // add class toggle
+	.setClassToggle("#figure3Text2", "awake") // add class toggle
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
@@ -136,6 +134,16 @@ new ScrollMagic.Scene({
   	})
 	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
+
+//Conclusion section appears
+new ScrollMagic.Scene({
+	triggerElement: "#conclusion",
+	offset:-100
+	})
+	.setClassToggle("#conclusionSection", "awake") // add class toggle
+	.addIndicators() // add indicators (requires plugin)
+	.addTo(controller);
+
 
 $('#referenceTitle').on('click', function(){
 	$('#referenceTitle').toggleClass('corners');
