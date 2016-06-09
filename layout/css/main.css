@@ -20,7 +20,7 @@
 .bgContent h1{
 	padding-top:15px;
 	margin-bottom:0;
-	font-size:1.7em;
+	font-size:1.5em;
 	}
 	
 .bgContent p{
@@ -36,10 +36,22 @@
 	clear:both;
 	}
 	
+.text h3{
+	margin-top:5px;
+	}
+	
 .text p{
 	font-size:1.1em;
 	line-height:1.5em;
 	margin-bottom:10px;
+	}
+	
+.text ul{
+	padding-left:20px;
+	}
+	
+.text li{
+	margin-top:10px;
 	}
 	
 .figure{
@@ -211,6 +223,12 @@ header img{
 .photo img{
 	width:40%;
 	}
+	
+/*Figure 3*/
+#figure3Text h2{
+	font-size:1.2em;
+}
+
 
 	
 /*References*/
@@ -360,8 +378,14 @@ footer a:hover{
 	}
 	
 	/*Figure 3*/
+	#figure3Text h2{
+		font-size:1.5em;
+		}
+	
+	
 	#landUseFig{
-		width:800px;
+		width:700px;
+		margin-bottom:-30px;
 		}
 		
 	/*References*/
