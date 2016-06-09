@@ -30,6 +30,7 @@
 .sectionContainer{
 	padding:15px;
 	margin:0 auto;
+	position:relative;
 	}
 	
 .text{
@@ -175,6 +176,16 @@ header img{
 #relativeAbundanceSVG{
 	width:760px;
 	}
+	
+.photo img{
+	width:100%;
+	}
+	
+.photo{
+	min-height:150px;
+	text-align:center;
+	}
+	
 
 /*Figure 2*/
 
@@ -213,15 +224,6 @@ header img{
 	
 .pic img{
 	width:70%;
-	}
-
-.photo{
-	min-height:150px;
-	text-align:center;
-	}
-	
-.photo img{
-	width:40%;
 	}
 	
 /*Figure 3*/
@@ -340,12 +342,21 @@ footer a:hover{
 		}
 		
 	/*Figure 1*/
-	
 	#figure1Table{
 		width:35%;
 		position:absolute;
 		top:102px;
 		right:10px;
+	}
+	
+	.left{
+		width:50%;
+		float:left;
+	}
+	
+	.right{
+		width:50%;
+		float:right;
 	}
 		
 	/*Figure 2*/
