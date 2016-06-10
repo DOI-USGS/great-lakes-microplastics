@@ -20,7 +20,6 @@ new ScrollMagic.Scene({
 	offset: 200
 	})
 	.setClassToggle("#fish", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Oyster					
@@ -29,7 +28,6 @@ new ScrollMagic.Scene({
 	offset:600
 	})
 	.setClassToggle("#oyster", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Stream		
@@ -38,7 +36,6 @@ new ScrollMagic.Scene({
 	offset:1000
 	})
 	.setClassToggle("#stream", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Lakes	
@@ -47,7 +44,6 @@ new ScrollMagic.Scene({
 	offset:1500
 	})
 	.setClassToggle("#lakes", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 //Environmental Hazards text	
@@ -55,7 +51,6 @@ new ScrollMagic.Scene({
 	triggerElement: "#environmentalHazards",
 	})
 	.setClassToggle("#envHazardsSection", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 //Bead ban text
@@ -63,7 +58,6 @@ new ScrollMagic.Scene({
 	triggerElement: "#beadBan",
 	})
 	.setClassToggle("#beadBanSection", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Relative Abundance figure appears
@@ -71,7 +65,6 @@ new ScrollMagic.Scene({
 	triggerElement: "#relativeAbundance",
 	})
 	.setClassToggle("#figure1Section", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 // show pin state
@@ -88,7 +81,6 @@ new ScrollMagic.Scene({
 	triggerElement: "#landUse",
 	})
 	.setClassToggle("#figure3Section", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 //Figure3 appears	
@@ -98,7 +90,6 @@ new ScrollMagic.Scene({
 	})
 	.setClassToggle("#landUseFig", "awake") // add class toggle
 	.on("enter leave", updateBox)
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Figure3 is pinned	
@@ -109,7 +100,6 @@ new ScrollMagic.Scene({
 	.setPin('#landUse')
 	.triggerHook(0)
 	.on("enter leave", updateBox)
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Second text appears	
@@ -119,7 +109,6 @@ new ScrollMagic.Scene({
 	})
 	.setClassToggle("#figure3Text2", "awake") // add class toggle
 	.triggerHook(0)
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 //Sorting	
@@ -134,7 +123,6 @@ new ScrollMagic.Scene({
 	.on("enter", function() {
     	triggerOnce("landUseTrigger");
   	})
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 //Conclusion section appears
@@ -143,7 +131,6 @@ new ScrollMagic.Scene({
 	offset:-100
 	})
 	.setClassToggle("#conclusionSection", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 	
 //reference section appears
@@ -152,7 +139,6 @@ new ScrollMagic.Scene({
 	offset:-100
 	})
 	.setClassToggle("#referenceBox", "awake") // add class toggle
-	.addIndicators() // add indicators (requires plugin)
 	.addTo(controller);
 
 
