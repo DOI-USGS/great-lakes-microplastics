@@ -74,7 +74,10 @@ relAbundance-intro1: >-
 relAbundance-p1: >-
   They found that rivers carry many kinds of microplastics, of which microbeads are a surprisingly small fraction.
 relAbundance-p2: >-
-  Instead, fibers averaged 71% of the total number of microplastics particles in these river water samples. Hover over the following graph for more information.
+  Instead, fibers averaged 71% of the total number of microplastics particles in these river water samples. 
+
+relAbundance-p3: >-
+  Hover over the following graph for more information.
 
 relAbundance-title: Microplastics in rivers
   
@@ -105,6 +108,9 @@ landUse-p1: >-
   That turns out to be a tricky question, and at first there seemed to be few patterns.
 
 landUse-p2: >-
+  Hover over the following graph for more information.
+
+landUse-p3: >-
   Though the relationship is modest, it seems that urban watersheds tend to produce the most plastic-rich rivers. 
   This is especially true for fragments, films, and foams. However, scientists were surprised to find no apparent 
   pattern between land use and the most commonly observed microplastic type: fibers.
