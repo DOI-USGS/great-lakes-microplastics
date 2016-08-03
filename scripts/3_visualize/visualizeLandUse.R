@@ -136,6 +136,25 @@ renameViewSides <- function(svg, side){
   invisible(svg)
 }
 
+addParticleLegend <- function(svg, cols, id.names){
+  legend.keys <- data.frame(keys=c("meanFiber","meanPellet", "meanFilm", "meanFoam", "meanFrag"), 
+                            names = c("Fiber & Lines","Beads & Pellets", "Films", "Foams", "Fragments"), stringsAsFactors = FALSE)
+  
+  key.names <- unname(sapply(id.names, function(x) strsplit(x,'[-]')[[1]][2]))
+  legend.params <- group_by(data.frame(cols=cols, keys=key.names, stringsAsFactors = FALSE), keys) %>% summarize(col = unique(cols)[1]) %>% left_join(legend.keys, by='keys') %>% select(names, col,keys) %>% data.frame
+  axes.bounds <- xpathApply(dinosvg:::g_view(svg,c(1,2)), "//*[local-name()='g'][@id='axes']//*[local-name()='rect']")[[1]]
+  y.spc = 3
+  width = 8
+  pos.y = as.numeric(XML:::xmlAttrs(axes.bounds)[['y']])+2.5
+  pos.x = as.numeric(XML:::xmlAttrs(axes.bounds)[['x']])+2.5
+  g <- newXMLNode('g', parent=svg, at=1, attrs = c(id = 'static-legend'))
+  for (i in 1:nrow(legend.params)){
+    newXMLNode('rect', parent=g, at=1, attrs = c(y=pos.y, x=pos.x, height=width, width=width, fill=legend.params$col[i], stroke='none'))
+    pos.y = pos.y+y.spc+width
+    newXMLNode('text', parent=g, attrs = c(y=pos.y-width/2, x=pos.x+width, dx="0.33em", stroke="none", fill="#000000", 'text-anchor'='begin', class='sub-label'), newXMLTextNode(legend.params$names[i]))
+  }
+}
+
 modifyAttr <- function(g, value){
   attrs <- XML:::xmlAttrs(g)
   attrs[[names(value)]] <- as.character(value)
@@ -278,13 +297,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   dinosvg:::write_svg(svg, target_name)
 }
 
-addParticleLegend <- function(svg, cols, id.names){
-  legend.keys <- data.frame("meanFiber"="Fiber & Lines","meanPellet"="Beads & Pellets", "meanFilm"="Films", "meanFoam"="Foams", "meanFrag"="Fragments", stringsAsFactors = FALSE)
-  browser()
-  key.names <- unname(sapply(id.names, function(x) strsplit(x,'[-]')[[1]][2]))
-  group_by(data.frame(cols=cols, keys=key.names), keys) %>% summarize(col = unique(cols)[1])
-  axes.bounds <- xpathApply(dinosvg:::g_view(svg,c(1,2)), "//*[local-name()='g'][@id='axes']//*[local-name()='rect']")[[1]]
-}
+
 
 JS_defineInitFunction <- function(){
   c('function init(evt){
