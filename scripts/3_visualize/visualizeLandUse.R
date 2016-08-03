@@ -264,6 +264,8 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   tick.labs <- xpathApply(dinosvg:::g_side(svg,"2"), "//*[local-name()='g'][@id='axis-side-2']//*[local-name()='g'][@id='tick-labels']//*[local-name()='text']")
   lapply(tick.labs, modifyAttr, c('class'='y-tick-label'))
   
+  
+  addParticleLegend(svg, cols = gs.conc$view.1.2$rect$col, id.names = gs.conc$view.1.2$rect$id)
   newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="2.5", ry="2.5", width="55", height="27", fill='white', 'stroke-width'="0.5", stroke='#696969', class="hidden"))
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="2em", dy="-2em" , stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
@@ -274,6 +276,14 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   height <- as.numeric(XML:::xmlAttrs(mask.bottom)[['height']]) + as.numeric(y.pos2) - as.numeric(y2.pos)
   newXMLNode('rect', parent=svg, at=1, attrs = c(y=y2.pos, height=height, width="0", fill="#ffffb2", stroke='#ffff4c', rx="2", ry="2", id='highlight-fill'))
   dinosvg:::write_svg(svg, target_name)
+}
+
+addParticleLegend <- function(svg, cols, id.names){
+  legend.keys <- data.frame("meanFiber"="Fiber & Lines","meanPellet"="Beads & Pellets", "meanFilm"="Films", "meanFoam"="Foams", "meanFrag"="Fragments", stringsAsFactors = FALSE)
+  browser()
+  key.names <- unname(sapply(id.names, function(x) strsplit(x,'[-]')[[1]][2]))
+  group_by(data.frame(cols=cols, keys=key.names), keys) %>% summarize(col = unique(cols)[1])
+  axes.bounds <- xpathApply(dinosvg:::g_view(svg,c(1,2)), "//*[local-name()='g'][@id='axes']//*[local-name()='rect']")[[1]]
 }
 
 JS_defineInitFunction <- function(){
