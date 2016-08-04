@@ -26,7 +26,8 @@ function updateBox (e) {
 //Figure3 is pinned	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	duration:100
+	duration:50,
+	offset:100
 	})
 	.setPin('#landUse')
 	.triggerHook(0)
@@ -36,8 +37,8 @@ new ScrollMagic.Scene({
 //Sorting	
 new ScrollMagic.Scene({
 	triggerElement: "#landUse",
-	duration:100,
-	offset:100
+	duration:50,
+	offset:150
 	})
 	.setPin('#landUse')
 	.triggerHook(0)

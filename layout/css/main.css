@@ -113,7 +113,7 @@
 #environmentalHazards,
 #beadBan,
 #conclusion{
-  min-height:20%;
+  min-height:100px;
   }
 
 #landUse{
@@ -197,12 +197,10 @@
 	font-size:1.2em;
 }
 
-
-	
 /*References*/
 #referenceBox{
 	min-height:50px;
-	margin:50px 0 20px 0;
+	margin:0 0 20px 0;
 	padding:10px;
 	}
 	
@@ -337,7 +335,6 @@
 	
 	
 	#landUseFig{
-		width:700px;
 		margin-bottom:-30px;
 		}
 		
