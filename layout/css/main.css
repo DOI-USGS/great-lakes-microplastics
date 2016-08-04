@@ -77,30 +77,16 @@
 	display:none;
 	}
 
-
-/*Header CSS*/
-#logo{
-	background:rgb(63,136,189);
-	color:#fff;
-	height:32px;
-	padding:8px  0 0 10px;
-	margin:0 0 20px 0;
-	}
-	
-#logo h3{
-	}
-	
-#logo img{
-	float:left;
-	margin-right:5px;
-	width:80px;
-	}
-		
 /*Section CSS*/
 
 #intro{
 	min-height:100px;
 	}
+	
+#appTitle{
+  font-size:1.5em;
+  margin-bottom:10px;
+}
 
 #environmentalEffects,
 #relativeAbundance,
@@ -293,9 +279,9 @@
 		font-size:4.5em;
 	}
 	
-	#logo{
-	  margin:1px 0 20px 0;
-	}
+	#appTitle{
+    font-size:2.5em;
+  }
 		
 	/*Figure 1*/
 	#figure1Table{
