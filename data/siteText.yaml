@@ -44,16 +44,13 @@ envHazards-p1: >-
   Microplastics can harm humans, wildlife, and fish through:
 envHazards-p2: >-
   The physical hazards of ingesting plastic particles 
-  (fish, birds, and other animals can experience digestive obstruction, oxidative stress, 
-  impaired reproduction, and death)
+  (fish, birds, and other animals can experience digestive obstruction, impaired reproduction, other adverse biological effects, and death)
 envHazards-p3: >-
   Unhealthy additives in the plastic 
-  (phthalates, brominated flame retardants, nonylphenol, and antimicrobials are 
-  sometimes added to plastic and have been associated with cancer and endocrine disruption)
+  (some additives have been associated with cancer and endocrine disruption)
 envHazards-p4: >-
   Pollutants that accumulate on the plastic particles 
-  (polychlorinated biphenyls, polycyclic aromatic hydrocarbons, organochlorine pesticides, 
-  trace metals, and even pathogens have been found at high concentrations on microplastics)
+  (polychlorinated biphenyls (PCB's), polycyclic aromatic hydrocarbons (PAH's), organochlorine pesticides, trace metals, and even pathogens have been found at high concentrations on microplastics)
 
 ## Microbead Ban ##
 beadBan-title: Can we kick the microplastics habit? 
