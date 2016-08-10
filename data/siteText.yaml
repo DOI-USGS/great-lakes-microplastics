@@ -179,7 +179,7 @@ whereInOurWaterways:
 whatAreKnownRisks: 
   id: keynoteDiv3
   content: What are the known risks of microplastic pollution?
-  alt: Microplastic samples
+  alt: Canoe resting on the Montreal River in northern WI
 
 canWeKickTheHabit: 
   id: keynoteDiv4
@@ -189,7 +189,7 @@ canWeKickTheHabit:
 microplasticsInRivers: 
   id: keynoteDiv5
   content: Microplastics in rivers
-  alt: Scientists wading for microplastics samples on the Manitowoc River
+  alt: USGS scientist sampling for microplastics on the Nemadji River in Wisconsin
 
 plasticsInRiver: 
   id: keynoteDiv6
@@ -199,5 +199,5 @@ plasticsInRiver:
 whatsNext: 
   id: keynoteDiv7
   content: What's next?
-  alt: Motor boat microplastic sampling on the Milwaukee River at the Mouth
+  alt: Motor boat sampling for microplastic at the mouth of the Milwaukee River
   
