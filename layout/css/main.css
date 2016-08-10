@@ -89,11 +89,11 @@
 }
 
 #keynoteDiv2{
-  background:url('../images/keynotes/whereinWater.jpg');
+  background:url('../images/keynotes/mpsampling.jpg');
 }
 
 #keynoteDiv3{
-  background:url('../images/keynotes/mpsampling.jpg');
+  background:url('../images/keynotes/knownRisks.JPG');
 }
 
 #keynoteDiv4{
@@ -101,7 +101,7 @@
 }
 
 #keynoteDiv5{
-  background:url('../images/keynotes/microInRivers.jpg');
+  background:url('../images/keynotes/whereinWater.jpg');
 }
 
 #keynoteDiv6{
@@ -134,12 +134,13 @@
  }
  
  .keynoteContent{
-   background:red;
-   width:50%;
-   height:200px;
+   width:90%;
+   height:100px;
    position:absolute;
    top:0;right:0;left:0;bottom:0;
    margin:auto;
+   text-align:center;
+   color:#fff;
  }
 
 /*Section CSS*/
@@ -373,6 +374,10 @@
 #keynoteDiv6,
 #keynoteDiv7{
   background-attachment:fixed;
+}
+
+.keynoteContent{
+  width:80%;
 }
 		
 	/*Figure 2*/
