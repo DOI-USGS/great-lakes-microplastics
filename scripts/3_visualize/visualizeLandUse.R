@@ -40,22 +40,24 @@ gsplotLandUseConc <- function(fname.data, gap){
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
     mutate(id = paste0(num,'-',type), 
-           onmousemove=sprintf("hovertext('%1.1f (ppcm)',evt)",conc_per_m3),
+           onmousemove=sprintf("hovertext('%1.1f (particles/100gal)',evt)",conc_per_m3),
            onmouseout="hovertext(' ')") %>% 
     arrange(num) %>%
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
-           x.middle = rowMeans(cbind(x.left, x.right))) 
+           x.middle = rowMeans(cbind(x.left, x.right))) %>%
+    mutate(y.bottom = y.bottom/2.64172,
+           y.top = y.top/2.64172)
   
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
          geom.df$x.right, geom.df$y.top,
          lwd=0.5, col = geom.df$rect.col, 
          border = NA,
-         ylab = "Plastic particles\nper cubic meter",
-         ylim=c(0,13.5)) %>% 
-    axis(side = 2, at = seq(0, 14, by=2)) %>% 
+         ylab = "Plastic particles\nper 100 gallons",
+         ylim=c(0,5)) %>% 
+    axis(side = 2, at = seq(0, 5, by=1)) %>%
     axis(1, labels=FALSE, lwd.tick = 0)
   
   # hack because we need to support gs extensions
