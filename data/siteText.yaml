@@ -159,17 +159,31 @@ ref5: >-
   <a href='http://dx.doi.org/10.1038/494169a' target='_blank'>10.1038/494169a</a>
   
 ##Keynote magic##
-microplasticsInOurWaterways: keynoteDiv1
+microplasticsInOurWaterways: 
+  id: keynoteDiv1
+  content: Microplastics in our waterways
 
-whereInOurWaterways: keynoteDiv2
+whereInOurWaterways: 
+  id: keynoteDiv2
+  content: Where in our waterways are microplastics found?
 
-whatAreKnownRisks: keynoteDiv3
+whatAreKnownRisks: 
+  id: keynoteDiv3
+  content: What are the known risks of microplastic pollution?
 
-canWeKickTheHabit: keynoteDiv4
+canWeKickTheHabit: 
+  id: keynoteDiv4
+  content: Can we kick the microplastics habit?
 
-microplasticsInRivers: keynoteDiv5
+microplasticsInRivers: 
+  id: keynoteDiv5
+  content: Microplastics in rivers
 
-plasticsInRiver: keynoteDiv6
+plasticsInRiver: 
+  id: keynoteDiv6
+  content: How are plastics getting into our rivers?
 
-whatsNext: keynoteDiv7
+whatsNext: 
+  id: keynoteDiv7
+  content: What's next?
   

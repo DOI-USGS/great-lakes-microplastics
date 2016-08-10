@@ -134,12 +134,13 @@
  }
  
  .keynoteContent{
-   background:red;
-   width:50%;
-   height:200px;
+   width:90%;
+   height:100px;
    position:absolute;
    top:0;right:0;left:0;bottom:0;
    margin:auto;
+   text-align:center;
+   color:#fff;
  }
 
 /*Section CSS*/
@@ -373,6 +374,10 @@
 #keynoteDiv6,
 #keynoteDiv7{
   background-attachment:fixed;
+}
+
+.keynoteContent{
+  width:80%;
 }
 		
 	/*Figure 2*/
