@@ -127,20 +127,19 @@
   background-repeat:no-repeat;
 }
 
-.dimmer{
-  background:none;
-  background:rgba(0,0,0,.4);
-  height:100%;
- }
- 
  .keynoteContent{
    width:90%;
-   height:100px;
+   height:150px;
    position:absolute;
    top:0;right:0;left:0;bottom:0;
    margin:auto;
    text-align:center;
    color:#fff;
+ }
+ 
+ .keynoteContent h1{
+   font-weight:700;
+   text-shadow:0 2px 5px rgba(0,0,0,.3);
  }
 
 /*Section CSS*/
@@ -377,7 +376,8 @@
 }
 
 .keynoteContent{
-  width:80%;
+  width:100%;
+  font-size:2em;
 }
 		
 	/*Figure 2*/
