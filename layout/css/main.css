@@ -76,6 +76,72 @@
 .gone{
 	display:none;
 	}
+	
+/*Keynote CSS*/
+
+.keynote{
+  height:100%;
+  position:relative;
+ }
+
+#keynoteDiv1{
+  background:url('../images/keynotes/bad_ds_oct2015.jpg');
+}
+
+#keynoteDiv2{
+  background:url('../images/keynotes/whereinWater.jpg');
+}
+
+#keynoteDiv3{
+  background:url('../images/keynotes/mpsampling.jpg');
+}
+
+#keynoteDiv4{
+  background:url('../images/keynotes/kickHabit.jpg');
+}
+
+#keynoteDiv5{
+  background:url('../images/keynotes/microInRivers.jpg');
+}
+
+#keynoteDiv6{
+  background:url('../images/keynotes/howArePlastics.jpg');
+}
+
+#keynoteDiv7{
+  background:url('../images/keynotes/whatsNext.jpg');
+}
+
+#keynoteDiv1,
+#keynoteDiv2,
+#keynoteDiv3,
+#keynoteDiv4,
+#keynoteDiv5,
+#keynoteDiv6,
+#keynoteDiv7{
+  background-size:cover;
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+
+.dimmer{
+  background:none;
+  background:rgba(0,0,0,.4);
+  height:100%;
+ }
+ 
+ .keynoteContent{
+   width:90%;
+   height:100px;
+   position:absolute;
+   top:0;right:0;left:0;bottom:0;
+   margin:auto;
+   text-align:center;
+   color:#fff;
+ }
 
 /*Section CSS*/
 
@@ -298,6 +364,21 @@
 		width:50%;
 		float:right;
 	}
+	
+/*Keynote CSS*/
+#keynoteDiv1,
+#keynoteDiv2,
+#keynoteDiv3,
+#keynoteDiv4,
+#keynoteDiv5,
+#keynoteDiv6,
+#keynoteDiv7{
+  background-attachment:fixed;
+}
+
+.keynoteContent{
+  width:80%;
+}
 		
 	/*Figure 2*/
 	.oneStat,

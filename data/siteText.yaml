@@ -27,15 +27,14 @@ envEffects-oysters2: particles per serving of commercially-cultured <strong>oyst
 envEffects-oysters3: 90
 envEffects-oysters4: "particles per serving of commercially-cultured <strong>mussels</strong><sup><a href='#ref2'>2</a></sup>"
 
-envEffects-stream1: 1 particle for every
-envEffects-stream2: 8
-envEffects-stream3: gallon of Great Lakes tributary <strong>water</strong><sup><a href='#ref3'>3</a></sup>
-envEffects-stream4: "On average"
-envEffects-stream5: 1285
-envEffects-stream6: "particles per square foot of <strong>river sediment</strong><sup><a href='#ref4'>4</a></sup>"
+envEffects-stream1: Up to 
+envEffects-stream2: 32
+envEffects-stream3: particles per cubic meter of Great Lakes tributary <strong>water</strong>
+envEffects-stream4: ">13,800"
+envEffects-stream5: "particles per square meter of <strong>river sediment</strong><sup><a href='#ref3'>3</a></sup>"
 
-envEffects-lake1: "112,000" 
-envEffects-lake2: "particles per square mile of <strong>Great Lakes water</strong><sup><a href='#ref5'>5</a></sup>"
+envEffects-lake1: "43,000" 
+envEffects-lake2: "particles per square kilometer of <strong>Great Lakes water</strong><sup><a href='#ref4'>4</a></sup>"
 
 
 ## Environmental Hazards ##
@@ -149,22 +148,49 @@ ref3: >-
   <i>Environmental Science & Technology</i>. 2016.
 
 ref4: >- 
-  4. Castañeda, R.; Avlijas, S.; Simard, M.;Ricciardi, A. 
-  Microplastic pollution in St. Lawrence River sediments. 
-  <i>Canadian Journal of Fisheries and Aquatic Sciences</i> 2014, 71(12) 1767-1771.
-  <a href='http://dx.doi.org/10.1139/cjfas-2014-0281' target='_blank'>10.1139/cjfas-2014-0281</a>
-
-
-ref5: >- 
-  5. Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
+  4. Eriksen, M.; Mason, S.; Wilson, S.; Box, C.; Zellers, A.; Edwards, W.; Farley, H.; Amato, S. 
   Microplastic pollution in the surface waters of the Laurentian Great Lakes. 
   <i>Mar. Pollut. Bull.</i> 2013, 77 (1-2)
   <a href='http://dx.doi.org/10.1016/j.marpolbul.2013.10.007' target='_blank'>10.1016/j.marpolbul.2013.10.007</a>
 
-ref6: >-
-  6. Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 
+ref5: >-
+  5. Rochman, C.M., Browne, M.A., Halpern, B.S., Hentschel, B.T., Hoh, E., Karapanagioti, H.K., Rios-Mendoza, L.M., Takada, H., Teh, S. and Thompson, R.C., 
   Policy: Classify plastic waste as hazardous. <i>Nature</i>. 2013, 494: 169-171
   <a href='http://dx.doi.org/10.1038/494169a' target='_blank'>10.1038/494169a</a>
   
+##Keynote magic##
+microplasticsInOurWaterways: 
+  id: keynoteDiv1
+  content: Microplastics in our waterways
+  alt: Late fall on the Bad River in Wisconsin
 
+whereInOurWaterways: 
+  id: keynoteDiv2
+  content: Where in our waterways are microplastics found?
+  alt: USGS scientist sampling for microplastics on the Nemadji River in Wisconsin
+
+whatAreKnownRisks: 
+  id: keynoteDiv3
+  content: What are the known risks of microplastic pollution?
+  alt: Microplastic samples
+
+canWeKickTheHabit: 
+  id: keynoteDiv4
+  content: Can we kick the microplastics habit?
+  alt: Sampling on the Milwaukee River as the water enters Lake Michigan
+
+microplasticsInRivers: 
+  id: keynoteDiv5
+  content: Microplastics in rivers
+  alt: Scientists wading for microplastics samples on the Manitowoc River
+
+plasticsInRiver: 
+  id: keynoteDiv6
+  content: How are plastics getting into our rivers?
+  alt: View of Milwaukee, Wisconsin from Lake Michigan
+
+whatsNext: 
+  id: keynoteDiv7
+  content: What's next?
+  alt: Motor boat microplastic sampling on the Milwaukee River at the Mouth
   
