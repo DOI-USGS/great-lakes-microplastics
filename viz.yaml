@@ -62,6 +62,10 @@ sections:
     id: footer
     template: layout/templates/footer.mustache
     context: siteTextData
+  - 
+    id: keynote
+    template: layout/templates/keynote.mustache
+    context: siteTextData
 data:
   -
     id: siteTextData
