@@ -386,6 +386,8 @@
 	.right{
 		width:50%;
 		float:right;
+		position:relative;
+		z-index:90000;
 	}
 	
 /*Keynote CSS*/
