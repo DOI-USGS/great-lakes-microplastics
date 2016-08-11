@@ -127,6 +127,12 @@
   background-repeat:no-repeat;
 }
 
+.dimmer{
+  background:none;
+  background:rgba(0,0,0,.2);
+  height:100%;
+ }
+ 
  .keynoteContent{
    width:90%;
    height:150px;

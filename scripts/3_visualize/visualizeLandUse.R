@@ -157,6 +157,24 @@ addParticleLegend <- function(svg, cols, id.names){
   }
 }
 
+addLandUseLegend <- function(svg, cols, id.names){
+  key.names <- unname(sapply(id.names, function(x) strsplit(x,'[-]')[[1]][2]))
+  legend.keys <- data.frame(keys=c("UrbanPct","AgTotalPct", "OtherPct"), 
+                            names = c("Urban","Agriculture", "Other"), stringsAsFactors = FALSE)
+  legend.params <- group_by(data.frame(cols=cols, keys=key.names, stringsAsFactors = FALSE), keys) %>% 
+    summarize(col = unique(cols)[1]) %>% left_join(legend.keys, by='keys') %>% select(names, col,keys) %>% data.frame
+  axes.bounds <- xpathApply(dinosvg:::g_view(svg,c(1,'2a')), "//*[local-name()='g'][@id='axes']//*[local-name()='rect']")[[1]]
+  x.spc = 50
+  width = 8
+  pos.y = as.numeric(XML:::xmlAttrs(axes.bounds)[['y']])-15
+  pos.x = as.numeric(XML:::xmlAttrs(axes.bounds)[['x']])+135
+  g <- newXMLNode('g', parent=svg, at=1, attrs = c(id = 'static-legend'))
+  for (i in 1:nrow(legend.params)){
+    newXMLNode('rect', parent=g, at=1, attrs = c(y=pos.y, x=pos.x, height=width, width=width, fill=legend.params$col[i], stroke='none'))
+    newXMLNode('text', parent=g, attrs = c(y=pos.y+width/2, x=pos.x+width, dy="0.33em", dx="0.33em", stroke="none", fill="#000000", 'text-anchor'='begin', class='sub-label'), newXMLTextNode(legend.params$names[i]))
+    pos.x = pos.x+x.spc+width
+  }
+}
 modifyAttr <- function(g, value){
   attrs <- XML:::xmlAttrs(g)
   attrs[[names(value)]] <- as.character(value)
@@ -287,6 +305,7 @@ createBarFig <- function(gs.conc, gs.landuse, target_name){
   
   
   addParticleLegend(svg, cols = gs.conc$view.1.2$rect$col, id.names = gs.conc$view.1.2$rect$id)
+  addLandUseLegend(svg, cols = gs.landuse$view.1.2$rect$col, id.names = gs.landuse$view.1.2$rect$id)
   newXMLNode('rect', parent=svg, attrs = c(id="tooltip_bg", x="0", y="0", rx="2.5", ry="2.5", width="55", height="27", fill='white', 'stroke-width'="0.5", stroke='#696969', class="hidden"))
   newXMLNode('rect', parent=svg, attrs = c(id='tool_key', x="0", y="0", width="7", height="7", fill="none", stroke="none"))
   newXMLNode('text', parent=svg, attrs = c(id="tooltip_key", dx="2em", dy="-2em" , stroke="none", fill="#000000", 'text-anchor'="begin", class='sub-label'), newXMLTextNode(' '))
