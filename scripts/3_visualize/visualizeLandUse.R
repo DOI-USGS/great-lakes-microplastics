@@ -143,7 +143,12 @@ addParticleLegend <- function(svg, cols, id.names){
                             names = c("Fiber & Lines","Beads & Pellets", "Films", "Foams", "Fragments"), stringsAsFactors = FALSE)
   
   key.names <- unname(sapply(id.names, function(x) strsplit(x,'[-]')[[1]][2]))
-  legend.params <- group_by(data.frame(cols=cols, keys=key.names, stringsAsFactors = FALSE), keys) %>% summarize(col = unique(cols)[1]) %>% left_join(legend.keys, by='keys') %>% select(names, col,keys) %>% data.frame
+  legend.params <- group_by(data.frame(cols=cols, keys=key.names, stringsAsFactors = FALSE), keys) %>% 
+    summarize(col = unique(cols)[1]) %>% 
+    left_join(legend.keys, by='keys') %>% 
+    select(names, col,keys) %>% 
+    arrange(keys = c("meanFiber","meanFrag", "meanFoam","meanFilm","meanPellets")) %>%
+    data.frame
   axes.bounds <- xpathApply(dinosvg:::g_view(svg,c(1,2)), "//*[local-name()='g'][@id='axes']//*[local-name()='rect']")[[1]]
   y.spc = 3
   width = 8
