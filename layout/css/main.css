@@ -144,9 +144,9 @@
  }
  
  .keynoteContent h1{
-  font-weight:700;
-  text-shadow:0 2px 5px rgba(0,0,0,.3);
-}
+   font-weight:700;
+   text-shadow:0 2px 5px rgba(0,0,0,.3);
+ }
 
 /*Section CSS*/
 
@@ -273,6 +273,7 @@
 	min-height:50px;
 	margin:0 0 20px 0;
 	padding:10px;
+	clear:both;
 	}
 	
 #referenceTitle{
@@ -382,7 +383,8 @@
 }
 
 .keynoteContent{
-  width:80%;
+  width:100%;
+  font-size:2em;
 }
 		
 	/*Figure 2*/
