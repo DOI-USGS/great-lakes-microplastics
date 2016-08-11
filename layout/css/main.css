@@ -77,6 +77,10 @@
 	display:none;
 	}
 	
+.left{
+  margin-bottom:10px;
+}
+	
 /*Keynote CSS*/
 
 .keynote{
@@ -335,8 +339,12 @@
     font-size:1.5em;
   }
   
+  .text h2{
+    font-size:2em;
+  }
+  
   .text ul{
-    font-size:1em;
+    font-size:1.2em;
   }
 	
 	.bgContent{
@@ -370,8 +378,9 @@
 	}
 	
 	.left{
-		width:50%;
+		width:49%;
 		float:left;
+		padding-right:1%;
 	}
 	
 	.right{
