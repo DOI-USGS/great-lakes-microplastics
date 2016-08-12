@@ -1,13 +1,13 @@
 ## GLOBAL ##
-title: Microplastics in our waterways
+title: Microplastics in our Nation's Waterways
 
 ## Intro ##
-welcome: Microplastics in our waterways
+welcome: Microplastics in our Nation's Waterways
 welcome-subnote1: >-
   Microbeads have been banned, but the fight against microplastics pollution is only just beginning.
 welcome-subnote2: Brought to you by USGS-VIZLAB
 welcome-p1: >-
-  Microplastics are the tiny plastic fragments that fall off of our decomposing bottles and bags and are 
+  Microplastics are the miniscule plastic fragments (smaller than 0.04 inch) that fall off of decomposing plastic bottles and bags, and are 
   intentionally manufactured into some toothpastes and lotions. Scientists have found
   microplastics nearly everywhere, particularly in lakes, rivers, and aquatic animals.
 
@@ -18,7 +18,7 @@ envEffects-title: Where in our waterways are microplastics found?
 envEffects-globalProd1: ">617,000,000,000"
 envEffects-globalProd2: "pounds of plastic produced worldwide in 2012"
 
-envEffects-fish1: One study found particles in
+envEffects-fish1: Studies have found particles in
 envEffects-fish2: 12%
 envEffects-fish3: "of <strong>freshwater fish</strong><sup><a href='#ref1'>1</a></sup>"
 
@@ -41,38 +41,40 @@ envEffects-lake2: "particles per square mile of <strong>Great Lakes water</stron
 ## Environmental Hazards ##
 envHazards-title: What are the known risks of microplastic pollution?
 envHazards-p1: >-
-  Microplastics can harm humans, wildlife, and fish through:
+  Microplastics can be harmful to humans, as well as wildlife through:
 envHazards-p2: >-
   The physical hazards of ingesting plastic particles 
-  (fish, birds, and other animals can experience digestive obstruction, impaired reproduction, other adverse biological effects, and death)
+  (fish, birds, and other animals can experience digestive obstruction, impaired reproduction, other adverse biological effects, and even death)
 envHazards-p3: >-
-  Unhealthy additives in the plastic 
+  The unhealthy additives found in plastic particles 
   (some additives have been associated with cancer and endocrine disruption)
 envHazards-p4: >-
-  Pollutants that accumulate on the plastic particles 
+  The contaminants that accumulate on plastic particles 
   (polychlorinated biphenyls (PCB's), polycyclic aromatic hydrocarbons (PAH's), organochlorine pesticides, trace metals, and even pathogens have been found at high concentrations on microplastics)
 
 ## Microbead Ban ##
 beadBan-title: Can we kick the microplastics habit? 
 beadBan-p1: >-
-  We’re trying. In 2015, the United States Congress passed 
+  We’re trying. In 2015, the U.S. Congress passed 
   <a href='https://www.congress.gov/bill/114th-congress/house-bill/1321' target='_blank'>Public Law 114-114</a> 
-  to ban the sale of cosmetics containing microbeads. The ban takes effect in 2018.
+  to ban the sale of cosmetics containing plastic microbeads. The ban takes effect in 2018.
 beadBan-p2: >-
   The ban addresses microbeads alone, in part because early studies indicated that 
-  microbeads were the most common type of microplastic in aquatic ecosystems.
+  microbeads were the most common type of microplastic found in aquatic ecosystems.
   However, those early studies all took place in lakes. Is the same true in rivers?
 
 ## Relative Abundance ##
 relAbundance-intro1: >-
-  USGS scientists sampled rivers flowing into the Great Lakes<sup><a href='#ref3'>3</a></sup> 
-  to find out which kinds of microplastics are most common in rivers, 
-  and which rivers are the most polluted with microplastics.
+  U.S. Geological Survey scientists sampled rivers flowing into the Great Lakes<sup><a href='#ref3'>3</a></sup> 
+  to find out which kinds of microplastics are most commonly found in rivers, 
+  and which rivers contain the most microplastics particles.
 
 relAbundance-p1: >-
-  They found that rivers carry many kinds of microplastics, of which microbeads are a surprisingly small fraction.
+  These scientists found that rivers carry many different kinds of microplastics, 
+  and were surprised to learn that plastic microbeads make up only a small fraction of all microplastics.
 relAbundance-p2: >-
-  Instead, fibers averaged 71% of the total number of microplastics particles in these river water samples. 
+  The USGS scientists found that fibers composed an average of 71% of the total number of microplastics 
+  particles found in samples of river water. 
 
 relAbundance-p3: >-
   Hover over the following graph for more information.
@@ -103,21 +105,24 @@ relAbundance-foams: ["styrofoam"]
 landUse-title: How are plastics getting into our rivers?
 
 landUse-p1: >-
-  That turns out to be a tricky question, and at first there seemed to be few patterns.
+  That turns out to be a tricky question. USGS scientists plotted the microplastics data 
+  for the river water samples collected at various locations. Then they compared those data to 
+  land-use types found at those same sampling locations to determine if there seemed to be few were any patterns in the data.
+
 
 landUse-p2: >-
   Hover over the data on the graph below for more information.
 
 landUse-p3: >-
-  Though the relationship is modest, it seems that urban watersheds tend to produce the most plastic-rich rivers. 
-  This is especially true for fragments, films, and foams. However, scientists were surprised to find no apparent 
-  pattern between land use and the most commonly observed microplastic type: fibers.
+  Though the relationship is modest, it appears that urban watersheds tend to be associated with rivers that have 
+  high concentrations of microplastics in the water, and especially true for plastic fragments, films, and foams. However, scientists were surprised to find no apparent 
+  pattern between land use and the most commonly observed microplastic type - fibers.
 
 ## Conclusion ##
 conclusion-title: What's next?
 conclusion-p1: >-
- While the ban on microbeads has raised public awareness, the microplastics story is large and complex. 
- Studies like this one are bringing us toward a better understanding of the many forms and fates of microplastics.
+ While the ban on plastic microbeads has raised public awareness, the microplastics story is large and complex. 
+ Studies like this one conducted by USGS scientists are bringing us toward a better understanding of the many forms and fates of microplastics in our Nation's waterways.
 
 ## Footer ##
 footerURL1: U.S. Department of the Interior
@@ -165,7 +170,7 @@ ref6: >-
 ##Keynote magic##
 microplasticsInOurWaterways: 
   id: keynoteDiv1
-  content: Microplastics in our waterways
+  content: Microplastics in our Nation's waterways
   alt: Late fall on the Bad River in Wisconsin
 
 whereInOurWaterways: 
