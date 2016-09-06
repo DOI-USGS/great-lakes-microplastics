@@ -1,6 +1,5 @@
 auth.R
 cache/
-target/
 .remake/
 
 # History files
