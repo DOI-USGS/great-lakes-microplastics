@@ -1,3 +1,3 @@
 googleAnalyticsId <- function() {
-  return("UA-78530187-1")
+  return("UA-78530187-3")
 }
