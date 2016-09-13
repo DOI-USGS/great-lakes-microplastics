@@ -331,6 +331,19 @@
 	border:none;
 	padding-bottom:0;
 	}
+	
+@media only screen
+	and (min-device-width: 768px)
+	and (max-device-width: 1024px)
+	and (-webkit-min-device-pixel-ratio: 1){
+		#keynoteDiv1,
+		#keynoteDiv3,
+		#keynoteDiv5,
+		#keynoteDiv6,
+		#keynoteDiv7{
+			background-attachment: scroll !important;
+		}
+}
 
 		
 @media screen and (min-width:768px){
