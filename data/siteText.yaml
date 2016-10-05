@@ -173,35 +173,35 @@ ref6: >-
 microplasticsInOurWaterways: 
   id: keynoteDiv1
   content: Microplastics in our Nation's waterways
-  alt: Late fall on the Bad River in Wisconsin
+  alttext: Late fall on the Bad River in Wisconsin
 
 whereInOurWaterways: 
   id: keynoteDiv2
   content: Where in our waterways are microplastics found?
-  alt: USGS scientist sampling for microplastics on the Nemadji River in Wisconsin
+  alttext: USGS scientist sampling for microplastics on the Nemadji River in Wisconsin
 
 whatAreKnownRisks: 
   id: keynoteDiv3
   content: What are the known risks of microplastic pollution?
-  alt: Canoe resting on the Montreal River in northern MI
+  alttext: Canoe resting on the Montreal River in northern MI
 
 canWeKickTheHabit: 
   id: keynoteDiv4
   content: Can we kick the microplastics habit?
-  alt: Sampling on the Milwaukee River as the water enters Lake Michigan
+  alttext: Sampling on the Milwaukee River as the water enters Lake Michigan
 
 microplasticsInRivers: 
   id: keynoteDiv5
   content: Microplastics in rivers
-  alt: USGS scientist sampling for microplastics on the Nemadji River in Wisconsin
+  alttext: USGS scientist sampling for microplastics on the Nemadji River in Wisconsin
 
 plasticsInRiver: 
   id: keynoteDiv6
   content: How are plastics getting into our rivers?
-  alt: View of Milwaukee, Wisconsin from Lake Michigan
+  alttext: View of Milwaukee, Wisconsin from Lake Michigan
 
 whatsNext: 
   id: keynoteDiv7
   content: What's next?
-  alt: Motor boat sampling for microplastic at the mouth of the Milwaukee River
+  alttext: Motor boat sampling for microplastic at the mouth of the Milwaukee River
   
