@@ -12,6 +12,9 @@ info:
     (see Microplastics Sources sidebar), and are commonly grouped by
     size, as well as by particle types including fibers/lines,
     pellets/beads, foams, films, and fragments.
+  thumbnail: 
+    url: images/thumbnail.png
+    alttext: Microplastics sampling
 pages:
   -
     id: index
