@@ -4,7 +4,7 @@ info:
   name: Microplastics in the Great Lakes
   date: 2016-05-12
   publish-date: 2016-05-19
-  path: /microplastics
+  path: microplastics
   description: >-
     Microplastics, plastic particles less than 5 millimeters in diameter,
     are a contaminant of emerging concern in aquatic environments.
@@ -13,6 +13,9 @@ info:
     size, as well as by particle types including fibers/lines,
     pellets/beads, foams, films, and fragments.
   thumbnail: 
+    url: images/thumbnail.png
+    alttext: Microplastics sampling
+  thumbnail-landing: 
     url: images/thumbnail.png
     alttext: Microplastics sampling
 pages:
