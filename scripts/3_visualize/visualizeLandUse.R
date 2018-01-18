@@ -34,21 +34,23 @@ visualizeLandUse <- function(tag, fname.geom.conc, fname.geom.pct,
 # Returns gsplot object for the top part of the figure
 gsplotLandUseConc <- function(fname.data, gap){
   
+  m3_to_100gal <- 2.64172
+  
   geom.df <-  read.table(fname.data, sep = "\t", stringsAsFactors = FALSE)
   sites <- unique(geom.df$site.name)
   
   site.ids <- data.frame('site.name'=sites, num=1:length(sites), stringsAsFactors = FALSE)
   geom.df <- left_join(geom.df, site.ids) %>% 
     mutate(id = paste0(num,'-',type), 
-           onmousemove=sprintf("hovertext('%1.1f (particles/100gal)',evt)",conc_per_m3),
+           onmousemove=sprintf("hovertext('%1.1f (particles/100gal)',evt)",conc_per_m3 / m3_to_100gal),
            onmouseout="hovertext(' ')") %>% 
     arrange(num) %>%
     #use gap specification for spacing bars
     mutate(x.right = x.left*gap + x.right,
            x.left = x.left*(1+gap), #xright calc before xleft calc bc it needs orig xleft vals
            x.middle = rowMeans(cbind(x.left, x.right))) %>%
-    mutate(y.bottom = y.bottom/2.64172,
-           y.top = y.top/2.64172)
+    mutate(y.bottom = y.bottom / m3_to_100gal,
+           y.top = y.top / m3_to_100gal)
   
   gs.conc <- gsplot() %>% 
     rect(geom.df$x.left, geom.df$y.bottom, 
