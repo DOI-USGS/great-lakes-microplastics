@@ -2,7 +2,7 @@
   {
     "name": "great-lakes-microplastics",
     "organization": "U.S. Geological Survey",
-    "description": "Microplastics in the Great Lakes",
+    "description": "Microplastics are the miniscule plastic fragments (smaller than 0.04 inch) that fall off of decomposing plastic bottles and bags, and are intentionally manufactured into some toothpastes and lotions. Scientists have found microplastics nearly everywhere, particularly in lakes, rivers, and aquatic animals. This data visualization website explores where microplastics are found in U.S. waterways, their known risks, and what USGS scientists learned by sampling 29 Great Lakes tributaries.",
     "version": "main",
     "status": "Production",
     "permissions": {
@@ -10,31 +10,35 @@
       "licenses": [
         {
           "name": "Public Domain, CC0-1.0",
-          "URL": "https://github.com/USGS-VIZLAB/great-lakes-microplastics/blob/main/LICENSE.md"
+          "URL": "https://github.com/DOI-USGS/great-lakes-microplastics/blob/main/LICENSE.md"
         }
       ]
     },
-    "homepageURL": "https://github.com/USGS-VIZLAB/great-lakes-microplastics/",
-    "downloadURL": "https://github.com/USGS-VIZLAB/great-lakes-microplastics/archive/refs/heads/main.zip",
-    "disclaimerURL": "https://github.com/USGS-VIZLAB/great-lakes-microplastics/blob/main/DISCLAIMER.md",
-    "repositoryURL": "https://github.com/USGS-VIZLAB/great-lakes-microplastics.git",
+    "homepageURL": "https://water.usgs.gov/vizlab/microplastics/",
+    "downloadURL": "https://github.com/DOI-USGS/great-lakes-microplastics/archive/refs/heads/main.zip",
+    "disclaimerURL": "https://github.com/DOI-USGS/great-lakes-microplastics/blob/main/DISCLAIMER.md",
+    "repositoryURL": "https://github.com/DOI-USGS/great-lakes-microplastics.git",
     "vcs": "git",
     "laborHours": 100,
     "tags": [
-      "R",
+      "microplastics",
+      "Great Lakes",
       "USGS",
-      "Vizlab"
+      "Vizlab",
+      "data visualization"
     ],
     "languages": [
       "R",
-      "JavaScript"
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
     "contact": {
-      "name": "Laura DeCicco",
-      "email": "ldecicco@usgs.gov"
+      "name": "Cee Nell",
+      "email": "cnell@usgs.gov"
     },
     "date": {
-      "metadataLastUpdated": "2023-05-05"
+      "metadataLastUpdated": "2026-09-21"
     }
   }
 ]

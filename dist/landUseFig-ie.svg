@@ -1,0 +1,555 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 432 454" onload="init(evt)">
+  <style>text {
+  cursor: default;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.x-tick-label, #tooltip {
+font-size: 10px;
+}
+.sub-label, .y-tick-label {
+font-size: 8px;
+}
+
+.hidden {
+opacity:0;
+}
+text{
+font-size: 12px;
+
+}</style>
+  <rect y="21.6" height="301.36" width="0" fill="#ffffb2" stroke="#ffff4c" rx="2" ry="2" id="highlight-fill"/>
+  <g id="static-legend">
+    <rect y="208.2" x="156.6" height="8" width="8" fill="#ffcc0a" stroke="none"/>
+    <rect y="208.2" x="272.6" height="8" width="8" fill="#D2372C" stroke="none"/>
+    <rect y="208.2" x="214.6" height="8" width="8" fill="#9BD733" stroke="none"/>
+    <text y="212.2" x="164.6" dy="0.33em" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Agriculture</text>
+    <text y="212.2" x="222.6" dy="0.33em" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Other</text>
+    <text y="212.2" x="280.6" dy="0.33em" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Urban</text>
+  </g>
+  <g id="static-legend">
+    <rect y="24.1" x="24.1" height="8" width="8" fill="#26b9da" stroke="none"/>
+    <rect y="68.1" x="24.1" height="8" width="8" fill="#4ebec2" stroke="none"/>
+    <rect y="57.1" x="24.1" height="8" width="8" fill="#0b516b" stroke="none"/>
+    <rect y="46.1" x="24.1" height="8" width="8" fill="#01b29F" stroke="none"/>
+    <rect y="35.1" x="24.1" height="8" width="8" fill="#aadedc" stroke="none"/>
+    <text y="31.1" x="32.1" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Fiber &amp; Lines</text>
+    <text y="42.1" x="32.1" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Fragments</text>
+    <text y="53.1" x="32.1" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Foams</text>
+    <text y="64.1" x="32.1" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Films</text>
+    <text y="75.1" x="32.1" dx="0.33em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label">Beads &amp; Pellets</text>
+  </g>
+  <g id="view-1-2a">
+    <defs>
+      <clipPath id="mask-1-2a">
+        <rect x="21.6" y="223.2" height="99.76" width="388.8"/>
+      </clipPath>
+    </defs>
+    <g id="axes" fill="none" stroke="#000000" stroke-width="1">
+      <rect x="21.6" y="223.2" height="99.76" width="388.8" id="axes-box"/>
+    </g>
+    <g clip-path="url(#mask-1-2)a">
+      <rect x="21.6" y="320.067" height="2.89303999999998" width="11.710843373494" fill="rgb(210,55,44)" id="1-UrbanPct" onmousemove="hovertext('2.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="21.6" y="317.174" height="2.89303999999998" width="11.710843373494" fill="rgb(255,204,10)" id="1-AgTotalPct" onmousemove="hovertext('2.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="21.6" y="223.2" height="93.97392" width="11.710843373494" fill="rgb(155,215,51)" id="1-OtherPct" onmousemove="hovertext('94.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="319.967" height="2.99279999999999" width="11.710843373494" fill="rgb(210,55,44)" id="2-UrbanPct" onmousemove="hovertext('3.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="310.091" height="9.87624" width="11.710843373494" fill="rgb(255,204,10)" id="2-AgTotalPct" onmousemove="hovertext('9.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="223.2" height="86.89096" width="11.710843373494" fill="rgb(155,215,51)" id="2-OtherPct" onmousemove="hovertext('87.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="314.58" height="8.37984" width="11.710843373494" fill="rgb(210,55,44)" id="3-UrbanPct" onmousemove="hovertext('8.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="273.28" height="41.30064" width="11.710843373494" fill="rgb(255,204,10)" id="3-AgTotalPct" onmousemove="hovertext('41.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="223.2" height="50.07952" width="11.710843373494" fill="rgb(155,215,51)" id="3-OtherPct" onmousemove="hovertext('50.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="315.977" height="6.98320000000001" width="11.7108433734941" fill="rgb(210,55,44)" id="4-UrbanPct" onmousemove="hovertext('7.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="246.245" height="69.73224" width="11.7108433734941" fill="rgb(255,204,10)" id="4-AgTotalPct" onmousemove="hovertext('69.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="223.2" height="23.04456" width="11.7108433734941" fill="rgb(155,215,51)" id="4-OtherPct" onmousemove="hovertext('23.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="314.381" height="8.57936000000001" width="11.7108433734938" fill="rgb(210,55,44)" id="5-UrbanPct" onmousemove="hovertext('8.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="250.235" height="64.14568" width="11.7108433734938" fill="rgb(255,204,10)" id="5-AgTotalPct" onmousemove="hovertext('64.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="223.2" height="27.03496" width="11.7108433734938" fill="rgb(155,215,51)" id="5-OtherPct" onmousemove="hovertext('27.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="293.132" height="29.82824" width="11.7108433734941" fill="rgb(210,55,44)" id="6-UrbanPct" onmousemove="hovertext('29.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="250.035" height="43.09632" width="11.7108433734941" fill="rgb(255,204,10)" id="6-AgTotalPct" onmousemove="hovertext('43.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="223.2" height="26.83544" width="11.7108433734941" fill="rgb(155,215,51)" id="6-OtherPct" onmousemove="hovertext('26.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="239.062" height="83.89816" width="11.7108433734941" fill="rgb(210,55,44)" id="7-UrbanPct" onmousemove="hovertext('84.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="238.064" height="0.997599999999977" width="11.7108433734941" fill="rgb(255,204,10)" id="7-AgTotalPct" onmousemove="hovertext('1.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="223.2" height="14.86424" width="11.7108433734941" fill="rgb(155,215,51)" id="7-OtherPct" onmousemove="hovertext('14.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="285.051" height="37.9088" width="11.7108433734938" fill="rgb(210,55,44)" id="8-UrbanPct" onmousemove="hovertext('38.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="257.717" height="27.33424" width="11.7108433734938" fill="rgb(255,204,10)" id="8-AgTotalPct" onmousemove="hovertext('27.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="223.2" height="34.51696" width="11.7108433734938" fill="rgb(155,215,51)" id="8-OtherPct" onmousemove="hovertext('34.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="309.193" height="13.76688" width="11.7108433734941" fill="rgb(210,55,44)" id="9-UrbanPct" onmousemove="hovertext('13.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="248.938" height="60.25504" width="11.7108433734941" fill="rgb(255,204,10)" id="9-AgTotalPct" onmousemove="hovertext('60.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="223.2" height="25.73808" width="11.7108433734941" fill="rgb(155,215,51)" id="9-OtherPct" onmousemove="hovertext('25.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="311.986" height="10.9736" width="11.7108433734941" fill="rgb(210,55,44)" id="10-UrbanPct" onmousemove="hovertext('11.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="264.002" height="47.98456" width="11.7108433734941" fill="rgb(255,204,10)" id="10-AgTotalPct" onmousemove="hovertext('48.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="223.2" height="40.80184" width="11.7108433734941" fill="rgb(155,215,51)" id="10-OtherPct" onmousemove="hovertext('40.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="309.393" height="13.56736" width="11.7108433734937" fill="rgb(210,55,44)" id="11-UrbanPct" onmousemove="hovertext('13.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="260.81" height="48.58312" width="11.7108433734937" fill="rgb(255,204,10)" id="11-AgTotalPct" onmousemove="hovertext('48.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="223.2" height="37.60952" width="11.7108433734937" fill="rgb(155,215,51)" id="11-OtherPct" onmousemove="hovertext('37.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="308.196" height="14.76448" width="11.7108433734941" fill="rgb(210,55,44)" id="12-UrbanPct" onmousemove="hovertext('14.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="254.325" height="53.8704" width="11.7108433734941" fill="rgb(255,204,10)" id="12-AgTotalPct" onmousemove="hovertext('54.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="223.2" height="31.12512" width="11.7108433734941" fill="rgb(155,215,51)" id="12-OtherPct" onmousemove="hovertext('31.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="310.789" height="12.17072" width="11.7108433734938" fill="rgb(210,55,44)" id="13-UrbanPct" onmousemove="hovertext('12.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="266.396" height="44.3932" width="11.7108433734938" fill="rgb(255,204,10)" id="13-AgTotalPct" onmousemove="hovertext('44.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="223.2" height="43.19608" width="11.7108433734938" fill="rgb(155,215,51)" id="13-OtherPct" onmousemove="hovertext('43.4 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="270.287" height="52.67328" width="11.7108433734941" fill="rgb(210,55,44)" id="14-UrbanPct" onmousemove="hovertext('52.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="250.834" height="19.4532" width="11.7108433734941" fill="rgb(255,204,10)" id="14-AgTotalPct" onmousemove="hovertext('19.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="223.2" height="27.63352" width="11.7108433734941" fill="rgb(155,215,51)" id="14-OtherPct" onmousemove="hovertext('27.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="231.181" height="91.7792" width="11.7108433734941" fill="rgb(210,55,44)" id="15-UrbanPct" onmousemove="hovertext('92.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="231.081" height="0.0997600000000034" width="11.7108433734941" fill="rgb(255,204,10)" id="15-AgTotalPct" onmousemove="hovertext('0.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="223.2" height="7.88103999999998" width="11.7108433734941" fill="rgb(155,215,51)" id="15-OtherPct" onmousemove="hovertext('7.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="294.129" height="28.83064" width="11.7108433734938" fill="rgb(210,55,44)" id="16-UrbanPct" onmousemove="hovertext('28.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="268.99" height="25.13952" width="11.7108433734938" fill="rgb(255,204,10)" id="16-AgTotalPct" onmousemove="hovertext('25.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="223.2" height="45.78984" width="11.7108433734938" fill="rgb(155,215,51)" id="16-OtherPct" onmousemove="hovertext('45.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="311.887" height="11.07336" width="11.7108433734941" fill="rgb(210,55,44)" id="17-UrbanPct" onmousemove="hovertext('11.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="244.748" height="67.13848" width="11.7108433734941" fill="rgb(255,204,10)" id="17-AgTotalPct" onmousemove="hovertext('67.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="223.2" height="21.54816" width="11.7108433734941" fill="rgb(155,215,51)" id="17-OtherPct" onmousemove="hovertext('21.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="312.286" height="10.67432" width="11.7108433734941" fill="rgb(210,55,44)" id="18-UrbanPct" onmousemove="hovertext('10.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="233.775" height="78.51112" width="11.7108433734941" fill="rgb(255,204,10)" id="18-AgTotalPct" onmousemove="hovertext('78.7 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="223.2" height="10.57456" width="11.7108433734941" fill="rgb(155,215,51)" id="18-OtherPct" onmousemove="hovertext('10.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="313.184" height="9.77647999999999" width="11.7108433734938" fill="rgb(210,55,44)" id="19-UrbanPct" onmousemove="hovertext('9.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="229.186" height="83.99792" width="11.7108433734938" fill="rgb(255,204,10)" id="19-AgTotalPct" onmousemove="hovertext('84.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="223.2" height="5.98559999999998" width="11.7108433734938" fill="rgb(155,215,51)" id="19-OtherPct" onmousemove="hovertext('6.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="314.68" height="8.28008" width="11.7108433734941" fill="rgb(210,55,44)" id="20-UrbanPct" onmousemove="hovertext('8.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="234.373" height="80.3068" width="11.7108433734941" fill="rgb(255,204,10)" id="20-AgTotalPct" onmousemove="hovertext('80.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="223.2" height="11.17312" width="11.7108433734941" fill="rgb(155,215,51)" id="20-OtherPct" onmousemove="hovertext('11.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="313.483" height="9.47719999999998" width="11.7108433734941" fill="rgb(210,55,44)" id="21-UrbanPct" onmousemove="hovertext('9.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="239.162" height="74.3212" width="11.7108433734941" fill="rgb(255,204,10)" id="21-AgTotalPct" onmousemove="hovertext('74.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="223.2" height="15.9616" width="11.7108433734941" fill="rgb(155,215,51)" id="21-OtherPct" onmousemove="hovertext('15.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="310.39" height="12.56976" width="11.7108433734937" fill="rgb(210,55,44)" id="22-UrbanPct" onmousemove="hovertext('12.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="254.325" height="56.06512" width="11.7108433734937" fill="rgb(255,204,10)" id="22-AgTotalPct" onmousemove="hovertext('56.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="223.2" height="31.12512" width="11.7108433734937" fill="rgb(155,215,51)" id="22-OtherPct" onmousemove="hovertext('31.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="282.457" height="40.50256" width="11.7108433734941" fill="rgb(210,55,44)" id="23-UrbanPct" onmousemove="hovertext('40.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="260.311" height="22.14672" width="11.7108433734941" fill="rgb(255,204,10)" id="23-AgTotalPct" onmousemove="hovertext('22.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="223.2" height="37.11072" width="11.7108433734941" fill="rgb(155,215,51)" id="23-OtherPct" onmousemove="hovertext('37.2 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="283.056" height="39.904" width="11.7108433734941" fill="rgb(210,55,44)" id="24-UrbanPct" onmousemove="hovertext('40.0 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="265.598" height="17.458" width="11.7108433734941" fill="rgb(255,204,10)" id="24-AgTotalPct" onmousemove="hovertext('17.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="223.2" height="42.398" width="11.7108433734941" fill="rgb(155,215,51)" id="24-OtherPct" onmousemove="hovertext('42.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="314.081" height="8.87864000000002" width="11.7108433734938" fill="rgb(210,55,44)" id="25-UrbanPct" onmousemove="hovertext('8.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="279.864" height="34.21768" width="11.7108433734938" fill="rgb(255,204,10)" id="25-AgTotalPct" onmousemove="hovertext('34.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="223.2" height="56.66368" width="11.7108433734938" fill="rgb(155,215,51)" id="25-OtherPct" onmousemove="hovertext('56.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="311.188" height="11.77168" width="11.7108433734941" fill="rgb(210,55,44)" id="26-UrbanPct" onmousemove="hovertext('11.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="275.973" height="35.21528" width="11.7108433734941" fill="rgb(255,204,10)" id="26-AgTotalPct" onmousemove="hovertext('35.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="223.2" height="52.77304" width="11.7108433734941" fill="rgb(155,215,51)" id="26-OtherPct" onmousemove="hovertext('52.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="306.699" height="16.26088" width="11.7108433734942" fill="rgb(210,55,44)" id="27-UrbanPct" onmousemove="hovertext('16.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="272.681" height="34.01816" width="11.7108433734942" fill="rgb(255,204,10)" id="27-AgTotalPct" onmousemove="hovertext('34.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="223.2" height="49.48096" width="11.7108433734942" fill="rgb(155,215,51)" id="27-OtherPct" onmousemove="hovertext('49.5 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="315.678" height="7.28248000000002" width="11.7108433734938" fill="rgb(210,55,44)" id="28-UrbanPct" onmousemove="hovertext('7.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="267.892" height="47.78504" width="11.7108433734938" fill="rgb(255,204,10)" id="28-AgTotalPct" onmousemove="hovertext('47.9 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="223.2" height="44.69248" width="11.7108433734938" fill="rgb(155,215,51)" id="28-OtherPct" onmousemove="hovertext('44.8 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="316.376" height="6.58416" width="11.7108433734941" fill="rgb(210,55,44)" id="29-UrbanPct" onmousemove="hovertext('6.6 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="271.185" height="45.19128" width="11.7108433734941" fill="rgb(255,204,10)" id="29-AgTotalPct" onmousemove="hovertext('45.3 (pct)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="223.2" height="47.98456" width="11.7108433734941" fill="rgb(155,215,51)" id="29-OtherPct" onmousemove="hovertext('48.1 (pct)',evt)" onmouseout="hovertext(' ')"/>
+    </g>
+  </g>
+  <g id="side-1">
+    <g id="axis-side-1a">
+      <g id="tick-labels" stroke="none" fill="#000000" text-anchor="end">
+        <text dy="0.33em" dx="-0.33em" transform="translate(27.455,322.96) rotate(-90)" id="site-1" class="x-tick-label">St Louis, MN</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(40.923,322.96) rotate(-90)" id="site-2" class="x-tick-label">Nemadji, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(54.39,322.96) rotate(-90)" id="site-3" class="x-tick-label">Fox, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(67.858,322.96) rotate(-90)" id="site-4" class="x-tick-label">Manitowoc, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(81.325,322.96) rotate(-90)" id="site-5" class="x-tick-label">Sheboygan, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(94.793,322.96) rotate(-90)" id="site-6" class="x-tick-label">Milwaukee, WI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(108.26,322.96) rotate(-90)" id="site-7" class="x-tick-label">IndianaHC, IN</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(121.728,322.96) rotate(-90)" id="site-8" class="x-tick-label">Burns, IN</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(135.195,322.96) rotate(-90)" id="site-9" class="x-tick-label">St Joseph, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(148.663,322.96) rotate(-90)" id="site-10" class="x-tick-label">PawPaw, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(162.13,322.96) rotate(-90)" id="site-11" class="x-tick-label">Kalamazoo, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(175.598,322.96) rotate(-90)" id="site-12" class="x-tick-label">Grand, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(189.065,322.96) rotate(-90)" id="site-13" class="x-tick-label">Saginaw, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(202.533,322.96) rotate(-90)" id="site-14" class="x-tick-label">Clinton, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(216,322.96) rotate(-90)" id="site-15" class="x-tick-label">Rouge, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(229.467,322.96) rotate(-90)" id="site-16" class="x-tick-label">Huron, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(242.935,322.96) rotate(-90)" id="site-17" class="x-tick-label">Raisin, MI</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(256.402,322.96) rotate(-90)" id="site-18" class="x-tick-label">Maumee, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(269.87,322.96) rotate(-90)" id="site-19" class="x-tick-label">Portage, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(283.337,322.96) rotate(-90)" id="site-20" class="x-tick-label">Sandusky, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(296.805,322.96) rotate(-90)" id="site-21" class="x-tick-label">Huron, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(310.272,322.96) rotate(-90)" id="site-22" class="x-tick-label">Black, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(323.74,322.96) rotate(-90)" id="site-23" class="x-tick-label">Rocky, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(337.207,322.96) rotate(-90)" id="site-24" class="x-tick-label">Cuyahoga, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(350.675,322.96) rotate(-90)" id="site-25" class="x-tick-label">Grand, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(364.142,322.96) rotate(-90)" id="site-26" class="x-tick-label">Ashtabula, OH</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(377.61,322.96) rotate(-90)" id="site-27" class="x-tick-label">Buffalo, NY</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(391.077,322.96) rotate(-90)" id="site-28" class="x-tick-label">Tonawanda, NY</text>
+        <text dy="0.33em" dx="-0.33em" transform="translate(404.545,322.96) rotate(-90)" id="site-29" class="x-tick-label">Genesee, NY</text>
+      </g>
+      <g id="ticks">
+        <path d="M 27.455,322.96 v -5"/>
+        <path d="M 40.923,322.96 v -5"/>
+        <path d="M 54.39,322.96 v -5"/>
+        <path d="M 67.858,322.96 v -5"/>
+        <path d="M 81.325,322.96 v -5"/>
+        <path d="M 94.793,322.96 v -5"/>
+        <path d="M 108.26,322.96 v -5"/>
+        <path d="M 121.728,322.96 v -5"/>
+        <path d="M 135.195,322.96 v -5"/>
+        <path d="M 148.663,322.96 v -5"/>
+        <path d="M 162.13,322.96 v -5"/>
+        <path d="M 175.598,322.96 v -5"/>
+        <path d="M 189.065,322.96 v -5"/>
+        <path d="M 202.533,322.96 v -5"/>
+        <path d="M 216,322.96 v -5"/>
+        <path d="M 229.467,322.96 v -5"/>
+        <path d="M 242.935,322.96 v -5"/>
+        <path d="M 256.402,322.96 v -5"/>
+        <path d="M 269.87,322.96 v -5"/>
+        <path d="M 283.337,322.96 v -5"/>
+        <path d="M 296.805,322.96 v -5"/>
+        <path d="M 310.272,322.96 v -5"/>
+        <path d="M 323.74,322.96 v -5"/>
+        <path d="M 337.207,322.96 v -5"/>
+        <path d="M 350.675,322.96 v -5"/>
+        <path d="M 364.142,322.96 v -5"/>
+        <path d="M 377.61,322.96 v -5"/>
+        <path d="M 391.077,322.96 v -5"/>
+        <path d="M 404.545,322.96 v -5"/>
+      </g>
+      <g id="axis-label" stroke="none" fill="#000000" text-anchor="middle">
+        <text x="216" y="322.96" dy="7.5em">Sampling locations</text>
+      </g>
+    </g>
+  </g>
+  <g id="side-2">
+    <g id="axis-side-2a">
+      <g id="tick-labels" stroke="none" fill="#000000" text-anchor="end">
+        <text x="21.6" y="322.96" dx="-0.33em" dy="0.33em" class="y-tick-label">0</text>
+        <text x="21.6" y="298.02" dx="-0.33em" dy="0.33em" class="y-tick-label">25</text>
+        <text x="21.6" y="273.08" dx="-0.33em" dy="0.33em" class="y-tick-label">50</text>
+        <text x="21.6" y="248.14" dx="-0.33em" dy="0.33em" class="y-tick-label">75</text>
+        <text x="21.6" y="223.2" dx="-0.33em" dy="0.33em" class="y-tick-label">100</text>
+      </g>
+      <g id="ticks">
+        <path d="M 21.6,322.96 h 5"/>
+        <path d="M 21.6,298.02 h 5"/>
+        <path d="M 21.6,273.08 h 5"/>
+        <path d="M 21.6,248.14 h 5"/>
+        <path d="M 21.6,223.2 h 5"/>
+      </g>
+      <g id="axis-label" stroke="none" fill="#000000" text-anchor="begin">
+        <text x="21.6" y="223.2" dy="-0.5em" dx="-20">Land use <tspan class="sub-label">(% of basin)</tspan></text>
+      </g>
+    </g>
+  </g>
+  <script type="text/ecmascript"><![CDATA[function init(evt){
+    if ( window.svgDocument == null ) {
+    svgDocument = evt.target.ownerDocument;
+    svgDocument.sortLU = this.sortLU;
+    svgDocument.sortLUrev = this.sortLUrev;
+    var mainDocument = window.parent.document;
+    mainDocument.addEventListener("landUseTrigger", sortLU, false);
+    }
+}
+var highlightBaseHeight = Number(document.getElementById("highlight-fill").getAttribute("height"));
+var swaps = [[3,29],[5,20],[6,28],[7,3],[15,16],[15,17],[15,18],[15,19],[15,5],[15,21],[15,22],[15,23],[15,24],[15,25],[15,26],[15,27],[15,6],[15,7],[8,9],[8,10],[8,11],[8,12],[8,13],[8,16],[14,17],[8,18],[14,19],[8,5],[14,21],[8,22],[14,25],[8,26],[23,27],[24,6],[14,8],[14,24],[16,17],[16,18],[16,19],[16,5],[16,21],[16,22],[16,25],[16,26],[16,27],[9,10],[9,17],[11,18],[12,19],[13,5],[9,21],[11,25],[12,26],[9,22],[9,11],[10,5],[17,25],[18,21],[10,18],[20,28]]
+var revswaps = [[29,4],[29,3],[28,5],[20,10],[29,13],[28,11],[25,9],[21,12],[19,6],[18,8],[20,14],[17,7],[26,15],[29,22],[29,25],[28,21],[29,16],[28,19],[27,18],[29,24],[28,23],[27,20],[29,17],[28,26],[29,28],[22,16],[25,17],[21,19],[22,18],[21,20],[22,21],[24,22],[19,18],[10,6],[13,7],[14,13],[11,8],[12,10],[12,11],[4,3]]
+	 var svg = document.querySelector("svg")
+     	 var pt = svg.createSVGPoint();
+     	 var toolkeys = {"meanFiber":"Fiber & Lines","meanPellet":"Beads & Pellets", "meanFilm":"Films", "meanFoam":"Foams", "meanFrag":"Fragments", "UrbanPct":"Urban", "AgTotalPct":"Agriculture", "OtherPct":"Other"}
+     	 var xmax = Number(svg.getAttribute("viewBox").split(" ")[2]);
+function sortLU(){
+	 var i = 0;
+	 window.myInterval = setInterval(function () {
+		 if (i < swaps.length){
+			 var x0 = document.getElementById(swaps[i][0] + "-meanFiber").getAttribute("x");
+			 var x1 = document.getElementById(swaps[i][1] + "-meanFiber").getAttribute("x");
+			 var tr0vals = document.getElementById("site-" + swaps[i][0]).getAttribute("transform").split(/[,()]+/);
+			 var tr1vals = document.getElementById("site-" + swaps[i][1]).getAttribute("transform").split(/[,()]+/);
+			 var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
+			 var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"
+			 document.getElementById("site-" + swaps[i][0]).setAttribute("transform", tr0new);
+			 document.getElementById("site-" + swaps[i][1]).setAttribute("transform", tr1new);
+			 document.getElementById(swaps[i][0] + "-UrbanPct").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-AgTotalPct").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-OtherPct").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-meanPellet").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-meanFilm").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-meanFoam").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-meanFrag").setAttribute("x", x1);
+			 document.getElementById(swaps[i][0] + "-meanFiber").setAttribute("x", x1);
+			 document.getElementById(swaps[i][1] + "-UrbanPct").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-AgTotalPct").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-OtherPct").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-meanPellet").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-meanFilm").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-meanFoam").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-meanFrag").setAttribute("x", x0);
+			 document.getElementById(swaps[i][1] + "-meanFiber").setAttribute("x", x0);
+			 i++
+		} else {
+			 clearInterval(window.myInterval);
+	}}, 25)
+}
+function sortLUrev(){
+	 var i = 0;
+	 window.myInterval = setInterval(function () {
+		 if (i < revswaps.length){
+			 var x0 = document.getElementById(revswaps[i][0] + "-meanFiber").getAttribute("x");
+			 var x1 = document.getElementById(revswaps[i][1] + "-meanFiber").getAttribute("x");
+			 var tr0vals = document.getElementById("site-" + revswaps[i][0]).getAttribute("transform").split(/[,()]+/);
+			 var tr1vals = document.getElementById("site-" + revswaps[i][1]).getAttribute("transform").split(/[,()]+/);
+			 var tr0new = tr0vals[0]+"("+tr1vals[1]+","+tr0vals[2]+") "+tr0vals[3]+"("+tr0vals[4]+")"
+			 var tr1new = tr1vals[0]+"("+tr0vals[1]+","+tr1vals[2]+") "+tr1vals[3]+"("+tr1vals[4]+")"
+			 document.getElementById("site-" + revswaps[i][0]).setAttribute("transform", tr0new);
+			 document.getElementById("site-" + revswaps[i][1]).setAttribute("transform", tr1new);
+			 document.getElementById(revswaps[i][0] + "-UrbanPct").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-AgTotalPct").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-OtherPct").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-meanPellet").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-meanFilm").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-meanFoam").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-meanFrag").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][0] + "-meanFiber").setAttribute("x", x1);
+			 document.getElementById(revswaps[i][1] + "-UrbanPct").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-AgTotalPct").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-OtherPct").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-meanPellet").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-meanFilm").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-meanFoam").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-meanFrag").setAttribute("x", x0);
+			 document.getElementById(revswaps[i][1] + "-meanFiber").setAttribute("x", x0);
+			 i++
+		} else {
+			 clearInterval(window.myInterval);
+	}}, 38)
+}
+function cursorPoint(evt){
+  pt.x = evt.clientX; pt.y = evt.clientY;
+  return pt.matrixTransform(svg.getScreenCTM().inverse());
+};
+  function hovertext(text, evt){
+  var highlight = document.getElementById("highlight-fill");
+  var tooltip = document.getElementById("tooltip");
+  var tooltip_bg = document.getElementById("tooltip_bg");
+  var tool_key = document.getElementById("tool_key");
+  var tooltip_key = document.getElementById("tooltip_key");
+  tooltip.setAttribute("text-anchor","begin");
+  tooltip.setAttribute("dx","0.5em");
+  tooltip_key.setAttribute("text-anchor","begin");
+  tooltip_key.setAttribute("dx","1.6em");
+  if (evt === undefined){
+  highlight.setAttribute("width","0");
+  tooltip.setAttribute("class","hidden");
+  tooltip_key.setAttribute("class","hidden");
+  tooltip.firstChild.data = text;
+  tooltip_bg.setAttribute("class","hidden");
+  tooltip_bg.setAttribute("x",0);
+  tooltip_bg.setAttribute("y",0);
+  tool_key.setAttribute("fill","none");
+  } else {
+  var pt = cursorPoint(evt)
+  highlight.setAttribute("width",evt.target.getAttribute("width"));
+  highlight.setAttribute("x",evt.target.getAttribute("x"));
+  var siteNum = evt.target.getAttribute("id").split("-")[0];
+  highlight.setAttribute("height", 6 + highlightBaseHeight + Number(document.getElementById("site-" + siteNum).getComputedTextLength()));
+  tooltip.setAttribute("x",pt.x);
+  tooltip.setAttribute("y",pt.y);
+  tooltip.firstChild.data = text;
+  tooltip_bg.setAttribute("x",pt.x+2);
+  tooltip_bg.setAttribute("y",pt.y-25);
+  tooltip.setAttribute("class","shown");
+  tooltip_key.setAttribute("x",pt.x);
+  tooltip_key.setAttribute("y",pt.y);
+  tooltip_key.setAttribute("class","sub-label");
+  var keytext = evt.target.getAttribute("id").split("-")[1];
+  tooltip_key.firstChild.data = toolkeys[keytext];
+  tooltip_bg.setAttribute("class","shown");
+  tool_key.setAttribute("fill", evt.target.getAttribute("fill"));
+  tool_key.setAttribute("x",pt.x+5);
+  tool_key.setAttribute("y",pt.y-23);
+  var length = Math.max(tooltip.getComputedTextLength(), tooltip_key.getComputedTextLength()+12);
+  tooltip_bg.setAttribute("width", length+6);
+  if (pt.x+length+8 > xmax){
+  tooltip.setAttribute("text-anchor","end");
+  tooltip.setAttribute("dx","-0.5em");
+  tooltip_bg.setAttribute("x",pt.x-8-length);
+  tool_key.setAttribute("x",pt.x-12);
+  tooltip_key.setAttribute("text-anchor","end");
+  tooltip_key.setAttribute("dx","-1.6em");
+  }
+  }
+  }]]></script>
+  <g id="view-1-2">
+    <defs>
+      <clipPath id="mask-1-2">
+        <rect x="21.6" y="21.6" height="180.4" width="388.8"/>
+      </clipPath>
+    </defs>
+    <g id="axes" fill="none" stroke="#000000" stroke-width="1">
+      <rect x="21.6" y="21.6" height="180.4" width="388.8" id="axes-box"/>
+    </g>
+    <g clip-path="url(#mask-1-2)">
+      <rect x="21.6" y="202" height="0" width="11.710843373494" fill="rgb(78,190,194)" id="1-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="21.6" y="201.732" height="0.268335168535032" width="11.710843373494" fill="rgb(11,81,107)" id="1-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="21.6" y="201.213" height="0.518856375423184" width="11.710843373494" fill="rgb(1,178,159)" id="1-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="21.6" y="201.007" height="0.205456969597861" width="11.710843373494" fill="rgb(170,222,220)" id="1-meanFrag" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="21.6" y="191.638" height="9.36956600480079" width="11.710843373494" fill="rgb(38,185,218)" id="1-meanFiber" onmousemove="hovertext('0.7 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="201.941" height="0.0589830023640729" width="11.710843373494" fill="rgb(78,190,194)" id="2-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="201.712" height="0.228573134818873" width="11.710843373494" fill="rgb(11,81,107)" id="2-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="201.467" height="0.245184674260173" width="11.710843373494" fill="rgb(1,178,159)" id="2-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="200.874" height="0.592954754850609" width="11.710843373494" fill="rgb(170,222,220)" id="2-meanFrag" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="35.067" y="176.662" height="24.2120905823333" width="11.710843373494" fill="rgb(38,185,218)" id="2-meanFiber" onmousemove="hovertext('1.8 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="199.818" height="2.1822401852815" width="11.710843373494" fill="rgb(78,190,194)" id="3-meanPellet" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="196.046" height="3.77180294174525" width="11.710843373494" fill="rgb(11,81,107)" id="3-meanFilm" onmousemove="hovertext('0.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="195.357" height="0.68928037348411" width="11.710843373494" fill="rgb(1,178,159)" id="3-meanFoam" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="180.94" height="14.4167452708492" width="11.710843373494" fill="rgb(170,222,220)" id="3-meanFrag" onmousemove="hovertext('1.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="48.535" y="147.233" height="33.7070395068676" width="11.710843373494" fill="rgb(38,185,218)" id="3-meanFiber" onmousemove="hovertext('2.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="201.975" height="0.0253597898536952" width="11.7108433734941" fill="rgb(78,190,194)" id="4-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="201.496" height="0.478149375632654" width="11.7108433734941" fill="rgb(11,81,107)" id="4-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="201.159" height="0.33725501482806" width="11.7108433734941" fill="rgb(1,178,159)" id="4-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="200.784" height="0.375166943408232" width="11.7108433734941" fill="rgb(170,222,220)" id="4-meanFrag" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="62.002" y="192.33" height="8.4542610347155" width="11.7108433734941" fill="rgb(38,185,218)" id="4-meanFiber" onmousemove="hovertext('0.6 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="201.776" height="0.224220460494337" width="11.7108433734938" fill="rgb(78,190,194)" id="5-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="201.634" height="0.142065201214365" width="11.7108433734938" fill="rgb(11,81,107)" id="5-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="201.118" height="0.515361948259425" width="11.7108433734938" fill="rgb(1,178,159)" id="5-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="200.667" height="0.450854156883423" width="11.7108433734938" fill="rgb(170,222,220)" id="5-meanFrag" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="75.47" y="188.475" height="12.1923536073061" width="11.7108433734938" fill="rgb(38,185,218)" id="5-meanFiber" onmousemove="hovertext('0.9 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="199.712" height="2.28809181223616" width="11.7108433734941" fill="rgb(78,190,194)" id="6-meanPellet" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="198.144" height="1.56838174820936" width="11.7108433734941" fill="rgb(11,81,107)" id="6-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="167.404" height="30.7390709594319" width="11.7108433734941" fill="rgb(1,178,159)" id="6-meanFoam" onmousemove="hovertext('2.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="120.198" height="47.2064596718747" width="11.7108433734941" fill="rgb(170,222,220)" id="6-meanFrag" onmousemove="hovertext('3.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="88.937" y="104.873" height="15.3248289063656" width="11.7108433734941" fill="rgb(38,185,218)" id="6-meanFiber" onmousemove="hovertext('1.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="198.388" height="3.61216656095826" width="11.7108433734941" fill="rgb(78,190,194)" id="7-meanPellet" onmousemove="hovertext('0.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="197.103" height="1.28529434935356" width="11.7108433734941" fill="rgb(11,81,107)" id="7-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="192.579" height="4.52382747275576" width="11.7108433734941" fill="rgb(1,178,159)" id="7-meanFoam" onmousemove="hovertext('0.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="121.615" height="70.9632665302732" width="11.7108433734941" fill="rgb(170,222,220)" id="7-meanFrag" onmousemove="hovertext('5.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="102.405" y="103.447" height="18.1681046175585" width="11.7108433734941" fill="rgb(38,185,218)" id="7-meanFiber" onmousemove="hovertext('1.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="201.896" height="0.104230432739229" width="11.7108433734938" fill="rgb(78,190,194)" id="8-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="201.817" height="0.0791008854669428" width="11.7108433734938" fill="rgb(11,81,107)" id="8-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="199.432" height="2.38489413551008" width="11.7108433734938" fill="rgb(1,178,159)" id="8-meanFoam" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="198.547" height="0.885247302529621" width="11.7108433734938" fill="rgb(170,222,220)" id="8-meanFrag" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="115.872" y="197.651" height="0.895798216338733" width="11.7108433734938" fill="rgb(38,185,218)" id="8-meanFiber" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="200.866" height="1.13356641246892" width="11.7108433734941" fill="rgb(78,190,194)" id="9-meanPellet" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="200.33" height="0.536796917730783" width="11.7108433734941" fill="rgb(11,81,107)" id="9-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="197.039" height="3.29106292890307" width="11.7108433734941" fill="rgb(1,178,159)" id="9-meanFoam" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="159.884" height="37.154527711896" width="11.7108433734941" fill="rgb(170,222,220)" id="9-meanFrag" onmousemove="hovertext('2.7 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="129.34" y="153.887" height="5.9974271147961" width="11.7108433734941" fill="rgb(38,185,218)" id="9-meanFiber" onmousemove="hovertext('0.4 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="201.885" height="0.114732959076463" width="11.7108433734941" fill="rgb(78,190,194)" id="10-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="201.36" height="0.524902300399958" width="11.7108433734941" fill="rgb(11,81,107)" id="10-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="201.36" height="0" width="11.7108433734941" fill="rgb(1,178,159)" id="10-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="199.427" height="1.93361322070058" width="11.7108433734941" fill="rgb(170,222,220)" id="10-meanFrag" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="142.807" y="127.744" height="71.6831398204738" width="11.7108433734941" fill="rgb(38,185,218)" id="10-meanFiber" onmousemove="hovertext('5.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="201.922" height="0.0781345806222191" width="11.7108433734937" fill="rgb(78,190,194)" id="11-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="200.577" height="1.34452448947931" width="11.7108433734937" fill="rgb(11,81,107)" id="11-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="200.205" height="0.372134156981076" width="11.7108433734937" fill="rgb(1,178,159)" id="11-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="197.628" height="2.57745274493894" width="11.7108433734937" fill="rgb(170,222,220)" id="11-meanFrag" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="156.275" y="175.909" height="21.7186349168475" width="11.7108433734937" fill="rgb(38,185,218)" id="11-meanFiber" onmousemove="hovertext('1.6 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="202" height="0" width="11.7108433734941" fill="rgb(78,190,194)" id="12-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="201.439" height="0.560532297818952" width="11.7108433734941" fill="rgb(11,81,107)" id="12-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="201.404" height="0.035806280030954" width="11.7108433734941" fill="rgb(1,178,159)" id="12-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="199.286" height="2.11747939094386" width="11.7108433734941" fill="rgb(170,222,220)" id="12-meanFrag" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="169.742" y="153.024" height="46.2620101609031" width="11.7108433734941" fill="rgb(38,185,218)" id="12-meanFiber" onmousemove="hovertext('3.4 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="201.872" height="0.128130669827641" width="11.7108433734938" fill="rgb(78,190,194)" id="13-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="201.477" height="0.395121670491704" width="11.7108433734938" fill="rgb(11,81,107)" id="13-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="200.932" height="0.544555346767481" width="11.7108433734938" fill="rgb(1,178,159)" id="13-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="194.707" height="6.22514667662327" width="11.7108433734938" fill="rgb(170,222,220)" id="13-meanFrag" onmousemove="hovertext('0.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="183.21" y="136.993" height="57.7137089010772" width="11.7108433734938" fill="rgb(38,185,218)" id="13-meanFiber" onmousemove="hovertext('4.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="200.887" height="1.11347696017728" width="11.7108433734941" fill="rgb(78,190,194)" id="14-meanPellet" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="188.141" height="12.7458308757334" width="11.7108433734941" fill="rgb(11,81,107)" id="14-meanFilm" onmousemove="hovertext('0.9 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="176.098" height="12.0426744051535" width="11.7108433734941" fill="rgb(1,178,159)" id="14-meanFoam" onmousemove="hovertext('0.9 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="96.539" height="79.5587762256179" width="11.7108433734941" fill="rgb(170,222,220)" id="14-meanFrag" onmousemove="hovertext('5.8 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="196.677" y="34.125" height="62.4144372860043" width="11.7108433734941" fill="rgb(38,185,218)" id="14-meanFiber" onmousemove="hovertext('4.6 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="201.719" height="0.280634271815956" width="11.7108433734941" fill="rgb(78,190,194)" id="15-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="198.628" height="3.09131560428332" width="11.7108433734941" fill="rgb(11,81,107)" id="15-meanFilm" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="178.652" height="19.9756778026551" width="11.7108433734941" fill="rgb(1,178,159)" id="15-meanFoam" onmousemove="hovertext('1.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="151.205" height="27.4474771065371" width="11.7108433734941" fill="rgb(170,222,220)" id="15-meanFrag" onmousemove="hovertext('2.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="210.145" y="64.507" height="86.6982210727742" width="11.7108433734941" fill="rgb(38,185,218)" id="15-meanFiber" onmousemove="hovertext('6.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="201.812" height="0.188085500148844" width="11.7108433734938" fill="rgb(78,190,194)" id="16-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="193.084" height="8.72833066731596" width="11.7108433734938" fill="rgb(11,81,107)" id="16-meanFilm" onmousemove="hovertext('0.6 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="186.715" height="6.3686145675687" width="11.7108433734938" fill="rgb(1,178,159)" id="16-meanFoam" onmousemove="hovertext('0.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="122.731" height="63.9836299856761" width="11.7108433734938" fill="rgb(170,222,220)" id="16-meanFrag" onmousemove="hovertext('4.7 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="223.612" y="80.876" height="41.8557652469038" width="11.7108433734938" fill="rgb(38,185,218)" id="16-meanFiber" onmousemove="hovertext('3.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="201.967" height="0.0333181314002786" width="11.7108433734941" fill="rgb(78,190,194)" id="17-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="201.605" height="0.361510996738446" width="11.7108433734941" fill="rgb(11,81,107)" id="17-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="201.149" height="0.456554947850094" width="11.7108433734941" fill="rgb(1,178,159)" id="17-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="199.239" height="1.90914741374618" width="11.7108433734941" fill="rgb(170,222,220)" id="17-meanFrag" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="237.08" y="182.667" height="16.572638456361" width="11.7108433734941" fill="rgb(38,185,218)" id="17-meanFiber" onmousemove="hovertext('1.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="201.947" height="0.05269200780711" width="11.7108433734941" fill="rgb(78,190,194)" id="18-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="201.534" height="0.413780528840249" width="11.7108433734941" fill="rgb(11,81,107)" id="18-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="200.957" height="0.576569082387834" width="11.7108433734941" fill="rgb(1,178,159)" id="18-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="199.782" height="1.17475950536519" width="11.7108433734941" fill="rgb(170,222,220)" id="18-meanFrag" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="250.547" y="168.856" height="30.9266678675533" width="11.7108433734941" fill="rgb(38,185,218)" id="18-meanFiber" onmousemove="hovertext('2.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="201.788" height="0.212428117629173" width="11.7108433734938" fill="rgb(78,190,194)" id="19-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="201.175" height="0.612245448811393" width="11.7108433734938" fill="rgb(11,81,107)" id="19-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="200.963" height="0.212428117629173" width="11.7108433734938" fill="rgb(1,178,159)" id="19-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="200.376" height="0.586425451088729" width="11.7108433734938" fill="rgb(170,222,220)" id="19-meanFrag" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="264.014" y="179.409" height="20.9673072186656" width="11.7108433734938" fill="rgb(38,185,218)" id="19-meanFiber" onmousemove="hovertext('1.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="201.218" height="0.781757788556376" width="11.7108433734941" fill="rgb(78,190,194)" id="20-meanPellet" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="199.595" height="1.6230265506361" width="11.7108433734941" fill="rgb(11,81,107)" id="20-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="197.43" height="2.16538792297368" width="11.7108433734941" fill="rgb(1,178,159)" id="20-meanFoam" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="192.563" height="4.86637460765726" width="11.7108433734941" fill="rgb(170,222,220)" id="20-meanFrag" onmousemove="hovertext('0.4 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="277.482" y="160.593" height="31.9709357855419" width="11.7108433734941" fill="rgb(38,185,218)" id="20-meanFiber" onmousemove="hovertext('2.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="201.912" height="0.0876761320714365" width="11.7108433734941" fill="rgb(78,190,194)" id="21-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="201.631" height="0.281565420492598" width="11.7108433734941" fill="rgb(11,81,107)" id="21-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="201.481" height="0.149396502569829" width="11.7108433734941" fill="rgb(1,178,159)" id="21-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="200.204" height="1.27702396410351" width="11.7108433734941" fill="rgb(170,222,220)" id="21-meanFrag" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="290.949" y="187.448" height="12.7567380629477" width="11.7108433734941" fill="rgb(38,185,218)" id="21-meanFiber" onmousemove="hovertext('0.9 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="201.977" height="0.0228888359705195" width="11.7108433734937" fill="rgb(78,190,194)" id="22-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="201.125" height="0.852186824036465" width="11.7108433734937" fill="rgb(11,81,107)" id="22-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="200.528" height="0.596930438094518" width="11.7108433734937" fill="rgb(1,178,159)" id="22-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="196.595" height="3.93307616574876" width="11.7108433734937" fill="rgb(170,222,220)" id="22-meanFrag" onmousemove="hovertext('0.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="304.417" y="185.439" height="11.1561651802433" width="11.7108433734937" fill="rgb(38,185,218)" id="22-meanFiber" onmousemove="hovertext('0.8 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="201.868" height="0.131565699327098" width="11.7108433734941" fill="rgb(78,190,194)" id="23-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="199.442" height="2.42627027469794" width="11.7108433734941" fill="rgb(11,81,107)" id="23-meanFilm" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="199.031" height="0.410811416899406" width="11.7108433734941" fill="rgb(1,178,159)" id="23-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="194.234" height="4.79750322693664" width="11.7108433734941" fill="rgb(170,222,220)" id="23-meanFrag" onmousemove="hovertext('0.4 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="317.884" y="162.984" height="31.249556642699" width="11.7108433734941" fill="rgb(38,185,218)" id="23-meanFiber" onmousemove="hovertext('2.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="201.938" height="0.0617635256347171" width="11.7108433734941" fill="rgb(78,190,194)" id="24-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="201.346" height="0.591836209511399" width="11.7108433734941" fill="rgb(11,81,107)" id="24-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="199.039" height="2.30764009659867" width="11.7108433734941" fill="rgb(1,178,159)" id="24-meanFoam" onmousemove="hovertext('0.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="194.066" height="4.97265007498987" width="11.7108433734941" fill="rgb(170,222,220)" id="24-meanFrag" onmousemove="hovertext('0.4 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="331.352" y="152.584" height="41.4818439720954" width="11.7108433734941" fill="rgb(38,185,218)" id="24-meanFiber" onmousemove="hovertext('3.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="202" height="0" width="11.7108433734938" fill="rgb(78,190,194)" id="25-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="201.972" height="0.0281963921375734" width="11.7108433734938" fill="rgb(11,81,107)" id="25-meanFilm" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="201.851" height="0.120464397105707" width="11.7108433734938" fill="rgb(1,178,159)" id="25-meanFoam" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="194.667" height="7.18470925372432" width="11.7108433734938" fill="rgb(170,222,220)" id="25-meanFrag" onmousemove="hovertext('0.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="344.819" y="178.425" height="16.2417432793394" width="11.7108433734938" fill="rgb(38,185,218)" id="25-meanFiber" onmousemove="hovertext('1.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="201.811" height="0.188550497595145" width="11.7108433734941" fill="rgb(78,190,194)" id="26-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="199.905" height="1.90607610850066" width="11.7108433734941" fill="rgb(11,81,107)" id="26-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="199.121" height="0.784829723078531" width="11.7108433734941" fill="rgb(1,178,159)" id="26-meanFoam" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="186.761" height="12.359193133767" width="11.7108433734941" fill="rgb(170,222,220)" id="26-meanFrag" onmousemove="hovertext('0.9 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="358.287" y="23.654" height="163.107068754936" width="11.7108433734941" fill="rgb(38,185,218)" id="26-meanFiber" onmousemove="hovertext('11.9 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="167.462" height="34.5377507060377" width="11.7108433734942" fill="rgb(78,190,194)" id="27-meanPellet" onmousemove="hovertext('2.5 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="159.141" height="8.32132569779313" width="11.7108433734942" fill="rgb(11,81,107)" id="27-meanFilm" onmousemove="hovertext('0.6 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="114.752" height="44.3885071353218" width="11.7108433734942" fill="rgb(1,178,159)" id="27-meanFoam" onmousemove="hovertext('3.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="95.386" height="19.3668625994816" width="11.7108433734942" fill="rgb(170,222,220)" id="27-meanFrag" onmousemove="hovertext('1.4 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="371.754" y="39.058" height="56.3277693680797" width="11.7108433734942" fill="rgb(38,185,218)" id="27-meanFiber" onmousemove="hovertext('4.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="201.7" height="0.300186893646611" width="11.7108433734938" fill="rgb(78,190,194)" id="28-meanPellet" onmousemove="hovertext('0.0 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="200.883" height="0.817163762271065" width="11.7108433734938" fill="rgb(11,81,107)" id="28-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="199.766" height="1.11645423754152" width="11.7108433734938" fill="rgb(1,178,159)" id="28-meanFoam" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="198.336" height="1.43064694227473" width="11.7108433734938" fill="rgb(170,222,220)" id="28-meanFrag" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="385.222" y="154.474" height="43.8611257820786" width="11.7108433734938" fill="rgb(38,185,218)" id="28-meanFiber" onmousemove="hovertext('3.2 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="200.403" height="1.59650082217104" width="11.7108433734941" fill="rgb(78,190,194)" id="29-meanPellet" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="198.629" height="1.77486004533665" width="11.7108433734941" fill="rgb(11,81,107)" id="29-meanFilm" onmousemove="hovertext('0.1 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="194.038" height="4.59096615678274" width="11.7108433734941" fill="rgb(1,178,159)" id="29-meanFoam" onmousemove="hovertext('0.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="190.451" height="3.5868703268618" width="11.7108433734941" fill="rgb(170,222,220)" id="29-meanFrag" onmousemove="hovertext('0.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+      <rect x="398.689" y="144.868" height="45.5826173000891" width="11.7108433734941" fill="rgb(38,185,218)" id="29-meanFiber" onmousemove="hovertext('3.3 (particles/100gal)',evt)" onmouseout="hovertext(' ')"/>
+    </g>
+  </g>
+  <g id="side-1">
+    <g id="axis-side-1"/>
+  </g>
+  <g id="side-2">
+    <g id="axis-side-2">
+      <g id="tick-labels" stroke="none" fill="#000000" text-anchor="end">
+        <text x="21.6" y="202" dx="-0.33em" dy="0.33em" class="y-tick-label">0</text>
+        <text x="21.6" y="165.92" dx="-0.33em" dy="0.33em" class="y-tick-label">1</text>
+        <text x="21.6" y="129.84" dx="-0.33em" dy="0.33em" class="y-tick-label">2</text>
+        <text x="21.6" y="93.76" dx="-0.33em" dy="0.33em" class="y-tick-label">3</text>
+        <text x="21.6" y="57.68" dx="-0.33em" dy="0.33em" class="y-tick-label">4</text>
+        <text x="21.6" y="21.6" dx="-0.33em" dy="0.33em" class="y-tick-label">5</text>
+      </g>
+      <g id="ticks">
+        <path d="M 21.6,202 h 5"/>
+        <path d="M 21.6,165.92 h 5"/>
+        <path d="M 21.6,129.84 h 5"/>
+        <path d="M 21.6,93.76 h 5"/>
+        <path d="M 21.6,57.68 h 5"/>
+        <path d="M 21.6,21.6 h 5"/>
+      </g>
+      <g id="axis-label" stroke="none" fill="#000000" text-anchor="begin">
+        <text x="21.6" y="21.6" dy="-0.5em" dx="-20">Plastic particles <tspan class="sub-label">per 100 gallons</tspan></text>
+      </g>
+    </g>
+  </g>
+  <rect id="tooltip_bg" x="0" y="0" rx="2.5" ry="2.5" width="55" height="27" fill="white" stroke-width="0.5" stroke="#696969" class="hidden"/>
+  <rect id="tool_key" x="0" y="0" width="7" height="7" fill="none" stroke="none"/>
+  <text id="tooltip_key" dx="2em" dy="-2em" stroke="none" fill="#000000" text-anchor="begin" class="sub-label"> </text>
+  <text id="tooltip" dx="0.5em" dy="-0.33em" stroke="none" fill="#000000" text-anchor="begin"> </text>
+</svg>
