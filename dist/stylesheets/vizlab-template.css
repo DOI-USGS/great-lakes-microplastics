@@ -554,6 +554,10 @@ h1, h2, h3, h4 {
 .photo .caption p {
   margin-top: 0.5em;
 }
+/* Text that resumes after a photo and its caption */
+.text--after-figure {
+  margin-top: 1.5rem;
+}
 .keynote-caption {
   position: absolute;
   right: 0;
