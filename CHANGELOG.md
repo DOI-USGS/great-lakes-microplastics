@@ -16,8 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the Vizlab pre-footer links (See more visualizations / Get the code) above the footer
 - Replaced the collapsible References box at the end of the page with stacked Data Collection, References, and USGS Vizlab authorship sections, matching other Vizlab sites, with published and last-updated dates; references keep their numbering so the in-text superscripts still resolve, and now link through `https://doi.org`
 - Added the full 2016 project team and the 2026 update to the page's authorship section, structured data, and the README citation and contributors
-- Switched the page font from Source Sans Pro to Source Sans 3, made headings bold, and unified the narrative text into one 700px column with a single type scale
-- Centered the stat blocks beside their silhouettes with flexbox in place of the fixed-height absolute positioning, which the larger text overflowed
+- Switched the page font from Source Sans Pro to Source Sans 3, made headings bold, and unified the narrative text into one 700px column with a single type scale (48px banner titles, 28px section headings, 18px body text, 15px captions)
+- Moved the "Where in our waterways are microplastics found?" heading above the introductory paragraph, which now ends with the lead-in to the statistics
+- Rebuilt the "where microplastics are found" statistics as a compact six-card grid with a silhouette for every data point: the oyster and mussel silhouettes were split out of the shared image, and a new river-sediment silhouette (`images/sediment.svg`) was drawn in the same style
+- Added captions: photo credits beneath the brook trout, microplastic sample, and piping plover photos (moved out of `title` tooltips), location labels on the full-bleed banner photos, a source note under the statistics, and explanatory captions under both charts, which also describe the interactions in place of the standalone "hover over the graph" sentences
+- Gave both chart SVGs the page font and a clearer hierarchy: bold chart and axis titles with lighter units, quieter tick and legend labels, and bold particle-type names in the relative abundance figure
+- Replaced the translucent dark-red background behind the land-use chart (an `rgb(100,0,0,.5)` rule that older browsers ignored and modern ones render pink) with a light neutral band
 - Replaced the Font Awesome kit script with vendored Font Awesome 4.7 webfonts in `dist/fonts/`; the share bar drops Google+ and uses an X icon in place of the Twitter bird, and its links point at the new site URL
 - Updated `og:url`, share links, and social media image URLs in `dist/index.html` for the new site URL and S3 image hosting, and added `twitter:title`/`twitter:url` tags
 - Rewrote `README.md` to describe the `dist/` site, how to serve it locally, and how the site was originally built

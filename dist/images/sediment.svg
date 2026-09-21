@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-label="Silhouette of a river bed with sediment">
+  <g fill="#036C83">
+    <!-- water surface -->
+    <path d="M60 300c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0v70c-60 40-120 40-180 0s-120-40-180 0-120 40-180 0-120-40-180 0z"/>
+    <!-- river bed -->
+    <path d="M60 640c90-90 180-140 270-140 80 0 140 40 210 40 90 0 170-60 300-140v420H60z"/>
+    <!-- suspended particles -->
+    <circle cx="200" cy="470" r="18"/><circle cx="300" cy="420" r="12"/><circle cx="420" cy="500" r="16"/>
+    <circle cx="520" cy="440" r="11"/><circle cx="640" cy="470" r="17"/><circle cx="740" cy="410" r="12"/>
+    <circle cx="820" cy="470" r="10"/><circle cx="130" cy="540" r="11"/><circle cx="360" cy="560" r="10"/>
+    <circle cx="580" cy="540" r="12"/><circle cx="700" cy="560" r="9"/>
+  </g>
+</svg>

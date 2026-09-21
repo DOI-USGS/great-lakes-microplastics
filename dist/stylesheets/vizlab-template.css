@@ -340,25 +340,32 @@ h1, h2, h3, h4 {
   font-weight: 700;
   line-height: 1.2;
 }
-/* One type scale for the whole page, matching the template's 20px body text:
-   keynote h1 (section banner) 2.5em / h2 (section) 1.5em / body text 1.25em. */
+/* One type scale for the whole page:
+     banner title (h1)   3em    48px
+     section heading (h2) 1.75em 28px
+     big stat number      4em    64px
+     body text            1.125em 18px
+     stat label           1.125em 18px
+     caption / credit     0.95em 15px
+   Sizes are set on the elements themselves (not inherited from containers)
+   so they stay the same wherever a heading appears. */
 .text p,
 .text li,
 #extras p {
-  font-size: 1.25em;
-  line-height: 1.5;
+  font-size: 1.125em;
+  line-height: 1.6;
   margin: 0 0 1em 0;
 }
 .text ul {
+  font-size: 1em;
   margin-bottom: 1em;
 }
 .text h2,
-#extras h2 {
-  font-size: 1.5em;
-  margin: 0 0 0.75rem 0;
-}
+#extras h2,
 #figure3Text h2 {
-  font-size: 1.5em;
+  font-size: 1.75em;
+  line-height: 1.2;
+  margin: 0 0 0.75rem 0;
 }
 #extras h2 {
   margin-top: 0;
@@ -385,46 +392,62 @@ h1, h2, h3, h4 {
   color: inherit;
   text-decoration: none;
 }
-/* Big stat numbers */
+/* Big stat numbers and their labels */
 .bigNumber {
+  font-size: 4em;
   font-weight: 800;
   color: #00264c;
+  line-height: 1.1;
 }
 .oneStat p,
 .twoStat p {
+  font-size: 1.125em;
   line-height: 1.4;
+}
+/* Banner titles: sized on the h1 itself rather than compounded through
+   .keynoteContent's font-size in css/main.css */
+.keynoteContent {
+  font-size: 1em;
+}
+.keynoteContent h1 {
+  font-size: 3em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+/* Figure captions and photo credits, styled as on other Vizlab sites */
+.caption p {
+  font-size: 0.95em;
+  font-style: italic;
+  color: rgb(106,106,106);
+  line-height: 1.5;
+  margin: 0.5em 0 1em 0;
+}
+.caption a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 .byline {
   font-style: italic;
   color: #555;
   margin-top: 0.5rem;
 }
-/* Keynote banner titles */
-.keynoteContent h1 {
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-@media screen and (min-width: 768px) {
-  .text p,
-  .text li {
-    font-size: 1.25em;
-  }
-  .text ul {
-    font-size: 1em;
-  }
+@media screen and (max-width: 767px) {
   .text h2,
+  #extras h2,
   #figure3Text h2 {
     font-size: 1.5em;
   }
-  .keynoteContent {
-    font-size: 1.6em;
+  .bigNumber {
+    font-size: 3em;
   }
-}
-@media screen and (max-width: 767px) {
-  .text p,
-  .text li,
-  #extras p {
-    font-size: 1.125em;
+  .keynoteContent h1 {
+    font-size: 2em;
+  }
+  .oneStat p,
+  .twoStat p {
+    font-size: 1em;
   }
 }
 
@@ -454,39 +477,113 @@ h1, h2, h3, h4 {
   min-height: 420px;
 }
 
-/* ============= STATS ROWS ============= */
-/* css/main.css centers each stat block beside its silhouette with absolute
-   positioning and a fixed height, which the larger text overflows. Center
-   them with flexbox instead. */
-@media screen and (min-width: 768px) {
-  .subject {
-    display: flex;
-    align-items: center;
+/* ============= STATS GRID ============= */
+/* Six compact stat cards, each with its own silhouette, in place of the
+   original full-width rows. */
+.stat-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 20px;
+  max-width: var(--figure-width);
+  margin: 0 auto;
+  padding: 0;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+}
+.stat__pic {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.stat__pic img {
+  max-height: 120px;
+  max-width: 160px;
+  width: auto;
+  height: auto;
+}
+#stream .stat__pic img {
+  max-width: 70px;
+}
+.stat .bigNumber {
+  margin: 0;
+}
+.stat__lead,
+.stat__label {
+  max-width: 220px;
+  margin: 0;
+}
+.stat__lead {
+  min-height: 1.4em;
+  color: #444;
+}
+.stat-caption {
+  max-width: calc(var(--text-width) - 2 * var(--gutter));
+  margin: 8px auto 0;
+}
+@media screen and (max-width: 767px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
+  }
+  .stat__pic {
+    height: 90px;
+  }
+  .stat__pic img {
+    max-height: 90px;
+    max-width: 120px;
+  }
+  #stream .stat__pic img {
+    max-width: 50px;
+  }
+  .stat__lead {
     min-height: 0;
-  }
-  .subject::after {
-    display: none;
-  }
-  .oneStat,
-  .twoStat {
-    position: static;
-    float: none;
-    width: 35%;
-    height: auto;
-    margin: 0;
-    flex: 0 0 35%;
-  }
-  .pic {
-    float: none;
-    width: 65%;
-    flex: 0 0 65%;
-    min-height: 0;
-  }
-  .oneStat p,
-  .twoStat p {
-    font-size: 1.1em;
   }
 }
+
 #socialMedia {
   z-index: 2;
+}
+
+/* ============= PHOTO CAPTIONS ============= */
+/* Credits beneath the side-by-side photos, and a small location label in the
+   corner of each full-bleed banner */
+.photo {
+  text-align: left;
+}
+.photo img {
+  display: block;
+}
+.photo .caption p {
+  margin-top: 0.5em;
+}
+.keynote-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 4px 12px;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+/* Chart captions sit in the narrative column */
+.figure + .caption {
+  box-sizing: border-box;
+  max-width: calc(var(--text-width) - 2 * var(--gutter));
+  margin: 0 auto;
+}
+#landUseFig + .caption {
+  padding-top: 30px;
 }

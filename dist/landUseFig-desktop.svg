@@ -1,22 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 432 454" onload="init(evt)">
-  <style>text {
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;display=swap');
+text {
   cursor: default;
-  font-family: Tahoma, Geneva, sans-serif;
+  font-family: 'Source Sans 3', 'Source Sans Pro', Tahoma, Geneva, sans-serif;
+  font-size: 12px;
+  fill: #1e1e1e;
+}
+/* Chart titles: bold, with the units in a lighter sub-label */
+#axis-label text {
+  font-size: 13px;
+  font-weight: 700;
+}
+#axis-label .sub-label {
+  font-size: 10px;
+  font-weight: 400;
+  fill: #555;
+}
+/* Legend and axis labels */
+.sub-label {
+  font-size: 9px;
+  fill: #333;
 }
 .x-tick-label, #tooltip {
-font-size: 10px;
+  font-size: 10px;
 }
-.sub-label, .y-tick-label {
-font-size: 8px;
+.x-tick-label, .y-tick-label {
+  fill: #555;
 }
-
+.y-tick-label {
+  font-size: 8px;
+}
+#tooltip_key {
+  font-weight: 600;
+}
 .hidden {
-opacity:0;
+  opacity: 0;
 }
-text{
-font-size: 12px;
-
-}</style>
+</style>
   <rect y="21.6" height="301.36" width="0" fill="#ffffb2" stroke="#ffff4c" rx="2" ry="2" id="highlight-fill"/>
   <g id="static-legend">
     <rect y="208.2" x="156.6" height="8" width="8" fill="#ffcc0a" stroke="none"/>
@@ -202,7 +223,7 @@ font-size: 12px;
         <path d="M 404.545,322.96 v -5"/>
       </g>
       <g id="axis-label" stroke="none" fill="#000000" text-anchor="middle">
-        <text x="216" y="322.96" dy="7.5em">Sampling locations</text>
+        <text x="216" y="322.96" dy="7.5em" text-anchor="middle" font-weight="700" font-size="11px" fill="#555">Sampling locations</text>
       </g>
     </g>
   </g>
