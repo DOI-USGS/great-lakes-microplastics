@@ -356,6 +356,7 @@ h1, h2, h3, h4 {
   margin-bottom: 1em;
 }
 .text h2,
+.text h3,
 #extras h2,
 #figure3Text h2 {
   font-size: 1.75em;
@@ -404,7 +405,8 @@ h1, h2, h3, h4 {
 .keynoteContent {
   font-size: 1em;
 }
-.keynoteContent h1 {
+.keynoteContent h1,
+.keynoteContent h2 {
   font-size: 3em;
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -430,9 +432,13 @@ h1, h2, h3, h4 {
 }
 @media screen and (max-width: 767px) {
   .text h2,
+  .text h3,
   #extras h2,
   #figure3Text h2 {
     font-size: 1.5em;
+  }
+  .keynoteContent h2 {
+    font-size: 2em;
   }
   .bigNumber {
     font-size: 3em;
@@ -485,15 +491,24 @@ h1, h2, h3, h4 {
   padding: 0;
 }
 .stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 120px minmax(1.8em, auto) auto auto;
+  justify-items: center;
+  align-content: start;
   text-align: center;
   min-height: 0;
   margin: 0;
   padding: 0;
 }
+/* Cards without a lead-in line keep the same row layout */
+.stat .bigNumber {
+  grid-row: 3;
+}
+.stat__label {
+  grid-row: 4;
+}
 .stat__pic {
+  grid-row: 1;
   height: 120px;
   display: flex;
   align-items: center;
@@ -518,13 +533,17 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 .stat__lead {
-  min-height: 1.4em;
+  grid-row: 2;
+  align-self: end;
   color: #444;
 }
 @media screen and (max-width: 767px) {
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 12px;
+  }
+  .stat {
+    grid-template-rows: 90px minmax(1.8em, auto) auto auto;
   }
   .stat__pic {
     height: 90px;
@@ -535,9 +554,6 @@ h1, h2, h3, h4 {
   }
   #stream .stat__pic img {
     max-width: 50px;
-  }
-  .stat__lead {
-    min-height: 0;
   }
 }
 
@@ -567,7 +583,7 @@ h1, h2, h3, h4 {
   font-size: 0.85em;
   font-style: italic;
   color: #fff;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.55);
   z-index: 2;
 }
 /* The land-use chart is wider than the column; its caption sits in the column */
@@ -621,4 +637,24 @@ h1, h2, h3, h4 {
   background: #00264c;
   color: #fff;
   cursor: default;
+}
+
+/* ============= ACCESSIBILITY ============= */
+/* A little more dimming behind the white banner titles */
+.dimmer {
+  background: rgba(0, 0, 0, 0.3);
+}
+/* Drop the fixed-background parallax and the sort animation's motion cue
+   for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  #keynoteDiv1,
+  #keynoteDiv3,
+  #keynoteDiv5,
+  #keynoteDiv6,
+  #keynoteDiv7 {
+    background-attachment: scroll !important;
+  }
+  .chart-toggle {
+    transition: none;
+  }
 }

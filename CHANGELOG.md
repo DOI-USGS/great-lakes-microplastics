@@ -29,6 +29,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Rewrote `README.md` to describe the `dist/` site, how to serve it locally, and how the site was originally built
 - Updated `code.json` and `CONTRIBUTING.md` to point at the `DOI-USGS` GitHub organization and the new site URL, https://water.usgs.gov/vizlab/microplastics
 
+- Made the sampling-location labels on the land-use chart smaller
+- Accessibility: allowed pinch-zoom (the viewport tag disabled it), gave both chart `<object>`s accessible names, descriptions, and text fallbacks, made the pre-footer links a `<nav>` landmark, reduced the page to one `h1` with the other banner titles as `h2` and in-section headings as `h3`, labelled the reference superscript links ("Reference 1"), moved the `<noscript>` notice into the body, increased the contrast of the banner captions and the dimming behind banner titles, and turned off the banner parallax under `prefers-reduced-motion`
+
 ### Fixed
 - Fixed the page's structured data, which still carried the headline and subtitle of an unrelated Vizlab site ("Shifts in fish habitat under climate change") and had a trailing comma that made the JSON invalid
 - Fixed the "Skip to main content" link, which pointed at an anchor with a literal `#` in its id; the content is now wrapped in `<main id="main-content">`

@@ -22,8 +22,11 @@ text {
   font-size: 9px;
   fill: #333;
 }
-.x-tick-label, #tooltip {
+#tooltip {
   font-size: 10px;
+}
+.x-tick-label {
+  font-size: 8.5px;
 }
 .x-tick-label, .y-tick-label {
   fill: #555;
