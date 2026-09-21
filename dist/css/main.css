@@ -4,76 +4,6 @@
 	width:100%;
 	}
 
-/*New USGS VID*/
-
-header.usgs-banner {
-    background: #00264c;
-	color:#fff;
-    padding: 8px 15px;
-    }
-
-.menu.nav {
-    margin-bottom: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-div.footer-doi-first {
-    padding-bottom: 2.5em;
-}
-div.footer-doi-second {
-    clear: both;
-    padding-top: 0.15em;
-    border-top: 1px solid #fff;
-}
-
-.nav:before, .nav:after {
-   content: none;
-}
-footer.footer {
-	background: #00264c;
-    padding: 0.2em 0 0 1em;
-	position: relative;
-	width: auto;
-	border-top: 1px solid #E5E5E5; 
-    overflow: auto;
-}
-
-footer.footer .footer-doi {
-	padding-right: 0;
-	padding-left: 0;
-}
-
-footer.footer .footer-doi ul.menu li a {
-    padding: 5px 0px;
-    color: #ffffff;
-    float: left;
-    font-size: 12px;
-}
-
-footer.footer .footer-doi ul.menu li:first-of-type {
-    padding-left: 0px;
-}
-
-footer.footer .footer-doi ul.menu li {
-    float: left;
-    padding-right: 2px;
-    padding-left: 5px;
-}
-
-footer.footer .footer-doi ul.menu li:after {
-    content: "|";
-    color: #ffffff;
-    float: left;
-    padding-top: 5px;
-    padding-left: 7px;
-    font-size: 12px;
-}
-
-footer.footer .footer-doi ul.menu li:last-child:after {
-    content: "";
-}
-
 /*Universal Classes*/
 
 .bg{
@@ -342,66 +272,6 @@ footer.footer .footer-doi ul.menu li:last-child:after {
 	font-size:1.2em;
 }
 
-/*References*/
-#referenceBox{
-	min-height:50px;
-	margin:0 0 20px 0;
-	padding:10px;
-	clear:both;
-	}
-	
-#referenceTitle{
-	background:rgb(63,136,189);
-	height:35px;
-	border-radius:5px 5px 0 0;
-	color:#fff;
-	position:relative;
-	}
-	
-#arrow{
-	width: 0; 
-  	height: 0; 
-  	border-top: 8px solid #fff;
-  	border-right: 8px solid transparent;
-	border-left: 8px solid transparent;
-	position:absolute;
-	right:10px;
-	top:13px;
-	}
-	
-.rotate{
-	transform: rotate(90deg);
-	}
-	
-.corners{
-	border-radius:5px !important;
-	}
-	
-#referenceTitle:hover{
-	background:#387186;
-	}
-	
-#referencePanels{
-	border:1px solid rgb(190,190,190);
-	padding:0 10px 10px 10px;
-	border-radius:0 0 5px 5px;
-	}
-	
-#referenceTitle h3{
-	padding:6px 0 0 10px;
-	}
-	
-.panel{
-	margin:10px 0 0 0;
-	padding-bottom:10px;
-	border-bottom:1px solid rgb(190,190,190);
-	}
-	
-.panel:last-child{
-	border:none;
-	padding-bottom:0;
-	}
-	
 @media only screen
 	and (min-device-width: 768px)
 	and (max-device-width: 1024px)
@@ -528,11 +398,7 @@ footer.footer .footer-doi ul.menu li:last-child:after {
 		margin-bottom:-30px;
 		}
 		
-	/*References*/
-	#referenceBoxContent{
-		width:760px;
-		margin:0 auto;
-		}
+
 		
 }
 

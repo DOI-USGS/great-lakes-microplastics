@@ -20,7 +20,9 @@ The repository has two parts: the **deployed static site** in `dist/`, and the *
 * `dist/relativeAbundanceFig-*.svg` – the interactive "relative abundance of microplastic types" figure (desktop, mobile, and IE variants)
 * `dist/landUseFig-*.svg` – the interactive "microplastics vs. land use" figure (desktop, mobile, and IE variants)
 * `dist/js/` – application code (`app.js` for the ScrollMagic section pinning, `index.js` for section analytics events) and vendored libraries (jQuery, Handlebars, USWDS)
-* `dist/css/`, `dist/stylesheets/` – site styles and the USWDS stylesheet
+* `dist/css/` – the site's own styles (`main.css`, `normalize.css`)
+* `dist/stylesheets/` – the USGS header/footer styles (`common.css`, `custom.css`), the USWDS stylesheet, and `vizlab-template.css`, which ports the banner, pre-footer, layout, and typography from `vue3-template`
+* `dist/fonts/` – Font Awesome 4.7 web fonts for the header, footer, and share icons
 * `dist/images/` – section banner photos (`keynotes/`), silhouettes and photos used in the page, the social media thumbnail, and logos
 * `dist/img/` – USWDS banner icons
 

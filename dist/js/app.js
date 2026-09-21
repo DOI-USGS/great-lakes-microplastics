@@ -48,10 +48,4 @@ new ScrollMagic.Scene({
   	})
 	.addTo(controller);
 
-$('#referenceTitle').on('click', function(){
-	$('#referenceTitle').toggleClass('corners');
-	$('#arrow').toggleClass('rotate');
-	$('#referencePanels').slideToggle('slow');
-});
-
 });
