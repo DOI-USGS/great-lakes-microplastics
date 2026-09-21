@@ -237,55 +237,50 @@ footer.footer ul.social svg.fa-svg {
 }
 
 /* ============= LAYOUT ============= */
-/* One text column for the narrative, matching the template's 700px
-   text-container; the stats, side-by-side photo sections, and figures keep
-   the wider column from css/main.css. */
-#intro .sectionContainer,
-#beadBanSection,
-#figure3Text,
-#figure3Text2,
-#extras {
+/* One 700px text column for every narrative section, matching the
+   template's text-container; photos stack beneath their text as full-column
+   figures. Only the statistics grid and the land-use chart use the wider
+   figure column. Overrides the fixed-width containers and the two-column
+   .left/.right floats in css/main.css. */
+.sectionContainer {
   box-sizing: border-box;
   width: auto;
   max-width: var(--text-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
+  margin: 0 auto;
+  padding: 30px var(--gutter);
 }
-/* Reset the heading-width and heading-only containers in the stats and
-   land-use sections so their text lines up with the narrative column */
-#figure2Section > .text,
-#figure1Section > .text {
-  box-sizing: border-box;
-  max-width: calc(var(--text-width) - 2 * var(--gutter));
-  margin-left: auto;
-  margin-right: auto;
+#figure2Section {
+  max-width: var(--figure-width);
 }
 #figure3Section {
+  max-width: none;
   padding-left: 0;
   padding-right: 0;
 }
 #figure3Text,
 #figure3Text2 {
-  padding-top: 15px;
+  box-sizing: border-box;
+  max-width: var(--text-width);
+  margin: 0 auto;
+  padding: 15px var(--gutter) 0;
 }
-.sectionContainer {
-  padding-top: 30px;
-  padding-bottom: 30px;
+.left,
+.right {
+  float: none;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  position: static;
+  z-index: auto;
 }
-/* common.css switches everything to border-box, so the fixed-width
-   containers in css/main.css need their padding on the outside again */
-@media screen and (min-width: 768px) {
-  .sectionContainer:not(#extras):not(#beadBanSection):not(#figure3Section) {
-    width: auto;
-    max-width: 760px;
-  }
+.photo {
+  min-height: 0;
+  margin: 1.5rem 0 0 0;
 }
-@media screen and (min-width: 1024px) {
-  .sectionContainer:not(#extras):not(#beadBanSection):not(#figure3Section) {
-    max-width: 960px;
-  }
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Figures fill the figure column */
@@ -294,7 +289,7 @@ footer.footer ul.social svg.fa-svg {
 }
 #relativeAbundanceSVG {
   width: 100%;
-  max-width: 760px;
+  max-width: 680px;
   display: block;
   margin: 0 auto;
 }
@@ -556,9 +551,6 @@ h1, h2, h3, h4 {
 .photo {
   text-align: left;
 }
-.photo img {
-  display: block;
-}
 .photo .caption p {
   margin-top: 0.5em;
 }
@@ -574,12 +566,10 @@ h1, h2, h3, h4 {
   background: rgba(0, 0, 0, 0.35);
   z-index: 2;
 }
-/* Chart captions sit in the narrative column */
-.figure + .caption {
-  box-sizing: border-box;
-  max-width: calc(var(--text-width) - 2 * var(--gutter));
-  margin: 0 auto;
-}
+/* The land-use chart is wider than the column; its caption sits in the column */
 #landUseFig + .caption {
-  padding-top: 30px;
+  box-sizing: border-box;
+  max-width: var(--text-width);
+  margin: 0 auto;
+  padding: 30px var(--gutter) 0;
 }
