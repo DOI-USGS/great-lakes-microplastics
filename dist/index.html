@@ -369,12 +369,18 @@
 		<p>That turns out to be a tricky question. USGS scientists plotted the microplastics data  for the river water samples collected at various locations. Then they compared those data to  land-use types found at those same sampling locations to determine if there seemed to be any patterns in the data.</p>
 	</div> 
 	
+	<div class="chart-controls" role="group" aria-label="Sort the rivers">
+		<span class="chart-controls__label">Sort rivers</span>
+		<button type="button" class="chart-toggle is-active" data-sort="geo" aria-pressed="true">West to east</button>
+		<button type="button" class="chart-toggle" data-sort="urban" aria-pressed="false">Least to most urban</button>
+	</div>
+
 	<div class="figure" id="landUseFig">
 	  <object id="landUseSVG" type="image/svg+xml" data="landUseFig-desktop.svg">
     </object>
   </div>
   <div class="caption">
-    <p>Each column is one of the 29 rivers. Top: the concentration of each type of microplastic particle in that river, in particles per 100 gallons. Bottom: how much of the river's watershed is agricultural, urban, or other land. The rivers first appear in geographic order from west (St. Louis River, Minnesota) to east (Genesee River, New York), then rearrange themselves so the least urban watersheds are on the left and the most urban are on the right. Hover over any bar to see its value.</p>
+    <p>Each column is one of the 29 rivers. Top: the concentration of each type of microplastic particle in that river, in particles per 100 gallons. Bottom: how much of the river's watershed is agricultural, urban, or other land. Use the buttons above the chart to arrange the rivers geographically, from west (St. Louis River, Minnesota) to east (Genesee River, New York), or by watershed, from least to most urban. Hover over any bar to see its value.</p>
   </div>
   
   <div id="figure3Text2" class="text">

@@ -577,3 +577,48 @@ h1, h2, h3, h4 {
   margin: 0 auto;
   padding: 30px var(--gutter) 0;
 }
+
+/* ============= CHART CONTROLS ============= */
+/* Segmented toggle above the land-use chart for sorting the rivers */
+.chart-controls {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: var(--text-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 12px;
+}
+.chart-controls__label {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #555;
+  margin-right: 4px;
+}
+.chart-toggle {
+  font: inherit;
+  font-size: 0.95em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 8px 14px;
+  border: 2px solid #00264c;
+  border-radius: 999px;
+  background: #fff;
+  color: #00264c;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.chart-toggle:hover,
+.chart-toggle:focus-visible {
+  background: #e6eef5;
+}
+.chart-toggle:focus-visible {
+  outline: 3px solid #78B4E8;
+  outline-offset: 2px;
+}
+.chart-toggle.is-active {
+  background: #00264c;
+  color: #fff;
+  cursor: default;
+}
