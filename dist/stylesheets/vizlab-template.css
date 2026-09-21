@@ -526,10 +526,6 @@ h1, h2, h3, h4 {
   min-height: 1.4em;
   color: #444;
 }
-.stat-caption {
-  max-width: calc(var(--text-width) - 2 * var(--gutter));
-  margin: 8px auto 0;
-}
 @media screen and (max-width: 767px) {
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);
