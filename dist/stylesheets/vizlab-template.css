@@ -658,3 +658,101 @@ h1, h2, h3, h4 {
     transition: none;
   }
 }
+
+/* ============= HERO BANNER ============= */
+/* The opening banner is the macro photo of sampled particles, so it needs a
+   stronger scrim than the landscape banners: the pale fragments would
+   otherwise sit right under the white title. */
+/* The banners are 100vh, but the hero sits below the USWDS banner and USGS
+   header, so a full 100vh pushes the share links and credit off-screen.
+   Fit it to what is left of the first screen. */
+.keynote--hero {
+  height: 85vh;
+  height: min(85vh, calc(100vh - 110px));
+  min-height: 460px;
+}
+.keynote--hero .dimmer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 6, 12, 0.45) 0%,
+    rgba(10, 6, 12, 0.35) 35%,
+    rgba(10, 6, 12, 0.55) 100%
+  );
+}
+.keynote--hero .keynoteContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--gutter);
+  z-index: 2;
+}
+.keynote--hero h1 {
+  font-size: clamp(2.25rem, 6.5vw, 4.75rem);
+  max-width: 20ch;
+  margin: 0;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+/* Accent rule under the title, in the teal of the silhouettes below */
+.keynote-rule {
+  width: clamp(100px, 18vw, 220px);
+  height: 6px;
+  margin: 1.25rem 0 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #036C83, #5BC8E8);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+/* The hero credit is a full photo credit rather than a short location label */
+.keynote--hero .keynote-caption {
+  max-width: min(46ch, 90%);
+  text-align: right;
+  line-height: 1.4;
+  padding: 6px 12px;
+}
+/* Share icons sit above the credit on the hero */
+.keynote--hero #socialMedia {
+  margin-bottom: 48px;
+}
+.p-share a {
+  background-color: rgba(255, 255, 255, 0.92);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.p-share a:hover,
+.p-share a:focus-visible {
+  background-color: #fff;
+  transform: translateY(-2px);
+}
+@media screen and (max-width: 767px) {
+  .keynote--hero .keynote-caption {
+    left: 0;
+    right: 0;
+    max-width: none;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .keynote--hero #socialMedia {
+    margin-bottom: 64px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p-share a {
+    transition: none;
+  }
+  .p-share a:hover,
+  .p-share a:focus-visible {
+    transform: none;
+  }
+}

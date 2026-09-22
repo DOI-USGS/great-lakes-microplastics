@@ -30,6 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated `code.json` and `CONTRIBUTING.md` to point at the `DOI-USGS` GitHub organization and the new site URL, https://water.usgs.gov/vizlab/microplastics
 
 - Made the sampling-location labels on the land-use chart smaller
+- Made the macro photo of sampled microplastic particles the opening banner, in place of the Bad River landscape, and removed it from the "Microplastics in rivers" section; its photo credit moved to the banner caption, and a web-sized copy (`images/mpsampling-hero.jpg`, 179 KB) is used in place of the 2 MB original
+- Enlarged the opening banner title and added a teal accent rule beneath it, a gradient scrim so the title stays legible over the pale particles, and a hover state on the share links; the opening banner is now sized to the space below the USGS header rather than a full `100vh`, which had pushed the share links and photo credit off the first screen
 - Accessibility: allowed pinch-zoom (the viewport tag disabled it), gave both chart `<object>`s accessible names, descriptions, and text fallbacks, made the pre-footer links a `<nav>` landmark, reduced the page to one `h1` with the other banner titles as `h2` and in-section headings as `h3`, labelled the reference superscript links ("Reference 1"), moved the `<noscript>` notice into the body, increased the contrast of the banner captions and the dimming behind banner titles, and turned off the banner parallax under `prefers-reduced-motion`
 
 ### Fixed
